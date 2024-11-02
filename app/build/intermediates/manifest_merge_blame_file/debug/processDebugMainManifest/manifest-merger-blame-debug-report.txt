@@ -44,8 +44,8 @@
 29-->/Users/woosang/Desktop/PokeInfo2/app/src/main/AndroidManifest.xml:13:9-46
 30        <activity
 30-->/Users/woosang/Desktop/PokeInfo2/app/src/main/AndroidManifest.xml:15:9-25:20
-31            android:name="com.example.pokeinfo.MainActivity"
-31-->/Users/woosang/Desktop/PokeInfo2/app/src/main/AndroidManifest.xml:16:13-41
+31            android:name="com.example.pokeinfo.main.MainActivity"
+31-->/Users/woosang/Desktop/PokeInfo2/app/src/main/AndroidManifest.xml:16:13-46
 32            android:exported="true"
 32-->/Users/woosang/Desktop/PokeInfo2/app/src/main/AndroidManifest.xml:17:13-36
 33            android:label="@string/app_name"

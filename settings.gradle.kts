@@ -23,3 +23,5 @@ rootProject.name = "PokeInfo"
 include(":app")
 include(":core")
 include(":core:designsystem")
+include(":core:domain")
+include(":core:data")

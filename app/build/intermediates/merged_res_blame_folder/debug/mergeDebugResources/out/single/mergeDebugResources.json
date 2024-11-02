@@ -1,66 +1,182 @@
 [
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_background_item_pokemon_span.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/background_item_pokemon_span.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/xml_backup_rules.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/xml/backup_rules.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_rounded_top_border.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/rounded_top_border.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/xml/data_extraction_rules.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen2.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen2.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_news1.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/news1.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gray8_transparency_radius8.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gray8_transparency_radius8.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen4.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen4.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_background_item_pokemon.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/background_item_pokemon.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/xml_backup_rules.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_news3.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/news3.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen6.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen6.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_map.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/map.png"
     },
     {
-        "merged": "com.example.pokeinfo.app-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.pokeinfo.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_search.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/search.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_rounded_bottom_border.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/rounded_bottom_border.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_filter.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/filter.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_rounded_bottom_border_red.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/rounded_bottom_border_red.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_ic_search.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/ic_search.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_favorite_off.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/favorite_off.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen1.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen1.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen8.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen8.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_white_topleft24_topright24.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/white_topleft24_topright24.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_favorite_on.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/favorite_on.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen3.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen3.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_news4.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/news4.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_close.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/close.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_news2.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/news2.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_poke001.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/poke001.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen7.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen7.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_pokeball.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/pokeball.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gen5.png.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gen5.png"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/drawable_gray8_radius6.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/drawable/gray8_radius6.xml"
+    },
+    {
+        "merged": "com.example.pokeinfo.app-debug-57:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.pokeinfo.app-main-59:/mipmap-anydpi/ic_launcher.xml"
     }
 ]
