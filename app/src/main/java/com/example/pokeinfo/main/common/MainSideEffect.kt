@@ -1,9 +1,10 @@
 package com.example.pokeinfo.main.common
 
 import com.example.domain.model.PokemonInfo
+import com.example.ui.SideEffect
 import kotlinx.collections.immutable.ImmutableList
 
-sealed class MainSideEffect {
+sealed class MainSideEffect: SideEffect {
     data class ShowFavoriteBottomSheet(val pokemonInfoList: ImmutableList<PokemonInfo>) : MainSideEffect()
     data class ShowAllTypeBottomSheet(val pokemonInfoList: ImmutableList<PokemonInfo>) : MainSideEffect()
     data class ShowGenerationsBottomSheet(val pokemonInfoList: ImmutableList<PokemonInfo>) : MainSideEffect()

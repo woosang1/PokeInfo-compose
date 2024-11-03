@@ -11,6 +11,7 @@ MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:16:1-19:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3ca7825ceeb592df5ba369315661bbc9/transformed/material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/80473a60e2d9f1b7ce24d31e399e2acd/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
@@ -30,7 +31,7 @@ MERGED from [androidx.compose.ui:ui-graphics-android:1.6.6] /Users/woosang/.grad
 MERGED from [androidx.compose.ui:ui-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/e694b7e70f3a0d69ee3aba673ee9a3b5/transformed/ui-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/woosang/.gradle/caches/8.9/transforms/9936f5babcef39f9951e8a1992e2fa06/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/39ced603133cc8ae23024e4bce8aa714/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/6d7e0e9c489bf9d4ef4aa36e0a20735d/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/073fdb6a43336ccd3efb19cf408faec0/transformed/activity-ktx-1.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity-compose:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/7fbea0b0f05e5b5446a4c4ebbc7e73d7/transformed/activity-compose-1.8.0/AndroidManifest.xml:2:1-7:12
@@ -43,9 +44,9 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/woosang/.gradle/c
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/092c2c50cf4f97ecc064e1eb1154ef8b/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/9a2d1a60d19152867ed00a6d581fc737/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/394c7bbddb2263cd00deac852276f50c/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/aec5ce596ba66fa3cb4dce562ffbfdca/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/614e4b628703df4adb1d34972ce4449d/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/de64252b04991603b84cf9cfe07ef039/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/ddaa725b2e59e78ae2f1c3cccbbd877e/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/041a731c7c71d65b95adf0565a2fefcb/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
@@ -82,6 +83,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/890ff7a146f8bda3b5b3770cba706eee/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/0e50d70f25cb299c2df4bea4c8640af6/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/770db8243d6d81c8c1aae78e5a300746/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.46] /Users/woosang/.gradle/caches/8.9/transforms/37f3faaca6098f3dfaa0fadfc5def61e/transformed/dagger-lint-aar-2.46/AndroidManifest.xml:16:1-19:12
 	package
 		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -179,6 +181,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3ca7825ceeb592df5ba369315661bbc9/transformed/material-release/AndroidManifest.xml:5:5-44
@@ -217,8 +221,8 @@ MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/woosang/.gradle/caches/8.9/transforms/9936f5babcef39f9951e8a1992e2fa06/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/woosang/.gradle/caches/8.9/transforms/9936f5babcef39f9951e8a1992e2fa06/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/39ced603133cc8ae23024e4bce8aa714/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/39ced603133cc8ae23024e4bce8aa714/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/6d7e0e9c489bf9d4ef4aa36e0a20735d/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/6d7e0e9c489bf9d4ef4aa36e0a20735d/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/073fdb6a43336ccd3efb19cf408faec0/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
@@ -243,12 +247,12 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/9a2d1a60d19152867ed00a6d581fc737/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/394c7bbddb2263cd00deac852276f50c/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/394c7bbddb2263cd00deac852276f50c/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/aec5ce596ba66fa3cb4dce562ffbfdca/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/aec5ce596ba66fa3cb4dce562ffbfdca/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/614e4b628703df4adb1d34972ce4449d/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/614e4b628703df4adb1d34972ce4449d/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/a9b0c0551a6b7826584e04f04141059b/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/de64252b04991603b84cf9cfe07ef039/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/de64252b04991603b84cf9cfe07ef039/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/ddaa725b2e59e78ae2f1c3cccbbd877e/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
@@ -321,6 +325,8 @@ MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/trans
 MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/0e50d70f25cb299c2df4bea4c8640af6/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/770db8243d6d81c8c1aae78e5a300746/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/770db8243d6d81c8c1aae78e5a300746/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.dagger:dagger-lint-aar:2.46] /Users/woosang/.gradle/caches/8.9/transforms/37f3faaca6098f3dfaa0fadfc5def61e/transformed/dagger-lint-aar-2.46/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.46] /Users/woosang/.gradle/caches/8.9/transforms/37f3faaca6098f3dfaa0fadfc5def61e/transformed/dagger-lint-aar-2.46/AndroidManifest.xml:18:3-42
 	android:targetSdkVersion
 		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
 	android:minSdkVersion

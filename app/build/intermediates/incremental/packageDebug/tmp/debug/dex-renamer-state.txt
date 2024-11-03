@@ -1,4 +1,4 @@
-#Sun Nov 03 13:41:46 KST 2024
+#Sun Nov 03 14:17:02 KST 2024
 base.0=/Users/woosang/Desktop/PokeInfo_compose/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/woosang/Desktop/PokeInfo_compose/app/build/intermediates/dex/debug/mergeLibDexDebug/3/classes.dex
 base.2=/Users/woosang/Desktop/PokeInfo_compose/app/build/intermediates/dex/debug/mergeLibDexDebug/6/classes.dex

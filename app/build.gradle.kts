@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
 }
 
 android {
@@ -43,6 +44,7 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:ui"))
 
+    // compopse
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -62,4 +64,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // hilt
+    // Hilt 의존성 추가
+    implementation("com.google.dagger:hilt-android:${Versions.hiltVersion}")
+    kapt("com.google.dagger:hilt-compiler:${Versions.hiltVersion}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
+    testImplementation("com.google.dagger:hilt-android-testing:${Versions.hiltVersion}")
+    kaptTest("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
+
+    // Kotlinx collections immutable 의존성 추가
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5") // 버전은 최신으로 확인
 }
