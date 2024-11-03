@@ -1,16 +1,35 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-55:/values-v18/values-v18.xml",
+            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-56:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/6bea0df5eff1ab2d9d8e16555e6adf76/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
                         "endColumns": "48",
                         "endOffsets": "99"
+                    }
+                },
+                {
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/3444f260ef3cee2bcd78875e18ba0852/transformed/core-1.5.0/res/values-v18/values.xml",
+                    "from": {
+                        "startLines": "4,12",
+                        "startColumns": "0,0",
+                        "startOffsets": "180,596",
+                        "endLines": "11,19",
+                        "endColumns": "8,8",
+                        "endOffsets": "595,1009"
+                    },
+                    "to": {
+                        "startLines": "3,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "104,524",
+                        "endLines": "10,18",
+                        "endColumns": "8,8",
+                        "endOffsets": "519,937"
                     }
                 }
             ]

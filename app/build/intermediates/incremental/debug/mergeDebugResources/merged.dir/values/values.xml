@@ -7137,6 +7137,20 @@
     <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
     <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
   </style>
+    <style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowFullscreen">false</item>
+<item name="android:fadingEdge">none</item>
+<item name="android:windowBackground">@android:color/white</item>
+<item name="android:windowAnimationStyle">@null</item>
+</style>
+    <style name="WhiteBackgroundTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowFullscreen">false</item>
+<item name="android:fadingEdge">none</item>
+<item name="android:windowBackground">@android:color/white</item>
+<item name="android:windowAnimationStyle">@null</item>
+</style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">

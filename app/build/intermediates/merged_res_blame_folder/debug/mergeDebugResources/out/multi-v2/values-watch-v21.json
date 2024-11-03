@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-55:/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-56:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/6bea0df5eff1ab2d9d8e16555e6adf76/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
