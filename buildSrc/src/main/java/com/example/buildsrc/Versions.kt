@@ -13,7 +13,6 @@ object Versions {
 //    const val room = "2.6.1"
 //    const val rxbinding = "4.0.0"
 //    const val glide = "4.11.0"
-//    const val window ="1.0.0"
 //    const val orbit ="6.0.0"
     const val compose = "1.6.8"
     const val junit = "4.13.2"

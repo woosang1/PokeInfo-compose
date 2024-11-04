@@ -6,11 +6,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import com.example.main.MainViewModel
-//import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun MainScreen(
-    mainViewModel: MainViewModel = MainViewModel()
+    mainViewModel: MainViewModel = hiltViewModel<MainViewModel>()
 ) {
     val uiState by mainViewModel.uiState.collectAsState()
     val context = LocalContext.current

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -43,4 +45,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.8.1")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // hilt
+    implementation("com.google.dagger:hilt-android:${Versions.hiltVersion}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
 }

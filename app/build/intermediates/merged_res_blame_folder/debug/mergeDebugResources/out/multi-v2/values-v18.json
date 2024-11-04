@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-56:/values-v18/values-v18.xml",
+            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-64:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/ca6bfc363c0e75cc744fd8c2502d081c/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/3444f260ef3cee2bcd78875e18ba0852/transformed/core-1.5.0/res/values-v18/values.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/144c2bee496cc4547d0bc407681713ef/transformed/core-1.5.0/res/values-v18/values.xml",
                     "from": {
                         "startLines": "4,12",
                         "startColumns": "0,0",

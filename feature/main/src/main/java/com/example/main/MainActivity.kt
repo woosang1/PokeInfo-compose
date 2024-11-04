@@ -14,10 +14,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             PokeInfoTheme {
                 MainScreen()
-//                    Greeting(
-//                        name = "Android",
-//                        modifier = Modifier.padding(innerPadding)
-//                    )
             }
         }
     }

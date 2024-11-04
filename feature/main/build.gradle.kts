@@ -3,10 +3,11 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = ConfigData.applicationId
+    namespace = "com.example.main"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -69,7 +70,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
     testImplementation("com.google.dagger:hilt-android-testing:${Versions.hiltVersion}")
     kaptTest("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // Kotlinx collections immutable 의존성 추가
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5") // 버전은 최신으로 확인
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
 }

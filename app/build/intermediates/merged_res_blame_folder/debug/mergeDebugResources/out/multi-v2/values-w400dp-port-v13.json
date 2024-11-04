@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-56:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-64:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/res/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/fbb9dd5b3078c89be04254ac6dfa52e0/transformed/material-1.10.0/res/values-w400dp-port-v13/values-w400dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

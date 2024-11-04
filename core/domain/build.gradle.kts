@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "com.example.domain"
-    compileSdk = 34
+    compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        minSdk = 26
+        minSdk = ConfigData.minSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,4 +40,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // hilt
+    implementation("com.google.dagger:hilt-android:${Versions.hiltVersion}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
 }
