@@ -4,14 +4,9 @@ ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-28:12
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-28:12
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-28:12
-MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
-MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
 MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:16:1-19:12
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3ca7825ceeb592df5ba369315661bbc9/transformed/material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/80473a60e2d9f1b7ce24d31e399e2acd/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
@@ -30,6 +25,13 @@ MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradl
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/6bb42dcd1f382d7ec824226e7eb78e85/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/e694b7e70f3a0d69ee3aba673ee9a3b5/transformed/ui-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:17:1-28:12
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:16:1-19:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/39ced603133cc8ae23024e4bce8aa714/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/6d7e0e9c489bf9d4ef4aa36e0a20735d/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
@@ -72,12 +74,12 @@ MERGED from [androidx.test:monitor:1.6.1] /Users/woosang/.gradle/caches/8.9/tran
 MERGED from [androidx.test:annotation:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/25b12ef96fbb61004465634e906ed974/transformed/annotation-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/woosang/.gradle/caches/8.9/transforms/2f35ff52bc44e220aa0b44268a07a71e/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/d9c02446b8514cf5fcbd901e23e1669c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/6e0873576107ed903c1ba322449be092/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/e4608b48d03bcee8eb66ddb5edb43dca/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/cfcd8db55270fce03a3c65f038aa833c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/bb6806f275109b2a6073f22a9a58c47b/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4b75eac27ea760b6c530850c42a73f6a/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/f7ab616871000347ed4d8b1f58f8baeb/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/890ff7a146f8bda3b5b3770cba706eee/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -97,14 +99,14 @@ MERGED from [com.google.dagger:dagger-lint-aar:2.46] /Users/woosang/.gradle/cach
 application
 ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:5:5-26:19
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:5:5-26:19
-MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/a71695b183ecbfd93f44dc07202d570d/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/a71695b183ecbfd93f44dc07202d570d/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/3444f260ef3cee2bcd78875e18ba0852/transformed/core-1.5.0/AndroidManifest.xml:26:5-51:19
 MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/3444f260ef3cee2bcd78875e18ba0852/transformed/core-1.5.0/AndroidManifest.xml:26:5-51:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/092c2c50cf4f97ecc064e1eb1154ef8b/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
@@ -167,22 +169,12 @@ uses-sdk
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
 INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
-MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
-MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/057fa49db7ef9b741181a92e18d16a92/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3ca7825ceeb592df5ba369315661bbc9/transformed/material-release/AndroidManifest.xml:5:5-44
@@ -219,6 +211,20 @@ MERGED from [androidx.compose.ui:ui-android:1.6.6] /Users/woosang/.gradle/caches
 MERGED from [androidx.compose.ui:ui-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/e694b7e70f3a0d69ee3aba673ee9a3b5/transformed/ui-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/740c69e66a09c79151b1fadcf2776fdf/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:20:5-44
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/b1f00036d8732d12a77694bf21c15749/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/77ed4bf38b4eb26ee7b4d27cf5bde05e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/6fcb13d2d7b9c07147608773d5b74d08/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/b49a7b834444d00b09fb6d6347d2ac89/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.46] /Users/woosang/.gradle/caches/8.9/transforms/c67e15121f64bf4ec886ff58a733da43/transformed/hilt-android-2.46/AndroidManifest.xml:18:3-42
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/8de8fde8a8d2c5a5d5a19677190001eb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/39ced603133cc8ae23024e4bce8aa714/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
@@ -303,10 +309,6 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/woosang/.
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/woosang/.gradle/caches/8.9/transforms/2f35ff52bc44e220aa0b44268a07a71e/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/d9c02446b8514cf5fcbd901e23e1669c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/d9c02446b8514cf5fcbd901e23e1669c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/6e0873576107ed903c1ba322449be092/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/6e0873576107ed903c1ba322449be092/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/e4608b48d03bcee8eb66ddb5edb43dca/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
@@ -315,6 +317,10 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/cach
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/cfcd8db55270fce03a3c65f038aa833c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/bb6806f275109b2a6073f22a9a58c47b/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/bb6806f275109b2a6073f22a9a58c47b/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6e1226142b99f6fce9118a78d8daa966/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4844e76350fb79ac7d270b04ea5c53e5/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4b75eac27ea760b6c530850c42a73f6a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/4b75eac27ea760b6c530850c42a73f6a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/f7ab616871000347ed4d8b1f58f8baeb/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
