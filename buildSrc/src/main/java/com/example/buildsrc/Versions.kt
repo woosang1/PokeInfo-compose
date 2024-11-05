@@ -10,7 +10,7 @@ object Versions {
     const val hiltVersion = "2.46"
     const val gradleVersion = "8.1.1"
 //    const val lifecycle = "2.5.1"
-//    const val room = "2.6.1"
+    const val room = "2.6.1"
 //    const val rxbinding = "4.0.0"
 //    const val glide = "4.11.0"
 //    const val orbit ="6.0.0"
