@@ -1,34 +1,64 @@
 package com.example.designsystem.theme
 
-import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.Density
+import com.example.pokeinfo.R
+import com.example.utils.textDp
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+data class TypographySystem(
+    private val colors: ColorSystem,
+    private val density: Density? = null,
+    val baseTextStyle: TextStyle = TextStyle(
+        color = colors.black,
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+    val title1: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.textDp(density),
+        lineHeight = 18.textDp(density)
+    ),
+    val title2: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 16.textDp(density),
+        lineHeight = 18.textDp(density)
+    ),
+    val title3: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.textDp(density),
+        lineHeight = 18.textDp(density)
+    ),
+    val title4: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.textDp(density),
+        lineHeight = 18.textDp(density)
+    ),
+    val title5: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 14.textDp(density),
+        lineHeight = 16.textDp(density)
+    ),
+    val title6: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.textDp(density),
+        lineHeight = 16.textDp(density)
     )
-    */
 )
+
+val nanumSquare = FontFamily(
+    Font(R.font.nanumsquare_neo_heavy, FontWeight.Black, FontStyle.Normal),
+    Font(R.font.nanumsquare_otfb, FontWeight.Bold, FontStyle.Normal),
+    Font(R.font.nanumsquare_otfeb, FontWeight.ExtraBold, FontStyle.Normal),
+    Font(R.font.nanumsquare_otfl, FontWeight.Light, FontStyle.Normal),
+    Font(R.font.nanumsquare_otfr, FontWeight.Normal, FontStyle.Normal),
+)
+
+

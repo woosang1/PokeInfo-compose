@@ -7,6 +7,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import com.example.main.MainViewModel
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.domain.model.PokemonInfo
+import com.example.main.common.views.GridCardLayout
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun MainScreen(
@@ -28,9 +31,11 @@ fun MainScreen(
             }
         }
     }
-    when(uiState.mainUiState){
+    when(val mainUiState = uiState.mainUiState){
         is MainUiState.Empty -> { }
-        is MainUiState.Result -> { }
+        is MainUiState.Result -> {
+            GridCardLayout(cardList = mainUiState.pokemonList)
+        }
         is MainUiState.Error -> { }
     }
 }
