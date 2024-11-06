@@ -11,7 +11,7 @@ interface NetworkAPI {
      * 포켓몬 조회
      */
     @GET("pokemon.json")
-    fun getPokemonInfo(): Flow<RpPokemonInfo>
+    fun getPokemonInfo(): RpPokemonInfo
 
     /**
      * 포켓몬 상세 정보

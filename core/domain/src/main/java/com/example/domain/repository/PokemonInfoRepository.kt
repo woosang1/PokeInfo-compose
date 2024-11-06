@@ -1,10 +1,11 @@
 package com.example.domain.repository
 
 import com.example.domain.model.PokemonInfo
+import kotlinx.coroutines.flow.Flow
 
 interface PokemonInfoRepository {
     /** remote **/
-    fun getInfo(limit: Int?, offset: Int?, successCallBack: (List<PokemonInfo>) -> Unit, failCallBack: (String) -> Unit)
+    suspend fun getPokemonInfo(limit: Int?, offset: Int?) : Flow<List<PokemonInfo>?>
 
     /** local **/
     fun insertLocalDB()

@@ -2,10 +2,12 @@ package com.example.data.repository
 
 import com.example.data.datasource.PokemonInfoLocalDataSource
 import com.example.data.datasource.PokemonInfoRemoteDataSource
-import com.example.data.model.rp.RpPokemonInfo
+import com.example.data.mapper.mapperToPokemonInfo
+import com.example.data.network.ApiResult
 import com.example.domain.model.PokemonInfo
-import com.example.data.model.rp.mapperToPokemonInfo
 import com.example.domain.repository.PokemonInfoRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class PokemonInfoRepositoryImpl @Inject constructor(
@@ -14,30 +16,25 @@ class PokemonInfoRepositoryImpl @Inject constructor(
 ) : PokemonInfoRepository {
 
     /** remote **/
-    override fun getInfo(
+    override suspend fun getPokemonInfo(
         limit: Int?,
         offset: Int?,
-        successCallBack: (List<PokemonInfo>) -> Unit,
-        failCallBack: (String) -> Unit
-    ) {
-        // TODO: Flow callback 구현 해야됨./
-        remoteDataSource.getInfo()
-//        remoteDataSource.getInfo().subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(object : DisposableSingleObserver<RpPokemonInfo>() {
-//                override fun onSuccess(result: RpPokemonInfo) {
-//                    val infoList = result.mapperToPokemonInfo()
-//                    successCallBack.invoke(infoList)
-//                }
-//
-//                override fun onError(e: Throwable) {
-//                    e.message?.let {
-//                        failCallBack.invoke(it)
-//                    }
-//                }
-//            })
+    ): Flow<List<PokemonInfo>> = flow {
+        remoteDataSource.getPokemonInfo().collect { it ->
+            when(it){
+                is ApiResult.Success -> {
+                    emit(it.value.pokemonItems.mapperToPokemonInfo())
+                }
+                is ApiResult.Error -> {
+                    // TODO: Local에서 꺼낼예정
+                    /**
+                     * 예외처리 생각해봐야함.
+                     */
+                    emit(ArrayList<PokemonInfo>().toList())
+                }
+            }
+        }
     }
-
 
     /** local **/
     override fun insertLocalDB() { localDataSource.insert() }

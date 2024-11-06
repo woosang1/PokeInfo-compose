@@ -8,7 +8,7 @@ import javax.inject.Provider
 class NetworkManager @Inject constructor(
     private val retrofitClient: Provider<RetrofitClient>
 ) {
-    fun getPokemonInfo(): Flow<RpPokemonInfo> = retrofitClient.get().getRetrofitByGistGithubUrl(NetworkAPI::class.java).getPokemonInfo()
+    fun getPokemonInfo(): RpPokemonInfo = retrofitClient.get().getRetrofitByGistGithubUrl(NetworkAPI::class.java).getPokemonInfo()
 
 }
 
