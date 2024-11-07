@@ -1,90 +1,93 @@
 package com.example.data.model.rp
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class RpPokemonInfo(
     val pokemonItems: List<RpPokemonItem>
 ) {
+    @Serializable
     data class RpPokemonItem(
-        @SerializedName("abilities")
+        @SerialName("abilities")
         val abilities: List<String?>?,
 
-        @SerializedName("attack")
+        @SerialName("attack")
         val attack: Int?,
 
-        @SerializedName("base_exp")
+        @SerialName("base_exp")
         val baseExp: String?,
 
-        @SerializedName("category")
+        @SerialName("category")
         val category: String?,
 
-        @SerializedName("cycles")
+        @SerialName("cycles")
         val cycles: String?,
 
-        @SerializedName("defense")
+        @SerialName("defense")
         val defense: Int?,
 
-        @SerializedName("egg_groups")
+        @SerialName("egg_groups")
         val eggGroups: String?,
 
-        @SerializedName("evolutions")
+        @SerialName("evolutions")
         val evolutions: List<String?>?,
 
-        @SerializedName("evolvedfrom")
+        @SerialName("evolvedfrom")
         val evolvedFrom: String?,
 
-        @SerializedName("female_percentage")
+        @SerialName("female_percentage")
         val femalePercentage: String?,
 
-        @SerializedName("genderless")
+        @SerialName("genderless")
         val genderless: Int?,
 
-        @SerializedName("height")
+        @SerialName("height")
         val height: String?,
 
-        @SerializedName("hp")
+        @SerialName("hp")
         val hp: Int?,
 
-        @SerializedName("id")
+        @SerialName("id")
         val id: String?,
 
-        @SerializedName("imageurl")
+        @SerialName("imageurl")
         val imageUrl: String?,
 
-        @SerializedName("male_percentage")
+        @SerialName("male_percentage")
         val malePercentage: String?,
 
-        @SerializedName("name")
+        @SerialName("name")
         val name: String?,
 
-        @SerializedName("reason")
+        @SerialName("reason")
         val reason: String?,
 
-        @SerializedName("special_attack")
+        @SerialName("special_attack")
         val specialAttack: Int?,
 
-        @SerializedName("special_defense")
+        @SerialName("special_defense")
         val specialDefense: Int?,
 
-        @SerializedName("speed")
+        @SerialName("speed")
         val speed: Int?,
 
-        @SerializedName("total")
+        @SerialName("total")
         val total: Int?,
 
-        @SerializedName("typeofpokemon")
+        @SerialName("typeofpokemon")
         val typeOfPokemon: List<String>?,
 
-        @SerializedName("weaknesses")
+        @SerialName("weaknesses")
         val weaknesses: List<String?>?,
 
-        @SerializedName("weight")
+        @SerialName("weight")
         val weight: String?,
 
-        @SerializedName("xdescription")
+        @SerialName("xdescription")
         val xDescription: String?,
 
-        @SerializedName("ydescription")
+        @SerialName("ydescription")
         val yDescription: String?
     )
 }
