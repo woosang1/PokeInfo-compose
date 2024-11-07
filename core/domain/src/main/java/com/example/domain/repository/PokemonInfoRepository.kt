@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface PokemonInfoRepository {
     /** remote **/
-    suspend fun getPokemonInfo(limit: Int?, offset: Int?) : Flow<List<PokemonInfo>?>
+    suspend fun getPokemonInfo(limit: Int?, offset: Int?) : Flow<List<PokemonInfo>>
 
     /** local **/
     fun insertLocalDB()

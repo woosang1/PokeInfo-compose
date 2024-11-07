@@ -1,6 +1,6 @@
 package com.example.data.network.interceptor
 
-import com.example.data.log.logDebug
+import com.example.log.logDebug
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -29,23 +29,25 @@ class LogInterceptor : Interceptor {
         val request = chain.request().newBuilder().build()
         val response = chain.proceed(request)
         val bodyString = response.body?.string().toString()
-        logDebug(String.format(
-            REQUEST_LOG_STRING,
-            request.method,
-            request.url,
-            bodyToString(request),
-            request.headers,
-            Thread.currentThread().name,
-            response.code,
-            try {
-                JSONObject(bodyString).toString(4)
-                    .replace("\\", "\"")
-                    .replace("\"/\"", "/")
-                    .replace("\"/", "/")
-            } catch (e: JSONException) {
-                bodyString
-            }
-        ))
+        logDebug(
+            String.format(
+                REQUEST_LOG_STRING,
+                request.method,
+                request.url,
+                bodyToString(request),
+                request.headers,
+                Thread.currentThread().name,
+                response.code,
+                try {
+                    JSONObject(bodyString).toString(4)
+                        .replace("\\", "\"")
+                        .replace("\"/\"", "/")
+                        .replace("\"/", "/")
+                } catch (e: JSONException) {
+                    bodyString
+                }
+            )
+        )
 
         return response.newBuilder()
             .body(bodyString.toResponseBody(response.body?.contentType()))

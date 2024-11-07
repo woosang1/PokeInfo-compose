@@ -1,10 +1,12 @@
 package com.example.main.common
 
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.Stable
 import com.example.domain.model.PokemonInfo
 import com.example.ui.State
 import kotlinx.collections.immutable.ImmutableList
 
+@Stable
 data class MainState(
     val mainUiState : MainUiState
 ): State

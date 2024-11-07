@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.ColorFilter
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
+import android.widget.Toast
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import coil.request.ImageRequest
@@ -89,3 +90,17 @@ private fun makeCenteredPlaceholderDrawable(
     return centeredDrawable
 }
 
+private var toast: Toast? = null
+
+fun Context.showToast(message: String?, duration: Int = Toast.LENGTH_SHORT) {
+    if (!message.isNullOrEmpty()) {
+        if (toast == null) {
+            toast = Toast.makeText(applicationContext, message, duration)
+        } else {
+            toast?.cancel()
+            toast = Toast.makeText(applicationContext, message, duration)
+            toast?.setText(message)
+        }
+        toast?.show()
+    }
+}

@@ -9,7 +9,7 @@ class GetPokemonInfoUseCase @Inject constructor(
     private val pokemonInfoRepository: PokemonInfoRepository
 ) {
 
-    suspend fun getInfo(limit: Int?, offset: Int?): Flow<List<PokemonInfo>?> =
+    suspend fun getInfo(limit: Int?, offset: Int?): Flow<List<PokemonInfo>> =
         pokemonInfoRepository.getPokemonInfo(
             limit = limit,
             offset = offset

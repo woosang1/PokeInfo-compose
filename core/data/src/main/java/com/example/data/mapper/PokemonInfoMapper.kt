@@ -43,12 +43,10 @@ fun List<RpPokemonInfo.RpPokemonItem>.mapperToPokemonInfo(): List<PokemonInfo> {
     }
 }
 
-fun List<RpPokemonInfo.RpPokemonItem>.getPokemonByEvolutionId(idList : List<String?>?) : List<PokemonInfo> {
-    Log.i("logger" , "getPokemonByEvolutionId 호출.")
+internal fun List<RpPokemonInfo.RpPokemonItem>.getPokemonByEvolutionId(idList : List<String?>?) : List<PokemonInfo> {
     val evolutions = ArrayList<PokemonInfo>()
     idList?.forEachIndexed { index, id ->
         val evolutionPokemon = this.firstOrNull { it.id == id }
-        Log.i("logger" , "evolutionPokemon : ${evolutionPokemon.toString()}")
         evolutionPokemon?.let { it ->
             evolutions.add(
                 PokemonInfo(

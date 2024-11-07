@@ -15,12 +15,15 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getPokemonInfoUseCase: GetPokemonInfoUseCase
 ) : BaseViewModel<MainEvent, MainState, MainSideEffect>() {
+
     override fun createInitialState(): MainState = MainState(mainUiState = MainUiState.Empty)
     override fun handleEvent(event: MainEvent) {
         when (event) {
             is MainEvent.ClickCircleMenuBtn -> { }
             is MainEvent.ClickSearchBtn -> { }
-            is MainEvent.ClickPokemonCard -> { }
+            is MainEvent.ClickPokemonCard -> {
+                setEffect { MainSideEffect.StartDetailActivity(pokemonInfo = event.pokemonInfo) }
+            }
         }
     }
 
@@ -30,12 +33,9 @@ class MainViewModel @Inject constructor(
                 limit = limit,
                 offset = offset
             ).collectLatest { result ->
-                if (result == null) setState { MainState(mainUiState = MainUiState.Error) }
-                else {
-                    setState {
-                        if (result.isNotEmpty()) MainState(mainUiState = MainUiState.Result(pokemonList = result.toImmutableList()))
-                        else MainState(mainUiState = MainUiState.Error)
-                    }
+                setState {
+                    if (result.isNotEmpty()) MainState(mainUiState = MainUiState.Result(pokemonList = result.toImmutableList()))
+                    else MainState(mainUiState = MainUiState.Error)
                 }
             }
         }
