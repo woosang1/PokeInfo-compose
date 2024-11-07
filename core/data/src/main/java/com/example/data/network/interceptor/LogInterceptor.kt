@@ -9,8 +9,9 @@ import okio.Buffer
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
+import javax.inject.Inject
 
-class LogInterceptor : Interceptor {
+class LogInterceptor  @Inject constructor(): Interceptor {
     companion object {
         private const val TAG = "RetrofitLog"
         private const val REQUEST_LOG_STRING = ".\n" +

@@ -7,11 +7,13 @@ import com.example.main.common.MainSideEffect
 import com.example.main.common.MainState
 import com.example.main.common.MainUiState
 import com.example.ui.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val getPokemonInfoUseCase: GetPokemonInfoUseCase
 ) : BaseViewModel<MainEvent, MainState, MainSideEffect>() {

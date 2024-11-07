@@ -15,7 +15,7 @@ import com.example.utils.showToast
 
 @Composable
 fun MainScreen(
-    mainViewModel: MainViewModel = hiltViewModel<MainViewModel>()
+    mainViewModel: MainViewModel = hiltViewModel()
 ) {
     val uiState by mainViewModel.uiState.collectAsState()
     val sideEffect = mainViewModel.effect

@@ -1,6 +1,10 @@
 package com.example.pokeinfo.main;
 
+import com.example.data.di.ApiModule;
+import com.example.data.di.InterceptorModule;
 import com.example.data.di.RepositoryModule;
+import com.example.main.MainActivity_GeneratedInjector;
+import com.example.main.MainViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -124,8 +128,10 @@ public final class PokeInfoApplication_HiltComponents {
 
   @Component(
       modules = {
+          ApiModule.class,
           ApplicationContextModule.class,
           HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class,
+          InterceptorModule.class,
           ActivityRetainedCBuilderModule.class,
           ServiceCBuilderModule.class
       }
@@ -151,6 +157,7 @@ public final class PokeInfoApplication_HiltComponents {
   @Subcomponent(
       modules = {
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
+          MainViewModel_HiltModules.KeyModule.class,
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class
       }
@@ -174,7 +181,8 @@ public final class PokeInfoApplication_HiltComponents {
       }
   )
   @ActivityScoped
-  public abstract static class ActivityC implements ActivityComponent,
+  public abstract static class ActivityC implements MainActivity_GeneratedInjector,
+      ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,
       FragmentComponentManager.FragmentComponentBuilderEntryPoint,
@@ -188,6 +196,7 @@ public final class PokeInfoApplication_HiltComponents {
   @Subcomponent(
       modules = {
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          MainViewModel_HiltModules.BindsModule.class,
           RepositoryModule.class
       }
   )

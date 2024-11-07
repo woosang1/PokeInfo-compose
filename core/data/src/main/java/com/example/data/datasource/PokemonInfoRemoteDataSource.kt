@@ -1,11 +1,11 @@
 package com.example.data.datasource
 
-import com.example.data.network.NetworkManager
+import com.example.data.network.NetworkAPI
 import com.example.data.network.safeFlow
 import javax.inject.Inject
 
 class PokemonInfoRemoteDataSource @Inject constructor(
-    private val networkManager: NetworkManager
+    private val networkApi : NetworkAPI
 ) {
-    suspend fun getPokemonInfo() = safeFlow { networkManager.getPokemonInfo() }
+    fun getPokemonInfo() = safeFlow { networkApi.getPokemonInfo() }
 }
