@@ -4,7 +4,7 @@
             "outputFile": "com.example.pokeinfo.app-mergeDebugResources-69:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/d75677f130f99e85bb481bcbcd9fa509/transformed/material3-release/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/ccd4c24944d120fb34d6d069e62a013d/transformed/material3-release/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/res/values-fr-rCA/values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,354,456,560,664,778",
-                        "endColumns": "97,101,98,101,103,103,113,100",
-                        "endOffsets": "148,250,349,451,555,659,773,874"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44,179",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3578,3676,3778,3877,3979,4083,4187,17236",
-                        "endColumns": "97,101,98,101,103,103,113,100",
-                        "endOffsets": "3671,3773,3872,3974,4078,4182,4296,17332"
-                    }
-                },
-                {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e7506dbdcf2239e55b3ea1972ef35506/transformed/appcompat-1.6.1/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e9b1c653ba9ccf773258d9b878c929f6/transformed/appcompat-1.6.1/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0e6e2ad4d89df6ff2776cf59e319372b/transformed/ui-release/res/values-fr-rCA/values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,204,292,390,496,583,663,757,849,936,1007,1075,1156,1241,1317,1396,1465",
-                        "endColumns": "98,87,97,105,86,79,93,91,86,70,67,80,84,75,78,68,121",
-                        "endOffsets": "199,287,385,491,578,658,752,844,931,1002,1070,1151,1236,1312,1391,1460,1582"
-                    },
-                    "to": {
-                        "startLines": "48,49,50,51,52,56,57,170,171,172,173,175,176,178,180,181,182",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4608,4707,4795,4893,4999,5329,5409,16500,16592,16679,16750,16907,16988,17160,17337,17416,17485",
-                        "endColumns": "98,87,97,105,86,79,93,91,86,70,67,80,84,75,78,68,121",
-                        "endOffsets": "4702,4790,4888,4994,5081,5404,5498,16587,16674,16745,16813,16983,17068,17231,17411,17480,17602"
-                    }
-                },
-                {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/5d1f943014092d546d02c01cc83a1691/transformed/material-1.10.0/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0a6eeea60733ce7db4f338f02e3dba39/transformed/material-1.10.0/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +57,24 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/736fcedcd5340cd06b0b39933c7ed3ed/transformed/foundation-release/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/777fa2e8541c43f2ff212af006d47570/transformed/ui-release/res/values-fr-rCA/values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,204,292,390,496,583,663,757,849,936,1007,1075,1156,1241,1317,1396,1465",
+                        "endColumns": "98,87,97,105,86,79,93,91,86,70,67,80,84,75,78,68,121",
+                        "endOffsets": "199,287,385,491,578,658,752,844,931,1002,1070,1151,1236,1312,1391,1460,1582"
+                    },
+                    "to": {
+                        "startLines": "48,49,50,51,52,56,57,170,171,172,173,175,176,178,180,181,182",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4608,4707,4795,4893,4999,5329,5409,16500,16592,16679,16750,16907,16988,17160,17337,17416,17485",
+                        "endColumns": "98,87,97,105,86,79,93,91,86,70,67,80,84,75,78,68,121",
+                        "endOffsets": "4702,4790,4888,4994,5081,5404,5498,16587,16674,16745,16813,16983,17068,17231,17411,17480,17602"
+                    }
+                },
+                {
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0bba95011cfc63531173d912ae6d14bf/transformed/foundation-release/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -105,6 +88,23 @@
                         "startOffsets": "17607,17695",
                         "endColumns": "87,94",
                         "endOffsets": "17690,17785"
+                    }
+                },
+                {
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/res/values-fr-rCA/values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,354,456,560,664,778",
+                        "endColumns": "97,101,98,101,103,103,113,100",
+                        "endOffsets": "148,250,349,451,555,659,773,874"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,179",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3578,3676,3778,3877,3979,4083,4187,17236",
+                        "endColumns": "97,101,98,101,103,103,113,100",
+                        "endOffsets": "3671,3773,3872,3974,4078,4182,4296,17332"
                     }
                 }
             ]

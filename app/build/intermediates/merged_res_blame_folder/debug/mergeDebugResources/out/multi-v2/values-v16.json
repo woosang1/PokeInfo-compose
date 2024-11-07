@@ -4,7 +4,7 @@
             "outputFile": "com.example.pokeinfo.app-mergeDebugResources-69:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e7506dbdcf2239e55b3ea1972ef35506/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e9b1c653ba9ccf773258d9b878c929f6/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

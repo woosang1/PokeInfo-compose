@@ -4,7 +4,24 @@
             "outputFile": "com.example.pokeinfo.app-mergeDebugResources-69:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/5d1f943014092d546d02c01cc83a1691/transformed/material-1.10.0/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/777fa2e8541c43f2ff212af006d47570/transformed/ui-release/res/values-en-rGB/values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,968,1032,1110,1192,1265,1342,1408",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "192,274,368,467,554,636,725,814,898,963,1027,1105,1187,1260,1337,1403,1524"
+                    },
+                    "to": {
+                        "startLines": "48,49,50,51,52,56,57,170,171,172,173,175,176,178,180,181,182",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4397,4489,4571,4665,4764,5073,5155,15576,15665,15749,15814,15956,16034,16199,16373,16450,16516",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "4484,4566,4660,4759,4846,5150,5239,15660,15744,15809,15873,16029,16111,16267,16445,16511,16632"
+                    }
+                },
+                {
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0a6eeea60733ce7db4f338f02e3dba39/transformed/material-1.10.0/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/736fcedcd5340cd06b0b39933c7ed3ed/transformed/foundation-release/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0bba95011cfc63531173d912ae6d14bf/transformed/foundation-release/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -40,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e7506dbdcf2239e55b3ea1972ef35506/transformed/appcompat-1.6.1/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/e9b1c653ba9ccf773258d9b878c929f6/transformed/appcompat-1.6.1/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -74,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/d75677f130f99e85bb481bcbcd9fa509/transformed/material3-release/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/ccd4c24944d120fb34d6d069e62a013d/transformed/material3-release/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -88,23 +105,6 @@
                         "startOffsets": "5303,5421,5537,5648,5762,5861,5956,6068,6204,6320,6456,6540,6639,6730,6827,6946,7071,7175,7302,7425,7553,7714,7835,7951,8074,8199,8291,8389,8506,8630,8727,8829,8931,9061,9200,9306,9405,9483,9579,9673,9760,9847,9949,10031,10115,10216,10317,10417,10516,10604,10710,10811,10915,11035,11117,11217",
                         "endColumns": "117,115,110,113,98,94,111,135,115,135,83,98,90,96,118,124,103,126,122,127,160,120,115,122,124,91,97,116,123,96,101,101,129,138,105,98,77,95,93,86,86,101,81,83,100,100,99,98,87,105,100,103,119,81,99,94",
                         "endOffsets": "5416,5532,5643,5757,5856,5951,6063,6199,6315,6451,6535,6634,6725,6822,6941,7066,7170,7297,7420,7548,7709,7830,7946,8069,8194,8286,8384,8501,8625,8722,8824,8926,9056,9195,9301,9400,9478,9574,9668,9755,9842,9944,10026,10110,10211,10312,10412,10511,10599,10705,10806,10910,11030,11112,11212,11307"
-                    }
-                },
-                {
-                    "source": "/Users/woosang/.gradle/caches/8.9/transforms/0e6e2ad4d89df6ff2776cf59e319372b/transformed/ui-release/res/values-en-rGB/values-en-rGB.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,968,1032,1110,1192,1265,1342,1408",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
-                        "endOffsets": "192,274,368,467,554,636,725,814,898,963,1027,1105,1187,1260,1337,1403,1524"
-                    },
-                    "to": {
-                        "startLines": "48,49,50,51,52,56,57,170,171,172,173,175,176,178,180,181,182",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4397,4489,4571,4665,4764,5073,5155,15576,15665,15749,15814,15956,16034,16199,16373,16450,16516",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
-                        "endOffsets": "4484,4566,4660,4759,4846,5150,5239,15660,15744,15809,15873,16029,16111,16267,16445,16511,16632"
                     }
                 }
             ]

@@ -9,31 +9,31 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.REORDER_TASKS" />
-11-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:24:5-72
-11-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:24:22-69
+11-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:24:5-72
+11-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:24:22-69
 12
 13    <permission
-13-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+13-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 14        android:name="com.example.pokeinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+14-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+15-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 16
 17    <uses-permission android:name="com.example.pokeinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+17-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 18
 19    <queries>
-19-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:24:5-28:15
+19-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:24:5-28:15
 20        <package android:name="androidx.test.orchestrator" />
-20-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:25:9-62
-20-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:25:18-59
+20-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:25:9-62
+20-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:25:18-59
 21        <package android:name="androidx.test.services" />
-21-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:26:9-58
-21-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:26:18-55
+21-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:26:9-58
+21-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:26:18-55
 22        <package android:name="com.google.android.apps.common.testing.services" />
-22-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:27:9-83
-22-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/185c578605e95c8f2c5ca72e6af4bddd/transformed/runner-1.5.2/AndroidManifest.xml:27:18-80
+22-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:27:9-83
+22-->[androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/2be99855b8d39e1a3387b89c2c237666/transformed/runner-1.5.2/AndroidManifest.xml:27:18-80
 23    </queries>
 24
 25    <application
@@ -43,7 +43,7 @@
 27        android:allowBackup="true"
 27-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:7:9-35
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-28-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/7af0cbf7df118c527c2499921ea21d74/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+28-->[androidx.core:core:1.12.0] /Users/woosang/.gradle/caches/8.9/transforms/0dc8bb2e48d6c8334e68160d0c6a84a6/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 29        android:dataExtractionRules="@xml/data_extraction_rules"
 29-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:8:9-65
 30        android:debuggable="true"
@@ -83,139 +83,139 @@
 48            </intent-filter>
 49        </activity>
 50        <activity
-50-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:27:9-34:20
+50-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:27:9-34:20
 51            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
-51-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:28:13-99
+51-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:28:13-99
 52            android:exported="true"
-52-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:29:13-36
+52-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:29:13-36
 53            android:theme="@style/WhiteBackgroundTheme" >
-53-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:30:13-56
+53-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:30:13-56
 54            <intent-filter android:priority="-100" >
-54-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
-54-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
+54-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
+54-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
 55                <category android:name="android.intent.category.LAUNCHER" />
 55-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:17-77
 55-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:27-74
 56            </intent-filter>
 57        </activity>
 58        <activity
-58-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:35:9-42:20
+58-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:35:9-42:20
 59            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
-59-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:36:13-95
+59-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:36:13-95
 60            android:exported="true"
-60-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:37:13-36
+60-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:37:13-36
 61            android:theme="@style/WhiteBackgroundTheme" >
-61-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:38:13-56
+61-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:38:13-56
 62            <intent-filter android:priority="-100" >
-62-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
-62-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
+62-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
+62-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
 63                <category android:name="android.intent.category.LAUNCHER" />
 63-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:17-77
 63-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:27-74
 64            </intent-filter>
 65        </activity>
 66        <activity
-66-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:43:9-50:20
+66-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:43:9-50:20
 67            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
-67-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:44:13-103
+67-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:44:13-103
 68            android:exported="true"
-68-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:45:13-36
+68-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:45:13-36
 69            android:theme="@style/WhiteBackgroundDialogTheme" >
-69-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:46:13-62
+69-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:46:13-62
 70            <intent-filter android:priority="-100" >
-70-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
-70-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/56df390ffefbce28f15dcc420696ec40/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
+70-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
+70-->[androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/4ba51762ac19ea4b092f607e5a04ebf3/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
 71                <category android:name="android.intent.category.LAUNCHER" />
 71-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:17-77
 71-->/Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:27-74
 72            </intent-filter>
 73        </activity>
 74        <activity
-74-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/6b9f34c4b9cf73922d75e66a48b21a85/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+74-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/40ea39fb434a74df6cf15d90e9001715/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
 75            android:name="androidx.compose.ui.tooling.PreviewActivity"
-75-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/6b9f34c4b9cf73922d75e66a48b21a85/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+75-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/40ea39fb434a74df6cf15d90e9001715/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
 76            android:exported="true" />
-76-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/6b9f34c4b9cf73922d75e66a48b21a85/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+76-->[androidx.compose.ui:ui-tooling-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/40ea39fb434a74df6cf15d90e9001715/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
 77
 78        <provider
-78-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+78-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 79            android:name="androidx.startup.InitializationProvider"
-79-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+79-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
 80            android:authorities="com.example.pokeinfo.androidx-startup"
-80-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+80-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
 81            android:exported="false" >
-81-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+81-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
 82            <meta-data
-82-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+82-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
 83                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-83-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+83-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
 84                android:value="androidx.startup" />
-84-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/41e3066adb6fde3faea52dd8a053a6e6/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+84-->[androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/0168a5a86ac098fca2ca5ea3a578ffc4/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
 85            <meta-data
-85-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1fe3751b551750c5dd3f77108baa33fd/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+85-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7bba74afa849fd1c9b84da879f7af1d3/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
 86                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-86-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1fe3751b551750c5dd3f77108baa33fd/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+86-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7bba74afa849fd1c9b84da879f7af1d3/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
 87                android:value="androidx.startup" />
-87-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1fe3751b551750c5dd3f77108baa33fd/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+87-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7bba74afa849fd1c9b84da879f7af1d3/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
 88            <meta-data
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
 89                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
 90                android:value="androidx.startup" />
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
 91        </provider>
 92
 93        <activity
-93-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3874872164f5945792c731f1f83d0ccc/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:23:9-25:39
+93-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/fa39d1b311ee1bc59d70b8ce2231de6f/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:23:9-25:39
 94            android:name="androidx.activity.ComponentActivity"
-94-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3874872164f5945792c731f1f83d0ccc/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:24:13-63
+94-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/fa39d1b311ee1bc59d70b8ce2231de6f/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:24:13-63
 95            android:exported="true" />
-95-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/3874872164f5945792c731f1f83d0ccc/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:25:13-36
+95-->[androidx.compose.ui:ui-test-manifest:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/fa39d1b311ee1bc59d70b8ce2231de6f/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:25:13-36
 96
 97        <service
-97-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7481f16413fe717ba66b2d9acec37ca2/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+97-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/bf4283b5e71fd36d37e87003c6bf6937/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
 98            android:name="androidx.room.MultiInstanceInvalidationService"
-98-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7481f16413fe717ba66b2d9acec37ca2/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+98-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/bf4283b5e71fd36d37e87003c6bf6937/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
 99            android:directBootAware="true"
-99-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7481f16413fe717ba66b2d9acec37ca2/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+99-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/bf4283b5e71fd36d37e87003c6bf6937/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
 100            android:exported="false" />
-100-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/7481f16413fe717ba66b2d9acec37ca2/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+100-->[androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/bf4283b5e71fd36d37e87003c6bf6937/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
 101
 102        <receiver
-102-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
 103            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
 104            android:directBootAware="false"
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
 105            android:enabled="true"
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
 106            android:exported="true"
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
 107            android:permission="android.permission.DUMP" >
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
 108            <intent-filter>
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
 109                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
 110            </intent-filter>
 111            <intent-filter>
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
 112                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-112-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-112-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
 113            </intent-filter>
 114            <intent-filter>
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
 115                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-115-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-115-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
 116            </intent-filter>
 117            <intent-filter>
-117-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
 118                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4b29e5eca46365ffd76a61b78f3a47d6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/44bbb1deb7b4ee827cfa862095b3531f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
 119            </intent-filter>
 120        </receiver>
 121    </application>
