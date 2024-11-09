@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.main"
+    namespace = "com.example.home"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -30,19 +30,15 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
-    implementation(project(":feature:home"))
-    implementation(project(":feature:detail"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
     implementation(project(":core:ui"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:utils"))
 
-    // compopse
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -76,4 +72,5 @@ dependencies {
 
     // Kotlinx collections immutable 의존성 추가
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+
 }

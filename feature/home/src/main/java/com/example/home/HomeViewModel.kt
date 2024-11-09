@@ -1,11 +1,11 @@
-package com.example.main
+package com.example.home
 
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.GetPokemonInfoUseCase
-import com.example.main.common.MainEvent
-import com.example.main.common.MainSideEffect
-import com.example.main.common.MainState
-import com.example.main.common.MainUiState
+import com.example.home.common.MainEvent
+import com.example.home.common.HomeSideEffect
+import com.example.home.common.HomeState
+import com.example.home.common.HomeUiState
 import com.example.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toImmutableList
@@ -14,17 +14,17 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val getPokemonInfoUseCase: GetPokemonInfoUseCase
-) : BaseViewModel<MainEvent, MainState, MainSideEffect>() {
+) : BaseViewModel<MainEvent, HomeState, HomeSideEffect>() {
 
-    override fun createInitialState(): MainState = MainState(mainUiState = MainUiState.Empty)
+    override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Empty)
     override fun handleEvent(event: MainEvent) {
         when (event) {
             is MainEvent.ClickCircleMenuBtn -> { }
             is MainEvent.ClickSearchBtn -> { }
             is MainEvent.ClickPokemonCard -> {
-                setEffect { MainSideEffect.StartDetailActivity(pokemonInfo = event.pokemonInfo) }
+                setEffect { HomeSideEffect.StartDetailActivity(pokemonInfo = event.pokemonInfo) }
             }
         }
     }
@@ -36,8 +36,8 @@ class MainViewModel @Inject constructor(
                 offset = offset
             ).collectLatest { result ->
                 setState {
-                    if (result.isNotEmpty()) MainState(mainUiState = MainUiState.Result(pokemonList = result.toImmutableList()))
-                    else MainState(mainUiState = MainUiState.Error)
+                    if (result.isNotEmpty()) HomeState(homeUiState = HomeUiState.Result(pokemonList = result.toImmutableList()))
+                    else HomeState(homeUiState = HomeUiState.Error)
                 }
             }
         }

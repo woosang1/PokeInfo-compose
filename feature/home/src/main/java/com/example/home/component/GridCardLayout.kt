@@ -1,4 +1,4 @@
-package com.example.main.component
+package com.example.home.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.runtime.Composable

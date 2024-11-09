@@ -1,4 +1,4 @@
-package com.example.main.common
+package com.example.home.common
 
 import com.example.domain.model.PokemonInfo
 import com.example.ui.Event
