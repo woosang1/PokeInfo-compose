@@ -26,8 +26,8 @@ fun GridCardLayout(
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: ImmutableList<PokemonInfo>,
-    onClickPokemonCard: (PokemonInfo) -> Unit,
+    cardList: ImmutableList<PokemonInfo.Pokemon>,
+    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
@@ -45,9 +45,9 @@ fun GridCardLayout(
                     .padding(8.dp),
                 width = cardWidth,
                 height = 120,
-                pokemonInfo = cardList[index],
-                onClickPokemonCard = { pokemonInfo ->
-                    onClickPokemonCard.invoke(pokemonInfo)
+                pokemon = cardList[index],
+                onClickPokemonCard = { pokemon ->
+                    onClickPokemonCard.invoke(pokemon)
                 }
             )
         }
@@ -58,36 +58,7 @@ fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = PokemonInfo(
-            id = "000",
-            name = "Unknown",
-            image = "https://example.com/unknown.png",
-            type = emptyList(),
-            abilities = emptyList(),
-            attack = 50,
-            baseExp = "0",
-            category = "Unknown",
-            cycles = "Unknown",
-            defense = 50,
-            eggGroups = "Unknown",
-            evolutions = null,
-            evolvedfrom = "None",
-            femalePercentage = "50%",
-            genderless = 0,
-            height = "0.0 m",
-            hp = 50,
-            malePercentage = "50%",
-            reason = "None",
-            specialAttack = 50,
-            specialDefense = 50,
-            speed = 50,
-            total = 300,
-            typeofpokemon = emptyList(),
-            weaknesses = emptyList(),
-            weight = "0.0 kg",
-            xdescription = "No description available.",
-            ydescription = "No description available."
-        )
+        val defaultPokemon = PokemonInfo.Pokemon()
 
         GridCardLayout(
             columns = 2,
@@ -95,7 +66,7 @@ fun Test() {
             paddingValues = 16,
             horizontalArrangement = 8,
             verticalArrangement = 8,
-            cardList = ArrayList<PokemonInfo>().apply {
+            cardList = ArrayList<PokemonInfo.Pokemon>().apply {
                 add(defaultPokemon)
                 add(defaultPokemon)
             }.toImmutableList(),

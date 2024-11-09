@@ -6,7 +6,7 @@ import com.example.ui.Event
 sealed class MainEvent: Event {
     data class ClickCircleMenuBtn(val menuType : MenuType) : MainEvent()
     data object ClickSearchBtn : MainEvent()
-    data class ClickPokemonCard(val pokemonInfo: PokemonInfo) : MainEvent()
+    data class ClickPokemonCard(val pokemon: PokemonInfo.Pokemon) : MainEvent()
 }
 
 enum class MenuType(val description: String){

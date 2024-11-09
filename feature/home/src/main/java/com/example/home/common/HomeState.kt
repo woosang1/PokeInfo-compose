@@ -12,8 +12,9 @@ data class HomeState(
 ): State
 
 sealed class HomeUiState {
+    data object Init : HomeUiState()
     data object Empty : HomeUiState()
     @Immutable
-    data class Result(val pokemonList: ImmutableList<PokemonInfo>) : HomeUiState()
+    data class Result(val pokemonList: ImmutableList<PokemonInfo.Pokemon>) : HomeUiState()
     data object Error : HomeUiState()
 }

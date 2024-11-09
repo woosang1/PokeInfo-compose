@@ -12,11 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             PokeInfoTheme {
-                val navController = rememberNavController()
-                MainNavHost(navigator = navController)
+                MainNavHost(navigator = rememberNavController())
             }
         }
     }

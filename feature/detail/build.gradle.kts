@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.kotlinx.collections.immutable)
     implementation(libs.coil.compose)
+    implementation(libs.androidx.compose.navigation)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

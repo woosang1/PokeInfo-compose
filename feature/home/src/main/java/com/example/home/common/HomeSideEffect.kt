@@ -11,5 +11,5 @@ sealed class HomeSideEffect: SideEffect {
     data object ShowSearchBottomSheet: HomeSideEffect()
     data object CloseBottomSheet: HomeSideEffect()
     data class ShowToast(val message: String) : HomeSideEffect()
-    data class StartDetailActivity(val pokemonInfo: PokemonInfo) : HomeSideEffect()
+    data class StartDetailActivity(val pokemon: PokemonInfo.Pokemon) : HomeSideEffect()
 }

@@ -1,6 +1,6 @@
 package com.example.data.network.interceptor
 
-import com.example.log.logDebug
+import com.example.log.DebugLog
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -30,7 +30,7 @@ class LogInterceptor  @Inject constructor(): Interceptor {
         val request = chain.request().newBuilder().build()
         val response = chain.proceed(request)
         val bodyString = response.body?.string().toString()
-        logDebug(
+        DebugLog(
             String.format(
                 REQUEST_LOG_STRING,
                 request.method,

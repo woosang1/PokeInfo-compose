@@ -1,27 +1,33 @@
 package com.example.home.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.domain.model.PokemonInfo
 import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
+import com.example.home.R
+import com.example.log.DebugLog
 import com.example.utils.noRippleClickable
 import com.example.utils.setImageUrl
 //import com.example.ui.R
@@ -31,36 +37,46 @@ fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,
-    pokemonInfo: PokemonInfo,
-    onClickPokemonCard: (PokemonInfo) -> Unit,
+    pokemon: PokemonInfo.Pokemon,
+    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
 ) {
+
     Box(
         modifier = modifier
+            .clip(RoundedCornerShape(16.dp))
             .noRippleClickable {
-                onClickPokemonCard.invoke(pokemonInfo)
+                onClickPokemonCard.invoke(pokemon)
             }
     ) {
         // 배경 이미지
-        Image(
-            painter = rememberAsyncImagePainter(
-                model = LocalContext.current.setImageUrl(
-//                    data = pokemonInfo.type,
-                    data = "",
-                    width = width,
-                    height = height
-                )
-            ),
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop,
-            contentDescription = null
+        Box(
+            modifier = Modifier
+                .width(width.dp)
+                .height(height.dp)
+                .background(LocalColors.current.black)
+            ,
         )
+
+//        Image(
+//            painter = rememberAsyncImagePainter(
+//                model = LocalContext.current.setImageUrl(
+////                    data = pokemonInfo.type,
+//                    data = "",
+//                    width = width,
+//                    height = height
+//                )
+//            ),
+//            modifier = Modifier.fillMaxSize(),
+//            contentScale = ContentScale.Crop,
+//            contentDescription = null
+//        )
 
         // 내용
         Box(modifier = Modifier.padding(8.dp)) {
             Column {
                 // 이름 텍스트
                 Text(
-                    text = pokemonInfo.name,
+                    text = pokemon.name,
                     modifier = Modifier
                         .align(Alignment.Start),
                     textAlign = TextAlign.Center,
@@ -71,13 +87,14 @@ fun PokemonCard(
 
                 // ID 텍스트
                 Text(
-                    text = "#${pokemonInfo.id}",
+                    text = "#${pokemon.id}",
                     modifier = Modifier
                         .align(Alignment.End),
                     style = LocalTypography.current.title4,
-                    color = LocalColors.current.white.copy(
-                        alpha = 0.25f
-                    ),
+                    color = LocalColors.current.white,
+//                    color = LocalColors.current.white.copy(
+//                        alpha = 0.25f
+//                    ),
                     maxLines = 1
                 )
 
@@ -85,7 +102,7 @@ fun PokemonCard(
 
                 // Type1 텍스트
                 Text(
-                    text = pokemonInfo.type[0],
+                    text = "pokemonInfo.type[0]",
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                         .align(Alignment.Start),
@@ -96,7 +113,7 @@ fun PokemonCard(
 
                 // Type2 텍스트
                 Text(
-                    text = pokemonInfo.type[1],
+                    text = "pokemonInfo.type[1]",
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                         .align(Alignment.Start),
@@ -107,7 +124,7 @@ fun PokemonCard(
 
                 // Type3 텍스트 (옵션)
                 Text(
-                    text = pokemonInfo.type[1],
+                    text = "pokemonInfo.type[1]",
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                         .align(Alignment.Start),
@@ -126,7 +143,7 @@ fun PokemonCard(
                 Image(
                     painter = rememberAsyncImagePainter(
                         model = LocalContext.current.setImageUrl(
-                            data = pokemonInfo.image,
+                            data = pokemon.url,
                             width = 80,
                             height = 80
                         )

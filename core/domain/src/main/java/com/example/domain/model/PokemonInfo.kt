@@ -1,34 +1,26 @@
 package com.example.domain.model
 
-import java.io.Serializable
-
 data class PokemonInfo(
-    val id: String,
-    val name: String,
-    val image: String,
-    val type: List<String>,
-    val abilities: List<String?>,
-    val attack: Int,
-    val baseExp: String,
-    val category: String,
-    val cycles: String,
-    val defense: Int,
-    val eggGroups: String,
-    val evolutions: List<PokemonInfo>?,
-    val evolvedfrom: String,
-    val femalePercentage: String,
-    val genderless: Int,
-    val height: String,
-    val hp: Int,
-    val malePercentage: String,
-    val reason: String,
-    val specialAttack: Int,
-    val specialDefense: Int,
-    val speed: Int,
-    val total: Int,
-    val typeofpokemon: List<String>,
-    val weaknesses: List<String?>,
-    val weight: String,
-    val xdescription: String,
-    val ydescription: String
-): Serializable
+    val count: Int = 0,
+    val next: String = "",
+    val previous: String = "",
+    val results: List<Pokemon> = emptyList(),
+) {
+
+    data class Pokemon(
+        val id: Int = 0,
+        val count: Int = 0,
+        val name: String = "",
+        val url: String = "",
+    )
+}
+
+fun getImageUrl(url: String): String {
+    val id = getId(url)
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/" +
+            "pokemon/other/official-artwork/$id.png"
+}
+//fun name(name: String): String = name.replaceFirstChar { it.uppercase() }
+fun getId(url: String): String = url.split("/".toRegex()).dropLast(1).last()
+
+

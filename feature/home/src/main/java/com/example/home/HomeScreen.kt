@@ -1,19 +1,35 @@
 package com.example.home
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.designsystem.theme.LocalColors
 import com.example.domain.model.PokemonInfo
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.component.GridCardLayout
+import com.example.log.DebugLog
 
 @Composable
 fun HomeScreen(
     uiState: HomeState,
-    onClickPokemonCard: (PokemonInfo) -> Unit,
+    initAction:() -> Unit,
+    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
 ) {
     when(val mainUiState = uiState.homeUiState){
-        is HomeUiState.Empty -> { }
+        is HomeUiState.Init -> {
+            DebugLog("is HomeUiState.Init ->")
+            initAction.invoke()
+        }
+        is HomeUiState.Empty -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(LocalColors.current.black)
+            ) {  }
+        }
         is HomeUiState.Result -> {
             GridCardLayout(
                 columns = 2,
@@ -22,8 +38,8 @@ fun HomeScreen(
                 horizontalArrangement = 8,
                 verticalArrangement = 8,
                 cardList = mainUiState.pokemonList,
-                onClickPokemonCard = { pokemonInfo ->
-                    onClickPokemonCard.invoke(pokemonInfo)
+                onClickPokemonCard = { pokemon ->
+                    onClickPokemonCard.invoke(pokemon)
                 }
             )
         }
