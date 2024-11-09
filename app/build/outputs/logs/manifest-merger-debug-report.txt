@@ -1,0 +1,576 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:1-29:12
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:feature:home] /Users/woosang/Desktop/PokeInfo_compose/feature/home/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:feature:detail] /Users/woosang/Desktop/PokeInfo_compose/feature/detail/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:utils] /Users/woosang/Desktop/PokeInfo_compose/core/utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/da4e425455826787794ae77c7a4eefbe/transformed/hilt-navigation-compose-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.hilt:hilt-navigation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/e55578edd8c345f0cc34fe44271557a7/transformed/hilt-navigation-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/852dbb015572cdacbd3972ba9583da3b/transformed/navigation-common-2.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/13cf9a48c4d1cd911060ab73c94ab2fd/transformed/navigation-runtime-2.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/42e37af85e8729f020bae93b802353a0/transformed/navigation-common-ktx-2.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/fcfc4e00a1cf1e08b1ffa9c153168dfa/transformed/navigation-runtime-ktx-2.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/9e698b4f51b338049141a79d36e06426/transformed/navigation-compose-2.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:hilt-android:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/3bbc0998641c16f1e1386340d3df8d40/transformed/hilt-android-2.51.1/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/09c278ea7d18b839ad46bbf35fa9fbe4/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
+MERGED from [io.coil-kt:coil-compose:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/3a9d345ecceea056e01ab40304e29923/transformed/coil-compose-2.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil-compose-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/ee96153321f9b1e254bcfe67d28c6d7e/transformed/coil-compose-base-2.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/c7e961870612400f8b38cc1dc4ddb70f/transformed/coil-2.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/bb60129e317a5162aa0a3ceabf4865e8/transformed/coil-base-2.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/9c93b798aca1e41897f718689fc225f5/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/77151efc62b4f84c02c3d7df6c00673f/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/f12e7d6100f9ac02c0282388f75f6893/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/c71a44486653c14dbd4e68cb35bd407c/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/bb8e48a796e1730ff0d3a128954b87cb/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.25.1] /Users/woosang/.gradle/caches/8.9/transforms/a6e390240663398066ba1497f4003e1b/transformed/accompanist-drawablepainter-0.25.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/b8abcd5d2e2822cca39cc6fd1a38e01a/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/797a4cd567211c80acc86f7ffe12109c/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/f4d6989ae76fa3c784e8083186a5edca/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8c033e2e261a5021279094ca5401e2d3/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/2c39899f71faa6639f2cf47b2e72f2c5/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/57a86b757199fb991a90011595426111/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/91c8d4131b8406510d773df9569e07ac/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/9c67b557f2ecfa674a97d54a71f8eab8/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/ca61aa8e8437df56dabc84140248f3f5/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/50acfa94579cd483266102efdd6c2d8b/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/dcc3f2a61b71459fc2ad005663bd5ae4/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/1528f48e4668fe29c8c7949719016acd/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/86a25d2800797f52262fc33b18e91746/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/ead3aa02cf418dc0c5b18efcdccb83d3/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/98f9f103c0d40c6af4f6430d82935beb/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/356e5c984cbdcc7b7260c139ff71feb0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/0218224b102d9c44980123a2232c8a12/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/adba0eecdcc0536802790bf864cefed7/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/07b3ab31753f2f60b38baac3a2d69efe/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3df118c0fc1cbf6dcf3f66f6e27a0bfa/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/8db00225f6a2219dd89d7382fc927df8/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbf57f9756d2609a4aa85af74058772/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/woosang/.gradle/caches/8.9/transforms/004c50ac7f9bd4da0cb0b9c540c46252/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/36209288798901e5fe741a8568390534/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/545439d3b742cbfcff8fa6047903d847/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/d4477f24d66800e01806e41e9dbeefb1/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/534a8c383c79147e1e55447993b92070/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6b90ae34fd1964c915edee2f4cace545/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/08e2be805bb4246f7e6ebce842ce95eb/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/f5781f42be91e88ca052cd6e443c1314/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/d498f68663d8414f8b7d62cef6328e27/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.test.espresso:espresso-core:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/3f38d0b0d0da753cd3b572913aa53b65/transformed/espresso-core-3.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:17:1-53:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/1d6775776066333cbc3086aadc863439/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/64472e8485e7154487638ed004513fd7/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/8f26af4f958527fb53a01e9640e92b31/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/38ae6eaa7158277fb58b21f2fc91fd0a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/43c3748b3c7d05fb47243f0bb2a5cc3a/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7b6b910d94884ff9300e6a793078a214/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/02aa7893222e861408dec4bb9c0fddbf/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/b608e667d30496017fa67310e1ab869d/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/e73b33b4a47ba86fa2578782bbe2c948/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/3c2951ef10e8c6c360102b259cd7e91e/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7e5448c962700d20a21b80cfac617402/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/82377ebd6bb81558acd5dcda38a33f14/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/d4a4a9d65fc5fbc3149a403724d11079/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/95dd08951b7f429de7181700d0d2bbf7/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/62eecf62d4cf41d5d29e134fe84ed2a7/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/346f1e071ea3f18bccfe0183c2f34029/transformed/activity-ktx-1.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-compose:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/632d4fc1f5ca267a27b4c43078c35a92/transformed/activity-compose-1.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1cd67f44ec4d2f1b363a5d21e152a6e7/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/33e36b30c6ae7fafebc61fbec3700283/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbb4e04b3b3ac5c65934cd5476fffbd/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/458c738acc459a98cbeec8c74c0e413a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/961a0a8b4083b0ace8b3e3642529e331/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.test.services:storage:1.4.2] /Users/woosang/.gradle/caches/8.9/transforms/ae109275d4c61a0db3b2907cc2008d53/transformed/storage-1.4.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:monitor:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c8a3b25fec3cf23795c9371af7e1d21e/transformed/monitor-1.6.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:annotation:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/5350f97d80bbd775fc7ea034aaf0336f/transformed/annotation-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/woosang/.gradle/caches/8.9/transforms/6d7799b736a71468c73fc7d6954bee70/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/5ef856c5590a6d18bad20073b4d831e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/663d5c0624f465e5a6c4b7f41599ef88/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/fd8d68a8b17c8e081e7abea0e304eb9d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/cdb305a5fcc7420f5dd79d9fca9e0b3c/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/884aaf9e03dbe5f1a287dda3ddfcc5ba/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/woosang/.gradle/caches/8.9/transforms/b13081809963fd98f0930d508b0d1e73/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3d3011922d11298debec81ebb363e014/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/86cd8eb7d4c04f0dfebf1ced14b3818a/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/5dae704a56afe01207e97dc2b9bb5a61/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/97c64a301bd9efa42b869eb8b3027984/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/4d611c2b5d6cecd067a5e8729d0cfe99/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/1094a6e56f9421f1d920b64337d76081/transformed/dagger-lint-aar-2.51.1/AndroidManifest.xml:16:1-19:12
+	package
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:5:5-27:19
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:5:5-27:19
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/09c278ea7d18b839ad46bbf35fa9fbe4/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/09c278ea7d18b839ad46bbf35fa9fbe4/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/77151efc62b4f84c02c3d7df6c00673f/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/77151efc62b4f84c02c3d7df6c00673f/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:26:5-51:19
+MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:26:5-51:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:30:5-20
+MERGED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:30:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/5ef856c5590a6d18bad20073b4d831e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/5ef856c5590a6d18bad20073b4d831e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:11:9-41
+	android:fullBackupContent
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:9:9-54
+	android:roundIcon
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:12:9-54
+	tools:targetApi
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:15:9-29
+	android:icon
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:14:9-46
+	android:dataExtractionRules
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:8:9-65
+	android:name
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:6:9-49
+activity#com.example.main.MainActivity
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:16:9-26:20
+	android:label
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:19:13-45
+	android:exported
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:18:13-36
+	android:theme
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:20:13-50
+	android:name
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:17:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml:24:27-74
+uses-sdk
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:main] /Users/woosang/Desktop/PokeInfo_compose/feature/main/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:home] /Users/woosang/Desktop/PokeInfo_compose/feature/home/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:home] /Users/woosang/Desktop/PokeInfo_compose/feature/home/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:detail] /Users/woosang/Desktop/PokeInfo_compose/feature/detail/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature:detail] /Users/woosang/Desktop/PokeInfo_compose/feature/detail/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:ui] /Users/woosang/Desktop/PokeInfo_compose/core/ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:designsystem] /Users/woosang/Desktop/PokeInfo_compose/core/designsystem/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:data] /Users/woosang/Desktop/PokeInfo_compose/core/data/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:utils] /Users/woosang/Desktop/PokeInfo_compose/core/utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:utils] /Users/woosang/Desktop/PokeInfo_compose/core/utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/da4e425455826787794ae77c7a4eefbe/transformed/hilt-navigation-compose-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-navigation-compose:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/da4e425455826787794ae77c7a4eefbe/transformed/hilt-navigation-compose-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-navigation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/e55578edd8c345f0cc34fe44271557a7/transformed/hilt-navigation-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-navigation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/e55578edd8c345f0cc34fe44271557a7/transformed/hilt-navigation-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/852dbb015572cdacbd3972ba9583da3b/transformed/navigation-common-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/852dbb015572cdacbd3972ba9583da3b/transformed/navigation-common-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/13cf9a48c4d1cd911060ab73c94ab2fd/transformed/navigation-runtime-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/13cf9a48c4d1cd911060ab73c94ab2fd/transformed/navigation-runtime-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/42e37af85e8729f020bae93b802353a0/transformed/navigation-common-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/42e37af85e8729f020bae93b802353a0/transformed/navigation-common-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/fcfc4e00a1cf1e08b1ffa9c153168dfa/transformed/navigation-runtime-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/fcfc4e00a1cf1e08b1ffa9c153168dfa/transformed/navigation-runtime-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/9e698b4f51b338049141a79d36e06426/transformed/navigation-compose-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.0] /Users/woosang/.gradle/caches/8.9/transforms/9e698b4f51b338049141a79d36e06426/transformed/navigation-compose-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:core:domain] /Users/woosang/Desktop/PokeInfo_compose/core/domain/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:hilt-android:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/3bbc0998641c16f1e1386340d3df8d40/transformed/hilt-android-2.51.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/3bbc0998641c16f1e1386340d3df8d40/transformed/hilt-android-2.51.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/09c278ea7d18b839ad46bbf35fa9fbe4/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.10.0] /Users/woosang/.gradle/caches/8.9/transforms/09c278ea7d18b839ad46bbf35fa9fbe4/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [io.coil-kt:coil-compose:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/3a9d345ecceea056e01ab40304e29923/transformed/coil-compose-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-compose:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/3a9d345ecceea056e01ab40304e29923/transformed/coil-compose-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-compose-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/ee96153321f9b1e254bcfe67d28c6d7e/transformed/coil-compose-base-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-compose-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/ee96153321f9b1e254bcfe67d28c6d7e/transformed/coil-compose-base-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/c7e961870612400f8b38cc1dc4ddb70f/transformed/coil-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/c7e961870612400f8b38cc1dc4ddb70f/transformed/coil-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/bb60129e317a5162aa0a3ceabf4865e8/transformed/coil-base-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/bb60129e317a5162aa0a3ceabf4865e8/transformed/coil-base-2.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/9c93b798aca1e41897f718689fc225f5/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/9c93b798aca1e41897f718689fc225f5/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/77151efc62b4f84c02c3d7df6c00673f/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/woosang/.gradle/caches/8.9/transforms/77151efc62b4f84c02c3d7df6c00673f/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/f12e7d6100f9ac02c0282388f75f6893/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/f12e7d6100f9ac02c0282388f75f6893/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/c71a44486653c14dbd4e68cb35bd407c/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/c71a44486653c14dbd4e68cb35bd407c/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/bb8e48a796e1730ff0d3a128954b87cb/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/woosang/.gradle/caches/8.9/transforms/bb8e48a796e1730ff0d3a128954b87cb/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.25.1] /Users/woosang/.gradle/caches/8.9/transforms/a6e390240663398066ba1497f4003e1b/transformed/accompanist-drawablepainter-0.25.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.25.1] /Users/woosang/.gradle/caches/8.9/transforms/a6e390240663398066ba1497f4003e1b/transformed/accompanist-drawablepainter-0.25.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/b8abcd5d2e2822cca39cc6fd1a38e01a/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/b8abcd5d2e2822cca39cc6fd1a38e01a/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/797a4cd567211c80acc86f7ffe12109c/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/797a4cd567211c80acc86f7ffe12109c/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/f4d6989ae76fa3c784e8083186a5edca/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/f4d6989ae76fa3c784e8083186a5edca/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8c033e2e261a5021279094ca5401e2d3/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8c033e2e261a5021279094ca5401e2d3/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/2c39899f71faa6639f2cf47b2e72f2c5/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/2c39899f71faa6639f2cf47b2e72f2c5/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/57a86b757199fb991a90011595426111/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/57a86b757199fb991a90011595426111/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/91c8d4131b8406510d773df9569e07ac/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/91c8d4131b8406510d773df9569e07ac/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/9c67b557f2ecfa674a97d54a71f8eab8/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/9c67b557f2ecfa674a97d54a71f8eab8/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/ca61aa8e8437df56dabc84140248f3f5/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/ca61aa8e8437df56dabc84140248f3f5/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/50acfa94579cd483266102efdd6c2d8b/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/50acfa94579cd483266102efdd6c2d8b/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/dcc3f2a61b71459fc2ad005663bd5ae4/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/dcc3f2a61b71459fc2ad005663bd5ae4/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/1528f48e4668fe29c8c7949719016acd/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/1528f48e4668fe29c8c7949719016acd/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/86a25d2800797f52262fc33b18e91746/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/86a25d2800797f52262fc33b18e91746/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/ead3aa02cf418dc0c5b18efcdccb83d3/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/woosang/.gradle/caches/8.9/transforms/ead3aa02cf418dc0c5b18efcdccb83d3/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/98f9f103c0d40c6af4f6430d82935beb/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/98f9f103c0d40c6af4f6430d82935beb/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/356e5c984cbdcc7b7260c139ff71feb0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/356e5c984cbdcc7b7260c139ff71feb0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/0218224b102d9c44980123a2232c8a12/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/0218224b102d9c44980123a2232c8a12/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/adba0eecdcc0536802790bf864cefed7/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/adba0eecdcc0536802790bf864cefed7/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/07b3ab31753f2f60b38baac3a2d69efe/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/07b3ab31753f2f60b38baac3a2d69efe/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3df118c0fc1cbf6dcf3f66f6e27a0bfa/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3df118c0fc1cbf6dcf3f66f6e27a0bfa/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/8db00225f6a2219dd89d7382fc927df8/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/8db00225f6a2219dd89d7382fc927df8/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbf57f9756d2609a4aa85af74058772/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbf57f9756d2609a4aa85af74058772/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/woosang/.gradle/caches/8.9/transforms/004c50ac7f9bd4da0cb0b9c540c46252/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/woosang/.gradle/caches/8.9/transforms/004c50ac7f9bd4da0cb0b9c540c46252/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/36209288798901e5fe741a8568390534/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/36209288798901e5fe741a8568390534/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/545439d3b742cbfcff8fa6047903d847/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/545439d3b742cbfcff8fa6047903d847/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/d4477f24d66800e01806e41e9dbeefb1/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/d4477f24d66800e01806e41e9dbeefb1/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/534a8c383c79147e1e55447993b92070/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/woosang/.gradle/caches/8.9/transforms/534a8c383c79147e1e55447993b92070/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6b90ae34fd1964c915edee2f4cace545/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/6b90ae34fd1964c915edee2f4cace545/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/08e2be805bb4246f7e6ebce842ce95eb/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/08e2be805bb4246f7e6ebce842ce95eb/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/f5781f42be91e88ca052cd6e443c1314/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/f5781f42be91e88ca052cd6e443c1314/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/d498f68663d8414f8b7d62cef6328e27/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/d498f68663d8414f8b7d62cef6328e27/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test.espresso:espresso-core:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/3f38d0b0d0da753cd3b572913aa53b65/transformed/espresso-core-3.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/3f38d0b0d0da753cd3b572913aa53b65/transformed/espresso-core-3.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/1d6775776066333cbc3086aadc863439/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/1d6775776066333cbc3086aadc863439/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/64472e8485e7154487638ed004513fd7/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/woosang/.gradle/caches/8.9/transforms/64472e8485e7154487638ed004513fd7/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/8f26af4f958527fb53a01e9640e92b31/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/8f26af4f958527fb53a01e9640e92b31/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/38ae6eaa7158277fb58b21f2fc91fd0a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/38ae6eaa7158277fb58b21f2fc91fd0a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/43c3748b3c7d05fb47243f0bb2a5cc3a/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/43c3748b3c7d05fb47243f0bb2a5cc3a/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7b6b910d94884ff9300e6a793078a214/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7b6b910d94884ff9300e6a793078a214/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/02aa7893222e861408dec4bb9c0fddbf/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/02aa7893222e861408dec4bb9c0fddbf/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/b608e667d30496017fa67310e1ab869d/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/b608e667d30496017fa67310e1ab869d/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/e73b33b4a47ba86fa2578782bbe2c948/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/e73b33b4a47ba86fa2578782bbe2c948/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/3c2951ef10e8c6c360102b259cd7e91e/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/3c2951ef10e8c6c360102b259cd7e91e/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7e5448c962700d20a21b80cfac617402/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/7e5448c962700d20a21b80cfac617402/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/82377ebd6bb81558acd5dcda38a33f14/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/82377ebd6bb81558acd5dcda38a33f14/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/d4a4a9d65fc5fbc3149a403724d11079/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/d4a4a9d65fc5fbc3149a403724d11079/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/95dd08951b7f429de7181700d0d2bbf7/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/95dd08951b7f429de7181700d0d2bbf7/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/62eecf62d4cf41d5d29e134fe84ed2a7/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/62eecf62d4cf41d5d29e134fe84ed2a7/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/346f1e071ea3f18bccfe0183c2f34029/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/346f1e071ea3f18bccfe0183c2f34029/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/632d4fc1f5ca267a27b4c43078c35a92/transformed/activity-compose-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.0] /Users/woosang/.gradle/caches/8.9/transforms/632d4fc1f5ca267a27b4c43078c35a92/transformed/activity-compose-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1cd67f44ec4d2f1b363a5d21e152a6e7/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/1cd67f44ec4d2f1b363a5d21e152a6e7/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/33e36b30c6ae7fafebc61fbec3700283/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/33e36b30c6ae7fafebc61fbec3700283/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbb4e04b3b3ac5c65934cd5476fffbd/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/7bbb4e04b3b3ac5c65934cd5476fffbd/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/458c738acc459a98cbeec8c74c0e413a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/458c738acc459a98cbeec8c74c0e413a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/961a0a8b4083b0ace8b3e3642529e331/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/woosang/.gradle/caches/8.9/transforms/961a0a8b4083b0ace8b3e3642529e331/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.services:storage:1.4.2] /Users/woosang/.gradle/caches/8.9/transforms/ae109275d4c61a0db3b2907cc2008d53/transformed/storage-1.4.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.services:storage:1.4.2] /Users/woosang/.gradle/caches/8.9/transforms/ae109275d4c61a0db3b2907cc2008d53/transformed/storage-1.4.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c8a3b25fec3cf23795c9371af7e1d21e/transformed/monitor-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c8a3b25fec3cf23795c9371af7e1d21e/transformed/monitor-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:annotation:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/5350f97d80bbd775fc7ea034aaf0336f/transformed/annotation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:annotation:1.0.1] /Users/woosang/.gradle/caches/8.9/transforms/5350f97d80bbd775fc7ea034aaf0336f/transformed/annotation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/woosang/.gradle/caches/8.9/transforms/6d7799b736a71468c73fc7d6954bee70/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/woosang/.gradle/caches/8.9/transforms/6d7799b736a71468c73fc7d6954bee70/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/5ef856c5590a6d18bad20073b4d831e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/5ef856c5590a6d18bad20073b4d831e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/663d5c0624f465e5a6c4b7f41599ef88/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/663d5c0624f465e5a6c4b7f41599ef88/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/fd8d68a8b17c8e081e7abea0e304eb9d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/fd8d68a8b17c8e081e7abea0e304eb9d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/cdb305a5fcc7420f5dd79d9fca9e0b3c/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/cdb305a5fcc7420f5dd79d9fca9e0b3c/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/884aaf9e03dbe5f1a287dda3ddfcc5ba/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/woosang/.gradle/caches/8.9/transforms/884aaf9e03dbe5f1a287dda3ddfcc5ba/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/woosang/.gradle/caches/8.9/transforms/b13081809963fd98f0930d508b0d1e73/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/woosang/.gradle/caches/8.9/transforms/b13081809963fd98f0930d508b0d1e73/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3d3011922d11298debec81ebb363e014/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/3d3011922d11298debec81ebb363e014/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/86cd8eb7d4c04f0dfebf1ced14b3818a/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/86cd8eb7d4c04f0dfebf1ced14b3818a/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/5dae704a56afe01207e97dc2b9bb5a61/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/5dae704a56afe01207e97dc2b9bb5a61/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/97c64a301bd9efa42b869eb8b3027984/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/woosang/.gradle/caches/8.9/transforms/97c64a301bd9efa42b869eb8b3027984/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/4d611c2b5d6cecd067a5e8729d0cfe99/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.5.1] /Users/woosang/.gradle/caches/8.9/transforms/4d611c2b5d6cecd067a5e8729d0cfe99/transformed/espresso-idling-resource-3.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.dagger:dagger-lint-aar:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/1094a6e56f9421f1d920b64337d76081/transformed/dagger-lint-aar-2.51.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.51.1] /Users/woosang/.gradle/caches/8.9/transforms/1094a6e56f9421f1d920b64337d76081/transformed/dagger-lint-aar-2.51.1/AndroidManifest.xml:18:3-42
+	android:targetSdkVersion
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/woosang/Desktop/PokeInfo_compose/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/a9bfc6b1ca6f0893006034812b607c5b/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/woosang/.gradle/caches/8.9/transforms/a29aa4acefb7610132d76dafb7531f02/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/woosang/.gradle/caches/8.9/transforms/4944c8c8120c1aa4ef2aa7d2db21a1ff/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.example.pokeinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.example.pokeinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/woosang/.gradle/caches/8.9/transforms/dd1f86e825298e796baca0f17f37c337/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#android.permission.REORDER_TASKS
+ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:24:5-72
+	android:name
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:24:22-69
+activity#androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
+ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:27:9-34:20
+	android:exported
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:29:13-36
+	android:theme
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:30:13-56
+	android:name
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:28:13-99
+intent-filter#category:name:android.intent.category.LAUNCHER
+ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:31:13-33:29
+	android:priority
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:31:28-51
+activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
+ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:35:9-42:20
+	android:exported
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:37:13-36
+	android:theme
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:38:13-56
+	android:name
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:36:13-95
+activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
+ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:43:9-50:20
+	android:exported
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:45:13-36
+	android:theme
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:46:13-62
+	android:name
+		ADDED from [androidx.test:core:1.5.0] /Users/woosang/.gradle/caches/8.9/transforms/6aa0210b861446f0181e3807a2158555/transformed/core-1.5.0/AndroidManifest.xml:44:13-103
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /Users/woosang/.gradle/caches/8.9/transforms/4e336dad8191cf2f319169eaf8657a00/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:30:17-78
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] /Users/woosang/.gradle/caches/8.9/transforms/8e4ce46c9a6ec52640b3e1d621c3edc0/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:24:13-63
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/woosang/.gradle/caches/8.9/transforms/c4a4296174aed7ebe58a69ccf3c51777/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+queries
+ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:24:5-28:15
+package#androidx.test.orchestrator
+ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:25:9-62
+	android:name
+		ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:25:18-59
+package#androidx.test.services
+ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:26:9-58
+	android:name
+		ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:26:18-55
+package#com.google.android.apps.common.testing.services
+ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:27:9-83
+	android:name
+		ADDED from [androidx.test:runner:1.5.2] /Users/woosang/.gradle/caches/8.9/transforms/d841abaef48d533dff2f6cdba483bfec/transformed/runner-1.5.2/AndroidManifest.xml:27:18-80
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/woosang/.gradle/caches/8.9/transforms/c803157aeab1f5df1532a8bd6798b8f0/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
