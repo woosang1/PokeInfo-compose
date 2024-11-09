@@ -36,7 +36,7 @@ fun HomeRoute(
     HomeScreen(
         uiState = uiState,
         initAction = {
-            homeViewModel.getPokemonInfo(
+            homeViewModel.getPokemonList(
                 limit = 0,
                 offset = 0,
             )

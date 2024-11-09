@@ -1,12 +1,12 @@
 package com.example.data.mapper
 
-import com.example.data.model.rp.RpPokemonInfo
-import com.example.domain.model.PokemonInfo
+import com.example.data.model.rp.RpPokemonList
+import com.example.domain.model.PokemonList
 import com.example.domain.model.getId
 import com.example.domain.model.getImageUrl
 
-internal fun RpPokemonInfo.toDomain(): PokemonInfo {
-    return PokemonInfo(
+internal fun RpPokemonList.toDomain(): PokemonList {
+    return PokemonList(
         count = this.count ?: 0,
         next = this.next ?: "",
         previous = this.previous ?: "",
@@ -14,8 +14,8 @@ internal fun RpPokemonInfo.toDomain(): PokemonInfo {
     )
 }
 
-internal fun RpPokemonInfo.Pokemon.toDomain(): PokemonInfo.Pokemon {
-    return PokemonInfo.Pokemon(
+internal fun RpPokemonList.Pokemon.toDomain(): PokemonList.Pokemon {
+    return PokemonList.Pokemon(
         id = getId(this.url).toIntOrNull() ?: 0,
         count = this.count,
         name = this.name,

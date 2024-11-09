@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.PokeInfoTheme
-import com.example.domain.model.PokemonInfo
+import com.example.domain.model.PokemonList
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -26,8 +26,8 @@ fun GridCardLayout(
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: ImmutableList<PokemonInfo.Pokemon>,
-    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
+    cardList: ImmutableList<PokemonList.Pokemon>,
+    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
@@ -58,7 +58,7 @@ fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = PokemonInfo.Pokemon()
+        val defaultPokemon = PokemonList.Pokemon()
 
         GridCardLayout(
             columns = 2,
@@ -66,7 +66,7 @@ fun Test() {
             paddingValues = 16,
             horizontalArrangement = 8,
             verticalArrangement = 8,
-            cardList = ArrayList<PokemonInfo.Pokemon>().apply {
+            cardList = ArrayList<PokemonList.Pokemon>().apply {
                 add(defaultPokemon)
                 add(defaultPokemon)
             }.toImmutableList(),

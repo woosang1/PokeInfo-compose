@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.designsystem.theme.LocalColors
-import com.example.domain.model.PokemonInfo
+import com.example.domain.model.PokemonList
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.component.GridCardLayout
@@ -16,7 +16,7 @@ import com.example.log.DebugLog
 fun HomeScreen(
     uiState: HomeState,
     initAction:() -> Unit,
-    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
+    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
 ) {
     when(val mainUiState = uiState.homeUiState){
         is HomeUiState.Init -> {

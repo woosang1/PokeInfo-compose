@@ -15,19 +15,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.domain.model.PokemonInfo
+import com.example.domain.model.PokemonList
 import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
-import com.example.home.R
-import com.example.log.DebugLog
 import com.example.utils.noRippleClickable
 import com.example.utils.setImageUrl
 //import com.example.ui.R
@@ -37,8 +33,8 @@ fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,
-    pokemon: PokemonInfo.Pokemon,
-    onClickPokemonCard: (PokemonInfo.Pokemon) -> Unit,
+    pokemon: PokemonList.Pokemon,
+    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
 ) {
 
     Box(

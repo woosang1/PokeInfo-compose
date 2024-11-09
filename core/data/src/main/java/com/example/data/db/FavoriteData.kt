@@ -3,7 +3,6 @@ package com.example.data.db
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.example.domain.model.PokemonInfo
 
 
 @Entity(tableName = "favorite", indices = [Index(value = ["name"], unique = true)])

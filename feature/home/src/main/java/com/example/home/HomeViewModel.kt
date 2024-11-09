@@ -30,14 +30,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun getPokemonInfo(limit: Int?, offset: Int?) {
-        DebugLog("vm - getPokemonInfo")
-        DebugLog("limit : ${limit}")
-        DebugLog("offset : ${offset}")
+    fun getPokemonList(limit: Int, offset: Int) {
         viewModelScope.launch {
             getPokemonInfoUseCase.getInfo(
                 limit = limit,
-                offset = offset
+                offset = offset,
+                onError = { setState { HomeState(homeUiState = HomeUiState.Error) } }
             ).collectLatest { result ->
                 DebugLog("result : ${result.toString()}")
                 setState {

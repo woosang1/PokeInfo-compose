@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RpPokemonInfo(
+data class RpPokemonList(
     @SerialName("count")
     val count: Int?,
     @SerialName("next")

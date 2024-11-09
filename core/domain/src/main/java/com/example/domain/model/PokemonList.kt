@@ -1,6 +1,6 @@
 package com.example.domain.model
 
-data class PokemonInfo(
+data class PokemonList(
     val count: Int = 0,
     val next: String = "",
     val previous: String = "",
