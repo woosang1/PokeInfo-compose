@@ -21,7 +21,6 @@ class PokemonListRepositoryImpl @Inject constructor(
 
     /** remote **/
     override fun getPokemonList(page: Int): Flow<PagingData<PokemonList.Pokemon>> = flow {
-        DebugLog("PokemonListRepositoryImpl - getPokemonList [${page}]")
         emitAll(
             Pager(
                 config = PagingConfig(
@@ -32,6 +31,7 @@ class PokemonListRepositoryImpl @Inject constructor(
                 pagingSourceFactory = {
                     PokemonListPagingSource(
                         pokemonListRemoteDataSource = pokemonListRemoteDataSource,
+                        startPage = page,
                         pagingSize =  PAGING_SIZE
                     )
                 }

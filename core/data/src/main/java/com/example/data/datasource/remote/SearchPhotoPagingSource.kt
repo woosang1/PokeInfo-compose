@@ -7,8 +7,9 @@ import com.example.data.network.ApiResult
 import com.example.domain.model.PokemonList
 import com.example.log.DebugLog
 
-class PokemonListPagingSource(
+internal class PokemonListPagingSource(
     private val pokemonListRemoteDataSource: PokemonListRemoteDataSource,
+    private val startPage: Int,
     private val pagingSize: Int,
 ) : PagingSource<Int, PokemonList.Pokemon>() {
 
@@ -21,12 +22,11 @@ class PokemonListPagingSource(
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PokemonList.Pokemon> {
-        DebugLog("PokemonListPagingSource - load")
         return try {
-            val pageNumber = params.key ?: 0
+            val pageNumber = params.key ?: startPage
             var loadResult: LoadResult<Int, PokemonList.Pokemon> = LoadResult.Page(emptyList(), null, null)
             pokemonListRemoteDataSource.getPokemonList(
-                page = if (pageNumber == 0) pageNumber else (pageNumber*pagingSize),
+                page = if (pageNumber == startPage) pageNumber else (pageNumber*pagingSize),
                 limit = pagingSize
             ).collect { response ->
                 loadResult = when (response) {
