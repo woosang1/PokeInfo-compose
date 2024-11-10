@@ -13,7 +13,7 @@ import com.example.utils.showToast
 @Composable
 fun HomeRoute(
     homeViewModel: HomeViewModel = hiltViewModel(),
-    onStartDetail: () -> Unit,
+    onNavigateDetail: () -> Unit,
 ) {
     val context = LocalContext.current
     val uiState by homeViewModel.uiState.collectAsState()
@@ -28,18 +28,14 @@ fun HomeRoute(
                 is HomeSideEffect.ShowGenerationsBottomSheet -> {}
                 is HomeSideEffect.ShowSearchBottomSheet -> {}
                 is HomeSideEffect.ShowToast -> { context.showToast(effect.message) }
-                is HomeSideEffect.StartDetailActivity -> { onStartDetail.invoke() }
+                is HomeSideEffect.StartDetailActivity -> { onNavigateDetail.invoke() }
             }
         }
     }
 
     HomeScreen(
         uiState = uiState,
-        initAction = {
-            homeViewModel.getPokemonList(page = 0)
-        },
-        onClickPokemonCard = { pokemon ->
-            homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon))
-        }
+        initAction = { homeViewModel.getPokemonList(page = 0) },
+        onClickPokemonCard = { pokemon -> homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon)) }
     )
 }

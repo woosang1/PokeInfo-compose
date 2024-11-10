@@ -5,8 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.detail.navigation.detailNavGraph
+import com.example.detail.navigation.navigationDetail
 import com.example.home.navigation.homeNavGraph
-import com.example.home.navigation.navigationMain
+import com.example.home.navigation.navigationHome
 import com.example.navigation.Route
 
 
@@ -19,9 +20,7 @@ internal fun MainNavHost(
         navController = navigator,
         startDestination = Route.Home
     ) {
-        homeNavGraph(onStartDetail = { navigator.navigationMain() })
-        detailNavGraph()
-        // TODO: 추후 화면 들어올 예정
-//            detailNavGraph()
+        homeNavGraph(onNavigateDetail = { navigator.navigationDetail() })
+        detailNavGraph(onNavigateHome = { navigator.navigationHome() })
     }
 }

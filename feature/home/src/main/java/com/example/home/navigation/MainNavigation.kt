@@ -6,16 +6,16 @@ import androidx.navigation.compose.composable
 import com.example.home.HomeRoute
 import com.example.navigation.Route
 
-fun NavController.navigationMain(){
+fun NavController.navigationHome(){
     navigate(Route.Home)
 }
 
 fun NavGraphBuilder.homeNavGraph(
-    onStartDetail : () -> Unit,
+    onNavigateDetail : () -> Unit,
 ) {
     composable<Route.Home>{
         HomeRoute(
-            onStartDetail = onStartDetail
+            onNavigateDetail = onNavigateDetail
         )
     }
 }

@@ -10,8 +10,12 @@ fun NavController.navigationDetail(){
     navigate(Route.Detail)
 }
 
-fun NavGraphBuilder.detailNavGraph() {
+fun NavGraphBuilder.detailNavGraph(
+    onNavigateHome : () -> Unit
+) {
     composable<Route.Detail>{
-        DetailRoute()
+        DetailRoute(
+            onStartHome = onNavigateHome
+        )
     }
 }
