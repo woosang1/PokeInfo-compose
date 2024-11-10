@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.designsystem.theme.LocalColors
 import com.example.domain.model.PokemonList
 import com.example.home.common.HomeState
@@ -37,7 +38,7 @@ fun HomeScreen(
                 paddingValues = 16,
                 horizontalArrangement = 8,
                 verticalArrangement = 8,
-                cardList = mainUiState.pokemonList,
+                cardList = mainUiState.pokemonList.collectAsLazyPagingItems(),
                 onClickPokemonCard = { pokemon ->
                     onClickPokemonCard.invoke(pokemon)
                 }

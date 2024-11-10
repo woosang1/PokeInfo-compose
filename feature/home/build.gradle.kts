@@ -52,6 +52,10 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.androidx.compose.navigation)
 
+    // paging
+    implementation("androidx.paging:paging-runtime:3.1.1")
+    implementation("androidx.paging:paging-compose:3.3.2")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

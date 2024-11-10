@@ -1,0 +1,49 @@
+package com.example.data.datasource.remote
+
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
+import com.example.data.mapper.toDomain
+import com.example.data.network.ApiResult
+import com.example.domain.model.PokemonList
+import com.example.log.DebugLog
+
+class PokemonListPagingSource(
+    private val pokemonListRemoteDataSource: PokemonListRemoteDataSource,
+    private val pagingSize: Int,
+) : PagingSource<Int, PokemonList.Pokemon>() {
+
+    override fun getRefreshKey(state: PagingState<Int, PokemonList.Pokemon>): Int? {
+        DebugLog("PokemonListPagingSource - getRefreshKey")
+        return state.anchorPosition?.let { anchorPosition ->
+            state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
+                ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
+        }
+    }
+
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PokemonList.Pokemon> {
+        DebugLog("PokemonListPagingSource - load")
+        return try {
+            val pageNumber = params.key ?: 0
+            var loadResult: LoadResult<Int, PokemonList.Pokemon> = LoadResult.Page(emptyList(), null, null)
+            pokemonListRemoteDataSource.getPokemonList(
+                page = if (pageNumber == 0) pageNumber else (pageNumber*pagingSize),
+                limit = pagingSize
+            ).collect { response ->
+                loadResult = when (response) {
+                    is ApiResult.Success -> {
+                        LoadResult.Page(
+                            data = response.value.results.map { it.toDomain() },
+                            prevKey = if (pageNumber == 0) null else pageNumber - 1,
+                            nextKey = if (response.value.results.isEmpty()) null else pageNumber + 1
+                        )
+                    }
+                    is ApiResult.Error -> LoadResult.Error(Exception(response.exception.message))
+                }
+            }
+            loadResult
+        } catch (e: Exception) {
+            LoadResult.Error(e)
+        }
+    }
+}
+

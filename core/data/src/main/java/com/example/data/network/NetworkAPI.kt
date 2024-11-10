@@ -12,7 +12,10 @@ interface NetworkAPI {
      * 포켓몬 조회
      */
     @GET("pokemon")
-    suspend fun getPokemonList(): RpPokemonList
+    suspend fun getPokemonList(
+        @Query("limit") limit: Int,
+        @Query("offset") offset: Int = 0,
+    ): RpPokemonList
 
     /**
      * 포켓몬 상세 정보

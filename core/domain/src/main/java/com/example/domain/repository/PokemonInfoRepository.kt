@@ -1,11 +1,12 @@
 package com.example.domain.repository
 
+import androidx.paging.PagingData
 import com.example.domain.model.PokemonList
 import kotlinx.coroutines.flow.Flow
 
 interface PokemonInfoRepository {
     /** remote **/
-    suspend fun getPokemonInfo(limit: Int, offset: Int, onError: (String) -> Unit) : Flow<PokemonList>
+    fun getPokemonList(page: Int) : Flow<PagingData<PokemonList.Pokemon>>
 
     /** local **/
     fun insertLocalDB()

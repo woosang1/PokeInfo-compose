@@ -36,10 +36,7 @@ fun HomeRoute(
     HomeScreen(
         uiState = uiState,
         initAction = {
-            homeViewModel.getPokemonList(
-                limit = 0,
-                offset = 0,
-            )
+            homeViewModel.getPokemonList(page = 0)
         },
         onClickPokemonCard = { pokemon ->
             homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon))

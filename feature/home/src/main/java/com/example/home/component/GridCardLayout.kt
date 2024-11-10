@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.platform.LocalContext
+import androidx.paging.compose.LazyPagingItems
 import com.example.utils.dpToPixel
 import com.example.utils.getWidthDisplay
 
@@ -26,7 +27,7 @@ fun GridCardLayout(
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: ImmutableList<PokemonList.Pokemon>,
+    cardList: LazyPagingItems<PokemonList.Pokemon>,
     onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
@@ -36,20 +37,22 @@ fun GridCardLayout(
         horizontalArrangement = Arrangement.spacedBy(horizontalArrangement.dp),
         verticalArrangement = Arrangement.spacedBy(verticalArrangement.dp)
     ) {
-        items(cardList.size) { index ->
-            val cardWidth = ((LocalContext.current.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / 2
-            PokemonCard(
-                modifier = Modifier
-                    .width(cardWidth.dp)
-                    .height(120.dp)
-                    .padding(8.dp),
-                width = cardWidth,
-                height = 120,
-                pokemon = cardList[index],
-                onClickPokemonCard = { pokemon ->
-                    onClickPokemonCard.invoke(pokemon)
-                }
-            )
+        items(cardList.itemCount) { index ->
+            cardList[index]?.let { pokemon ->
+                val cardWidth = ((LocalContext.current.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / 2
+                PokemonCard(
+                    modifier = Modifier
+                        .width(cardWidth.dp)
+                        .height(120.dp)
+                        .padding(8.dp),
+                    width = cardWidth,
+                    height = 120,
+                    pokemon = pokemon,
+                    onClickPokemonCard = { pokemon ->
+                        onClickPokemonCard.invoke(pokemon)
+                    }
+                )
+            }
         }
     }
 }
@@ -59,18 +62,17 @@ fun GridCardLayout(
 fun Test() {
     PokeInfoTheme {
         val defaultPokemon = PokemonList.Pokemon()
-
-        GridCardLayout(
-            columns = 2,
-            modifier = Modifier,
-            paddingValues = 16,
-            horizontalArrangement = 8,
-            verticalArrangement = 8,
-            cardList = ArrayList<PokemonList.Pokemon>().apply {
-                add(defaultPokemon)
-                add(defaultPokemon)
-            }.toImmutableList(),
-            onClickPokemonCard = { }
-        )
+//        GridCardLayout(
+//            columns = 2,
+//            modifier = Modifier,
+//            paddingValues = 16,
+//            horizontalArrangement = 8,
+//            verticalArrangement = 8,
+//            cardList = ArrayList<PokemonList.Pokemon>().apply {
+//                add(defaultPokemon)
+//                add(defaultPokemon)
+//            }.toImmutableList(),
+//            onClickPokemonCard = { }
+//        )
     }
 }

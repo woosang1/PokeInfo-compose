@@ -45,6 +45,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.kotlinx.serialization.json)
 
+    // paging
+    implementation("androidx.paging:paging-runtime:3.1.1")
+    implementation("androidx.paging:paging-compose:3.3.2")
+
+    // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.8.1")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -67,5 +72,4 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
 
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-
 }
