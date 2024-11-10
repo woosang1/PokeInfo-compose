@@ -1,5 +1,6 @@
 package com.example.home.common
 
+import com.example.domain.model.Pokemon
 import com.example.domain.model.PokemonList
 import com.example.ui.SideEffect
 import kotlinx.collections.immutable.ImmutableList
@@ -11,5 +12,5 @@ sealed class HomeSideEffect: SideEffect {
     data object ShowSearchBottomSheet: HomeSideEffect()
     data object CloseBottomSheet: HomeSideEffect()
     data class ShowToast(val message: String) : HomeSideEffect()
-    data class StartDetailActivity(val pokemon: PokemonList.Pokemon) : HomeSideEffect()
+    data class StartDetailActivity(val pokemon: Pokemon) : HomeSideEffect()
 }

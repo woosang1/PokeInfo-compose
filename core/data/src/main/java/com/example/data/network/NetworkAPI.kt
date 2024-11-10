@@ -1,5 +1,6 @@
 package com.example.data.network
 
+import com.example.data.model.rp.RpPokemonInfo
 import com.example.data.model.rp.RpPokemonList
 import com.example.domain.model.PokemonList
 import kotlinx.coroutines.flow.Flow
@@ -22,7 +23,6 @@ interface NetworkAPI {
      */
     @GET("pokemon/")
     fun getPokemonDetailInfo(
-        @Query("id") id: Int?,
-        @Query("name") name: String?,
-    ): Flow<PokemonList>
+        @Query("id") id: Int
+    ): Flow<RpPokemonInfo>
 }

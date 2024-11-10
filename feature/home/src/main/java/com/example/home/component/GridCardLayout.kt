@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.platform.LocalContext
 import androidx.paging.compose.LazyPagingItems
+import com.example.domain.model.Pokemon
 import com.example.utils.dpToPixel
 import com.example.utils.getWidthDisplay
 
@@ -27,8 +28,8 @@ fun GridCardLayout(
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: LazyPagingItems<PokemonList.Pokemon>,
-    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
+    cardList: LazyPagingItems<Pokemon>,
+    onClickPokemonCard: (Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
@@ -61,14 +62,14 @@ fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = PokemonList.Pokemon()
+        val defaultPokemon = Pokemon()
 //        GridCardLayout(
 //            columns = 2,
 //            modifier = Modifier,
 //            paddingValues = 16,
 //            horizontalArrangement = 8,
 //            verticalArrangement = 8,
-//            cardList = ArrayList<PokemonList.Pokemon>().apply {
+//            cardList = ArrayList<Pokemon>().apply {
 //                add(defaultPokemon)
 //                add(defaultPokemon)
 //            }.toImmutableList(),

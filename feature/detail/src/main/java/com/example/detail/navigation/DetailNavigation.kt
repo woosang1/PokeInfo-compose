@@ -13,6 +13,7 @@ fun NavController.navigationDetail(){
 fun NavGraphBuilder.detailNavGraph(
     onNavigateHome : () -> Unit
 ) {
+    // TODO: id값 넘겨야아함. 
     composable<Route.Detail>{
         DetailRoute(
             onStartHome = onNavigateHome

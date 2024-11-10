@@ -4,16 +4,17 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.data.mapper.toDomain
 import com.example.data.network.ApiResult
+import com.example.domain.model.Pokemon
 import com.example.domain.model.PokemonList
 import com.example.log.DebugLog
 
 internal class PokemonListPagingSource(
-    private val pokemonListRemoteDataSource: PokemonListRemoteDataSource,
+    private val pokemonRemoteDataSource: PokemonRemoteDataSource,
     private val startPage: Int,
     private val pagingSize: Int,
-) : PagingSource<Int, PokemonList.Pokemon>() {
+) : PagingSource<Int, Pokemon>() {
 
-    override fun getRefreshKey(state: PagingState<Int, PokemonList.Pokemon>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, Pokemon>): Int? {
         DebugLog("PokemonListPagingSource - getRefreshKey")
         return state.anchorPosition?.let { anchorPosition ->
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
@@ -21,11 +22,11 @@ internal class PokemonListPagingSource(
         }
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PokemonList.Pokemon> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Pokemon> {
         return try {
             val pageNumber = params.key ?: startPage
-            var loadResult: LoadResult<Int, PokemonList.Pokemon> = LoadResult.Page(emptyList(), null, null)
-            pokemonListRemoteDataSource.getPokemonList(
+            var loadResult: LoadResult<Int, Pokemon> = LoadResult.Page(emptyList(), null, null)
+            pokemonRemoteDataSource.getPokemonList(
                 page = if (pageNumber == startPage) pageNumber else (pageNumber*pagingSize),
                 limit = pagingSize
             ).collect { response ->

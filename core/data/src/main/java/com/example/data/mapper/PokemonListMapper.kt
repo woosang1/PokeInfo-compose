@@ -1,6 +1,7 @@
 package com.example.data.mapper
 
 import com.example.data.model.rp.RpPokemonList
+import com.example.domain.model.Pokemon
 import com.example.domain.model.PokemonList
 import com.example.domain.model.getId
 import com.example.domain.model.getImageUrl
@@ -14,8 +15,8 @@ internal fun RpPokemonList.toDomain(): PokemonList {
     )
 }
 
-internal fun RpPokemonList.Pokemon.toDomain(): PokemonList.Pokemon {
-    return PokemonList.Pokemon(
+internal fun RpPokemonList.Pokemon.toDomain(): Pokemon {
+    return Pokemon(
         id = getId(this.url).toIntOrNull() ?: 0,
         count = this.count,
         name = this.name,

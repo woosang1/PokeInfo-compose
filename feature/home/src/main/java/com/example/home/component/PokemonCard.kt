@@ -24,6 +24,7 @@ import com.example.domain.model.PokemonList
 import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
+import com.example.domain.model.Pokemon
 import com.example.utils.noRippleClickable
 import com.example.utils.setImageUrl
 //import com.example.ui.R
@@ -33,8 +34,8 @@ fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,
-    pokemon: PokemonList.Pokemon,
-    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
+    pokemon: Pokemon,
+    onClickPokemonCard: (Pokemon) -> Unit,
 ) {
 
     Box(

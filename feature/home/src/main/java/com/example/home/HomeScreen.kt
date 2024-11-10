@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.designsystem.theme.LocalColors
-import com.example.domain.model.PokemonList
+import com.example.domain.model.Pokemon
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.component.GridCardLayout
@@ -17,7 +17,7 @@ import com.example.log.DebugLog
 fun HomeScreen(
     uiState: HomeState,
     initAction:() -> Unit,
-    onClickPokemonCard: (PokemonList.Pokemon) -> Unit,
+    onClickPokemonCard: (Pokemon) -> Unit,
 ) {
     when(val mainUiState = uiState.homeUiState){
         is HomeUiState.Init -> {
