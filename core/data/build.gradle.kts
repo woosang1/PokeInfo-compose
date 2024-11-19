@@ -56,13 +56,13 @@ dependencies {
 
 
     // hilt
-    implementation("com.google.dagger:hilt-android:${Versions.hiltVersion}")
-    kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
     // room
-    implementation("androidx.room:room-runtime:${Versions.room}")
-    implementation("androidx.room:room-ktx:${Versions.room}")
-    kapt("androidx.room:room-compiler:${Versions.room}")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+//    kapt("androidx.room:room-compiler:${Versions.room}")
 
     // Retrofit 및 관련 의존성 추가
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

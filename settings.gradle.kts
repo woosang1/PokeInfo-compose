@@ -1,4 +1,6 @@
 pluginManagement {
+//    include("build-logic")
+    include(":build-logic")
     repositories {
         google {
             content {
@@ -11,6 +13,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -20,14 +24,23 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "PokeInfo"
-include(":app")
+
+// Core Modules
 include(":core")
-include(":core:designsystem")
-include(":core:domain")
 include(":core:data")
+include(":core:domain")
 include(":core:ui")
+include(":core:designsystem")
+include(":core:utils")
+
+// Feature Modules
 include(":feature")
 include(":feature:main")
-include(":core:utils")
-include(":feature:detail")
 include(":feature:home")
+include(":feature:detail")
+
+// Application Module
+include(":app")
+
+// Build Logic
+//include(":build-logic")

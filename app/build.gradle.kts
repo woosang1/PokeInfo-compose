@@ -1,4 +1,5 @@
 plugins {
+//    id("pokeinfo.android.application")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
@@ -7,6 +8,7 @@ plugins {
 }
 
 android {
+    namespace = ConfigData.applicationId
     namespace = ConfigData.applicationId
     compileSdk = ConfigData.compileSdkVersion
 
@@ -66,7 +68,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // hilt
-    implementation("com.google.dagger:hilt-android:${Versions.hiltVersion}")
-    kapt("com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
 }
