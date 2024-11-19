@@ -1,4 +1,5 @@
 plugins {
+    // 커스텀-플러그인 못 찾는 이슈 발생 중
 //    id("pokeinfo.android.application")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
