@@ -36,6 +36,7 @@ fun HomeRoute(
     HomeScreen(
         uiState = uiState,
         initAction = { homeViewModel.getPokemonList(page = 0) },
-        onClickPokemonCard = { pokemon -> homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon)) }
+        onClickPokemonCard = { pokemon -> homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon)) },
+        onClickCircleMenuBtnEvent = { homeViewModel.callClickCircleMenuBtnEvent() }
     )
 }

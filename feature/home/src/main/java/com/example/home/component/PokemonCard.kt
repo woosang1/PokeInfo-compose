@@ -4,8 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -15,19 +17,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.domain.model.PokemonList
 import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.domain.model.Pokemon
 import com.example.utils.noRippleClickable
 import com.example.utils.setImageUrl
-//import com.example.ui.R
+import com.example.ui.R
 
 @Composable
 fun PokemonCard(
@@ -50,7 +53,7 @@ fun PokemonCard(
             modifier = Modifier
                 .width(width.dp)
                 .height(height.dp)
-                .background(LocalColors.current.black)
+                .background(LocalColors.current.purple80)
             ,
         )
 
@@ -71,37 +74,39 @@ fun PokemonCard(
         // 내용
         Box(modifier = Modifier.padding(8.dp)) {
             Column {
-                // 이름 텍스트
-                Text(
-                    text = pokemon.name,
-                    modifier = Modifier
-                        .align(Alignment.Start),
-                    textAlign = TextAlign.Center,
-                    style = LocalTypography.current.title4,
-                    color = LocalColors.current.white,
-                    maxLines = 1
-                )
+                Row {
+                    // 이름 텍스트
+                    Text(
+                        text = pokemon.name,
+                        modifier = Modifier
+                            .weight(1f),
+                        textAlign = TextAlign.Start,
+                        style = LocalTypography.current.title4,
+                        color = LocalColors.current.white,
+                        maxLines = 1
+                    )
 
-                // ID 텍스트
-                Text(
-                    text = "#${pokemon.id}",
-                    modifier = Modifier
-                        .align(Alignment.End),
-                    style = LocalTypography.current.title4,
-                    color = LocalColors.current.white,
-//                    color = LocalColors.current.white.copy(
-//                        alpha = 0.25f
-//                    ),
-                    maxLines = 1
-                )
+                    // ID 텍스트
+                    Text(
+                        text = "#${pokemon.id}",
+                        modifier = Modifier
+                            .weight(1f),
+                        textAlign = TextAlign.End,
+                        style = LocalTypography.current.title4,
+                        color = LocalColors.current.white.copy(
+                            alpha = 0.75f
+                        ),
+                        maxLines = 1
+                    )
+                }
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(32.dp))
 
                 // Type1 텍스트
                 Text(
-                    text = "pokemonInfo.type[0]",
+                    text = "타입1",
                     modifier = Modifier
-                        .padding(horizontal = 8.dp)
+                        .padding(start = 8.dp, end = 8.dp)
                         .align(Alignment.Start),
                     style = LocalTypography.current.title4,
                     color = LocalColors.current.white,
@@ -110,20 +115,9 @@ fun PokemonCard(
 
                 // Type2 텍스트
                 Text(
-                    text = "pokemonInfo.type[1]",
+                    text = "타입2",
                     modifier = Modifier
-                        .padding(horizontal = 8.dp)
-                        .align(Alignment.Start),
-                    style = LocalTypography.current.title4,
-                    color = LocalColors.current.white,
-                    maxLines = 1
-                )
-
-                // Type3 텍스트 (옵션)
-                Text(
-                    text = "pokemonInfo.type[1]",
-                    modifier = Modifier
-                        .padding(horizontal = 8.dp)
+                        .padding(start = 8.dp, top = 4.dp, end = 8.dp)
                         .align(Alignment.Start),
                     style = LocalTypography.current.title4,
                     color = LocalColors.current.white,
@@ -135,7 +129,6 @@ fun PokemonCard(
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .padding(bottom = 16.dp, end = 16.dp)
             ) {
                 Image(
                     painter = rememberAsyncImagePainter(
@@ -153,17 +146,17 @@ fun PokemonCard(
                 )
             }
 
-            // Pokeball 이미지 (배경에 흐리게 배치)
-//            Image(
-//                painter = painterResource(id = R.drawable.pokeball),
-//                contentDescription = null,
-//                modifier = Modifier
-//                    .align(Alignment.BottomEnd)
-//                    .padding(end = 16.dp, bottom = 24.dp)
-//                    .size(96.dp)
-//                    .alpha(0.25f),
-//                contentScale = ContentScale.Fit
-//            )
+//             Pokeball 이미지 (배경에 흐리게 배치)
+            Image(
+                painter = painterResource(id = R.drawable.pokeball),
+                contentDescription = null,
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .size(96.dp)
+                    .offset(x = 25.dp, y = 25.dp)
+                    .alpha(0.25f),
+                contentScale = ContentScale.Fit
+            )
         }
     }
 }

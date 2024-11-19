@@ -14,7 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
 import com.example.detail.common.DetailState
-import com.example.pokeinfo.R
+import com.example.ui.R
 import com.example.utils.noRippleClickable
 
 @Composable

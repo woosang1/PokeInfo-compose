@@ -75,5 +75,6 @@ dependencies {
 
     // Kotlinx collections immutable 의존성 추가
     implementation(libs.kotlinx.collections.immutable.v035)
+    implementation(libs.kotlinx.collections.immutable.v035)
 
 }

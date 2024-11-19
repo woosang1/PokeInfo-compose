@@ -1,6 +1,7 @@
 package com.example.home
 
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.cachedIn
 import com.example.domain.usecase.GetPokemonListUseCase
 import com.example.home.common.MainEvent
@@ -22,7 +23,8 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: MainEvent) {
         when (event) {
-            is MainEvent.ClickCircleMenuBtn -> { }
+            is MainEvent.ClickFloatingBtn -> { }
+            is MainEvent.ClickSideFloatingBtn -> { }
             is MainEvent.ClickSearchBtn -> { }
             is MainEvent.ClickPokemonCard -> {
                 setEffect { HomeSideEffect.StartDetailActivity(pokemon = event.pokemon) }
@@ -39,6 +41,12 @@ class HomeViewModel @Inject constructor(
                         HomeState(homeUiState = HomeUiState.Result(pokemonList = flowOf(pagingData)))
                     }
             }
+        }
+    }
+
+    fun callClickCircleMenuBtnEvent(){
+        viewModelScope.launch {
+            setEvent(MainEvent.ClickFloatingBtn)
         }
     }
 }

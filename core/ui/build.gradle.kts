@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.applicationId
+    namespace = "com.example.ui"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
