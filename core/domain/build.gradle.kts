@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-//    implementation(project(":core:data"))
+    implementation(project(":core:utils"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

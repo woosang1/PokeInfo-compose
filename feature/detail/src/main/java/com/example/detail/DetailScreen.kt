@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
 import com.example.detail.common.DetailState
+import com.example.detail.common.DetailUiState
 import com.example.ui.R
 import com.example.utils.noRippleClickable
 
@@ -40,5 +41,14 @@ fun DetailScreen(
                 },
             contentScale = ContentScale.Fit
         )
+
+        when(val detailUiState = uiState.detailUiState){
+            DetailUiState.Init -> {
+                detailViewModel.getPokemonDetailInfo(id = 1)
+            }
+            DetailUiState.Result -> {}
+            DetailUiState.Empty -> {}
+            DetailUiState.Error -> {}
+        }
     }
 }

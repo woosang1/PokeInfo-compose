@@ -10,6 +10,7 @@ import com.example.data.mapper.toDomain
 import com.example.data.network.ApiResult
 import com.example.domain.model.Pokemon
 import com.example.domain.model.PokemonList
+import com.example.domain.model.PokemonType
 import com.example.domain.repository.PokemonRepository
 import com.example.log.DebugLog
 import kotlinx.coroutines.flow.Flow
@@ -46,13 +47,40 @@ class PokemonRepositoryImpl @Inject constructor(
         id: Int,
         onError : (String) -> Unit
     ): Flow<Pokemon> = flow {
-        remoteDataSource.getPokemonInfo(id).collect { it ->
-            DebugLog(it.toString())
-            when(it){
-                is ApiResult.Success -> { it.value.collect { it.toDomain() } }
-                is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
+        try {
+            DebugLog("try111")
+            remoteDataSource.getPokemonInfo(id).collect { it ->
+                DebugLog(it.toString())
+                when(it){
+                    is ApiResult.Success -> { it.value.collect { emit(it.toDomain()) } }
+                    is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
+                }
             }
         }
+        catch(e: Exception){
+            onError.invoke(e.message ?: "")
+            DebugLog("e : ${e.toString()}")
+        }
+    }
+
+    override suspend fun getPokemonTypeInfo(
+        type: String,
+        onError : (String) -> Unit
+    ): Flow<PokemonType> = flow {
+        try {
+            remoteDataSource.getPokemonTypeInfo(type).collect { it ->
+                DebugLog(it.toString())
+                when(it){
+                    is ApiResult.Success -> { it.value.collect { emit(it.toDomain()) } }
+                    is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
+                }
+            }
+        }
+        catch (e: Exception) {
+            onError.invoke(e.message ?: "")
+            DebugLog("e : ${e.toString()}")
+        }
+
     }
 
     /** local **/

@@ -22,4 +22,11 @@ class PokemonRemoteDataSource @Inject constructor(
     ) = safeFlow {
         networkApi.getPokemonDetailInfo(id = id)
     }
+
+    fun getPokemonTypeInfo(
+        type: String
+    ) = safeFlow {
+        networkApi.getPokemonTypeInfo(type = type)
+    }
+
 }

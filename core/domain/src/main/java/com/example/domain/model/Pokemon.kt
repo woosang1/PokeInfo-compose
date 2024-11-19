@@ -10,7 +10,8 @@ data class Pokemon(
     val baseExperience: Int = 0,
     val abilities: List<String> = emptyList(),
     val stats: Map<String, Int> = emptyMap(),  // 스탯 이름과 값의 매핑
-    val types: List<String> = emptyList()      // 타입 목록
+    val types: List<String> = emptyList(),      // 타입 목록
+    val pokemonType: PokemonType? = null
 )
 
 fun getImageUrl(url: String): String {

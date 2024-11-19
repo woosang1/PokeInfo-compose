@@ -1,6 +1,5 @@
 package com.example.home.component
 
-import android.graphics.drawable.shapes.Shape
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.FloatingActionButton

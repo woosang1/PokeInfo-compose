@@ -2,6 +2,7 @@ package com.example.data.network
 
 import com.example.data.model.rp.RpPokemonInfo
 import com.example.data.model.rp.RpPokemonList
+import com.example.data.model.rp.RpPokemonType
 import com.example.domain.model.PokemonList
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
@@ -22,7 +23,15 @@ interface NetworkAPI {
      * 포켓몬 상세 정보
      */
     @GET("pokemon/")
-    fun getPokemonDetailInfo(
+    suspend fun getPokemonDetailInfo(
         @Query("id") id: Int
     ): Flow<RpPokemonInfo>
+
+    /**
+     * 타입 약점 / 강점 정보
+     */
+    @GET("type/")
+    suspend fun getPokemonTypeInfo(
+        @Query("type") type: String
+    ): Flow<RpPokemonType>
 }

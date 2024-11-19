@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.detail.common.DetailSideEffect
+import com.example.utils.showToast
 
 @Composable
 fun DetailRoute(
@@ -22,7 +23,7 @@ fun DetailRoute(
             when (effect) {
                 is DetailSideEffect.MoveTab -> { }
                 is DetailSideEffect.SetLikeIcon -> { }
-                is DetailSideEffect.ShowToast -> { }
+                is DetailSideEffect.ShowToast -> { context.showToast(message = effect.message) }
                 is DetailSideEffect.StartHomePage -> { }
             }
         }
