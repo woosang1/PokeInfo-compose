@@ -24,23 +24,21 @@ class PokemonRepositoryImpl @Inject constructor(
 ) : PokemonRepository {
 
     /** remote **/
-    override fun getPokemonList(page: Int): Flow<PagingData<Pokemon>> = flow {
-        emitAll(
-            Pager(
-                config = PagingConfig(
-                    pageSize = PAGING_SIZE,
-                    initialLoadSize = PAGING_SIZE,
-                    prefetchDistance = PAGING_SIZE
-                ),
-                pagingSourceFactory = {
-                    PokemonListPagingSource(
-                        pokemonRemoteDataSource = remoteDataSource,
-                        startPage = page,
-                        pagingSize =  PAGING_SIZE
-                    )
-                }
-            ).flow
-        )
+    override fun getPokemonList(page: Int): Flow<PagingData<Pokemon>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = PAGING_SIZE,
+                initialLoadSize = PAGING_SIZE,
+                prefetchDistance = PAGING_SIZE
+            ),
+            pagingSourceFactory = {
+                PokemonListPagingSource(
+                    pokemonRemoteDataSource = remoteDataSource,
+                    startPage = page,
+                    pagingSize =  PAGING_SIZE
+                )
+            }
+        ).flow
     }
 
     override suspend fun getPokemonInfo(
@@ -48,7 +46,6 @@ class PokemonRepositoryImpl @Inject constructor(
         onError : (String) -> Unit
     ): Flow<Pokemon> = flow {
         try {
-            DebugLog("try111")
             remoteDataSource.getPokemonInfo(id).collect { it ->
                 DebugLog(it.toString())
                 when(it){
@@ -59,7 +56,6 @@ class PokemonRepositoryImpl @Inject constructor(
         }
         catch(e: Exception){
             onError.invoke(e.message ?: "")
-            DebugLog("e : ${e.toString()}")
         }
     }
 
@@ -69,7 +65,6 @@ class PokemonRepositoryImpl @Inject constructor(
     ): Flow<PokemonType> = flow {
         try {
             remoteDataSource.getPokemonTypeInfo(type).collect { it ->
-                DebugLog(it.toString())
                 when(it){
                     is ApiResult.Success -> { it.value.collect { emit(it.toDomain()) } }
                     is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
@@ -78,9 +73,7 @@ class PokemonRepositoryImpl @Inject constructor(
         }
         catch (e: Exception) {
             onError.invoke(e.message ?: "")
-            DebugLog("e : ${e.toString()}")
         }
-
     }
 
     /** local **/

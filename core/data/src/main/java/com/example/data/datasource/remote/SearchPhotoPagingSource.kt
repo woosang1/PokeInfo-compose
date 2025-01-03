@@ -15,7 +15,6 @@ internal class PokemonListPagingSource(
 ) : PagingSource<Int, Pokemon>() {
 
     override fun getRefreshKey(state: PagingState<Int, Pokemon>): Int? {
-        DebugLog("PokemonListPagingSource - getRefreshKey")
         return state.anchorPosition?.let { anchorPosition ->
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
                 ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
