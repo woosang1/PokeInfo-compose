@@ -32,7 +32,7 @@ import com.example.ui.R
 fun HomeScreen(
     uiState: HomeState,
     initAction:() -> Unit,
-    onClickPokemonCard: (Pokemon) -> Unit,
+    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
     onClickCircleMenuBtnEvent: () -> Unit,
 ) {
     Box(

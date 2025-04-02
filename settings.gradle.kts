@@ -25,10 +25,13 @@ dependencyResolutionManagement {
 
 rootProject.name = "PokeInfo"
 
+// Application Module
+include(":app")
+
 // Core Modules
 include(":core")
-include(":core:data")
-include(":core:domain")
+include(":data")
+include(":domain")
 include(":core:ui")
 include(":core:designsystem")
 include(":core:utils")
@@ -39,8 +42,7 @@ include(":feature:main")
 include(":feature:home")
 include(":feature:detail")
 
-// Application Module
-include(":app")
-
 // Build Logic
 //include(":build-logic")
+include(":core:network")
+include(":core:model")

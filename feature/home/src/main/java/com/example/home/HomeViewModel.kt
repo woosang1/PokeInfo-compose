@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getPokemonListUseCase: GetPokemonListUseCase
+    private val getPokemonListUseCase: com.example.domain.usecase.GetPokemonListUseCase
 ) : BaseViewModel<MainEvent, HomeState, BaseSideEffect>() {
 
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Loading)

@@ -45,7 +45,7 @@ android {
 dependencies {
 
     implementation(project(":feature:main"))
-    implementation(project(":core:data"))
+    implementation(project(":data"))
 
     // compopse
     implementation(libs.androidx.core.ktx)

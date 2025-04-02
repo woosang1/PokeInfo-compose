@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val getPokemonDetailInfoUseCase: GetPokemonDetailInfoUseCase
+    private val getPokemonDetailInfoUseCase: com.example.domain.usecase.GetPokemonDetailInfoUseCase
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>() {
 
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)

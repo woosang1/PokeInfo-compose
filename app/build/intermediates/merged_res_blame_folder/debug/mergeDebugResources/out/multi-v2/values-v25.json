@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.pokeinfo.app-mergeDebugResources-76:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "/Users/woosanglee/.gradle/caches/8.9/transforms/4e59b39dc9bc9a7d693738f40827fa07/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}

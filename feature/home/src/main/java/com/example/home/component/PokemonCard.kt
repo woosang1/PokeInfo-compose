@@ -37,8 +37,8 @@ fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,
-    pokemon: Pokemon,
-    onClickPokemonCard: (Pokemon) -> Unit,
+    pokemon: com.example.domain.model.Pokemon,
+    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
 ) {
 
     Box(

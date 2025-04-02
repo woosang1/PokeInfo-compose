@@ -28,8 +28,8 @@ fun GridCardLayout(
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: LazyPagingItems<Pokemon>,
-    onClickPokemonCard: (Pokemon) -> Unit,
+    cardList: LazyPagingItems<com.example.domain.model.Pokemon>,
+    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
@@ -62,7 +62,7 @@ fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = Pokemon()
+        val defaultPokemon = com.example.domain.model.Pokemon()
 //        GridCardLayout(
 //            columns = 2,
 //            modifier = Modifier,
