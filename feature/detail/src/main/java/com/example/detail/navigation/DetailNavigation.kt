@@ -3,19 +3,21 @@ package com.example.detail.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
 import com.example.detail.DetailRoute
 import com.example.navigation.Route
 
-fun NavController.navigationDetail(){
-    navigate(Route.Detail)
+fun NavController.navigationDetail(pk: String){
+    navigate(Route.Detail(pk = pk))
 }
 
 fun NavGraphBuilder.detailNavGraph(
     onNavigateHome : () -> Unit
 ) {
-    // TODO: id값 넘겨야아함. 
-    composable<Route.Detail>{
+    composable<Route.Detail> { navBackStackEntry ->
+        val pk = navBackStackEntry.toRoute<Route.Detail>().pk
         DetailRoute(
+            pk = pk,
             onStartHome = onNavigateHome
         )
     }

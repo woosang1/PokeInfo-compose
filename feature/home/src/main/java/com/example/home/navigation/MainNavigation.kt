@@ -7,15 +7,15 @@ import com.example.home.HomeRoute
 import com.example.navigation.Route
 
 fun NavController.navigationHome(){
-    navigate(Route.Home)
+    navigate(Route.Home())
 }
 
 fun NavGraphBuilder.homeNavGraph(
-    onNavigateDetail : () -> Unit,
+    onStartDetail : (String) -> Unit,
 ) {
     composable<Route.Home>{
         HomeRoute(
-            onNavigateDetail = onNavigateDetail
+            onClickItem = onStartDetail
         )
     }
 }

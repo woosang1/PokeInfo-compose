@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.Flow
 interface PokemonRepository {
     /** remote **/
     fun getPokemonList(page: Int): Flow<PagingData<Pokemon>>
-    suspend fun getPokemonInfo(id: Int, onError : (String) -> Unit): Flow<Pokemon>
-    suspend fun getPokemonTypeInfo(type: String, onError : (String) -> Unit): Flow<PokemonType>
+    suspend fun getPokemonInfo(id: Int): Pokemon
+    suspend fun getPokemonTypeInfo(type: String): PokemonType
 
     /** local **/
     fun insertLocalDB()

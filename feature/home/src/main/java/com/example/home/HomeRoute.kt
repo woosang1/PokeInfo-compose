@@ -8,15 +8,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.MainEvent
+import com.example.ui.BaseSideEffect
 import com.example.utils.showToast
 
 @Composable
 fun HomeRoute(
     homeViewModel: HomeViewModel = hiltViewModel(),
-    onNavigateDetail: () -> Unit,
+    onClickItem: (String) -> Unit,
 ) {
     val context = LocalContext.current
-    val uiState by homeViewModel.uiState.collectAsState()
+    val uiState by homeViewModel.state.collectAsState()
     val sideEffect = homeViewModel.effect
 
     LaunchedEffect(sideEffect) {
@@ -27,8 +28,8 @@ fun HomeRoute(
                 is HomeSideEffect.ShowFavoriteBottomSheet -> {}
                 is HomeSideEffect.ShowGenerationsBottomSheet -> {}
                 is HomeSideEffect.ShowSearchBottomSheet -> {}
-                is HomeSideEffect.ShowToast -> { context.showToast(effect.message) }
-                is HomeSideEffect.StartDetailActivity -> { onNavigateDetail.invoke() }
+                is BaseSideEffect.ShowToast -> { context.showToast(effect.message) }
+                is HomeSideEffect.StartDetailActivity -> { onClickItem.invoke(effect.pokemon.id.toString()) }
             }
         }
     }

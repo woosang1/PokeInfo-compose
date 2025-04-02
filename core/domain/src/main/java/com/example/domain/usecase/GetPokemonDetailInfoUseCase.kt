@@ -12,24 +12,6 @@ import javax.inject.Inject
 class GetPokemonDetailInfoUseCase @Inject constructor(
     private val pokemonRepository: PokemonRepository
 ) {
-    operator fun invoke(id: Int, onError: (String) -> Unit): Flow<Pokemon> = flow {
-        DebugLog("GetPokemonDetailInfoUseCase - invoke")
-        val info = pokemonRepository.getPokemonInfo(id = id, onError = onError)
-        info.collectLatest {
-            emit(it)
-        }
-//        info.collectLatest { info ->
-//            DebugLog("info -> ")
-//            DebugLog("info : ${info.toString()}")
-//            val type = info.types.firstOrNull()
-//            type?.let { type ->
-//                pokemonRepository.getPokemonTypeInfo(type = type, onError = onError)
-//                    .collectLatest { it ->
-//                        DebugLog("type ->")
-//                        DebugLog("type : ${it.toString()}")
-//                        emit(info.copy(pokemonType = it))
-//                    }
-//            }
-//        }
-    }
+    suspend operator fun invoke(id: Int): Pokemon =
+        pokemonRepository.getPokemonInfo(id = id)
 }

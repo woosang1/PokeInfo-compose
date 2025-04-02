@@ -3,20 +3,16 @@ package com.example.navigation
 import kotlinx.serialization.Serializable
 
 sealed interface Route {
-//    val routeType: RouteType
+    val routeType: RouteType
 
     @Serializable
-    data object Home : Route
-//    data class Home(override val routeType: RouteType = RouteType.HOME) : Route
+    data class Home(override val routeType: RouteType = RouteType.HOME) : Route
 
     @Serializable
-    data object Detail: Route
-
-//    @Serializable
-//    data object Detail(
-////        override val routeType: RouteType = RouteType.DETAIL,
-////        val pk: String
-//    ) : Route
+    data class Detail(
+        override val routeType: RouteType = RouteType.DETAIL,
+        val pk: String
+    ) : Route
 }
 
 enum class RouteType(val description: String) {

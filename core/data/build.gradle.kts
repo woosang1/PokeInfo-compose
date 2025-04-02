@@ -49,12 +49,6 @@ dependencies {
     implementation("androidx.paging:paging-runtime:3.1.1")
     implementation("androidx.paging:paging-compose:3.3.2")
 
-    // retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.8.1")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-
-
     // hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
@@ -65,11 +59,9 @@ dependencies {
 //    kapt("androidx.room:room-compiler:${Versions.room}")
 
     // Retrofit 및 관련 의존성 추가
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.8.1")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.code.gson:gson:2.9.0")
-
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
 }

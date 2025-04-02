@@ -1,12 +1,9 @@
 package com.example.detail.common
 
-import com.example.domain.model.PokemonList
-import com.example.ui.SideEffect
-import kotlinx.collections.immutable.ImmutableList
+import com.example.ui.BaseSideEffect
 
-sealed class DetailSideEffect: SideEffect {
+sealed class DetailSideEffect: BaseSideEffect() {
     data object StartHomePage : DetailSideEffect()
     data class SetLikeIcon(val isLike: Boolean) : DetailSideEffect()
     data class MoveTab(val tabType: TabType) : DetailSideEffect()
-    data class ShowToast(val message: String) : DetailSideEffect()
 }

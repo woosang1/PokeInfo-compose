@@ -59,4 +59,7 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.kotlinx.collections.immutable)
     implementation(libs.coil.compose)
+
+    // retrofit
+    implementation(libs.retrofit2.retrofit)
 }

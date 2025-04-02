@@ -1,5 +1,7 @@
 package com.example.data.datasource.remote
 
+import com.example.data.model.rp.RpPokemonInfo
+import com.example.data.model.rp.RpPokemonType
 import com.example.data.network.NetworkAPI
 import com.example.data.network.safeFlow
 import javax.inject.Inject
@@ -17,16 +19,8 @@ class PokemonRemoteDataSource @Inject constructor(
         )
     }
 
-    fun getPokemonInfo(
-        id: Int
-    ) = safeFlow {
-        networkApi.getPokemonDetailInfo(id = id)
-    }
+    suspend fun getPokemonInfo(id: Int) : RpPokemonInfo = networkApi.getPokemonDetailInfo(id = id)
 
-    fun getPokemonTypeInfo(
-        type: String
-    ) = safeFlow {
-        networkApi.getPokemonTypeInfo(type = type)
-    }
+    suspend fun getPokemonTypeInfo(type: String) : RpPokemonType = networkApi.getPokemonTypeInfo(type = type)
 
 }

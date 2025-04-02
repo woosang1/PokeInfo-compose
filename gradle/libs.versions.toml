@@ -7,6 +7,8 @@ androidDesugarJdkLibs = "2.0.4"
 
 agp = "8.7.2"
 coilCompose = "2.2.0"
+converterGson = "2.9.0"
+gson = "2.11.0"
 hiltAndroidCompiler = "2.51.1"
 kotlin = "2.0.0"
 coreKtx = "1.10.1"
@@ -19,7 +21,9 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2024.04.01"
 appcompat = "1.6.1"
+loggingInterceptor = "4.12.0"
 material = "1.10.0"
+okhttp = "4.12.0"
 retrofit = "2.11.0"
 kotlinxSerializationJson = "1.7.0"
 androidxComposeNavigation = "2.8.0"
@@ -28,12 +32,15 @@ androidxComposeNavigation = "2.8.0"
 hilt = "2.51.1"
 roomKtx = "2.6.1"
 roomRuntime = "2.6.1"
+squareupRetrofit = "2.11.0"
 
 [libraries]
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidCompiler" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidCompiler" }
@@ -60,10 +67,13 @@ androidx-compose-navigation = { group = "androidx.navigation", name = "navigatio
 
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-collections-immutable-v035 = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutableVersion" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 #verify-detektPlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plgin", version.ref = "detekt" }
 compose-compiler-gradle-plugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "squareupRetrofit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

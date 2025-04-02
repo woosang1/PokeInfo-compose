@@ -7,15 +7,9 @@ import com.example.data.datasource.local.PokemonInfoLocalDataSource
 import com.example.data.datasource.remote.PokemonListPagingSource
 import com.example.data.datasource.remote.PokemonRemoteDataSource
 import com.example.data.mapper.toDomain
-import com.example.data.network.ApiResult
 import com.example.domain.model.Pokemon
-import com.example.domain.model.PokemonList
-import com.example.domain.model.PokemonType
 import com.example.domain.repository.PokemonRepository
-import com.example.log.DebugLog
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(
@@ -41,40 +35,9 @@ class PokemonRepositoryImpl @Inject constructor(
         ).flow
     }
 
-    override suspend fun getPokemonInfo(
-        id: Int,
-        onError : (String) -> Unit
-    ): Flow<Pokemon> = flow {
-        try {
-            remoteDataSource.getPokemonInfo(id).collect { it ->
-                DebugLog(it.toString())
-                when(it){
-                    is ApiResult.Success -> { it.value.collect { emit(it.toDomain()) } }
-                    is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
-                }
-            }
-        }
-        catch(e: Exception){
-            onError.invoke(e.message ?: "")
-        }
-    }
+    override suspend fun getPokemonInfo(id: Int): Pokemon = remoteDataSource.getPokemonInfo(id).toDomain()
 
-    override suspend fun getPokemonTypeInfo(
-        type: String,
-        onError : (String) -> Unit
-    ): Flow<PokemonType> = flow {
-        try {
-            remoteDataSource.getPokemonTypeInfo(type).collect { it ->
-                when(it){
-                    is ApiResult.Success -> { it.value.collect { emit(it.toDomain()) } }
-                    is ApiResult.Error -> { onError.invoke(it.exception.message ?: "") }
-                }
-            }
-        }
-        catch (e: Exception) {
-            onError.invoke(e.message ?: "")
-        }
-    }
+    override suspend fun getPokemonTypeInfo(type: String) = remoteDataSource.getPokemonTypeInfo(type).toDomain()
 
     /** local **/
     override fun insertLocalDB() { localDataSource.insert() }

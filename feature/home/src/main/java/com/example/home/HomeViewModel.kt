@@ -1,13 +1,13 @@
 package com.example.home
 
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.cachedIn
 import com.example.domain.usecase.GetPokemonListUseCase
 import com.example.home.common.MainEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
+import com.example.ui.BaseSideEffect
 import com.example.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -18,16 +18,16 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getPokemonListUseCase: GetPokemonListUseCase
-) : BaseViewModel<MainEvent, HomeState, HomeSideEffect>() {
+) : BaseViewModel<MainEvent, HomeState, BaseSideEffect>() {
 
-    override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
+    override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Loading)
     override fun handleEvent(event: MainEvent) {
         when (event) {
             is MainEvent.ClickFloatingBtn -> { }
             is MainEvent.ClickSideFloatingBtn -> { }
             is MainEvent.ClickSearchBtn -> { }
             is MainEvent.ClickPokemonCard -> {
-                setEffect { HomeSideEffect.StartDetailActivity(pokemon = event.pokemon) }
+                setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
         }
     }
@@ -38,7 +38,7 @@ class HomeViewModel @Inject constructor(
                 .cachedIn(this)
                 .collectLatest { pagingData ->
                     setState {
-                        HomeState(homeUiState = HomeUiState.Result(pokemonList = flowOf(pagingData)))
+                        HomeState(homeUiState = HomeUiState.Success(pokemonList = flowOf(pagingData)))
                     }
             }
         }

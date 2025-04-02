@@ -20,6 +20,7 @@ import com.example.utils.noRippleClickable
 
 @Composable
 fun DetailScreen(
+    pk: String,
     uiState: DetailState,
     detailViewModel: DetailViewModel,
     onNavigateHome: () -> Unit
@@ -42,13 +43,12 @@ fun DetailScreen(
             contentScale = ContentScale.Fit
         )
 
-        when(val detailUiState = uiState.detailUiState){
-            DetailUiState.Init -> {
-                detailViewModel.getPokemonDetailInfo(id = 1)
+        when(uiState.detailUiState){
+            DetailUiState.Loading -> {
+                detailViewModel.getPokemonDetailInfo(id = pk.toIntOrNull() ?: 0)
             }
             DetailUiState.Result -> {}
             DetailUiState.Empty -> {}
-            DetailUiState.Error -> {}
         }
     }
 }

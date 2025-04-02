@@ -9,23 +9,20 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import com.example.utils.errorHandler.UiError
 
-
-abstract class BaseViewModel<Event : com.example.ui.Event, State : com.example.ui.State, Effect : SideEffect> : ViewModel() {
+abstract class BaseViewModel<Event : com.example.ui.Event, State : com.example.ui.State, Effect : BaseSideEffect> : ViewModel() {
 
     private val initialState: State by lazy { createInitialState() }
     abstract fun createInitialState(): State
 
-    val currentState: State
-        get() = uiState.value
-
-    private val _uiState: MutableStateFlow<State> = MutableStateFlow(initialState)
-    val uiState = _uiState.asStateFlow()
+    private val _state: MutableStateFlow<State> = MutableStateFlow(initialState)
+    val state = _state.asStateFlow()
 
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
 
-    private val _effect: Channel<Effect> = Channel()
+    private val _effect: Channel<BaseSideEffect> = Channel()
     val effect = _effect.receiveAsFlow()
 
     init {
@@ -39,21 +36,30 @@ abstract class BaseViewModel<Event : com.example.ui.Event, State : com.example.u
             }
         }
     }
-    abstract fun handleEvent(event : Event)
+
+    abstract fun handleEvent(event: Event)
 
     fun setEvent(event: Event) {
-        val newEvent = event
-        viewModelScope.launch { _event.emit(newEvent) }
+        viewModelScope.launch { _event.emit(event) }
     }
 
     protected fun setState(reduce: State.() -> State) {
-        val newState = currentState.reduce()
-        _uiState.value = newState
+        val newState = state.value.reduce()
+        _state.value = newState
     }
 
-    protected fun setEffect(builder: () -> Effect) {
-        val effectValue = builder()
-        viewModelScope.launch { _effect.send(effectValue) }
+    fun setEffect(effect: BaseSideEffect) {
+        viewModelScope.launch { _effect.send(effect) }
+    }
+
+    fun handlerError(error: UiError){
+        when(error){
+            is UiError.AuthError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
+            is UiError.PermissionError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
+            is UiError.NetworkError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
+            is UiError.ServerError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
+            is UiError.UnknownError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
+        }
     }
 
 }

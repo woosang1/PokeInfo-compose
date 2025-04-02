@@ -25,7 +25,7 @@ interface NetworkAPI {
     @GET("pokemon/")
     suspend fun getPokemonDetailInfo(
         @Query("id") id: Int
-    ): Flow<RpPokemonInfo>
+    ): RpPokemonInfo
 
     /**
      * 타입 약점 / 강점 정보
@@ -33,5 +33,5 @@ interface NetworkAPI {
     @GET("type/")
     suspend fun getPokemonTypeInfo(
         @Query("type") type: String
-    ): Flow<RpPokemonType>
+    ): RpPokemonType
 }
