@@ -19,7 +19,6 @@ import com.example.detail.detail.common.DetailSideEffect
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
-import com.example.log.DebugLog
 import com.example.ui.R
 
 @Composable
@@ -45,7 +44,6 @@ fun DetailScreen(
                 .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
                 .noRippleClickable {
-                    DebugLog("뒤로가긱 클릭")
                     onBackEvent.invoke()
                 },
             contentScale = ContentScale.Fit

@@ -145,10 +145,7 @@ fun PokemonInfoBottomSheet(
     pokemon: Pokemon,
     onBackEvent: () -> Unit
 ) {
-    DebugLog("- PokemonInfoBottomSheet -")
-    DebugLog("pokemon:description : ${pokemon.description}")
     var selectedTab by remember { mutableStateOf(DetailTabRouteModel.tabList.first()) }
-
     LaunchedEffect(selectedTab) {
         navigator.navigate(
             tab = selectedTab,
@@ -189,7 +186,6 @@ fun PokemonInfoBottomSheet(
         sheetContent = {
             FixedTabs(
                 onTabSelected = { index ->
-                    DebugLog("onTabSelected : ${index}")
                     selectedTab = DetailTabRouteModel.tabList[index]
                 }
             )
@@ -197,7 +193,7 @@ fun PokemonInfoBottomSheet(
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(
                     navController = navigator.navController,
-                    startDestination = DetailTabRouteModel.tabList[1]
+                    startDestination = DetailTabRouteModel.tabList[2]
                 ) {
                     aboutNavGraph()
                     baseStatsNavGraph()

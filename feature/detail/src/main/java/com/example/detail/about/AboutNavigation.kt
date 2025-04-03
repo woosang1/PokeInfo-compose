@@ -11,20 +11,14 @@ import com.example.navigation.DetailTabRouteModel
 import kotlinx.serialization.json.Json
 
 fun NavController.navigationAbout(model: AboutModel, navOptions: NavOptions) {
-    DebugLog( "navigationAbout")
-    DebugLog( "model : ${model}")
     navigate(
         DetailTabRouteModel.About(modelJsonStr = Json.encodeToString(model)), navOptions
     )
 }
 
 fun NavGraphBuilder.aboutNavGraph() {
-    DebugLog("- aboutNavGraph -")
     composable<DetailTabRouteModel.About> { navBackStackEntry ->
         val modelJsonStr = navBackStackEntry.toRoute<DetailTabRouteModel.About>().modelJsonStr
-
-        DebugLog("modelJsonStr : ${modelJsonStr}")
-
         val model = try {
             if (!modelJsonStr.isNullOrBlank()) {
                 Json.decodeFromString<AboutModel>(modelJsonStr)
