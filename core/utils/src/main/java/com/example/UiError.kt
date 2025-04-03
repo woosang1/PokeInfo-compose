@@ -1,4 +1,4 @@
-package com.example.utils.errorHandler
+package com.example
 
 sealed class UiError(val message: String) {
     data class AuthError(val msg: String = "세션이 만료되었습니다. 다시 로그인해주세요.") : UiError(msg)

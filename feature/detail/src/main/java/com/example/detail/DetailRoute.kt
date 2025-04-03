@@ -2,22 +2,22 @@ package com.example.detail
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.detail.common.DetailSideEffect
 import com.example.base.BaseSideEffect
-import com.example.utils.showToast
+import com.example.extension.showToast
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun DetailRoute(
     pk: String,
     detailViewModel: DetailViewModel = hiltViewModel(),
-    onStartHome: () -> Unit
+    onBackEvent: () -> Unit
 ) {
     val context = LocalContext.current
-    val uiState by detailViewModel.state.collectAsState()
+    val uiState by detailViewModel.state.collectAsStateWithLifecycle()
     val sideEffect = detailViewModel.effect
 
     LaunchedEffect(sideEffect) {
@@ -33,7 +33,7 @@ fun DetailRoute(
 
     DetailScreen(
         uiState = uiState,
-        onNavigateHome = onStartHome,
+        onBackEvent = onBackEvent,
         onInit = { detailViewModel.getPokemonDetailInfo(id = pk.toIntOrNull() ?: 0) },
         onEvent = { event -> detailViewModel.setEvent(event) },
         onSideEffect = { effect -> detailViewModel.setEffect(effect) }

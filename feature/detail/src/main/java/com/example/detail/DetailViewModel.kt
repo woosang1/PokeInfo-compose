@@ -7,7 +7,7 @@ import com.example.detail.common.DetailState
 import com.example.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.base.BaseViewModel
-import com.example.utils.errorHandler.toUiError
+import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest

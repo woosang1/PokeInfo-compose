@@ -2,13 +2,13 @@ package com.example.home
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.home.common.HomeSideEffect
 import com.example.base.BaseSideEffect
-import com.example.utils.showToast
+import com.example.extension.showToast
 
 @Composable
 fun HomeRoute(
@@ -16,7 +16,7 @@ fun HomeRoute(
     onClickItem: (String) -> Unit,
 ) {
     val context = LocalContext.current
-    val uiState by homeViewModel.state.collectAsState()
+    val uiState by homeViewModel.state.collectAsStateWithLifecycle()
     val sideEffect = homeViewModel.effect
 
     LaunchedEffect(sideEffect) {

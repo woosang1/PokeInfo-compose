@@ -5,19 +5,20 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.example.detail.DetailRoute
+import com.example.navigation.MainRoute
 
 fun NavController.navigationDetail(pk: String){
-    navigate(com.example.navigation.MainRoute.Detail(pk = pk))
+    navigate(MainRoute.Detail(pk = pk))
 }
 
 fun NavGraphBuilder.detailNavGraph(
-    onNavigateHome : () -> Unit
+    onBackEvent : () -> Unit
 ) {
-    composable<com.example.navigation.MainRoute.Detail> { navBackStackEntry ->
-        val pk = navBackStackEntry.toRoute<com.example.navigation.MainRoute.Detail>().pk
+    composable<MainRoute.Detail> { navBackStackEntry ->
+        val pk = navBackStackEntry.toRoute<MainRoute.Detail>().pk
         DetailRoute(
             pk = pk,
-            onStartHome = onNavigateHome
+            onBackEvent = onBackEvent
         )
     }
 }

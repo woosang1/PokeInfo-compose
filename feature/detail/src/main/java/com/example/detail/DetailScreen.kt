@@ -13,18 +13,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.example.designsystem.theme.LocalColors
 import com.example.detail.common.DetailEvent
 import com.example.detail.common.DetailSideEffect
 import com.example.detail.common.DetailState
 import com.example.detail.common.DetailUiState
+import com.example.extension.noRippleClickable
+import com.example.log.DebugLog
 import com.example.ui.R
-import com.example.utils.noRippleClickable
 
 @Composable
 fun DetailScreen(
     uiState: DetailState,
-    onNavigateHome: () -> Unit,
+    onBackEvent: () -> Unit,
     onInit: () -> Unit,
     onEvent: (DetailEvent) -> Unit,
     onSideEffect: (DetailSideEffect) -> Unit,
@@ -44,14 +46,21 @@ fun DetailScreen(
                 .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
                 .noRippleClickable {
-                    onNavigateHome.invoke()
+                    DebugLog("뒤로가긱 클릭")
+                    onBackEvent.invoke()
                 },
             contentScale = ContentScale.Fit
         )
 
-        when(uiState.detailUiState){
+        when (uiState.detailUiState) {
             DetailUiState.Loading -> {}
-            DetailUiState.Result -> {}
+            DetailUiState.Result -> {
+                DetailContent(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter),
+                    onBackEvent = onBackEvent
+                )
+            }
             DetailUiState.Empty -> {}
         }
     }

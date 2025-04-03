@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import com.example.designsystem.theme.PokeInfoTheme
 import com.example.domain.model.Pokemon
-import com.example.utils.dpToPixel
-import com.example.utils.getWidthDisplay
+import com.example.extension.dpToPixel
+import com.example.extension.getWidthDisplay
 
 @Composable
 internal fun GridCardLayout(

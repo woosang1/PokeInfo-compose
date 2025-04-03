@@ -1,4 +1,4 @@
-package com.example.utils.errorHandler
+package com.example
 
 import okio.IOException
 import retrofit2.HttpException

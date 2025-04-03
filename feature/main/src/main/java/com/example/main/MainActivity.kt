@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PokeInfoTheme {
-                MainNavHost(navigator = rememberNavController())
+                MainNavHost()
             }
         }
     }
