@@ -11,7 +11,11 @@ data class Pokemon(
     val abilities: List<String> = emptyList(),
     val stats: Map<String, Int> = emptyMap(),  // 스탯 이름과 값의 매핑
     val types: List<String> = emptyList(),      // 타입 목록
-    val pokemonType: PokemonType? = null
+    val pokemonType: PokemonType? = null,
+    val description: String,
+    val genderRate: Pair<Double, Double>, // (성비)
+    val eggGroups: String, //  (알 그룹)
+    val eggCycle: Int //  (부화 사이클)
 )
 
 fun getImageUrl(url: String): String {

@@ -12,9 +12,13 @@ import androidx.navigation.navOptions
 import com.example.navigation.DetailTabRouteModel
 import com.example.navigation.MainRoute
 import com.example.detail.about.navigationAbout
+import com.example.detail.about.toAboutModel
 import com.example.detail.baseStats.navigationBaseStats
+import com.example.detail.baseStats.toBaseStatsModel
 import com.example.detail.evolution.navigationEvolution
+import com.example.detail.evolution.toEvolutionModel
 import com.example.detail.moves.navigationMoves
+import com.example.model.ui.Pokemon
 
 
 class DetailNavigator(
@@ -24,7 +28,7 @@ class DetailNavigator(
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-    fun navigate(tab: DetailTabRouteModel) {
+    fun navigate(tab: DetailTabRouteModel, pokemon: Pokemon) {
         val navOptions = navOptions {
             popUpTo(navController.graph.findStartDestination().id) {
                 saveState = true
@@ -34,10 +38,19 @@ class DetailNavigator(
         }
 
         when (tab) {
-            DetailTabRouteModel.About -> navController.navigationAbout(navOptions)
-            DetailTabRouteModel.BaseStats -> navController.navigationBaseStats(navOptions)
-            DetailTabRouteModel.Evolution -> navController.navigationEvolution(navOptions)
-            DetailTabRouteModel.Moves -> navController.navigationMoves(navOptions)
+            is DetailTabRouteModel.About -> navController.navigationAbout(
+                model = pokemon.toAboutModel(),
+                navOptions = navOptions
+            )
+            is DetailTabRouteModel.BaseStats -> navController.navigationBaseStats(
+                model = pokemon.toBaseStatsModel(),
+                navOptions = navOptions
+            )
+            is DetailTabRouteModel.Evolution -> navController.navigationEvolution(
+                model = pokemon.toEvolutionModel(),
+                navOptions = navOptions
+            )
+            is DetailTabRouteModel.Moves -> navController.navigationMoves(navOptions)
         }
     }
 

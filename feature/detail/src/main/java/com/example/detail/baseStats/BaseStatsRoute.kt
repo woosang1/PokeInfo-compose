@@ -7,9 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.example.designsystem.theme.LocalColors
+import com.example.model.ui.BaseStatsModel
 
 @Composable
-fun AboutRoute(
+fun BaseStatsRoute(
+    model: BaseStatsModel?
 ) {
     val context = LocalContext.current
 

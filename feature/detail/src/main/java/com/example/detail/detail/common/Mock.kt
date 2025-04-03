@@ -71,5 +71,9 @@ val mockBlastoise = Pokemon(
             // 무효화하는 공격 (Water 타입이 피해를 줄 수 없는 속성)
             noDamageTo = emptyList()
         )
-    )
+    ),
+    description = "Blastoise는 강력한 물대포를 사용할 수 있는 포켓몬이다.",
+    genderRate = Pair(87.5, 12.5), // 성비 (수컷 87.5%, 암컷 12.5%)
+    eggGroups = "Monster, Water 1", // 알 그룹 정보
+    eggCycle = 20 // 부화 사이클
 )

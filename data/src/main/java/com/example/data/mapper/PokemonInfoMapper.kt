@@ -21,6 +21,10 @@ fun RpPokemonInfo.toDomain(): Pokemon {
         }?.toMap() ?: emptyMap(),
         types = this.types?.map { type ->
             type.type?.name ?: ""
-        } ?: emptyList()
+        } ?: emptyList(),
+        description = "",
+        genderRate = Pair(0.0, 0.0),
+        eggGroups = "",
+        eggCycle = 0
     )
 }

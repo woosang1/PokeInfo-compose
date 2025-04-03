@@ -20,6 +20,10 @@ internal fun RpPokemonList.Pokemon.toDomain(): Pokemon {
         id = getId(this.url).toIntOrNull() ?: 0,
         count = this.count,
         name = this.name,
-        url = getImageUrl(this.url)
+        url = getImageUrl(this.url),
+        description = "",
+        genderRate = Pair(0.0, 0.0),
+        eggGroups = "",
+        eggCycle = 0
     )
 }

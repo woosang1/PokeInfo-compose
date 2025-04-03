@@ -56,6 +56,7 @@ import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
 import com.example.model.ui.Pokemon
 import com.example.extension.setImageUrl
+import com.example.log.DebugLog
 
 @Composable
 fun DetailContent(
@@ -130,6 +131,7 @@ fun DetailContent(
         }
         PokemonInfoBottomSheet(
             modifier = modifier,
+            pokemon = pokemon,
             onBackEvent = onBackEvent
         )
     }
@@ -140,8 +142,19 @@ fun DetailContent(
 fun PokemonInfoBottomSheet(
     modifier: Modifier,
     navigator: DetailNavigator = rememberDetailNavigator(),
+    pokemon: Pokemon,
     onBackEvent: () -> Unit
 ) {
+    DebugLog("- PokemonInfoBottomSheet -")
+    DebugLog("pokemon:description : ${pokemon.description}")
+    var selectedTab by remember { mutableStateOf(DetailTabRouteModel.tabList.first()) }
+
+    LaunchedEffect(selectedTab) {
+        navigator.navigate(
+            tab = selectedTab,
+            pokemon = pokemon
+        )
+    }
 
     val context = LocalContext.current
     val height = (context.getHeightDisplay() / 2).pxToDp()
@@ -176,14 +189,15 @@ fun PokemonInfoBottomSheet(
         sheetContent = {
             FixedTabs(
                 onTabSelected = { index ->
-                    navigator.navigate(DetailTabRouteModel.tabList[index])
+                    DebugLog("onTabSelected : ${index}")
+                    selectedTab = DetailTabRouteModel.tabList[index]
                 }
             )
             // 네비게이션 영역
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(
                     navController = navigator.navController,
-                    startDestination = DetailTabRouteModel.tabList.first()
+                    startDestination = DetailTabRouteModel.tabList[1]
                 ) {
                     aboutNavGraph()
                     baseStatsNavGraph()

@@ -60,7 +60,7 @@ internal fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = com.example.model.ui.Pokemon()
+//        val defaultPokemon = com.example.model.ui.Pokemon()
 //        GridCardLayout(
 //            columns = 2,
 //            modifier = Modifier,
