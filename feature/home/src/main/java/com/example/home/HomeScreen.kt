@@ -25,8 +25,8 @@ import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
-import com.example.home.component.FloatingButton
-import com.example.home.component.GridCardLayout
+import com.example.home.view.FloatingButton
+import com.example.home.view.GridCardLayout
 import com.example.ui.R
 
 @Composable

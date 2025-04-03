@@ -1,4 +1,4 @@
-package com.example.home.component
+package com.example.home.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,11 +13,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
+import com.example.component.PokemonCard
 import com.example.designsystem.theme.PokeInfoTheme
-import com.example.domain.model.Pokemon
 import com.example.extension.dpToPixel
 import com.example.extension.getWidthDisplay
-import androidx.compose.foundation.lazy.grid.items
+import com.example.model.ui.Pokemon
 
 @Composable
 internal fun GridCardLayout(
@@ -60,7 +60,7 @@ internal fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = Pokemon()
+        val defaultPokemon = com.example.model.ui.Pokemon()
 //        GridCardLayout(
 //            columns = 2,
 //            modifier = Modifier,

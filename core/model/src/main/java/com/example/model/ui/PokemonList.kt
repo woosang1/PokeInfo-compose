@@ -1,4 +1,4 @@
-package com.example.domain.model
+package com.example.model.ui
 
 data class PokemonList(
     val count: Int = 0,

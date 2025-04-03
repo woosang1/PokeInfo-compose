@@ -1,6 +1,6 @@
 package com.example.data.mapper
 
-import com.example.domain.model.Pokemon
+import com.example.model.ui.Pokemon
 import com.example.model.rp.RpPokemonInfo
 
 fun RpPokemonInfo.toDomain(): Pokemon {

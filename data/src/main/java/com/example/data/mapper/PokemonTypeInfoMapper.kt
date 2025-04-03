@@ -1,6 +1,6 @@
 package com.example.data.mapper
 
-import com.example.domain.model.PokemonType
+import com.example.model.ui.PokemonType
 import com.example.model.rp.RpPokemonType
 
 fun RpPokemonType.toDomain(): PokemonType {

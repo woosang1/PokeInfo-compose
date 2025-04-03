@@ -1,8 +1,8 @@
 package com.example.domain.repository
 
 import androidx.paging.PagingData
-import com.example.domain.model.Pokemon
-import com.example.domain.model.PokemonType
+import com.example.model.ui.Pokemon
+import com.example.model.ui.PokemonType
 import kotlinx.coroutines.flow.Flow
 
 interface PokemonRepository {

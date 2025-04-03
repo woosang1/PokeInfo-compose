@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import com.example.data.datasource.local.PokemonInfoLocalDataSource
 import com.example.data.datasource.remote.PokemonRemoteDataSource
 import com.example.data.mapper.toDomain
-import com.example.domain.model.Pokemon
+import com.example.model.ui.Pokemon
 import com.example.domain.repository.PokemonRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -17,7 +17,7 @@ class PokemonRepositoryImpl @Inject constructor(
 ) : PokemonRepository {
 
     /** remote **/
-    override fun getPokemonList(page: Int): Flow<PagingData<com.example.domain.model.Pokemon>> {
+    override fun getPokemonList(page: Int): Flow<PagingData<Pokemon>> {
         return Pager(
             config = PagingConfig(
                 pageSize = PAGING_SIZE,

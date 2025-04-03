@@ -1,4 +1,4 @@
-package com.example.home.component
+package com.example.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,13 +27,13 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
-import com.example.domain.model.Pokemon
 import com.example.extension.noRippleClickable
 import com.example.ui.R
 import com.example.extension.setImageUrl
+import com.example.model.ui.Pokemon
 
 @Composable
-internal fun PokemonCard(
+fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,

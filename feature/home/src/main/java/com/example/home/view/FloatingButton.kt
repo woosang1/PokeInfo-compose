@@ -1,4 +1,4 @@
-package com.example.home.component
+package com.example.home.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size

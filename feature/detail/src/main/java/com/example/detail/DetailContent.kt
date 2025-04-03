@@ -10,12 +10,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomSheetScaffold
@@ -42,7 +39,6 @@ import com.example.designsystem.theme.LocalTypography
 import com.example.navigation.DetailTabRouteModel
 import com.example.extension.getHeightDisplay
 import com.example.extension.pxToDp
-import kotlinx.coroutines.launch
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
@@ -50,7 +46,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import coil.compose.rememberAsyncImagePainter
-import com.example.domain.model.Pokemon
+import com.example.component.CircleView
+import com.example.model.ui.Pokemon
 import com.example.extension.setImageUrl
 
 @Composable
@@ -217,30 +214,6 @@ fun TabContent(text: String) {
                 .align(Alignment.Center),
             style = LocalTypography.current.subTitle,
             color = LocalColors.current.black,
-            maxLines = 1
-        )
-    }
-}
-
-@Composable
-fun CircleView(
-    modifier: Modifier = Modifier,
-    title: String,
-) {
-    Box(
-        modifier = modifier
-            .wrapContentSize()
-            .background(
-                color = LocalColors.current.lightBlue,
-                shape = RoundedCornerShape(50)
-            ),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            modifier = Modifier.padding(8.dp),
-            text = title,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.white,
             maxLines = 1
         )
     }
