@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -20,21 +21,23 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
-import com.example.domain.model.Pokemon
+import com.example.home.common.HomeEvent
+import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.component.FloatingButton
 import com.example.home.component.GridCardLayout
-import com.example.log.DebugLog
 import com.example.ui.R
 
 @Composable
 fun HomeScreen(
     uiState: HomeState,
-    initAction:() -> Unit,
-    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
-    onClickCircleMenuBtnEvent: () -> Unit,
+    onInit:() -> Unit,
+    onEvent: (HomeEvent) -> Unit,
+    onSideEffect: (HomeSideEffect) -> Unit,
 ) {
+    LaunchedEffect(true) { onInit.invoke() }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -67,10 +70,7 @@ fun HomeScreen(
                 maxLines = 1
             )
             when(val mainUiState = uiState.homeUiState){
-                is HomeUiState.Loading -> {
-                    DebugLog("is HomeUiState.Init ->")
-                    initAction.invoke()
-                }
+                is HomeUiState.Loading -> { }
                 is HomeUiState.Empty -> {
                     Box(
                         modifier = Modifier
@@ -87,7 +87,7 @@ fun HomeScreen(
                         verticalArrangement = 8,
                         cardList = mainUiState.pokemonList.collectAsLazyPagingItems(),
                         onClickPokemonCard = { pokemon ->
-                            onClickPokemonCard.invoke(pokemon)
+                            onEvent.invoke(HomeEvent.ClickPokemonCard(pokemon = pokemon))
                         }
                     )
                 }
@@ -100,9 +100,8 @@ fun HomeScreen(
                 .padding(end = 16.dp, bottom = 16.dp)
                 .align(Alignment.BottomEnd),
             onClick = {
-                onClickCircleMenuBtnEvent.invoke()
+                onEvent.invoke(HomeEvent.ClickFloatingBtn)
             }
         )
-
     }
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
 
 @Composable
-fun FloatingButton(
+internal fun FloatingButton(
     modifier: Modifier,
     onClick: () -> Unit
 ) {

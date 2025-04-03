@@ -3,7 +3,7 @@ package com.example.data.datasource.remote
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.data.mapper.toDomain
-import com.example.data.network.ApiResult
+import com.example.network.ApiResult
 
 internal class PokemonListPagingSource(
     private val pokemonRemoteDataSource: PokemonRemoteDataSource,

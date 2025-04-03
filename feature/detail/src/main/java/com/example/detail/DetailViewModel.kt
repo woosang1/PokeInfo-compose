@@ -6,19 +6,18 @@ import com.example.detail.common.DetailSideEffect
 import com.example.detail.common.DetailState
 import com.example.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
-import com.example.ui.BaseSideEffect
 import com.example.ui.BaseViewModel
+import com.example.utils.errorHandler.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.example.utils.errorHandler.toUiError
-import kotlinx.coroutines.flow.collectLatest
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val getPokemonDetailInfoUseCase: com.example.domain.usecase.GetPokemonDetailInfoUseCase
+    private val getPokemonDetailInfoUseCase: GetPokemonDetailInfoUseCase
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>() {
 
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)

@@ -1,11 +1,9 @@
 plugins {
-    // 커스텀-플러그인 못 찾는 이슈 발생 중
-//    id("pokeinfo.android.application")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.android.ksp)
 }
 
 android {
@@ -59,10 +57,10 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.kotlinx.collections.immutable)
 
+    // test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
@@ -70,6 +68,7 @@ dependencies {
 
     // hilt
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.androidx.hilt.compier)
 
 }

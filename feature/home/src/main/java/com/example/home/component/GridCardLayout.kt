@@ -1,35 +1,32 @@
 package com.example.home.component
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.designsystem.theme.PokeInfoTheme
-import com.example.domain.model.PokemonList
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
+import com.example.designsystem.theme.PokeInfoTheme
 import com.example.domain.model.Pokemon
 import com.example.utils.dpToPixel
 import com.example.utils.getWidthDisplay
 
 @Composable
-fun GridCardLayout(
+internal fun GridCardLayout(
     columns: Int,
     modifier: Modifier,
     paddingValues: Int,
     horizontalArrangement: Int,
     verticalArrangement: Int,
-    cardList: LazyPagingItems<com.example.domain.model.Pokemon>,
-    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
+    cardList: LazyPagingItems<Pokemon>,
+    onClickPokemonCard: (Pokemon) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
@@ -62,7 +59,7 @@ fun GridCardLayout(
 @Composable
 fun Test() {
     PokeInfoTheme {
-        val defaultPokemon = com.example.domain.model.Pokemon()
+        val defaultPokemon = Pokemon()
 //        GridCardLayout(
 //            columns = 2,
 //            modifier = Modifier,

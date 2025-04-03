@@ -1,9 +1,7 @@
 package com.example.data.datasource.remote
 
 import com.example.network.NetworkAPI
-import com.example.data.network.safeFlow
-import com.example.model.rp.RpPokemonInfo
-import com.example.model.rp.RpPokemonType
+import com.example.network.safeFlow
 import javax.inject.Inject
 
 class PokemonRemoteDataSource @Inject constructor(

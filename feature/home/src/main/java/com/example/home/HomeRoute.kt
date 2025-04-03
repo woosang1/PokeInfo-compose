@@ -7,7 +7,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.home.common.HomeSideEffect
-import com.example.home.common.MainEvent
 import com.example.ui.BaseSideEffect
 import com.example.utils.showToast
 
@@ -36,8 +35,8 @@ fun HomeRoute(
 
     HomeScreen(
         uiState = uiState,
-        initAction = { homeViewModel.getPokemonList(page = 0) },
-        onClickPokemonCard = { pokemon -> homeViewModel.setEvent(MainEvent.ClickPokemonCard(pokemon = pokemon)) },
-        onClickCircleMenuBtnEvent = { homeViewModel.callClickCircleMenuBtnEvent() }
+        onInit = { homeViewModel.getPokemonList(page = 0) },
+        onEvent = { event -> homeViewModel.setEvent(event) },
+        onSideEffect = { effect -> homeViewModel.setEffect(effect) }
     )
 }

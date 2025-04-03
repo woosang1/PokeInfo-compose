@@ -32,9 +32,10 @@ fun DetailRoute(
     }
 
     DetailScreen(
-        pk = pk,
         uiState = uiState,
-        detailViewModel = detailViewModel,
-        onNavigateHome = onStartHome
+        onNavigateHome = onStartHome,
+        onInit = { detailViewModel.getPokemonDetailInfo(id = pk.toIntOrNull() ?: 0) },
+        onEvent = { event -> detailViewModel.setEvent(event) },
+        onSideEffect = { effect -> detailViewModel.setEffect(effect) }
     )
 }

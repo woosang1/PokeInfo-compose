@@ -8,26 +8,32 @@ import android.graphics.drawable.Drawable
 import android.widget.Toast
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.core.content.ContextCompat
 import coil.request.ImageRequest
+import com.example.resource.R as ResourceR
 
 /**
  * width : dp
  * height : dp
  */
-fun Context.setImageUrl(data: String, width: Int, height: Int): ImageRequest{
-//    val drawable = ContextCompat.getDrawable(this@setImageUrl, R.drawable.icon_nol_gray06)
-    val paint = Paint().apply { color = Color(0xFFE1E4E6).toArgb()  }
+fun Context.setImageUrl(data: String, width: Int, height: Int, usePlaceholder: Boolean = true): ImageRequest{
+    val drawable = ContextCompat.getDrawable(this@setImageUrl, ResourceR.drawable.placeholder)
+    val paint = Paint().apply { color = Color(0xFFF5F7FA).toArgb()  }
     val placeholder = makeCenteredPlaceholderDrawable(
         width = width.dpToPixel(),
         height = height.dpToPixel(),
         paint = paint,
-//        placeholder = drawable
-        placeholder = null
+        placeholder = drawable
     )
     return ImageRequest.Builder(this@setImageUrl)
         .data(data)
-        .placeholder(placeholder)
-        .error(placeholder)
+        .size(width.dpToPixel(), height.dpToPixel())
+        .apply {
+            if (usePlaceholder) {
+                placeholder(placeholder)
+                error(placeholder)
+            }
+        }
         .build()
 }
 
@@ -54,6 +60,7 @@ private fun makeCenteredPlaceholderDrawable(
     placeholder: Drawable?
 ): Drawable? {
     if (placeholder == null) return null
+
     val centeredDrawable = object : Drawable() {
         override fun draw(canvas: Canvas) {
             val viewWidth = width
@@ -62,16 +69,16 @@ private fun makeCenteredPlaceholderDrawable(
             // 백그라운드 칠하기
             canvas.drawRect(0f, 0f, viewWidth.toFloat(), viewHeight.toFloat(), paint)
 
-            // imageView : placeholder 세로 비율 (3 : 1)
+            // placeholder 이미지의 비율을 3:1로 축소
             val placeholderHeight = viewHeight / 3
             val placeholderWidth =
                 (placeholder.intrinsicWidth * placeholderHeight) / placeholder.intrinsicHeight
 
+            // 중앙 정렬을 위한 좌표 계산
             val left = (viewWidth - placeholderWidth) / 2
             val top = (viewHeight - placeholderHeight) / 2
             val right = left + placeholderWidth
             val bottom = top + placeholderHeight
-
 
             placeholder.setBounds(left, top, right, bottom)
             placeholder.draw(canvas)
@@ -87,6 +94,7 @@ private fun makeCenteredPlaceholderDrawable(
 
         override fun getOpacity(): Int = placeholder.opacity
     }
+
     return centeredDrawable
 }
 

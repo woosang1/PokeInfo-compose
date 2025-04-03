@@ -7,12 +7,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
+import com.example.detail.common.DetailEvent
+import com.example.detail.common.DetailSideEffect
 import com.example.detail.common.DetailState
 import com.example.detail.common.DetailUiState
 import com.example.ui.R
@@ -20,11 +23,14 @@ import com.example.utils.noRippleClickable
 
 @Composable
 fun DetailScreen(
-    pk: String,
     uiState: DetailState,
-    detailViewModel: DetailViewModel,
-    onNavigateHome: () -> Unit
+    onNavigateHome: () -> Unit,
+    onInit: () -> Unit,
+    onEvent: (DetailEvent) -> Unit,
+    onSideEffect: (DetailSideEffect) -> Unit,
 ) {
+    LaunchedEffect(true) { onInit.invoke() }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -44,9 +50,7 @@ fun DetailScreen(
         )
 
         when(uiState.detailUiState){
-            DetailUiState.Loading -> {
-                detailViewModel.getPokemonDetailInfo(id = pk.toIntOrNull() ?: 0)
-            }
+            DetailUiState.Loading -> {}
             DetailUiState.Result -> {}
             DetailUiState.Empty -> {}
         }

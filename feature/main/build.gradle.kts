@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.android.ksp)
 }
 
 android {
@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.androidx.compose.navigation)
 
+    // test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,14 +67,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // hilt
-    // Hilt 의존성 추가
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    kapt(libs.hilt.android.compiler)
-    testImplementation(libs.hilt.android.testing)
-    kaptTest(libs.hilt.android.compiler)
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.androidx.hilt.compier)
+    implementation(libs.androidx.hilt.navigation.compose)
 
-    // Kotlinx collections immutable 의존성 추가
-    implementation(libs.kotlinx.collections.immutable.v035)
+    implementation(libs.kotlinx.collections.immutable)
 }

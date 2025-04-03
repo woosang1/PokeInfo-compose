@@ -1,5 +1,4 @@
 pluginManagement {
-//    include("build-logic")
     include(":build-logic")
     repositories {
         google {
@@ -28,6 +27,12 @@ rootProject.name = "PokeInfo"
 // Application Module
 include(":app")
 
+// Feature Modules
+include(":feature")
+include(":feature:main")
+include(":feature:home")
+include(":feature:detail")
+
 // Core Modules
 include(":core")
 include(":data")
@@ -35,14 +40,11 @@ include(":domain")
 include(":core:ui")
 include(":core:designsystem")
 include(":core:utils")
-
-// Feature Modules
-include(":feature")
-include(":feature:main")
-include(":feature:home")
-include(":feature:detail")
-
-// Build Logic
-//include(":build-logic")
 include(":core:network")
 include(":core:model")
+include(":core:database")
+
+
+
+
+include(":core:resource")

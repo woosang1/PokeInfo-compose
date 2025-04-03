@@ -28,17 +28,17 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.domain.model.Pokemon
+import com.example.ui.R
 import com.example.utils.noRippleClickable
 import com.example.utils.setImageUrl
-import com.example.ui.R
 
 @Composable
-fun PokemonCard(
+internal fun PokemonCard(
     modifier: Modifier,
     width: Int,
     height: Int,
-    pokemon: com.example.domain.model.Pokemon,
-    onClickPokemonCard: (com.example.domain.model.Pokemon) -> Unit,
+    pokemon: Pokemon,
+    onClickPokemonCard: (Pokemon) -> Unit,
 ) {
 
     Box(
@@ -56,20 +56,6 @@ fun PokemonCard(
                 .background(LocalColors.current.purple80)
             ,
         )
-
-//        Image(
-//            painter = rememberAsyncImagePainter(
-//                model = LocalContext.current.setImageUrl(
-////                    data = pokemonInfo.type,
-//                    data = "",
-//                    width = width,
-//                    height = height
-//                )
-//            ),
-//            modifier = Modifier.fillMaxSize(),
-//            contentScale = ContentScale.Crop,
-//            contentDescription = null
-//        )
 
         // 내용
         Box(modifier = Modifier.padding(8.dp)) {
@@ -135,7 +121,8 @@ fun PokemonCard(
                         model = LocalContext.current.setImageUrl(
                             data = pokemon.url,
                             width = 80,
-                            height = 80
+                            height = 80,
+                            usePlaceholder = false
                         )
                     ),
                     modifier = Modifier

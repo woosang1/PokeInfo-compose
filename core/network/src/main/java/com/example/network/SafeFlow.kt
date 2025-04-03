@@ -1,9 +1,8 @@
-package com.example.data.network
+package com.example.network
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-
 
 inline fun <T> safeFlow(crossinline networkCall: suspend () -> T): Flow<ApiResult<T>> = flow {
     val result = networkCall()

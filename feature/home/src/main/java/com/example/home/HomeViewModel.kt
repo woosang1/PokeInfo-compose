@@ -3,7 +3,7 @@ package com.example.home
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.domain.usecase.GetPokemonListUseCase
-import com.example.home.common.MainEvent
+import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
@@ -17,16 +17,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getPokemonListUseCase: com.example.domain.usecase.GetPokemonListUseCase
-) : BaseViewModel<MainEvent, HomeState, BaseSideEffect>() {
+    private val getPokemonListUseCase: GetPokemonListUseCase
+) : BaseViewModel<HomeEvent, HomeState, BaseSideEffect>() {
 
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Loading)
-    override fun handleEvent(event: MainEvent) {
+    override fun handleEvent(event: HomeEvent) {
         when (event) {
-            is MainEvent.ClickFloatingBtn -> { }
-            is MainEvent.ClickSideFloatingBtn -> { }
-            is MainEvent.ClickSearchBtn -> { }
-            is MainEvent.ClickPokemonCard -> {
+            is HomeEvent.ClickFloatingBtn -> { }
+            is HomeEvent.ClickSideFloatingBtn -> { }
+            is HomeEvent.ClickSearchBtn -> { }
+            is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
         }
@@ -46,7 +46,7 @@ class HomeViewModel @Inject constructor(
 
     fun callClickCircleMenuBtnEvent(){
         viewModelScope.launch {
-            setEvent(MainEvent.ClickFloatingBtn)
+            setEvent(HomeEvent.ClickFloatingBtn)
         }
     }
 }
