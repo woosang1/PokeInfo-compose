@@ -3,6 +3,8 @@ package com.example.detail
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -33,16 +35,16 @@ fun DetailScreen(
 ) {
     LaunchedEffect(true) { onInit.invoke() }
 
-    Box(
+    Column (
         modifier = Modifier
             .fillMaxSize()
-            .background(LocalColors.current.purple80)
+            .background(LocalColors.current.purple80),
+        horizontalAlignment = Alignment.Start
     ) {
         Image(
             painter = painterResource(id = R.drawable.close),
             contentDescription = null,
             modifier = Modifier
-                .align(Alignment.TopStart)
                 .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
                 .noRippleClickable {
@@ -53,15 +55,16 @@ fun DetailScreen(
         )
 
         when (uiState.detailUiState) {
-            DetailUiState.Loading -> {}
-            DetailUiState.Result -> {
+            is DetailUiState.Loading -> {}
+            is DetailUiState.Result -> {
                 DetailContent(
                     modifier = Modifier
-                        .align(Alignment.BottomCenter),
+                        .padding(top = 8.dp),
+                    pokemon = uiState.detailUiState.pokemon,
                     onBackEvent = onBackEvent
                 )
             }
-            DetailUiState.Empty -> {}
+            is DetailUiState.Empty -> {}
         }
     }
 }

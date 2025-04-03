@@ -13,45 +13,66 @@ data class TypographySystem(
     private val colors: ColorSystem,
     private val density: Density? = null,
     val baseTextStyle: TextStyle = TextStyle(
-        color = colors.black,
+        color = colors.white,
     ),
-    val title1: TextStyle = baseTextStyle.copy(
+
+    val headline1: TextStyle = baseTextStyle.copy(
         fontFamily = nanumSquare,
-        fontWeight = FontWeight.Bold,
-        fontSize = 16.textDp(density),
-        lineHeight = 18.textDp(density)
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 24.textDp(density),
+        lineHeight = 40.textDp(density)
     ),
-    val title2: TextStyle = baseTextStyle.copy(
+
+    val headline2: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 20.textDp(density),
+        lineHeight = 34.textDp(density)
+    ),
+
+    val headline3: TextStyle = baseTextStyle.copy(
         fontFamily = nanumSquare,
         fontWeight = FontWeight.ExtraBold,
         fontSize = 16.textDp(density),
-        lineHeight = 18.textDp(density)
+        lineHeight = 14.textDp(density)
     ),
-    val title3: TextStyle = baseTextStyle.copy(
+
+    val body1: TextStyle = baseTextStyle.copy(
         fontFamily = nanumSquare,
         fontWeight = FontWeight.Normal,
         fontSize = 16.textDp(density),
-        lineHeight = 18.textDp(density)
+        lineHeight = 28.textDp(density)
     ),
-    val title4: TextStyle = baseTextStyle.copy(
+
+    val form3B: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.textDp(density),
+        lineHeight = 16.textDp(density)
+    ),
+
+    val form3: TextStyle = baseTextStyle.copy(
+        fontFamily = nanumSquare,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.textDp(density),
+        lineHeight = 16.textDp(density)
+    ),
+
+    val subTitle: TextStyle = baseTextStyle.copy(
         fontFamily = nanumSquare,
         fontWeight = FontWeight.Normal,
         fontSize = 14.textDp(density),
-        lineHeight = 18.textDp(density)
+        lineHeight = 24.textDp(density)
     ),
-    val title5: TextStyle = baseTextStyle.copy(
+
+    val caption1: TextStyle = baseTextStyle.copy(
         fontFamily = nanumSquare,
-        fontWeight = FontWeight.ExtraBold,
-        fontSize = 14.textDp(density),
-        lineHeight = 16.textDp(density)
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.textDp(density),
+        lineHeight = 20.textDp(density)
     ),
-    val title6: TextStyle = baseTextStyle.copy(
-        fontFamily = nanumSquare,
-        fontWeight = FontWeight.Bold,
-        fontSize = 14.textDp(density),
-        lineHeight = 16.textDp(density)
+
     )
-)
 
 val nanumSquare = FontFamily(
     Font(R.font.nanumsquare_neo_heavy, FontWeight.Black, FontStyle.Normal),

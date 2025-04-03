@@ -38,7 +38,9 @@ class DetailViewModel @Inject constructor(
                 }
                 .collectLatest { pokemon ->
                     // TODO: 여기 고쳐야함.
-                    setState { copy(detailUiState = DetailUiState.Result) }
+                    setState { copy(detailUiState = DetailUiState.Result(
+                        pokemon = pokemon
+                    )) }
                 }
         }
     }

@@ -1,12 +1,22 @@
 package com.example.detail
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -35,17 +45,89 @@ import com.example.extension.pxToDp
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import coil.compose.rememberAsyncImagePainter
+import com.example.domain.model.Pokemon
+import com.example.extension.setImageUrl
 
 @Composable
 fun DetailContent(
     modifier: Modifier = Modifier,
+    pokemon: Pokemon,
     onBackEvent: () -> Unit
 ) {
-    PokemonInfoBottomSheet(
-        modifier = modifier,
-        onBackEvent = onBackEvent
-    )
+    Box {
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(horizontal = 20.dp)
+        ) {
+            // 이름 + ID
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = "거북왕",
+                    modifier = Modifier
+                        .weight(1f),
+                    style = LocalTypography.current.headline1,
+                    color = LocalColors.current.white,
+                    maxLines = 1,
+                    textAlign = TextAlign.Start
+                )
+
+                Text(
+                    text = "#003",
+                    modifier = Modifier.weight(1f),
+                    style = LocalTypography.current.headline2,
+                    color = LocalColors.current.white,
+                    maxLines = 1,
+                    textAlign = TextAlign.End
+                )
+            }
+
+            // 타입
+            Row(
+                modifier = Modifier
+                    .padding(top = 8.dp)
+            ) {
+                CircleView(
+                    modifier = Modifier,
+                    title = "물"
+                )
+                CircleView(
+                    modifier = Modifier.padding(start = 8.dp),
+                    title = "물2"
+                )
+            }
+            // 이미지 (가운데 정렬 + 위쪽 마진)
+            Image(
+                painter = rememberAsyncImagePainter(
+                    model = LocalContext.current.setImageUrl(
+                        data = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+                        width = 200,
+                        height = 200,
+                        usePlaceholder = false
+                    )
+                ),
+                modifier = Modifier
+                    .size(200.dp)
+                    .clip(CircleShape)
+                    .align(Alignment.CenterHorizontally)
+                    .padding(top = 20.dp),
+                contentScale = ContentScale.Crop,
+                contentDescription = null
+            )
+        }
+        PokemonInfoBottomSheet(
+            modifier = modifier,
+            onBackEvent = onBackEvent
+        )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -60,7 +142,7 @@ fun PokemonInfoBottomSheet(
 
     val bottomSheetState = rememberStandardBottomSheetState(
         initialValue = SheetValue.PartiallyExpanded,
-        skipHiddenState = false
+        skipHiddenState = true
     )
 
     val scope = rememberCoroutineScope()
@@ -73,7 +155,8 @@ fun PokemonInfoBottomSheet(
     }
 
     BackHandler(enabled = isSheetVisible) {
-        scope.launch { bottomSheetState.hide() }
+        onBackEvent.invoke()
+//        scope.launch { bottomSheetState.hide() }
     }
 
     BottomSheetScaffold(
@@ -92,6 +175,7 @@ fun PokemonInfoBottomSheet(
         scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState),
         sheetPeekHeight = height.dp,
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+        sheetSwipeEnabled = false
     ) { paddingValues -> }
 }
 
@@ -131,8 +215,32 @@ fun TabContent(text: String) {
             text = text,
             modifier = Modifier
                 .align(Alignment.Center),
-            style = LocalTypography.current.title4,
+            style = LocalTypography.current.subTitle,
             color = LocalColors.current.black,
+            maxLines = 1
+        )
+    }
+}
+
+@Composable
+fun CircleView(
+    modifier: Modifier = Modifier,
+    title: String,
+) {
+    Box(
+        modifier = modifier
+            .wrapContentSize()
+            .background(
+                color = LocalColors.current.lightBlue,
+                shape = RoundedCornerShape(50)
+            ),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            modifier = Modifier.padding(8.dp),
+            text = title,
+            style = LocalTypography.current.subTitle,
+            color = LocalColors.current.white,
             maxLines = 1
         )
     }

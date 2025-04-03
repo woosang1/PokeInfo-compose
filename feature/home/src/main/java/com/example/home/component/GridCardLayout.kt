@@ -17,6 +17,7 @@ import com.example.designsystem.theme.PokeInfoTheme
 import com.example.domain.model.Pokemon
 import com.example.extension.dpToPixel
 import com.example.extension.getWidthDisplay
+import androidx.compose.foundation.lazy.grid.items
 
 @Composable
 internal fun GridCardLayout(

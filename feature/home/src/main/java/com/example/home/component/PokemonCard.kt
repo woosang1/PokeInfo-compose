@@ -67,7 +67,7 @@ internal fun PokemonCard(
                         modifier = Modifier
                             .weight(1f),
                         textAlign = TextAlign.Start,
-                        style = LocalTypography.current.title4,
+                        style = LocalTypography.current.body1,
                         color = LocalColors.current.white,
                         maxLines = 1
                     )
@@ -78,7 +78,7 @@ internal fun PokemonCard(
                         modifier = Modifier
                             .weight(1f),
                         textAlign = TextAlign.End,
-                        style = LocalTypography.current.title4,
+                        style = LocalTypography.current.subTitle,
                         color = LocalColors.current.white.copy(
                             alpha = 0.75f
                         ),
@@ -94,7 +94,7 @@ internal fun PokemonCard(
                     modifier = Modifier
                         .padding(start = 8.dp, end = 8.dp)
                         .align(Alignment.Start),
-                    style = LocalTypography.current.title4,
+                    style = LocalTypography.current.subTitle,
                     color = LocalColors.current.white,
                     maxLines = 1
                 )
@@ -105,7 +105,7 @@ internal fun PokemonCard(
                     modifier = Modifier
                         .padding(start = 8.dp, top = 4.dp, end = 8.dp)
                         .align(Alignment.Start),
-                    style = LocalTypography.current.title4,
+                    style = LocalTypography.current.subTitle,
                     color = LocalColors.current.white,
                     maxLines = 1
                 )

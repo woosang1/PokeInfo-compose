@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.example.data.datasource.local.PokemonInfoLocalDataSource
 import com.example.data.datasource.remote.PokemonRemoteDataSource
 import com.example.data.mapper.toDomain
+import com.example.domain.model.Pokemon
 import com.example.domain.repository.PokemonRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -33,8 +34,7 @@ class PokemonRepositoryImpl @Inject constructor(
         ).flow
     }
 
-    override suspend fun getPokemonInfo(id: Int): com.example.domain.model.Pokemon = remoteDataSource.getPokemonInfo(id).toDomain()
-
+    override suspend fun getPokemonInfo(id: Int): Pokemon = remoteDataSource.getPokemonInfo(id).toDomain()
     override suspend fun getPokemonTypeInfo(type: String) = remoteDataSource.getPokemonTypeInfo(type).toDomain()
 
     /** local **/
