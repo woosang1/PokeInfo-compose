@@ -1,10 +1,8 @@
-package com.example.detail
+package com.example.detail.detail
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -15,12 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.zIndex
 import com.example.designsystem.theme.LocalColors
-import com.example.detail.common.DetailEvent
-import com.example.detail.common.DetailSideEffect
-import com.example.detail.common.DetailState
-import com.example.detail.common.DetailUiState
+import com.example.detail.detail.common.DetailEvent
+import com.example.detail.detail.common.DetailSideEffect
+import com.example.detail.detail.common.DetailState
+import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
 import com.example.log.DebugLog
 import com.example.ui.R

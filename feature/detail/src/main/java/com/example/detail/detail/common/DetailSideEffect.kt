@@ -1,4 +1,4 @@
-package com.example.detail.common
+package com.example.detail.detail.common
 
 import com.example.base.base.BaseSideEffect
 

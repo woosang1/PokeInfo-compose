@@ -1,4 +1,4 @@
-package com.example.detail.common
+package com.example.detail.detail.common
 
 
 enum class TabType(val title: String, val description: String){

@@ -1,6 +1,4 @@
-package com.example.detail.common
-
-import com.example.base.mvi.Event
+package com.example.detail.detail.common
 
 sealed class DetailEvent: com.example.base.mvi.Event {
     data object ClickBackIcon : DetailEvent()

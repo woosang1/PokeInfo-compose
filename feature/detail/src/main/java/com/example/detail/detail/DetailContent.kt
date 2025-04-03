@@ -1,4 +1,4 @@
-package com.example.detail
+package com.example.detail.detail
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomSheetScaffold
@@ -45,8 +47,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.compose.NavHost
 import coil.compose.rememberAsyncImagePainter
 import com.example.component.CircleView
+import com.example.detail.about.aboutNavGraph
+import com.example.detail.baseStats.baseStatsNavGraph
+import com.example.detail.evolution.evolutionNavGraph
+import com.example.detail.moves.movesNavGraph
 import com.example.model.ui.Pokemon
 import com.example.extension.setImageUrl
 
@@ -68,7 +75,7 @@ fun DetailContent(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "거북왕",
+                    text = pokemon.name,
                     modifier = Modifier
                         .weight(1f),
                     style = LocalTypography.current.headline1,
@@ -78,7 +85,7 @@ fun DetailContent(
                 )
 
                 Text(
-                    text = "#003",
+                    text = "#${pokemon.id}",
                     modifier = Modifier.weight(1f),
                     style = LocalTypography.current.headline2,
                     color = LocalColors.current.white,
@@ -88,24 +95,25 @@ fun DetailContent(
             }
 
             // 타입
-            Row(
+            LazyRow(
                 modifier = Modifier
-                    .padding(top = 8.dp)
+                    .fillMaxWidth()
+                    .padding(top = 20.dp),
+                horizontalArrangement = Arrangement.Start
             ) {
-                CircleView(
-                    modifier = Modifier,
-                    title = "물"
-                )
-                CircleView(
-                    modifier = Modifier.padding(start = 8.dp),
-                    title = "물2"
-                )
+                itemsIndexed(pokemon.types.take(2)) { index, type -> // 최대 2개까지만 표시
+                    CircleView(
+                        modifier = Modifier.padding(start = if (index > 0) 8.dp else 0.dp),
+                        title = type
+                    )
+                }
             }
+
             // 이미지 (가운데 정렬 + 위쪽 마진)
             Image(
                 painter = rememberAsyncImagePainter(
                     model = LocalContext.current.setImageUrl(
-                        data = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+                        data = pokemon.url,
                         width = 200,
                         height = 200,
                         usePlaceholder = false
@@ -131,6 +139,7 @@ fun DetailContent(
 @Composable
 fun PokemonInfoBottomSheet(
     modifier: Modifier,
+    navigator: DetailNavigator = rememberDetailNavigator(),
     onBackEvent: () -> Unit
 ) {
 
@@ -166,8 +175,22 @@ fun PokemonInfoBottomSheet(
             },
         sheetContent = {
             FixedTabs(
-                onTabSelected = { index -> }
+                onTabSelected = { index ->
+                    navigator.navigate(DetailTabRouteModel.tabList[index])
+                }
             )
+            // 네비게이션 영역
+            Box(modifier = Modifier.fillMaxSize()) {
+                NavHost(
+                    navController = navigator.navController,
+                    startDestination = DetailTabRouteModel.tabList.first()
+                ) {
+                    aboutNavGraph()
+                    baseStatsNavGraph()
+                    evolutionNavGraph()
+                    movesNavGraph()
+                }
+            }
         },
         scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState),
         sheetPeekHeight = height.dp,

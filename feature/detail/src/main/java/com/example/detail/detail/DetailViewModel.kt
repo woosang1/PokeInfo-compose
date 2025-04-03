@@ -1,10 +1,10 @@
-package com.example.detail
+package com.example.detail.detail
 
 import androidx.lifecycle.viewModelScope
-import com.example.detail.common.DetailEvent
-import com.example.detail.common.DetailSideEffect
-import com.example.detail.common.DetailState
-import com.example.detail.common.DetailUiState
+import com.example.detail.detail.common.DetailEvent
+import com.example.detail.detail.common.DetailSideEffect
+import com.example.detail.detail.common.DetailState
+import com.example.detail.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.base.base.BaseViewModel
 import com.example.toUiError
@@ -39,7 +39,7 @@ class DetailViewModel @Inject constructor(
                 .collectLatest { pokemon ->
                     // TODO: 여기 고쳐야함.
                     setState { copy(detailUiState = DetailUiState.Result(
-                        pokemon = pokemon
+                        pokemon = com.example.detail.detail.common.mockBlastoise
                     )) }
                 }
         }

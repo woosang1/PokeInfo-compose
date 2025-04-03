@@ -7,7 +7,7 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.detail.navigation.navigationDetail
+import com.example.detail.detail.navigation.navigationDetail
 import com.example.home.navigation.navigationHome
 import com.example.navigation.MainRoute
 

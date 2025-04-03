@@ -1,11 +1,11 @@
-package com.example.detail
+package com.example.detail.detail
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.detail.common.DetailSideEffect
+import com.example.detail.detail.common.DetailSideEffect
 import com.example.base.base.BaseSideEffect
 import com.example.extension.showToast
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
