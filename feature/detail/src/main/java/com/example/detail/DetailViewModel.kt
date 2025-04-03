@@ -6,7 +6,7 @@ import com.example.detail.common.DetailSideEffect
 import com.example.detail.common.DetailState
 import com.example.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
-import com.example.base.BaseViewModel
+import com.example.base.base.BaseViewModel
 import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch

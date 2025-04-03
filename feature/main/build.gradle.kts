@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:utils"))
     implementation(project(":core:navigation"))
     implementation(project(":core:model"))
+    implementation(project(":core:base"))
 
     // compopse
     implementation(libs.androidx.core.ktx)

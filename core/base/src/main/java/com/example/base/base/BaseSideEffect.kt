@@ -1,6 +1,7 @@
-package com.example.base
+package com.example.base.base
 
-import com.example.mvi.SideEffect
+import com.example.base.mvi.SideEffect
+
 
 open class BaseSideEffect: SideEffect {
     data class ShowToast(val message: String) : BaseSideEffect()

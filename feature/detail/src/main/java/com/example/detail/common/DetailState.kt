@@ -3,12 +3,12 @@ package com.example.detail.common
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import com.example.model.ui.Pokemon
-import com.example.mvi.State
+import com.example.base.mvi.State
 
 @Immutable
 data class DetailState(
     val detailUiState : DetailUiState
-): State
+): com.example.base.mvi.State
 
 @Stable
 sealed interface DetailUiState {

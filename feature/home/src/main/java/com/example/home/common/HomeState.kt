@@ -4,13 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.paging.PagingData
 import com.example.model.ui.Pokemon
-import com.example.mvi.State
+import com.example.base.mvi.State
 import kotlinx.coroutines.flow.Flow
 
 @Immutable
 data class HomeState(
     val homeUiState : HomeUiState
-): State
+): com.example.base.mvi.State
 
 @Stable
 sealed interface HomeUiState {

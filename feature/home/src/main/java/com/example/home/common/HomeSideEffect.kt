@@ -1,8 +1,6 @@
 package com.example.home.common
 
-import com.example.model.ui.Pokemon
-import com.example.model.ui.PokemonList
-import com.example.base.BaseSideEffect
+import com.example.base.base.BaseSideEffect
 import kotlinx.collections.immutable.ImmutableList
 
 sealed class HomeSideEffect: BaseSideEffect() {
