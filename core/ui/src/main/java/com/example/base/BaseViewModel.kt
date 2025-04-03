@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<Event : com.example.ui.Event, State : com.example.ui.State, Effect : BaseSideEffect> : ViewModel() {
+abstract class BaseViewModel<Event : com.example.mvi.Event, State : com.example.mvi.State, Effect : BaseSideEffect> : ViewModel() {
 
     private val initialState: State by lazy { createInitialState() }
     abstract fun createInitialState(): State

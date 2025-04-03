@@ -1,6 +1,6 @@
 package com.example.detail.common
 
-import com.example.ui.Event
+import com.example.mvi.Event
 
 sealed class DetailEvent: Event {
     data object ClickBackIcon : DetailEvent()

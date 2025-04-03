@@ -1,7 +1,7 @@
 package com.example.home.common
 
 import com.example.domain.model.Pokemon
-import com.example.ui.Event
+import com.example.mvi.Event
 
 sealed interface HomeEvent: Event {
     data object ClickFloatingBtn : HomeEvent

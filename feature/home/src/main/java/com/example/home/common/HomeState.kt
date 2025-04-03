@@ -4,7 +4,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.paging.PagingData
 import com.example.domain.model.Pokemon
-import com.example.ui.State
+import com.example.mvi.State
 import kotlinx.coroutines.flow.Flow
 
 @Immutable

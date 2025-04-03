@@ -7,7 +7,7 @@ import com.example.detail.navigation.detailNavGraph
 import com.example.detail.navigation.navigationDetail
 import com.example.home.navigation.homeNavGraph
 import com.example.home.navigation.navigationHome
-import com.example.navigation.Route
+import com.example.navigation.MainRoute
 
 
 @Composable
@@ -16,7 +16,7 @@ internal fun MainNavHost(
 ) {
     NavHost(
         navController = navigator,
-        startDestination = Route.Home()
+        startDestination = MainRoute.Home
     ) {
         homeNavGraph(onStartDetail = { navigator.navigationDetail(it) })
         detailNavGraph(onNavigateHome = { navigator.navigationHome() })

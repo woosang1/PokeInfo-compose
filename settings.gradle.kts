@@ -48,3 +48,4 @@ include(":core:database")
 
 
 include(":core:resource")
+include(":core:navigation")

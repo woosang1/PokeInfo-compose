@@ -7,8 +7,8 @@ import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
-import com.example.ui.BaseSideEffect
-import com.example.ui.BaseViewModel
+import com.example.base.BaseSideEffect
+import com.example.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf

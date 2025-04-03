@@ -7,7 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.home.common.HomeSideEffect
-import com.example.ui.BaseSideEffect
+import com.example.base.BaseSideEffect
 import com.example.utils.showToast
 
 @Composable

@@ -1,6 +1,6 @@
 package com.example.detail.common
 
-import com.example.ui.BaseSideEffect
+import com.example.base.BaseSideEffect
 
 sealed class DetailSideEffect: BaseSideEffect() {
     data object StartHomePage : DetailSideEffect()
