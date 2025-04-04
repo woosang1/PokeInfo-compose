@@ -81,7 +81,7 @@ fun BaseStatsScreen(
                         modifier = Modifier
                             .padding(top = 8.dp),
                         label = "Gender Ratio",
-                        value = "${model.genderRate.first * 100}% ♂ / ${model.genderRate.second * 100}% ♀"
+                        value = "${model.genderRate.first}% ♂ / ${model.genderRate.second}% ♀"
                     )
                     HorizontalText(
                         modifier = Modifier
