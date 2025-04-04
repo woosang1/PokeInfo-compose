@@ -9,7 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.example.navigation.DetailTabRouteModel
+import com.example.navigation.DetailTabRoute
 import com.example.navigation.MainRoute
 import com.example.detail.about.navigationAbout
 import com.example.detail.about.toAboutModel
@@ -18,6 +18,7 @@ import com.example.detail.baseStats.toBaseStatsModel
 import com.example.detail.evolution.navigationEvolution
 import com.example.detail.evolution.toEvolutionModel
 import com.example.detail.moves.navigationMoves
+import com.example.log.DebugLog
 import com.example.model.ui.Pokemon
 
 
@@ -28,7 +29,9 @@ class DetailNavigator(
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-    fun navigate(tab: DetailTabRouteModel, pokemon: Pokemon) {
+    val startDestination = DetailTabRoute.About
+
+    fun navigate(tab: DetailTabRoute, pokemon: Pokemon) {
         val navOptions = navOptions {
             popUpTo(navController.graph.findStartDestination().id) {
                 saveState = true
@@ -38,20 +41,38 @@ class DetailNavigator(
         }
 
         when (tab) {
-            is DetailTabRouteModel.About -> navController.navigationAbout(
+            is DetailTabRoute.About -> navController.navigationAbout(
                 model = pokemon.toAboutModel(),
                 navOptions = navOptions
             )
-            is DetailTabRouteModel.BaseStats -> navController.navigationBaseStats(
+            is DetailTabRoute.BaseStats -> navController.navigationBaseStats(
                 model = pokemon.toBaseStatsModel(),
                 navOptions = navOptions
             )
-            is DetailTabRouteModel.Evolution -> navController.navigationEvolution(
+            is DetailTabRoute.Evolution -> navController.navigationEvolution(
                 model = pokemon.toEvolutionModel(),
                 navOptions = navOptions
             )
-            is DetailTabRouteModel.Moves -> navController.navigationMoves(navOptions)
+            is DetailTabRoute.Moves -> navController.navigationMoves(navOptions)
         }
+    }
+
+    fun backEvent(
+        currentTab: DetailTabRoute,
+        onTabChanged: (DetailTabRoute) -> Unit,
+        onFirstTabAction: () -> Unit
+    ) {
+        DebugLog("--------------")
+        DebugLog("DetailNavigatory - backEvent")
+        DebugLog("currentTab : ${currentTab}")
+        val currentIndex = DetailTabRoute.tabList.indexOfFirst { it::class == currentTab::class }
+        DebugLog("currentIndex : ${currentIndex}")
+        if (currentIndex > 0) {
+            onTabChanged(DetailTabRoute.tabList[currentIndex - 1])
+        } else {
+            onFirstTabAction()
+        }
+        DebugLog("--------------")
     }
 
     private inline fun <reified T : MainRoute> isSameCurrentDestination(): Boolean {

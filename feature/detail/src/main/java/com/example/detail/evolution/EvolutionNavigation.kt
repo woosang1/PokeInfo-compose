@@ -5,19 +5,18 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.example.model.ui.BaseStatsModel
 import com.example.model.ui.EvolutionModel
-import com.example.navigation.DetailTabRouteModel
+import com.example.navigation.DetailTabRoute
 import kotlinx.serialization.json.Json
 
 fun NavController.navigationEvolution(model: EvolutionModel, navOptions: NavOptions){
     navigate(
-        DetailTabRouteModel.Evolution(modelJsonStr = Json.encodeToString(model)), navOptions
+        DetailTabRoute.Evolution(modelJsonStr = Json.encodeToString(model)), navOptions
     )}
 
 fun NavGraphBuilder.evolutionNavGraph() {
-    composable<DetailTabRouteModel.Evolution>{ navBackStackEntry ->
-        val modelJsonStr = navBackStackEntry.toRoute<DetailTabRouteModel.Evolution>().modelJsonStr
+    composable<DetailTabRoute.Evolution>{ navBackStackEntry ->
+        val modelJsonStr = navBackStackEntry.toRoute<DetailTabRoute.Evolution>().modelJsonStr
         val model = try {
             if (!modelJsonStr.isNullOrBlank()) {
                 Json.decodeFromString<EvolutionModel>(modelJsonStr)

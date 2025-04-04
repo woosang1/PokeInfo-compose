@@ -38,7 +38,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import com.example.designsystem.theme.LocalTypography
-import com.example.navigation.DetailTabRouteModel
+import com.example.navigation.DetailTabRoute
 import com.example.extension.getHeightDisplay
 import com.example.extension.pxToDp
 import androidx.compose.runtime.mutableStateOf
@@ -57,6 +57,7 @@ import com.example.detail.moves.movesNavGraph
 import com.example.model.ui.Pokemon
 import com.example.extension.setImageUrl
 import com.example.log.DebugLog
+import com.example.navigation.DetailTabRoute.Companion.getIndex
 
 @Composable
 fun DetailContent(
@@ -145,8 +146,10 @@ fun PokemonInfoBottomSheet(
     pokemon: Pokemon,
     onBackEvent: () -> Unit
 ) {
-    var selectedTab by remember { mutableStateOf(DetailTabRouteModel.tabList.first()) }
+    var selectedTab by remember { mutableStateOf(DetailTabRoute.tabList.first()) }
+
     LaunchedEffect(selectedTab) {
+        DebugLog("LaunchedEffect(selectedTab) : ${selectedTab}")
         navigator.navigate(
             tab = selectedTab,
             pokemon = pokemon
@@ -167,11 +170,21 @@ fun PokemonInfoBottomSheet(
     var isSheetVisible by remember { mutableStateOf(true) }
 
     LaunchedEffect(bottomSheetState.targetValue) {
+        DebugLog("- LaunchedEffect(bottomSheetState.targetValue) -")
         isSheetVisible = bottomSheetState.targetValue != SheetValue.Hidden
+        DebugLog("- isSheetVisible : ${isSheetVisible} -")
     }
 
     BackHandler(enabled = isSheetVisible) {
-        onBackEvent.invoke()
+        DebugLog("- BackHandler -")
+        navigator.backEvent(
+            currentTab = selectedTab,
+            onTabChanged = { changeTabRoute ->
+                DebugLog("- onTabChanged[${changeTabRoute.getIndex()}] - : ${changeTabRoute}")
+                selectedTab = changeTabRoute
+            },
+            onFirstTabAction = { onBackEvent.invoke() }
+        )
 //        scope.launch { bottomSheetState.hide() }
     }
 
@@ -185,15 +198,17 @@ fun PokemonInfoBottomSheet(
             },
         sheetContent = {
             FixedTabs(
+                selectedTabIndex = selectedTab.getIndex(),
                 onTabSelected = { index ->
-                    selectedTab = DetailTabRouteModel.tabList[index]
+                    selectedTab = DetailTabRoute.tabList[index]
                 }
             )
             // 네비게이션 영역
+            // TODO: 뒤로가기시,  startDestination 가 한번씩 나오는 이슈 발생!!!
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(
                     navController = navigator.navController,
-                    startDestination = DetailTabRouteModel.tabList[2]
+                    startDestination = DetailTabRoute.Moves
                 ) {
                     aboutNavGraph()
                     baseStatsNavGraph()
@@ -211,21 +226,19 @@ fun PokemonInfoBottomSheet(
 
 @Composable
 fun FixedTabs(
+    selectedTabIndex: Int,
     onTabSelected: (Int) -> Unit
 ) {
-    var selectedTabIndex by remember { mutableIntStateOf(0) }
-
     TabRow(
         selectedTabIndex = selectedTabIndex,
         modifier = Modifier.fillMaxWidth(),
         containerColor = Color.Transparent
     ) {
-        DetailTabRouteModel.tabList.forEachIndexed { index, tab ->
+        DetailTabRoute.tabList.forEachIndexed { index, tab ->
             Tab(
                 selected = selectedTabIndex == index,
                 onClick = {
-                    selectedTabIndex = index // 선택된 탭 변경
-                    onTabSelected(index) // 외부 콜백 호출
+                    onTabSelected(index)
                 }
             ) {
                 TabContent(text = tab.title)
