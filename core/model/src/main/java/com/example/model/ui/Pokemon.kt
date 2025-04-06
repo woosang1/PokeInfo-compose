@@ -9,14 +9,26 @@ data class Pokemon(
     val count: Int = 0,
     val baseExperience: Int = 0,
     val abilities: List<String> = emptyList(),
-    val stats: Map<String, Int> = emptyMap(),  // 스탯 이름과 값의 매핑
+    val stats: Stats = Stats(),  // 스탯 이름과 값의 매핑
     val types: List<String> = emptyList(),      // 타입 목록
     val pokemonType: PokemonType? = null,
     val description: String,
     val genderRate: Pair<Double, Double>, // (성비)
     val eggGroups: String, //  (알 그룹)
     val eggCycle: Int //  (부화 사이클)
-)
+) {
+    data class Stats(
+        val hp: Int = 0,
+        val attack: Int = 0,
+        val defense: Int = 0,
+        val specialAttack: Int = 0,
+        val specialDefense: Int = 0,
+        val speed: Int = 0
+    ) {
+        val total: Int
+            get() = hp + attack + defense + specialAttack + specialDefense + speed
+    }
+}
 
 fun getImageUrl(url: String): String {
     val id = getId(url)

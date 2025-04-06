@@ -1,20 +1,21 @@
 package com.example.detail.baseStats
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
@@ -35,118 +36,122 @@ fun BaseStatsScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LocalColors.current.lightBlue)
+            .background(LocalColors.current.white)
             .padding(horizontal = 12.dp, vertical = 20.dp)
     ) {
         if (model != null) {
             Column(
                 modifier = Modifier
+                    .padding(top = 8.dp)
             ) {
-                Text(
-                    text = model.description,
+                StatsBarLayout(
                     modifier = Modifier,
-                    style = LocalTypography.current.headline3,
-                    color = LocalColors.current.black,
-                    maxLines = 1,
-                    textAlign = TextAlign.Start
+                    title = "HP",
+                    value = model.hp,
+                    maxValue = 200
                 )
 
-                Row(
+                StatsBarLayout(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(top = 20.dp, start = 16.dp, end = 16.dp)
-                        .background(LocalColors.current.white)
-                        .border(1.dp, LocalColors.current.gray, shape = RoundedCornerShape(4.dp)),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    VerticalText(label = "Height", value = "${model.height} m")
-                    VerticalText(label = "Weight", value = "${model.weight} kg")
-                }
-
-                HorizontalDivider()
-
-                Text(
-                    modifier = Modifier
-                        .padding(top = 20.dp),
-                    text = "Breeding",
-                    style = LocalTypography.current.headline2,
-                    color = LocalColors.current.black,
+                        .padding(top = 8.dp),
+                    title = "공격",
+                    value = model.attack,
+                    maxValue = 200
                 )
 
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    HorizontalText(
-                        modifier = Modifier
-                            .padding(top = 8.dp),
-                        label = "Gender Ratio",
-                        value = "${model.genderRate.first}% ♂ / ${model.genderRate.second}% ♀"
-                    )
-                    HorizontalText(
-                        modifier = Modifier
-                            .padding(top = 8.dp), label = "Egg Groups", value = model.eddGroups
-                    )
-                    HorizontalText(
-                        modifier = Modifier
-                            .padding(top = 8.dp),
-                        label = "Egg Cycle",
-                        value = model.eggCycle.toString()
-                    )
-                }
+                StatsBarLayout(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
+                    title = "방어",
+                    value = model.defense,
+                    maxValue = 200
+                )
+
+                StatsBarLayout(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
+                    title = "특수공격",
+                    value = model.specialAttack,
+                    maxValue = 200
+                )
+
+                StatsBarLayout(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
+                    title = "특수방어",
+                    value = model.specialDefense,
+                    maxValue = 200
+                )
+
+                StatsBarLayout(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
+                    title = "스피드",
+                    value = model.speed,
+                    maxValue = 200
+                )
+
+                StatsBarLayout(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
+                    title = "총점",
+                    value = model.total,
+                    maxValue = 1000
+                )
             }
         }
     }
 }
 
 @Composable
-fun VerticalText(label: String, value: String) {
-    Column(
-        modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            modifier = Modifier
-                .weight(1f),
-            text = label,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
-            textAlign = TextAlign.Start
-        )
-        Text(
-            modifier = Modifier
-                .weight(1f),
-            text = value,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
-            textAlign = TextAlign.Start
-        )
-    }
-}
-
-@Composable
-fun HorizontalText(
-    modifier: Modifier,
-    label: String,
-    value: String
+fun StatsBarLayout(
+    modifier: Modifier = Modifier,
+    title: String,
+    value: Int,
+    maxValue: Int
 ) {
     Row(
-        modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
+        // 이름
         Text(
-            modifier = Modifier.weight(1f),
-            text = label,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
+            text = title,
+            modifier = Modifier
+                .width(80.dp),
+            style = LocalTypography.current.headline3,
+            color = LocalColors.current.darkGray,
+            maxLines = 1,
             textAlign = TextAlign.Start
         )
+
+        // 수치
         Text(
-            modifier = Modifier.weight(2f),
-            text = value,
-            style = LocalTypography.current.subTitle,
+            text = value.toString(),
+            modifier = Modifier,
+            style = LocalTypography.current.headline3,
             color = LocalColors.current.black,
+            maxLines = 1,
             textAlign = TextAlign.Start
         )
+
+        // 프로그레스 바
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .height(8.dp)
+                .padding(start = 16.dp)
+                .clip(RoundedCornerShape(4.dp))
+                .background(LocalColors.current.gray)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth(value / maxValue.toFloat())
+                    .background(LocalColors.current.red)
+            )
+        }
     }
 }

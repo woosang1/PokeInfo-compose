@@ -5,11 +5,12 @@ import com.example.model.ui.Pokemon
 
 fun Pokemon.toBaseStatsModel(): BaseStatsModel {
     return BaseStatsModel(
-        description = this.description,
-        height = this.height,
-        weight = this.weight,
-        genderRate = this.genderRate, // 추가됨
-        eddGroups = this.eggGroups, // 추가됨
-        eggCycle = this.eggCycle // 추가됨
+        hp = this.stats.hp,
+        attack = this.stats.attack,
+        defense = this.stats.defense,
+        specialAttack = this.stats.specialAttack,
+        specialDefense = this.stats.specialDefense,
+        speed = this.stats.speed,
+        total = this.stats.total
     )
 }

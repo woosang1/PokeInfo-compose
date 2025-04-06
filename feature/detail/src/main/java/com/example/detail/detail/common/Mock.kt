@@ -20,13 +20,13 @@ val mockBlastoise = Pokemon(
     abilities = listOf("Torrent", "Rain Dish"),
 
     // 포켓몬의 기본 능력치 (Base Stats)
-    stats = mapOf(
-        "hp" to 79,  // 체력 (HP)
-        "attack" to 83,  // 공격력 (Attack)
-        "defense" to 100,  // 방어력 (Defense)
-        "special-attack" to 85,  // 특수 공격력 (Special Attack)
-        "special-defense" to 105,  // 특수 방어력 (Special Defense)
-        "speed" to 78  // 스피드 (Speed)
+    stats = Pokemon.Stats(  // ← 수정됨
+        hp = 79,
+        attack = 83,
+        defense = 100,
+        specialAttack = 85,
+        specialDefense = 105,
+        speed = 78
     ),
 
     // 포켓몬이 가지는 타입 (Blastoise는 "Water" 타입)

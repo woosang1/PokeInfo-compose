@@ -14,11 +14,16 @@ fun RpPokemonInfo.toDomain(): Pokemon {
         abilities = this.abilities?.map { ability ->
             ability.ability?.name ?: ""
         } ?: emptyList(),
-        stats = this.stats?.mapNotNull { stat ->
-            stat.stat?.name?.let { name ->
-                name to (stat.baseStat ?: 0)
-            }
-        }?.toMap() ?: emptyMap(),
+
+        stats = Pokemon.Stats(
+            hp = getStatValue("hp"),
+            attack = getStatValue("attack"),
+            defense = getStatValue("defense"),
+            specialAttack = getStatValue("special-attack"),
+            specialDefense = getStatValue("special-defense"),
+            speed = getStatValue("speed")
+        ),
+
         types = this.types?.map { type ->
             type.type?.name ?: ""
         } ?: emptyList(),
@@ -27,4 +32,10 @@ fun RpPokemonInfo.toDomain(): Pokemon {
         eggGroups = "",
         eggCycle = 0
     )
+}
+
+private fun RpPokemonInfo.getStatValue(statName: String): Int {
+    return this.stats
+        ?.firstOrNull { it.stat?.name == statName }
+        ?.baseStat ?: 0
 }
