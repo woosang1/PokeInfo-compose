@@ -34,6 +34,7 @@ class DetailViewModel @Inject constructor(
         viewModelScope.launch {
             flow { emit(getPokemonDetailInfoUseCase(id)) }
                 .catch { throwable ->
+                    DebugLog("error : ${throwable.message}")
                     setState { copy(detailUiState = DetailUiState.Empty) }
                     handlerError(throwable.toUiError())
                 }

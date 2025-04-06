@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -29,9 +30,12 @@ internal fun GridCardLayout(
     cardList: LazyPagingItems<Pokemon>,
     onClickPokemonCard: (Pokemon) -> Unit,
 ) {
+    val gridState = rememberLazyGridState()
+
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
         modifier = modifier,
+        state = gridState,
         contentPadding = PaddingValues(paddingValues.dp),
         horizontalArrangement = Arrangement.spacedBy(horizontalArrangement.dp),
         verticalArrangement = Arrangement.spacedBy(verticalArrangement.dp)

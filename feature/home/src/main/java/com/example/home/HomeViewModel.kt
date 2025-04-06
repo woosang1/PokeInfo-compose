@@ -32,7 +32,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun getPokemonList(page: Int) {
+    fun checkLoading(){
+        if (state.value.homeUiState is HomeUiState.Loading) getPokemonList(page = 0)
+    }
+
+    private fun getPokemonList(page: Int) {
         viewModelScope.launch {
             getPokemonListUseCase(page = page)
                 .cachedIn(this)

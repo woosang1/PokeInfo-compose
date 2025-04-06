@@ -19,7 +19,7 @@ data class RpPokemonInfo(
     @SerialName("height")
     val height: Int?,
     @SerialName("held_items")
-    val heldItems: List<String?>?,
+    val heldItems: List<HeldItem?>?,
     @SerialName("id")
     val id: Int?,
     @SerialName("is_default")
@@ -33,7 +33,7 @@ data class RpPokemonInfo(
     @SerialName("order")
     val order: Int?,
     @SerialName("past_abilities")
-    val pastAbilities: List<String?>?,
+    val pastAbilities: List<PastAbility?>?,
     @SerialName("past_types")
     val pastTypes: List<String?>?,
     @SerialName("species")
@@ -618,4 +618,57 @@ data class RpPokemonInfo(
             val url: String?
         )
     }
+
+    @Serializable
+    data class HeldItem(
+        @SerialName("item")
+        val item: Item,
+        @SerialName("version_details")
+        val versionDetails: List<VersionDetail>
+    ) {
+        @Serializable
+        data class Item(
+            @SerialName("name")
+            val name: String,
+            @SerialName("url")
+            val url: String
+       )
+
+        @Serializable
+        data class VersionDetail(
+            @SerialName("rarity")
+            val rarity: Int,
+            @SerialName("version")
+            val version: Version
+        ) {
+            @Serializable
+            data class Version(
+                @SerialName("name")
+                val name: String,
+                @SerialName("url")
+                val url: String
+            )
+        }
+    }
+
+    @Serializable
+    data class PastAbility(
+        @SerialName("abilities")
+        val abilities: List<AbilityWrapper>
+    ) {
+        @Serializable
+        data class AbilityWrapper(
+            @SerialName("ability")
+            val ability: Ability
+        ) {
+            @Serializable
+            data class Ability(
+                @SerialName("name")
+                val name: String,
+                @SerialName("url")
+                val url: String
+            )
+        }
+    }
+
 }

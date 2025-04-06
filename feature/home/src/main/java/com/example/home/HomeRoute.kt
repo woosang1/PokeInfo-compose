@@ -35,7 +35,7 @@ fun HomeRoute(
 
     HomeScreen(
         uiState = uiState,
-        onInit = { homeViewModel.getPokemonList(page = 0) },
+        onInit = { homeViewModel.checkLoading() },
         onEvent = { event -> homeViewModel.setEvent(event) },
         onSideEffect = { effect -> homeViewModel.setEffect(effect) }
     )
