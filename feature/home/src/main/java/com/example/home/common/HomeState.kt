@@ -10,11 +10,11 @@ import kotlinx.coroutines.flow.Flow
 @Immutable
 data class HomeState(
     val homeUiState : HomeUiState
-): com.example.base.mvi.State
+): State
 
 @Stable
 sealed interface HomeUiState {
     data object Loading : HomeUiState
     data object Empty : HomeUiState
-    data class Success(val pokemonList: Flow<PagingData<com.example.model.ui.Pokemon>>) : HomeUiState
+    data class Success(val pokemonList: Flow<PagingData<Pokemon>>) : HomeUiState
 }

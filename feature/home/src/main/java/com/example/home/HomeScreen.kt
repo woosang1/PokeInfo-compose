@@ -19,10 +19,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.example.component.LoadingAnimation
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.home.common.HomeEvent
-import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.view.FloatingButton
@@ -31,7 +31,7 @@ import com.example.ui.R
 
 @Composable
 fun HomeScreen(
-    uiState: HomeState,
+    state: HomeState,
     onInit:() -> Unit,
     onEvent: (HomeEvent) -> Unit
 ) {
@@ -41,6 +41,8 @@ fun HomeScreen(
         modifier = Modifier
             .fillMaxSize()
     ) {
+        if (state.homeUiState is HomeUiState.Loading) { LoadingAnimation() }
+
         // 좌상단 이미지
         Image(
             painter = painterResource(id = R.drawable.pokeball),
@@ -68,13 +70,14 @@ fun HomeScreen(
                 color = LocalColors.current.black,
                 maxLines = 1
             )
-            when(val mainUiState = uiState.homeUiState){
+
+            when(val mainUiState = state.homeUiState){
                 is HomeUiState.Loading -> { }
                 is HomeUiState.Empty -> {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(LocalColors.current.black)
+                            .background(LocalColors.current.white)
                     ) {  }
                 }
                 is HomeUiState.Success -> {

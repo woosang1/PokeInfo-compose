@@ -38,6 +38,7 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:utils"))
     implementation(project(":core:model"))
+    implementation(project(":core:resource"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -70,4 +71,7 @@ dependencies {
     implementation(libs.kotlinx.collections.immutable)
     implementation(libs.coil.compose)
     implementation(libs.androidx.compose.navigation)
+
+    implementation(libs.lottie.compose)
+
 }

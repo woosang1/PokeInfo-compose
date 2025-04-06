@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.component.LoadingAnimation
 import com.example.designsystem.theme.LocalColors
 import com.example.component.common.getPokemonColorByColor
 import com.example.detail.detail.common.DetailEvent
@@ -54,7 +55,9 @@ fun DetailScreen(
         )
 
         when (uiState.detailUiState) {
-            is DetailUiState.Loading -> {}
+            is DetailUiState.Loading -> {
+                LoadingAnimation()
+            }
             is DetailUiState.Result -> {
                 DetailContent(
                     modifier = Modifier

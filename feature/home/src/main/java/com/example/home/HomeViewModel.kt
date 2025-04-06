@@ -1,7 +1,9 @@
 package com.example.home
 
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import androidx.paging.filter
 import com.example.domain.usecase.GetPokemonListUseCase
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
@@ -9,9 +11,12 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.base.base.BaseSideEffect
 import com.example.base.base.BaseViewModel
+import com.example.home.common.getIdRangeForGeneration
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,11 +28,21 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Loading)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.ClickFloatingBtn -> { }
+            is HomeEvent.ClickFloatingBtn -> {
+                // TODO: 먼저 구현.
+                setEffect(HomeSideEffect.ShowGenerationsBottomSheet)
+            }
             is HomeEvent.ClickSideFloatingBtn -> { }
             is HomeEvent.ClickSearchBtn -> { }
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
+            }
+            is HomeEvent.SelectGeneration -> {
+                viewModelScope.launch {
+                    // TODO: Loading 했는데 로딩 애니메이션 안나옴. (나오는 텀이 존재함.)
+                    setState { copy(homeUiState = HomeUiState.Loading) }
+                    getPokemonList(page = 0, generation = event.generation)
+                }
             }
         }
     }
@@ -36,21 +51,20 @@ class HomeViewModel @Inject constructor(
         if (state.value.homeUiState is HomeUiState.Loading) getPokemonList(page = 0)
     }
 
-    private fun getPokemonList(page: Int) {
+    private fun getPokemonList(page: Int, generation: Int? = null) {
         viewModelScope.launch {
+            val idRange = generation?.let { getIdRangeForGeneration(it) }
             getPokemonListUseCase(page = page)
+                .map { pagingData ->
+                    idRange?.let { range ->
+                        pagingData.filter { it.id in range }
+                    } ?: pagingData
+                }
                 .cachedIn(this)
-                .collectLatest { pagingData ->
-                    setState {
-                        HomeState(homeUiState = HomeUiState.Success(pokemonList = flowOf(pagingData)))
-                    }
-            }
-        }
-    }
-
-    fun callClickCircleMenuBtnEvent(){
-        viewModelScope.launch {
-            setEvent(HomeEvent.ClickFloatingBtn)
+                .collectLatest { filteredPagingData ->
+                    setState { copy(homeUiState = HomeUiState.Success(pokemonList = flowOf(filteredPagingData))) }
+                    setEffect(HomeSideEffect.HideGenerationsBottomSheet)
+                }
         }
     }
 }
