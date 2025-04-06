@@ -9,6 +9,7 @@ interface PokemonRepository {
     /** remote **/
     fun getPokemonList(page: Int): Flow<PagingData<Pokemon>>
     suspend fun getPokemonInfo(id: Int): Pokemon
+    suspend fun getPokemonSpeciesInfo(id: Int): Pokemon
     suspend fun getPokemonTypeInfo(type: String): PokemonType
 
     /** local **/

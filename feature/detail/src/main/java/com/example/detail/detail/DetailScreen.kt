@@ -14,6 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
+import com.example.component.common.getPokemonColorByColor
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.detail.common.DetailSideEffect
 import com.example.detail.detail.common.DetailState
@@ -31,10 +32,15 @@ fun DetailScreen(
 ) {
     LaunchedEffect(true) { onInit.invoke() }
 
+    val backgroundColor = when (val state = uiState.detailUiState) {
+        is DetailUiState.Result -> state.pokemon.color.getPokemonColorByColor().copy(alpha = 0.5f)
+        else -> LocalColors.current.purple80
+    }
+
     Column (
         modifier = Modifier
             .fillMaxSize()
-            .background(LocalColors.current.purple80),
+            .background(backgroundColor),
         horizontalAlignment = Alignment.Start
     ) {
         Image(

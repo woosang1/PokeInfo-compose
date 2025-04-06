@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.component.common.getPokemonColorType
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 
@@ -18,11 +19,13 @@ fun CircleView(
     modifier: Modifier = Modifier,
     title: String,
 ) {
+    val backgroundColor = title.getPokemonColorType().copy(alpha = 1f)
+
     Box(
         modifier = modifier
             .wrapContentSize()
             .background(
-                color = LocalColors.current.lightBlue,
+                color = backgroundColor,
                 shape = RoundedCornerShape(50)
             ),
         contentAlignment = Alignment.Center

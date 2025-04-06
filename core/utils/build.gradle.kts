@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -69,4 +70,6 @@ dependencies {
 
     // retrofit
     implementation(libs.retrofit2.retrofit)
+
+    implementation(libs.kotlinx.serialization.json)
 }

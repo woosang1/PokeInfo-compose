@@ -1,4 +1,4 @@
-package com.example.data.di
+package com.example.network.di
 
 import com.example.network.interceptor.LogInterceptor
 import dagger.Module

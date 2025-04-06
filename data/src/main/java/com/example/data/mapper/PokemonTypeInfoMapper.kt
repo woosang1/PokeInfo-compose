@@ -3,7 +3,7 @@ package com.example.data.mapper
 import com.example.model.ui.PokemonType
 import com.example.model.rp.RpPokemonType
 
-fun RpPokemonType.toDomain(): PokemonType {
+fun RpPokemonType.toEntity(): PokemonType {
     return PokemonType(
         damageRelations = this.damageRelations?.let {
             PokemonType.DamageRelations(

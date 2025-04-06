@@ -65,7 +65,7 @@ fun HomeScreen(
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp, bottom = 2.dp),
                 textAlign = TextAlign.Start,
-                style = LocalTypography.current.subTitle,
+                style = LocalTypography.current.headline1,
                 color = LocalColors.current.black,
                 maxLines = 1
             )

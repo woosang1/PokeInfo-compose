@@ -2,7 +2,7 @@ package com.example.data.datasource.remote
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.data.mapper.toDomain
+import com.example.data.mapper.toEntity
 import com.example.model.ui.Pokemon
 import com.example.network.ApiResult
 
@@ -30,7 +30,7 @@ internal class PokemonListPagingSource(
                 loadResult = when (response) {
                     is ApiResult.Success -> {
                         LoadResult.Page(
-                            data = response.value.results.map { it.toDomain() },
+                            data = response.value.results.map { it.toEntity() },
                             prevKey = if (pageNumber == 0) null else pageNumber - 1,
                             nextKey = if (response.value.results.isEmpty()) null else pageNumber + 1
                         )

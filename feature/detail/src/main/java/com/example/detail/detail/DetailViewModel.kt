@@ -7,6 +7,7 @@ import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.base.base.BaseViewModel
+import com.example.log.DebugLog
 import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -37,10 +38,7 @@ class DetailViewModel @Inject constructor(
                     handlerError(throwable.toUiError())
                 }
                 .collectLatest { pokemon ->
-                    // TODO: 여기 고쳐야함.
-                    setState { copy(detailUiState = DetailUiState.Result(
-                        pokemon = com.example.detail.detail.common.mockBlastoise
-                    )) }
+                    setState { copy(detailUiState = DetailUiState.Result(pokemon = pokemon)) }
                 }
         }
     }

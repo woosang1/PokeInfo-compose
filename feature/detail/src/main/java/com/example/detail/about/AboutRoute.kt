@@ -37,7 +37,7 @@ fun AboutScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LocalColors.current.lightBlue)
+            .background(LocalColors.current.white)
             .padding(horizontal = 12.dp, vertical = 20.dp)
     ) {
         if (model != null) {
@@ -49,7 +49,6 @@ fun AboutScreen(
                     modifier = Modifier,
                     style = LocalTypography.current.headline3,
                     color = LocalColors.current.black,
-                    maxLines = 1,
                     textAlign = TextAlign.Start
                 )
 
@@ -65,8 +64,6 @@ fun AboutScreen(
                     VerticalText(label = "Height", value = "${model.height} m")
                     VerticalText(label = "Weight", value = "${model.weight} kg")
                 }
-
-                HorizontalDivider()
 
                 Text(
                     modifier = Modifier
@@ -105,7 +102,8 @@ fun AboutScreen(
 fun VerticalText(label: String, value: String) {
     Column(
         modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             modifier = Modifier
@@ -113,7 +111,7 @@ fun VerticalText(label: String, value: String) {
             text = label,
             style = LocalTypography.current.subTitle,
             color = LocalColors.current.black,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Center
         )
         Text(
             modifier = Modifier

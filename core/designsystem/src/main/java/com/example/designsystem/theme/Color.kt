@@ -20,10 +20,18 @@ data class ColorSystem(
     val gray: Color,
     val darkGray: Color,
     val red: Color,
-    val yellow: Color
+    val yellow: Color,
+    val pink: Color,
+    val orange: Color,
+    val lightGreen: Color,
+    val beige: Color,
+    val violet: Color,
+    val deepBlue: Color,
+    val brown: Color,
+    val silver: Color
 )
 
-val lightColors: ColorSystem = ColorSystem(
+val lightColors = ColorSystem(
     black = Color(0xFF1a1c20),
     purple80 = Color(0xFFD0BCFF),
     white = Color(0xFFFFFFFF),
@@ -38,5 +46,13 @@ val lightColors: ColorSystem = ColorSystem(
     gray = Color(0xFFAFC2DB),
     darkGray = Color(0xFF869AB7),
     red = Color(0xFFD32F2F),
-    yellow = Color(0xFFFFC107)
+    yellow = Color(0xFFFFC107),
+    orange = Color(0xFFFF9800),
+    lightGreen = Color(0xFF8BC34A),
+    beige = Color(0xFFF5F5DC),
+    pink = Color(0xFFFFC0CB),
+    violet = Color(0xFF7E57C2),
+    deepBlue = Color(0xFF3F51B5),
+    brown = Color(0xFFA0522D),
+    silver = Color(0xFFC0C0C0)
 )

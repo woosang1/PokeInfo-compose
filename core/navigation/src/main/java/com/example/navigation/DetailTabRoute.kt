@@ -12,7 +12,7 @@ sealed interface DetailTabRoute {
 
     @Serializable
     data class BaseStats(val modelJsonStr: String? = null) : DetailTabRoute {
-        override val title: String = "상태"
+        override val title: String = "능력치"
     }
 
     @Serializable

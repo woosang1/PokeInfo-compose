@@ -2,19 +2,22 @@ package com.example.data.mapper
 
 import com.example.model.ui.Pokemon
 import com.example.model.rp.RpPokemonInfo
+import com.example.model.ui.getImageUrl
 
-fun RpPokemonInfo.toDomain(): Pokemon {
+fun RpPokemonInfo.toEntity(): Pokemon {
+    val id = id ?: 0
     return Pokemon(
-        id = this.id ?: 0,
-        name = this.name ?: "",
-        url = "",
-        weight = this.weight ?: 0,
-        height = this.height ?: 0,
-        baseExperience = this.baseExperience ?: 0,
-        abilities = this.abilities?.map { ability ->
-            ability.ability?.name ?: ""
-        } ?: emptyList(),
+        id = id,
+        name = name.orEmpty(),
+        url = getImageUrl(id.toString()),
+        weight = weight ?: 0,
+        height = height ?: 0,
+        baseExperience = baseExperience ?: 0,
 
+        // 능력치 이름만 추출
+        abilities = abilities?.map { it?.ability?.name.orEmpty() } ?: emptyList(),
+
+        // 스탯은 이름으로 구분하여 각각 매핑
         stats = Pokemon.Stats(
             hp = getStatValue("hp"),
             attack = getStatValue("attack"),
@@ -24,18 +27,14 @@ fun RpPokemonInfo.toDomain(): Pokemon {
             speed = getStatValue("speed")
         ),
 
-        types = this.types?.map { type ->
-            type.type?.name ?: ""
-        } ?: emptyList(),
-        description = "",
-        genderRate = Pair(0.0, 0.0),
-        eggGroups = "",
-        eggCycle = 0
+        // 타입 이름만 추출
+        types = types?.map { it?.type?.name.orEmpty() } ?: emptyList(),
     )
 }
 
+// 주어진 스탯 이름에 해당하는 값을 반환. 없으면 0 반환.
 private fun RpPokemonInfo.getStatValue(statName: String): Int {
-    return this.stats
-        ?.firstOrNull { it.stat?.name == statName }
+    return stats
+        ?.firstOrNull { it?.stat?.name == statName }
         ?.baseStat ?: 0
 }

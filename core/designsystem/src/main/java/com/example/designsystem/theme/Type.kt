@@ -34,7 +34,7 @@ data class TypographySystem(
         fontFamily = nanumSquare,
         fontWeight = FontWeight.ExtraBold,
         fontSize = 16.textDp(density),
-        lineHeight = 14.textDp(density)
+        lineHeight = 20.textDp(density)
     ),
 
     val body1: TextStyle = baseTextStyle.copy(

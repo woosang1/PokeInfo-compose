@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android.ksp)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -50,10 +51,13 @@ dependencies {
     implementation(libs.retrofit2.retrofit)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-    implementation(libs.gson)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     ksp(libs.androidx.hilt.compier)
+
+    implementation(libs.kotlinx.serialization.json)
+
 }
