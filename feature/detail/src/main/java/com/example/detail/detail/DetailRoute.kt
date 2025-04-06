@@ -26,16 +26,14 @@ fun DetailRoute(
                 is DetailSideEffect.MoveTab -> { }
                 is DetailSideEffect.SetLikeIcon -> { }
                 is BaseSideEffect.ShowToast -> { context.showToast(message = effect.message) }
-                is DetailSideEffect.StartHomePage -> { }
+                is DetailSideEffect.BackPage -> { onBackEvent.invoke() }
             }
         }
     }
 
     DetailScreen(
         uiState = uiState,
-        onBackEvent = onBackEvent,
         onInit = { detailViewModel.getPokemonDetailInfo(id = pk.toIntOrNull() ?: 0) },
-        onEvent = { event -> detailViewModel.setEvent(event) },
-        onSideEffect = { effect -> detailViewModel.setEffect(effect) }
+        onEvent = { event -> detailViewModel.setEvent(event) }
     )
 }

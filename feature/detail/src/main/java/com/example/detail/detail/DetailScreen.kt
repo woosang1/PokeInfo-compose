@@ -25,10 +25,8 @@ import com.example.ui.R
 @Composable
 fun DetailScreen(
     uiState: DetailState,
-    onBackEvent: () -> Unit,
     onInit: () -> Unit,
-    onEvent: (DetailEvent) -> Unit,
-    onSideEffect: (DetailSideEffect) -> Unit,
+    onEvent: (DetailEvent) -> Unit
 ) {
     LaunchedEffect(true) { onInit.invoke() }
 
@@ -50,7 +48,7 @@ fun DetailScreen(
                 .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
                 .noRippleClickable {
-                    onBackEvent.invoke()
+                    onEvent.invoke(DetailEvent.ClickBackIcon)
                 },
             contentScale = ContentScale.Fit
         )
@@ -62,7 +60,7 @@ fun DetailScreen(
                     modifier = Modifier
                         .padding(top = 8.dp),
                     pokemon = uiState.detailUiState.pokemon,
-                    onBackEvent = onBackEvent
+                    onEvent = onEvent
                 )
             }
             is DetailUiState.Empty -> {}

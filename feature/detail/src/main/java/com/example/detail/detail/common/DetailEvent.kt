@@ -1,7 +1,11 @@
 package com.example.detail.detail.common
 
-sealed class DetailEvent: com.example.base.mvi.Event {
+import com.example.base.mvi.Event
+import com.example.navigation.DetailTabRoute
+
+sealed class DetailEvent: Event {
     data object ClickBackIcon : DetailEvent()
+    data object PressBackActionWithFirstTab : DetailEvent()
     data class ClickLikeIcon(val isLike: Boolean) : DetailEvent()
-    data class SelectTab(val tabType: TabType) : DetailEvent()
+    data class SelectTab(val detailTabRoute: DetailTabRoute) : DetailEvent()
 }

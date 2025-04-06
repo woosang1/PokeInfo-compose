@@ -33,8 +33,7 @@ import com.example.ui.R
 fun HomeScreen(
     uiState: HomeState,
     onInit:() -> Unit,
-    onEvent: (HomeEvent) -> Unit,
-    onSideEffect: (HomeSideEffect) -> Unit,
+    onEvent: (HomeEvent) -> Unit
 ) {
     LaunchedEffect(true) { onInit.invoke() }
 

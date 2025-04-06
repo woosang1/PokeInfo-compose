@@ -52,6 +52,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.component.CircleView
 import com.example.detail.about.aboutNavGraph
 import com.example.detail.baseStats.baseStatsNavGraph
+import com.example.detail.detail.common.DetailEvent
 import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
 import com.example.model.ui.Pokemon
@@ -63,7 +64,7 @@ import com.example.navigation.DetailTabRoute.Companion.getIndex
 fun DetailContent(
     modifier: Modifier = Modifier,
     pokemon: Pokemon,
-    onBackEvent: () -> Unit
+    onEvent: (DetailEvent) -> Unit
 ) {
     Box {
         Column(
@@ -133,7 +134,7 @@ fun DetailContent(
         PokemonInfoBottomSheet(
             modifier = modifier,
             pokemon = pokemon,
-            onBackEvent = onBackEvent
+            onEvent = onEvent
         )
     }
 }
@@ -144,7 +145,7 @@ fun PokemonInfoBottomSheet(
     modifier: Modifier,
     navigator: DetailNavigator = rememberDetailNavigator(),
     pokemon: Pokemon,
-    onBackEvent: () -> Unit
+    onEvent: (DetailEvent) -> Unit
 ) {
     var selectedTab by remember { mutableStateOf(DetailTabRoute.tabList.first()) }
 
@@ -182,10 +183,10 @@ fun PokemonInfoBottomSheet(
             onTabChanged = { changeTabRoute ->
                 DebugLog("- onTabChanged[${changeTabRoute.getIndex()}] - : ${changeTabRoute}")
                 selectedTab = changeTabRoute
+                onEvent.invoke(DetailEvent.SelectTab(changeTabRoute))
             },
-            onFirstTabAction = { onBackEvent.invoke() }
+            onFirstTabAction = { onEvent.invoke(DetailEvent.PressBackActionWithFirstTab) }
         )
-//        scope.launch { bottomSheetState.hide() }
     }
 
     BottomSheetScaffold(

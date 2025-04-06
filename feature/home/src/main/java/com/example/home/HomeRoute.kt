@@ -36,7 +36,6 @@ fun HomeRoute(
     HomeScreen(
         uiState = uiState,
         onInit = { homeViewModel.checkLoading() },
-        onEvent = { event -> homeViewModel.setEvent(event) },
-        onSideEffect = { effect -> homeViewModel.setEffect(effect) }
+        onEvent = { event -> homeViewModel.setEvent(event) }
     )
 }

@@ -24,7 +24,8 @@ class DetailViewModel @Inject constructor(
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
     override fun handleEvent(event: DetailEvent) {
         when (event) {
-            is DetailEvent.ClickBackIcon -> { }
+            is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.BackPage) }
+            is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.BackPage) }
             is DetailEvent.ClickLikeIcon -> { }
             is DetailEvent.SelectTab -> { }
         }
