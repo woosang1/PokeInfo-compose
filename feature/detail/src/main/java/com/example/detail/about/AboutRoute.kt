@@ -19,12 +19,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
+import com.example.log.DebugLog
 import com.example.model.ui.AboutModel
 
 @Composable
 fun AboutRoute(
     model: AboutModel?
 ) {
+    DebugLog("- AboutRoute -")
     AboutScreen(
         model = model
     )
