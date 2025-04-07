@@ -12,10 +12,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.paging.LoadState
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.home.common.HomeSideEffect
 import com.example.base.base.BaseSideEffect
+import com.example.component.LoadingAnimation
 import com.example.extension.showToast
 import com.example.home.common.HomeEvent
+import com.example.home.common.HomeUiState
 import com.example.home.view.GenerationBottomSheet
 
 @Composable
@@ -24,9 +28,10 @@ fun HomeRoute(
     onClickItem: (String) -> Unit,
 ) {
     val context = LocalContext.current
-    val uiState by homeViewModel.state.collectAsStateWithLifecycle()
+    val state by homeViewModel.state.collectAsStateWithLifecycle()
     val sideEffect = homeViewModel.effect
 
+    val isLoadingAnimation = remember { mutableStateOf(false) }
     val isShowGenerationSheet = remember { mutableStateOf(false) }
 
     LaunchedEffect(sideEffect) {
@@ -45,9 +50,14 @@ fun HomeRoute(
                 is BaseSideEffect.ShowToast -> {
                     context.showToast(effect.message)
                 }
-
                 is HomeSideEffect.StartDetailActivity -> {
                     onClickItem.invoke(effect.pokemon.id.toString())
+                }
+                is HomeSideEffect.ShowLoadingAnimation -> {
+                    isLoadingAnimation.value = true
+                }
+                is HomeSideEffect.HideLoadingAnimation -> {
+                    isLoadingAnimation.value = false
                 }
             }
         }
@@ -57,10 +67,21 @@ fun HomeRoute(
         modifier = Modifier.fillMaxSize()
     ) {
         HomeScreen(
-            state = uiState,
+            state = state,
             onInit = { homeViewModel.checkLoading() },
             onEvent = { event -> homeViewModel.setEvent(event) }
         )
+
+        if (isLoadingAnimation.value){
+            val uiState = state.homeUiState
+            (uiState as? HomeUiState.Content)?.let {
+                val pokeList = uiState.pokemonList.collectAsLazyPagingItems()
+                val isEmpty = (pokeList.itemCount == 0)
+                if (pokeList.loadState.refresh is LoadState.Loading || isEmpty) { LoadingAnimation() }
+                else homeViewModel.setEffect(HomeSideEffect.HideLoadingAnimation)
+            }
+        }
+
         if (isShowGenerationSheet.value) {
             GenerationBottomSheet(
                 modifier = Modifier.align(Alignment.BottomCenter),

@@ -8,8 +8,8 @@ fun Pokemon.toAboutModel(): AboutModel {
         description = this.description,
         height = this.height,
         weight = this.weight,
-        genderRate = this.genderRate, // 추가됨
-        eddGroups = this.eggGroups, // 추가됨
-        eggCycle = this.eggCycle // 추가됨
+        genderRate = this.genderRate,
+        eddGroups = this.eggGroups,
+        eggCycle = this.eggCycle
     )
 }

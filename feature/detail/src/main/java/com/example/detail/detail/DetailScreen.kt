@@ -21,6 +21,7 @@ import com.example.detail.detail.common.DetailSideEffect
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
+import com.example.log.DebugLog
 import com.example.ui.R
 
 @Composable
@@ -29,7 +30,10 @@ fun DetailScreen(
     onInit: () -> Unit,
     onEvent: (DetailEvent) -> Unit
 ) {
-    LaunchedEffect(true) { onInit.invoke() }
+    LaunchedEffect(Unit) {
+        DebugLog("DetailScreen - LaunchedEffect(Unit)")
+        onInit.invoke()
+    }
 
     val backgroundColor = when (val state = uiState.detailUiState) {
         is DetailUiState.Result -> state.pokemon.color.getPokemonColorByColor().copy(alpha = 0.5f)

@@ -14,7 +14,9 @@ data class HomeState(
 
 @Stable
 sealed interface HomeUiState {
-    data object Loading : HomeUiState
+    data object Init : HomeUiState
+    data class Content(
+        val pokemonList: Flow<PagingData<Pokemon>>
+    ) : HomeUiState
     data object Empty : HomeUiState
-    data class Success(val pokemonList: Flow<PagingData<Pokemon>>) : HomeUiState
 }

@@ -1,7 +1,6 @@
 package com.example.home
 
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
 import com.example.domain.usecase.GetPokemonListUseCase
@@ -13,7 +12,6 @@ import com.example.base.base.BaseSideEffect
 import com.example.base.base.BaseViewModel
 import com.example.home.common.getIdRangeForGeneration
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
@@ -25,30 +23,34 @@ class HomeViewModel @Inject constructor(
     private val getPokemonListUseCase: GetPokemonListUseCase
 ) : BaseViewModel<HomeEvent, HomeState, BaseSideEffect>() {
 
-    override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Loading)
+    override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
             is HomeEvent.ClickFloatingBtn -> {
                 // TODO: 먼저 구현.
                 setEffect(HomeSideEffect.ShowGenerationsBottomSheet)
             }
-            is HomeEvent.ClickSideFloatingBtn -> { }
-            is HomeEvent.ClickSearchBtn -> { }
+
+            is HomeEvent.ClickSideFloatingBtn -> {}
+            is HomeEvent.ClickSearchBtn -> {}
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
+
             is HomeEvent.SelectGeneration -> {
                 viewModelScope.launch {
-                    // TODO: Loading 했는데 로딩 애니메이션 안나옴. (나오는 텀이 존재함.)
-                    setState { copy(homeUiState = HomeUiState.Loading) }
+                    setEffect(HomeSideEffect.ShowLoadingAnimation)
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
         }
     }
 
-    fun checkLoading(){
-        if (state.value.homeUiState is HomeUiState.Loading) getPokemonList(page = 0)
+    fun checkLoading() {
+        if (state.value.homeUiState !is HomeUiState.Content) {
+            setEffect(HomeSideEffect.ShowLoadingAnimation)
+            getPokemonList(page = 0)
+        }
     }
 
     private fun getPokemonList(page: Int, generation: Int? = null) {
@@ -62,7 +64,13 @@ class HomeViewModel @Inject constructor(
                 }
                 .cachedIn(this)
                 .collectLatest { filteredPagingData ->
-                    setState { copy(homeUiState = HomeUiState.Success(pokemonList = flowOf(filteredPagingData))) }
+                    setState {
+                        copy(
+                            homeUiState = HomeUiState.Content(
+                                pokemonList = flowOf(filteredPagingData)
+                            )
+                        )
+                    }
                     setEffect(HomeSideEffect.HideGenerationsBottomSheet)
                 }
         }

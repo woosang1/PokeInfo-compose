@@ -18,6 +18,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.component.LoadingAnimation
 import com.example.designsystem.theme.LocalColors
@@ -27,6 +28,7 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.view.FloatingButton
 import com.example.home.view.GridCardLayout
+import com.example.log.DebugLog
 import com.example.ui.R
 
 @Composable
@@ -35,14 +37,15 @@ fun HomeScreen(
     onInit:() -> Unit,
     onEvent: (HomeEvent) -> Unit
 ) {
-    LaunchedEffect(true) { onInit.invoke() }
+    LaunchedEffect(Unit) {
+        DebugLog("HomeScreen - LaunchedEffect(Unit)")
+        onInit.invoke()
+    }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        if (state.homeUiState is HomeUiState.Loading) { LoadingAnimation() }
-
         // 좌상단 이미지
         Image(
             painter = painterResource(id = R.drawable.pokeball),
@@ -72,7 +75,7 @@ fun HomeScreen(
             )
 
             when(val mainUiState = state.homeUiState){
-                is HomeUiState.Loading -> { }
+                is HomeUiState.Init -> Unit
                 is HomeUiState.Empty -> {
                     Box(
                         modifier = Modifier
@@ -80,14 +83,15 @@ fun HomeScreen(
                             .background(LocalColors.current.white)
                     ) {  }
                 }
-                is HomeUiState.Success -> {
+                is HomeUiState.Content -> {
+                    val pokeList = mainUiState.pokemonList.collectAsLazyPagingItems()
                     GridCardLayout(
                         columns = 2,
                         modifier = Modifier,
                         paddingValues = 16,
                         horizontalArrangement = 8,
                         verticalArrangement = 8,
-                        cardList = mainUiState.pokemonList.collectAsLazyPagingItems(),
+                        cardList = pokeList,
                         onClickPokemonCard = { pokemon ->
                             onEvent.invoke(HomeEvent.ClickPokemonCard(pokemon = pokemon))
                         }
