@@ -18,9 +18,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.component.LoadingAnimation
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.home.common.HomeEvent
@@ -105,7 +103,7 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(end = 16.dp, bottom = 16.dp)
                 .align(Alignment.BottomEnd),
-            onClick = {
+            onClickGeneration = {
                 onEvent.invoke(HomeEvent.ClickFloatingBtn)
             }
         )

@@ -1,32 +1,55 @@
 package com.example.home.view
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
+import de.charlex.compose.SpeedDialData
+import de.charlex.compose.SpeedDialFloatingActionButton
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun FloatingButton(
     modifier: Modifier,
-    onClick: () -> Unit
+    onClickGeneration: () -> Unit
 ) {
-    FloatingActionButton(
-        modifier = modifier.size(56.dp),
-        onClick = { onClick() },
-        containerColor = LocalColors.current.lightBlue,
-        contentColor = LocalColors.current.white
-    ) {
-        Image(
-            painter = painterResource(id = com.example.ui.R.drawable.filter),
-            contentDescription = null,
-            modifier = Modifier
-                .size(24.dp),
-            contentScale = ContentScale.Fit
+
+    SpeedDialFloatingActionButton(
+        modifier = modifier,
+        initialExpanded = false,
+        animationDuration = 300,
+        animationDelayPerSelection = 100,
+        showLabels = true,
+        fabBackgroundColor = LocalColors.current.lightBlue,
+        fabContentColor = LocalColors.current.blue,
+        speedDialBackgroundColor = LocalColors.current.lightBlue,
+        speedDialContentColor = LocalColors.current.white,
+        speedDialData = listOf(
+            SpeedDialData(
+                label = "??",
+                painter = painterResource(id = com.example.ui.R.drawable.filter)
+            ) {
+                //TODO onClick
+            },
+            SpeedDialData(
+                label = "찜",
+                painter = painterResource(id = com.example.ui.R.drawable.filter)
+            ) {
+                //TODO onClick
+            },
+            SpeedDialData(
+                label = "검색",
+                painter = painterResource(id = com.example.ui.R.drawable.filter)
+            ) {
+                //TODO onClick
+            },
+            SpeedDialData(
+                label = "세대",
+                painter = painterResource(id = com.example.ui.R.drawable.filter)
+            ) {
+                onClickGeneration.invoke()
+            }
         )
-    }
+    )
 }

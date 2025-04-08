@@ -76,4 +76,6 @@ dependencies {
 
     implementation(libs.kotlinx.collections.immutable)
 
+    implementation(libs.speeddial)
+
 }
