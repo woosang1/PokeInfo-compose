@@ -40,6 +40,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
@@ -63,7 +64,7 @@ fun GenerationBottomSheet(
 ) {
 
     val context = LocalContext.current
-    val height = (context.getHeightDisplay() * 0.7).toInt().pxToDp()
+    val height = (context.getHeightDisplay() / 2).pxToDp()
 
     val bottomSheetState = rememberStandardBottomSheetState(
         initialValue = SheetValue.PartiallyExpanded,
@@ -90,13 +91,13 @@ fun GenerationBottomSheet(
     Box(modifier =
         Modifier.fillMaxSize()
             .fillMaxSize()
+            .background(Color.Transparent)
             .clickable { if(isSheetVisible) onHide.invoke() }
     ) {
         BottomSheetScaffold(
             modifier = modifier
                 .fillMaxWidth()
                 .wrapContentHeight()
-                .background(LocalColors.current.softGreen)
                 .clickable(enabled = !isSheetVisible) {
                     focusManager.clearFocus()
                 },
@@ -106,7 +107,7 @@ fun GenerationBottomSheet(
             scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState),
             sheetPeekHeight = height.dp,
             sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-            sheetSwipeEnabled = false
+            sheetSwipeEnabled = true
         ) { paddingValues -> }
     }
 }

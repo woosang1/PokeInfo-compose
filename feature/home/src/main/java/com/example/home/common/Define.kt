@@ -4,7 +4,7 @@ enum class MenuType(val title: String){
     HOME("홈"),
     LIKE("좋아요"),
     SEARCH("검색"),
-    GENERATION("모든 세대"),
+    GENERATION("세대"),
 }
 
 fun getIdRangeForGeneration(generation: Int): IntRange = when (generation) {
