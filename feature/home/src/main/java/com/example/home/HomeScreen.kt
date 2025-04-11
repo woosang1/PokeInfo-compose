@@ -28,6 +28,7 @@ import com.example.home.view.FloatingButton
 import com.example.home.view.GridCardLayout
 import com.example.log.DebugLog
 import com.example.ui.R
+import com.example.resource.R as ResourceR
 
 @Composable
 fun HomeScreen(
@@ -46,7 +47,7 @@ fun HomeScreen(
     ) {
         // 좌상단 이미지
         Image(
-            painter = painterResource(id = R.drawable.pokeball),
+            painter = painterResource(id = ResourceR.drawable.pokeball),
             contentDescription = null,
             modifier = Modifier
                 .align(Alignment.TopStart)

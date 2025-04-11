@@ -622,31 +622,31 @@ data class RpPokemonInfo(
     @Serializable
     data class HeldItem(
         @SerialName("item")
-        val item: Item,
+        val item: Item?,
         @SerialName("version_details")
-        val versionDetails: List<VersionDetail>
+        val versionDetails: List<VersionDetail>?
     ) {
         @Serializable
         data class Item(
             @SerialName("name")
-            val name: String,
+            val name: String?,
             @SerialName("url")
-            val url: String
+            val url: String?
        )
 
         @Serializable
         data class VersionDetail(
             @SerialName("rarity")
-            val rarity: Int,
+            val rarity: Int?,
             @SerialName("version")
-            val version: Version
+            val version: Version?
         ) {
             @Serializable
             data class Version(
                 @SerialName("name")
-                val name: String,
+                val name: String?,
                 @SerialName("url")
-                val url: String
+                val url: String?
             )
         }
     }
@@ -654,19 +654,19 @@ data class RpPokemonInfo(
     @Serializable
     data class PastAbility(
         @SerialName("abilities")
-        val abilities: List<AbilityWrapper>
+        val abilities: List<AbilityWrapper>?
     ) {
         @Serializable
         data class AbilityWrapper(
             @SerialName("ability")
-            val ability: Ability
+            val ability: Ability?
         ) {
             @Serializable
             data class Ability(
                 @SerialName("name")
-                val name: String,
+                val name: String?,
                 @SerialName("url")
-                val url: String
+                val url: String?
             )
         }
     }

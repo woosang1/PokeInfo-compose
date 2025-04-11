@@ -29,6 +29,7 @@ import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.extension.noRippleClickable
 import com.example.ui.R
+import com.example.resource.R as ResourceR
 import com.example.extension.setImageUrl
 import com.example.model.ui.Pokemon
 
@@ -135,7 +136,7 @@ fun PokemonCard(
 
 //             Pokeball 이미지 (배경에 흐리게 배치)
             Image(
-                painter = painterResource(id = R.drawable.pokeball),
+                painter = painterResource(id = ResourceR.drawable.pokeball),
                 contentDescription = null,
                 modifier = Modifier
                     .align(Alignment.BottomEnd)

@@ -2,8 +2,11 @@ package com.example.detail.detail
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
@@ -17,12 +20,11 @@ import com.example.component.LoadingAnimation
 import com.example.designsystem.theme.LocalColors
 import com.example.component.common.getPokemonColorByColor
 import com.example.detail.detail.common.DetailEvent
-import com.example.detail.detail.common.DetailSideEffect
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
 import com.example.log.DebugLog
-import com.example.ui.R
+import com.example.resource.R as ResourceR
 
 @Composable
 fun DetailScreen(
@@ -40,23 +42,48 @@ fun DetailScreen(
         else -> LocalColors.current.purple80
     }
 
+    val isLike = when (val state = uiState.detailUiState) {
+        is DetailUiState.Result -> state.pokemon.isLike
+        else -> false
+    }
+
     Column (
         modifier = Modifier
             .fillMaxSize()
             .background(backgroundColor),
         horizontalAlignment = Alignment.Start
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.close),
-            contentDescription = null,
+
+        Row(
             modifier = Modifier
-                .padding(start = 16.dp, top = 16.dp)
-                .size(36.dp)
-                .noRippleClickable {
-                    onEvent.invoke(DetailEvent.ClickBackIcon)
-                },
-            contentScale = ContentScale.Fit
-        )
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Image(
+                painter = painterResource(id = ResourceR.drawable.close),
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 16.dp)
+                    .size(24.dp)
+                    .noRippleClickable {
+                        onEvent.invoke(DetailEvent.ClickBackIcon)
+                    },
+                contentScale = ContentScale.Fit
+            )
+
+            Image(
+                painter = painterResource(id = if(isLike) ResourceR.drawable.like_on_icon else ResourceR.drawable.like_off_icon),
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(end = 16.dp, top = 16.dp)
+                    .size(24.dp)
+                    .noRippleClickable {
+                        onEvent.invoke(DetailEvent.ClickLikeIcon(isLike = !isLike))
+                    },
+                contentScale = ContentScale.Fit
+            )
+        }
 
         when (uiState.detailUiState) {
             is DetailUiState.Loading -> {

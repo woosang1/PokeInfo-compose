@@ -7,6 +7,7 @@ import androidx.compose.ui.res.painterResource
 import com.example.designsystem.theme.LocalColors
 import de.charlex.compose.SpeedDialData
 import de.charlex.compose.SpeedDialFloatingActionButton
+import com.example.resource.R as ResourceR
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -28,25 +29,25 @@ internal fun FloatingButton(
         speedDialData = listOf(
             SpeedDialData(
                 label = "??",
-                painter = painterResource(id = com.example.ui.R.drawable.filter)
+                painter = painterResource(id = ResourceR.drawable.filter)
             ) {
                 //TODO onClick
             },
             SpeedDialData(
                 label = "찜",
-                painter = painterResource(id = com.example.ui.R.drawable.filter)
+                painter = painterResource(id = ResourceR.drawable.filter)
             ) {
                 //TODO onClick
             },
             SpeedDialData(
                 label = "검색",
-                painter = painterResource(id = com.example.ui.R.drawable.filter)
+                painter = painterResource(id = ResourceR.drawable.filter)
             ) {
                 //TODO onClick
             },
             SpeedDialData(
                 label = "세대",
-                painter = painterResource(id = com.example.ui.R.drawable.filter)
+                painter = painterResource(id = ResourceR.drawable.filter)
             ) {
                 onClickGeneration.invoke()
             }

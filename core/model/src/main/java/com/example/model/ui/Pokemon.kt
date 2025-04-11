@@ -8,6 +8,7 @@ data class Pokemon(
     val height: Int = 0,
     val count: Int = 0,
     val color: String = "",
+    val isLike: Boolean = false,
     val baseExperience: Int = 0,
     val abilities: List<String> = emptyList(),
     val stats: Stats = Stats(),  // 스탯 이름과 값의 매핑

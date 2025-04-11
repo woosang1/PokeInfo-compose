@@ -26,7 +26,17 @@ class DetailViewModel @Inject constructor(
         when (event) {
             is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.BackPage) }
             is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.BackPage) }
-            is DetailEvent.ClickLikeIcon -> { }
+            is DetailEvent.ClickLikeIcon -> {
+                // TODO: 해당 로컬에 넣는 로직 필요. 
+                viewModelScope.launch {
+                    (state.value.detailUiState as? DetailUiState.Result)?.let { result ->
+                        val updatedPokemon = result.pokemon.copy(isLike = event.isLike)
+                        setState {
+                            copy(detailUiState = result.copy(pokemon = updatedPokemon))
+                        }
+                    }
+                }
+            }
             is DetailEvent.SelectTab -> { }
         }
     }
