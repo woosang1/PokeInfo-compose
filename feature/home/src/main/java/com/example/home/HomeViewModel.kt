@@ -1,6 +1,7 @@
 package com.example.home
 
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
 import com.example.domain.usecase.GetPokemonListUseCase
@@ -10,6 +11,8 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.base.base.BaseSideEffect
 import com.example.base.base.BaseViewModel
+import com.example.domain.usecase.GetLikePokemonListUseCase
+import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -20,19 +23,35 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getPokemonListUseCase: GetPokemonListUseCase
+    private val getPokemonListUseCase: GetPokemonListUseCase,
+    private val getLikePokemonListUseCase: GetLikePokemonListUseCase
 ) : BaseViewModel<HomeEvent, HomeState, BaseSideEffect>() {
 
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
             is HomeEvent.ClickFloatingBtn -> {
-                // TODO: 먼저 구현.
-                setEffect(HomeSideEffect.ShowGenerationsBottomSheet)
+                when(event.menuType){
+                    MenuType.LIKE -> {
+                        viewModelScope.launch {
+                            val likePokemonList = getLikePokemonListUseCase()
+                            setState {
+                                copy(
+                                    homeUiState = HomeUiState.Content(
+                                        pokemonList = likePokemonList.map { PagingData.from(it) }
+                                    )
+                                )
+                            }
+                        }
+                    }
+                    MenuType.SEARCH -> {}
+                    MenuType.HOME -> {
+                        setEffect(HomeSideEffect.ShowLoadingAnimation)
+                        getPokemonList(page = 0)
+                    }
+                    MenuType.GENERATION -> { setEffect(HomeSideEffect.ShowGenerationsBottomSheet) }
+                }
             }
-
-            is HomeEvent.ClickSideFloatingBtn -> {}
-            is HomeEvent.ClickSearchBtn -> {}
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }

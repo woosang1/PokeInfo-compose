@@ -13,9 +13,12 @@ import com.example.resource.R as ResourceR
 @Composable
 internal fun FloatingButton(
     modifier: Modifier,
+    buttonList: List<String>,
+    onClickHome: () -> Unit,
+    onClickLike: () -> Unit,
+    onClickSearch: () -> Unit,
     onClickGeneration: () -> Unit
 ) {
-
     SpeedDialFloatingActionButton(
         modifier = modifier,
         initialExpanded = false,
@@ -27,30 +30,16 @@ internal fun FloatingButton(
         speedDialBackgroundColor = LocalColors.current.lightBlue,
         speedDialContentColor = LocalColors.current.white,
         speedDialData = listOf(
+            Triple(buttonList[0], ResourceR.drawable.filter, onClickHome),
+            Triple(buttonList[1], ResourceR.drawable.filter, onClickLike),
+            Triple(buttonList[2], ResourceR.drawable.filter, onClickSearch),
+            Triple(buttonList[3], ResourceR.drawable.filter, onClickGeneration),
+        ).map { (label, iconRes, onClick) ->
             SpeedDialData(
-                label = "??",
-                painter = painterResource(id = ResourceR.drawable.filter)
-            ) {
-                //TODO onClick
-            },
-            SpeedDialData(
-                label = "찜",
-                painter = painterResource(id = ResourceR.drawable.filter)
-            ) {
-                //TODO onClick
-            },
-            SpeedDialData(
-                label = "검색",
-                painter = painterResource(id = ResourceR.drawable.filter)
-            ) {
-                //TODO onClick
-            },
-            SpeedDialData(
-                label = "세대",
-                painter = painterResource(id = ResourceR.drawable.filter)
-            ) {
-                onClickGeneration.invoke()
-            }
-        )
+                label = label,
+                painter = painterResource(id = iconRes),
+                onClick = onClick
+            )
+        }
     )
 }

@@ -15,13 +15,16 @@ import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val getPokemonDetailInfoUseCase: GetPokemonDetailInfoUseCase,
+    private val getLikePokemonListUseCase: GetLikePokemonListUseCase,
     private val insertPokemonUseCase: InsertPokemonUseCase,
     private val deletePokemonUseCase: DeletePokemonUseCase,
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>() {
@@ -50,17 +53,21 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    fun getPokemonDetailInfo(id: Int){
+    fun getPokemonDetailInfo(id: Int) {
         viewModelScope.launch {
-            flow { emit(getPokemonDetailInfoUseCase(id)) }
-                .catch { throwable ->
-                    DebugLog("error : ${throwable.message}")
-                    setState { copy(detailUiState = DetailUiState.Empty) }
-                    handlerError(throwable.toUiError())
-                }
-                .collectLatest { pokemon ->
-                    setState { copy(detailUiState = DetailUiState.Result(pokemon = pokemon)) }
-                }
+            combine(
+                getLikePokemonListUseCase(),
+                flow { emit(getPokemonDetailInfoUseCase(id)) }
+            ) { likeList, pokemon ->
+                val isLiked = likeList.any { it.id == pokemon.id }
+                pokemon.copy(isLike = isLiked)
+            }.catch { e ->
+                DebugLog("error : ${e.message}")
+                setState { copy(detailUiState = DetailUiState.Empty) }
+                handlerError(e.toUiError())
+            }.collectLatest { updatedPokemon ->
+                setState { copy(detailUiState = DetailUiState.Result(pokemon = updatedPokemon)) }
+            }
         }
     }
 }

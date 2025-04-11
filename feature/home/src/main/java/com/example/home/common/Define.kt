@@ -1,8 +1,9 @@
 package com.example.home.common
 
 enum class MenuType(val title: String){
-    FAVORITE("찜"),
-    ALL_TYPE("모든 타입"),
+    HOME("홈"),
+    LIKE("좋아요"),
+    SEARCH("검색"),
     GENERATION("모든 세대"),
 }
 

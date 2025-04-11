@@ -24,10 +24,10 @@ import com.example.designsystem.theme.LocalTypography
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
+import com.example.home.common.MenuType
 import com.example.home.view.FloatingButton
 import com.example.home.view.GridCardLayout
 import com.example.log.DebugLog
-import com.example.ui.R
 import com.example.resource.R as ResourceR
 
 @Composable
@@ -104,8 +104,18 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(end = 16.dp, bottom = 16.dp)
                 .align(Alignment.BottomEnd),
+            buttonList = MenuType.entries.map { it.title },
+            onClickHome = {
+                onEvent.invoke(HomeEvent.ClickFloatingBtn(MenuType.HOME))
+            },
+            onClickLike = {
+                onEvent.invoke(HomeEvent.ClickFloatingBtn(MenuType.LIKE))
+            },
+            onClickSearch = {
+                onEvent.invoke(HomeEvent.ClickFloatingBtn(MenuType.SEARCH))
+            },
             onClickGeneration = {
-                onEvent.invoke(HomeEvent.ClickFloatingBtn)
+                onEvent.invoke(HomeEvent.ClickFloatingBtn(MenuType.GENERATION))
             }
         )
     }
