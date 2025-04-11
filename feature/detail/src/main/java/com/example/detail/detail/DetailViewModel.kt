@@ -7,6 +7,9 @@ import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.base.base.BaseViewModel
+import com.example.domain.usecase.DeletePokemonUseCase
+import com.example.domain.usecase.GetLikePokemonListUseCase
+import com.example.domain.usecase.InsertPokemonUseCase
 import com.example.log.DebugLog
 import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +21,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val getPokemonDetailInfoUseCase: GetPokemonDetailInfoUseCase
+    private val getPokemonDetailInfoUseCase: GetPokemonDetailInfoUseCase,
+    private val insertPokemonUseCase: InsertPokemonUseCase,
+    private val deletePokemonUseCase: DeletePokemonUseCase,
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>() {
 
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
@@ -27,10 +32,14 @@ class DetailViewModel @Inject constructor(
             is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.BackPage) }
             is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.BackPage) }
             is DetailEvent.ClickLikeIcon -> {
-                // TODO: 해당 로컬에 넣는 로직 필요. 
+                val isLike = event.isLike
                 viewModelScope.launch {
                     (state.value.detailUiState as? DetailUiState.Result)?.let { result ->
-                        val updatedPokemon = result.pokemon.copy(isLike = event.isLike)
+                        val pokemon = result.pokemon
+                        if (isLike) insertPokemonUseCase(pokemon = pokemon)
+                        else deletePokemonUseCase(id = pokemon.id)
+
+                        val updatedPokemon = result.pokemon.copy(isLike = isLike)
                         setState {
                             copy(detailUiState = result.copy(pokemon = updatedPokemon))
                         }

@@ -1,5 +1,8 @@
 package com.example.model.ui
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Pokemon(
     val id: Int = 0,
     val name: String = "",
@@ -19,6 +22,7 @@ data class Pokemon(
     val eggGroups: String = "", //  (알 그룹)
     val eggCycle: Int = 0 //  (부화 사이클)
 ) {
+    @Serializable
     data class Stats(
         val hp: Int = 0,
         val attack: Int = 0,

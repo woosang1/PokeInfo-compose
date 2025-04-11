@@ -13,7 +13,8 @@ interface PokemonRepository {
     suspend fun getPokemonTypeInfo(type: String): PokemonType
 
     /** local **/
-    fun insertLocalDB()
-    fun clearLocalDB()
-    fun deleteLocalDB(id: String)
+    suspend fun getLikePokemonList(): Flow<List<Pokemon>>
+    suspend fun insertLocalDB(pokemon: Pokemon)
+    suspend fun deleteLocalDB(id: Int)
+    suspend fun clearLocalDB()
 }
