@@ -11,8 +11,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -25,6 +27,8 @@ import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
 import com.example.log.DebugLog
 import com.example.resource.R as ResourceR
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 
 @Composable
 fun DetailScreen(
@@ -35,6 +39,10 @@ fun DetailScreen(
     LaunchedEffect(Unit) {
         DebugLog("DetailScreen - LaunchedEffect(Unit)")
         onInit.invoke()
+    }
+
+    val isShowToolbar = remember(uiState.detailUiState) {
+        uiState.detailUiState is DetailUiState.Result
     }
 
     val backgroundColor = when (val state = uiState.detailUiState) {
@@ -57,7 +65,8 @@ fun DetailScreen(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 8.dp),
+                .padding(bottom = 8.dp)
+                .alpha(if (isShowToolbar) 1f else 0f),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Image(

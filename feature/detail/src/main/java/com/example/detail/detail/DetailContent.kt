@@ -217,7 +217,7 @@ fun PokemonInfoBottomSheet(
         scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState),
         sheetPeekHeight = height.dp,
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-        sheetSwipeEnabled = false
+        sheetSwipeEnabled = true
     ) { paddingValues -> }
 
     LaunchedEffect(selectedTab) {
