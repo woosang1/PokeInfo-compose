@@ -19,8 +19,9 @@ Clean Architecture + MVI
 - Retrofit, OkHttp
 - Coroutines + Flow
 - Room
-- 
-## 📦 디렉토리 구조
+
+### 📦 디렉토리 구조
+```
 PokeInfo-compose/
 ├── app/                            // 애플리케이션 관련 설정 및 실행
 │
@@ -50,6 +51,7 @@ PokeInfo-compose/
 │   └── main/                       // 포켓몬 메인 페이지 기능
 │
 └── build.gradle                   // 프로젝트의 Gradle 빌드 설정
+```
 
 ## Screenshots
 <p align="center">
