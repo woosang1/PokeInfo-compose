@@ -1,4 +1,4 @@
-package com.example
+package com.example.utils
 
 import androidx.compose.runtime.Composable
 import androidx.paging.LoadState

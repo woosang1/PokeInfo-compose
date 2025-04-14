@@ -14,7 +14,7 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
-import com.example.toUiError
+import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest

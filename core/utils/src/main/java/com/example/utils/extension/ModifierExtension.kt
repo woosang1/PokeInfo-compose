@@ -1,4 +1,4 @@
-package com.example.extension
+package com.example.utils.extension
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable

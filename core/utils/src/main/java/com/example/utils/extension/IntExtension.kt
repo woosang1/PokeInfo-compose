@@ -1,4 +1,4 @@
-package com.example.extension
+package com.example.utils.extension
 
 import android.content.res.Resources
 import androidx.compose.ui.unit.Density

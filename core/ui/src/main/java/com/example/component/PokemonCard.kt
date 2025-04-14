@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
-import com.example.extension.noRippleClickable
+import com.example.utils.extension.noRippleClickable
 import com.example.model.ui.Pokemon
 import com.example.resource.R as ResourceR
 

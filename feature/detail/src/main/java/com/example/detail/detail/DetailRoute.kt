@@ -8,7 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.base.base.BaseSideEffect
 import com.example.detail.detail.common.DetailSideEffect
-import com.example.extension.showToast
+import com.example.utils.extension.showToast
 
 @Composable
 fun DetailRoute(

@@ -16,11 +16,13 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.base.base.BaseSideEffect
 import com.example.component.LoadingAnimation
-import com.example.extension.showToast
+import com.example.utils.extension.showToast
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeUiState
 import com.example.home.view.GenerationBottomSheet
+import com.example.utils.state.rememberFoldableState
+import com.example.utils.extension.isDualScreen
 
 @Composable
 fun HomeRoute(
@@ -28,6 +30,10 @@ fun HomeRoute(
     onClickItem: (String) -> Unit,
 ) {
     val context = LocalContext.current
+
+    val foldableState by rememberFoldableState(context)
+    val isDualScreen = foldableState?.isDualScreen() ?: false
+
     val state by homeViewModel.state.collectAsStateWithLifecycle()
     val sideEffect = homeViewModel.effect
 
@@ -68,6 +74,7 @@ fun HomeRoute(
     ) {
         HomeScreen(
             state = state,
+            isDualScreen = isDualScreen,
             onEvent = { event -> homeViewModel.setEvent(event) }
         )
 

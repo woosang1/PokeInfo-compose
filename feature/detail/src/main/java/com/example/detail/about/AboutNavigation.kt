@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.example.log.DebugLog
+import com.example.utils.log.DebugLog
 import com.example.model.ui.AboutModel
 import com.example.navigation.DetailTabRoute
 import kotlinx.serialization.json.Json

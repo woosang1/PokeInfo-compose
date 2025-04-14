@@ -82,5 +82,7 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.turbine)
 
+    // window
+    implementation(libs.androidx.window)
 
 }

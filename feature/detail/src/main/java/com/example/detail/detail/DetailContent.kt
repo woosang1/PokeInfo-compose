@@ -1,6 +1,5 @@
 package com.example.detail.detail
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -42,7 +41,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import coil.compose.AsyncImage
-import coil.compose.rememberAsyncImagePainter
 import com.example.component.CircleView
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
@@ -52,9 +50,9 @@ import com.example.detail.baseStats.baseStatsNavGraph
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
-import com.example.extension.getHeightDisplay
-import com.example.extension.pxToDp
-import com.example.log.DebugLog
+import com.example.utils.extension.getHeightDisplay
+import com.example.utils.extension.pxToDp
+import com.example.utils.log.DebugLog
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
 import com.example.navigation.DetailTabRoute.Companion.getIndex

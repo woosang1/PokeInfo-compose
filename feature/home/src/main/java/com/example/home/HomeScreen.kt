@@ -24,12 +24,13 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.view.FloatingButton
-import com.example.log.DebugLog
+import com.example.utils.log.DebugLog
 import com.example.resource.R as ResourceR
 
 @Composable
 fun HomeScreen(
     state: HomeState,
+    isDualScreen: Boolean,
     onEvent: (HomeEvent) -> Unit
 ) {
     LaunchedEffect(Unit) {
@@ -79,6 +80,7 @@ fun HomeScreen(
                 is HomeUiState.Content -> {
                     HomeContentScreen(
                         pokemonList = mainUiState.pokemonList,
+                        isDualScreen = isDualScreen,
                         onEvent = onEvent
                     )
                 }

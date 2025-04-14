@@ -24,8 +24,8 @@ import com.example.designsystem.theme.LocalColors
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
-import com.example.extension.noRippleClickable
-import com.example.log.DebugLog
+import com.example.utils.extension.noRippleClickable
+import com.example.utils.log.DebugLog
 import com.example.resource.R as ResourceR
 
 @Composable

@@ -3,7 +3,7 @@ package com.example.data.datasource.remote
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.data.mapper.toEntity
-import com.example.log.DebugLog
+import com.example.utils.log.DebugLog
 import com.example.model.ui.Pokemon
 
 internal class PokemonListPagingSource(
