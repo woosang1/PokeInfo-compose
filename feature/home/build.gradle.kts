@@ -41,6 +41,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:base"))
     implementation(project(":core:resource"))
+    implementation(project(":core:testing"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,6 +77,10 @@ dependencies {
 
     implementation(libs.kotlinx.collections.immutable)
 
+    // test
     implementation(libs.speeddial)
+    testImplementation(libs.mockk)
+    testImplementation(libs.turbine)
+
 
 }

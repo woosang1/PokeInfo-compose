@@ -15,6 +15,7 @@ import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
@@ -30,6 +31,7 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
+            is HomeEvent.OnInit -> { checkLoading() }
             is HomeEvent.ClickFloatingBtn -> {
                 when(event.menuType){
                     MenuType.LIKE -> {
@@ -87,6 +89,10 @@ class HomeViewModel @Inject constructor(
                     } ?: pagingData
                 }
                 .cachedIn(this)
+                .catch { e ->
+                    setState { copy(homeUiState = HomeUiState.Error) }
+                    e.message?.let { setEffect(BaseSideEffect.ShowToast(it)) }
+                }
                 .collectLatest { filteredPagingData ->
                     setState {
                         copy(

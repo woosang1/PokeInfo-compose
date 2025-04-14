@@ -31,12 +31,11 @@ import com.example.resource.R as ResourceR
 @Composable
 fun HomeScreen(
     state: HomeState,
-    onInit:() -> Unit,
     onEvent: (HomeEvent) -> Unit
 ) {
     LaunchedEffect(Unit) {
         DebugLog("HomeScreen - LaunchedEffect(Unit)")
-        onInit.invoke()
+        onEvent(HomeEvent.OnInit)
     }
 
     Box(

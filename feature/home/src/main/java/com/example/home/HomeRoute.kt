@@ -68,7 +68,6 @@ fun HomeRoute(
     ) {
         HomeScreen(
             state = state,
-            onInit = { homeViewModel.checkLoading() },
             onEvent = { event -> homeViewModel.setEvent(event) }
         )
 
