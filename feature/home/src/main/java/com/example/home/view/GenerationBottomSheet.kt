@@ -143,7 +143,7 @@ fun GenerationContent(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             contentPadding = PaddingValues(8.dp)
         ) {
-            items(generations) { generation ->
+            items(generations, key = {it.generation }) { generation ->
                 GenerationItem(
                     generationItemData = generation,
                     onClickItem = { onClickItem.invoke(it) }
