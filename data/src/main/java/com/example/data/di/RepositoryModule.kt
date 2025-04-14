@@ -12,7 +12,7 @@ import dagger.hilt.android.components.ViewModelComponent
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun provideMainHomeSection(pokemonRepositoryImpl : PokemonRepositoryImpl): PokemonRepository
+    abstract fun bindPokemonRepository(pokemonRepositoryImpl : PokemonRepositoryImpl): PokemonRepository
 }
 
 
