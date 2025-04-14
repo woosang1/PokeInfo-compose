@@ -1,7 +1,6 @@
 package com.example.home
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,7 +34,7 @@ fun HomeScreen(
 ) {
     LaunchedEffect(Unit) {
         DebugLog("HomeScreen - LaunchedEffect(Unit)")
-        onEvent(HomeEvent.OnInit)
+        onEvent(HomeEvent.Init)
     }
 
     Box(
@@ -73,11 +72,9 @@ fun HomeScreen(
             when(val mainUiState = state.homeUiState){
                 is HomeUiState.Init -> Unit
                 is HomeUiState.Error -> {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(LocalColors.current.white)
-                    ) {  }
+                    HomeErrorScreen(
+                        onEvent = onEvent
+                    )
                 }
                 is HomeUiState.Content -> {
                     HomeContentScreen(

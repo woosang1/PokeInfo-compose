@@ -60,7 +60,7 @@ class HomeUnitTest {
         homeViewModel = HomeViewModel(getPokemonListUseCase, getLikePokemonListUseCase)
 
         // when
-        homeViewModel.setEvent(HomeEvent.OnInit)
+        homeViewModel.setEvent(HomeEvent.Init)
 
         // then
         val stateFlow = homeViewModel.state
@@ -90,7 +90,7 @@ class HomeUnitTest {
 
         homeViewModel = HomeViewModel(getPokemonListUseCase, getLikePokemonListUseCase)
 
-        homeViewModel.setEvent(HomeEvent.OnPagingError(errorMessage))
+        homeViewModel.setEvent(HomeEvent.PagingError(errorMessage))
 
         homeViewModel.state.test {
             val state = awaitItem()

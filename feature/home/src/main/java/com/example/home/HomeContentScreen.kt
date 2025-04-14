@@ -24,7 +24,7 @@ fun HomeContentScreen(
             ?: pokeList.loadState.prepend as? LoadState.Error
 
         errorState?.let { it ->
-            it.error.message?.let { message -> onEvent(HomeEvent.OnPagingError(message)) }
+            onEvent(HomeEvent.PagingError(e = it.error))
         }
     }
 

@@ -14,6 +14,7 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
+import com.example.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
@@ -31,7 +32,7 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.OnInit -> { checkLoading() }
+            is HomeEvent.Init -> { checkLoading() }
             is HomeEvent.ClickFloatingBtn -> {
                 when(event.menuType){
                     MenuType.LIKE -> {
@@ -64,15 +65,19 @@ class HomeViewModel @Inject constructor(
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
-            is HomeEvent.OnPagingError -> {
+            is HomeEvent.PagingError -> {
                 setState { copy(homeUiState = HomeUiState.Error) }
                 setEffect(HomeSideEffect.HideLoadingAnimation)
-                setEffect(BaseSideEffect.ShowToast(event.message))
+                handlerError(event.e.toUiError())
+            }
+            is HomeEvent.ClickReLoadBtn -> {
+                setEffect(HomeSideEffect.ShowLoadingAnimation)
+                getPokemonList(page = 0)
             }
         }
     }
 
-    fun checkLoading() {
+    private fun checkLoading() {
         if (state.value.homeUiState !is HomeUiState.Content) {
             setEffect(HomeSideEffect.ShowLoadingAnimation)
             getPokemonList(page = 0)
@@ -91,7 +96,7 @@ class HomeViewModel @Inject constructor(
                 .cachedIn(this)
                 .catch { e ->
                     setState { copy(homeUiState = HomeUiState.Error) }
-                    e.message?.let { setEffect(BaseSideEffect.ShowToast(it)) }
+                    handlerError(e.toUiError())
                 }
                 .collectLatest { filteredPagingData ->
                     setState {
