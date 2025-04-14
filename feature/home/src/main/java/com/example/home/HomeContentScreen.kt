@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.example.PagingContentHandler
 import com.example.home.common.HomeEvent
 import com.example.home.view.GridCardLayout
 import com.example.model.ui.Pokemon
@@ -18,25 +19,24 @@ fun HomeContentScreen(
 ) {
     val pokeList = pokemonList.collectAsLazyPagingItems()
 
-    LaunchedEffect(pokeList.loadState) {
-        val errorState = pokeList.loadState.refresh as? LoadState.Error
-            ?: pokeList.loadState.append as? LoadState.Error
-            ?: pokeList.loadState.prepend as? LoadState.Error
-
-        errorState?.let { it ->
-            onEvent(HomeEvent.PagingError(e = it.error))
-        }
-    }
-
-    GridCardLayout(
-        columns = 2,
-        modifier = Modifier,
-        paddingValues = 16,
-        horizontalArrangement = 8,
-        verticalArrangement = 8,
-        cardList = pokeList,
-        onClickPokemonCard = { pokemon ->
-            onEvent.invoke(HomeEvent.ClickPokemonCard(pokemon = pokemon))
+    PagingContentHandler(
+        items = pokeList,
+        onError = { e -> onEvent(HomeEvent.PagingError(e = e)) },
+        onEmpty = { },
+        onLoading = { },
+        content = {
+            GridCardLayout(
+                columns = 2,
+                modifier = Modifier,
+                paddingValues = 16,
+                horizontalArrangement = 8,
+                verticalArrangement = 8,
+                cardList = pokeList,
+                onClickPokemonCard = { pokemon ->
+                    onEvent.invoke(HomeEvent.ClickPokemonCard(pokemon = pokemon))
+                }
+            )
         }
     )
+
 }

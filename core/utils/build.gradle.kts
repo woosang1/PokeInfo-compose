@@ -65,6 +65,10 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.coil.compose)
 
+    // paging
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
     // window
     implementation(libs.androidx.window)
 
