@@ -3,8 +3,8 @@ package com.example.data.datasource.remote
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.data.mapper.toEntity
+import com.example.log.DebugLog
 import com.example.model.ui.Pokemon
-import com.example.network.ApiResult
 
 internal class PokemonListPagingSource(
     private val pokemonRemoteDataSource: PokemonRemoteDataSource,
@@ -22,24 +22,19 @@ internal class PokemonListPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Pokemon> {
         return try {
             val pageNumber = params.key ?: startPage
-            var loadResult: LoadResult<Int, Pokemon> = LoadResult.Page(emptyList(), null, null)
-            pokemonRemoteDataSource.getPokemonList(
+            val response = pokemonRemoteDataSource.getPokemonList(
                 page = if (pageNumber == startPage) pageNumber else (pageNumber*pagingSize),
                 limit = pagingSize
-            ).collect { response ->
-                loadResult = when (response) {
-                    is ApiResult.Success -> {
-                        LoadResult.Page(
-                            data = response.value.results.map { it.toEntity() },
-                            prevKey = if (pageNumber == 0) null else pageNumber - 1,
-                            nextKey = if (response.value.results.isEmpty()) null else pageNumber + 1
-                        )
-                    }
-                    is ApiResult.Error -> LoadResult.Error(Exception(response.exception.message))
-                }
-            }
-            loadResult
+            )
+            val data = response.results.map { it.toEntity() }
+
+            LoadResult.Page(
+                data = data,
+                prevKey = if (pageNumber == startPage) null else pageNumber - 1,
+                nextKey = if (data.isEmpty()) null else pageNumber + 1
+            )
         } catch (e: Exception) {
+            DebugLog("load - catch ${e.message}")
             LoadResult.Error(e)
         }
     }

@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface NetworkAPI {
+interface PokemonAPI {
 
     /**
      * 포켓몬 조회

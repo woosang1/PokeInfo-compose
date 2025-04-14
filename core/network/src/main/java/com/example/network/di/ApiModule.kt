@@ -1,6 +1,6 @@
 package com.example.network.di
 
-import com.example.network.NetworkAPI
+import com.example.network.PokemonAPI
 import com.example.network.interceptor.LogInterceptor
 import com.example.network.pokeApiUrl
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -41,13 +41,13 @@ object ApiModule {
     fun provideNetworkAPI(
         okHttpClient: OkHttpClient,
         converterFactory: Converter.Factory,
-    ): NetworkAPI =
+    ): PokemonAPI =
         Retrofit.Builder()
             .baseUrl(pokeApiUrl)
             .client(okHttpClient)
             .addConverterFactory(converterFactory)
             .build()
-            .create(NetworkAPI::class.java)
+            .create(PokemonAPI::class.java)
 
     @Provides
     @Singleton

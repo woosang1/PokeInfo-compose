@@ -62,6 +62,11 @@ class HomeViewModel @Inject constructor(
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
+            is HomeEvent.OnPagingError -> {
+                setState { copy(homeUiState = HomeUiState.Error) }
+                setEffect(HomeSideEffect.HideLoadingAnimation)
+                setEffect(BaseSideEffect.ShowToast(event.message))
+            }
         }
     }
 
@@ -90,7 +95,6 @@ class HomeViewModel @Inject constructor(
                             )
                         )
                     }
-                    setEffect(HomeSideEffect.HideGenerationsBottomSheet)
                 }
         }
     }

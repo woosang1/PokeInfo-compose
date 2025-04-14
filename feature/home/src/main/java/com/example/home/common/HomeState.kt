@@ -18,5 +18,5 @@ sealed interface HomeUiState {
     data class Content(
         val pokemonList: Flow<PagingData<Pokemon>>
     ) : HomeUiState
-    data object Empty : HomeUiState
+    data object Error : HomeUiState
 }

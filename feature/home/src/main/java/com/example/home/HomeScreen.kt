@@ -18,7 +18,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.home.common.HomeEvent
@@ -26,7 +25,6 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.view.FloatingButton
-import com.example.home.view.GridCardLayout
 import com.example.log.DebugLog
 import com.example.resource.R as ResourceR
 
@@ -75,7 +73,7 @@ fun HomeScreen(
 
             when(val mainUiState = state.homeUiState){
                 is HomeUiState.Init -> Unit
-                is HomeUiState.Empty -> {
+                is HomeUiState.Error -> {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -83,17 +81,9 @@ fun HomeScreen(
                     ) {  }
                 }
                 is HomeUiState.Content -> {
-                    val pokeList = mainUiState.pokemonList.collectAsLazyPagingItems()
-                    GridCardLayout(
-                        columns = 2,
-                        modifier = Modifier,
-                        paddingValues = 16,
-                        horizontalArrangement = 8,
-                        verticalArrangement = 8,
-                        cardList = pokeList,
-                        onClickPokemonCard = { pokemon ->
-                            onEvent.invoke(HomeEvent.ClickPokemonCard(pokemon = pokemon))
-                        }
+                    HomeContentScreen(
+                        pokemonList = mainUiState.pokemonList,
+                        onEvent = onEvent
                     )
                 }
             }
