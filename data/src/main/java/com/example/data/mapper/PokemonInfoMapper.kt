@@ -1,7 +1,7 @@
 package com.example.data.mapper
 
-import com.example.model.ui.Pokemon
 import com.example.model.rp.RpPokemonInfo
+import com.example.model.ui.Pokemon
 import com.example.model.ui.getImageUrl
 
 fun RpPokemonInfo.toEntity(): Pokemon {

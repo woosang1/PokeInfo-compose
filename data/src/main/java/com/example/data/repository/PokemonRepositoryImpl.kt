@@ -6,11 +6,10 @@ import androidx.paging.PagingData
 import com.example.data.datasource.local.PokemonInfoLocalDataSource
 import com.example.data.datasource.remote.PokemonRemoteDataSource
 import com.example.data.mapper.toEntity
-import com.example.database.room.PokemonRoomEntity
 import com.example.database.room.toDomain
 import com.example.database.room.toEntity
-import com.example.model.ui.Pokemon
 import com.example.domain.repository.PokemonRepository
+import com.example.model.ui.Pokemon
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

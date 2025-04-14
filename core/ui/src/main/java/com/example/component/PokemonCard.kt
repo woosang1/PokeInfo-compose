@@ -28,10 +28,9 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.extension.noRippleClickable
-import com.example.ui.R
-import com.example.resource.R as ResourceR
 import com.example.extension.setImageUrl
 import com.example.model.ui.Pokemon
+import com.example.resource.R as ResourceR
 
 @Composable
 fun PokemonCard(
