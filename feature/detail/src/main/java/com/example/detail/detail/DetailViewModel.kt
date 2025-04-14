@@ -2,14 +2,14 @@ package com.example.detail.detail
 
 import androidx.lifecycle.viewModelScope
 import com.example.base.base.BaseSideEffect
+import com.example.base.base.BaseViewModel
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.detail.common.DetailSideEffect
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
-import com.example.domain.usecase.GetPokemonDetailInfoUseCase
-import com.example.base.base.BaseViewModel
 import com.example.domain.usecase.DeletePokemonUseCase
 import com.example.domain.usecase.GetLikePokemonListUseCase
+import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.domain.usecase.InsertPokemonUseCase
 import com.example.log.DebugLog
 import com.example.toUiError
@@ -18,7 +18,6 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

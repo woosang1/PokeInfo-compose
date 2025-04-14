@@ -4,14 +4,14 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
+import com.example.base.base.BaseSideEffect
+import com.example.base.base.BaseViewModel
+import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.domain.usecase.GetPokemonListUseCase
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
-import com.example.base.base.BaseSideEffect
-import com.example.base.base.BaseViewModel
-import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
 import dagger.hilt.android.lifecycle.HiltViewModel

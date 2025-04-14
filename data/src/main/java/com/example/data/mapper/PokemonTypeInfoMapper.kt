@@ -1,7 +1,7 @@
 package com.example.data.mapper
 
-import com.example.model.ui.PokemonType
 import com.example.model.rp.RpPokemonType
+import com.example.model.ui.PokemonType
 
 fun RpPokemonType.toEntity(): PokemonType {
     return PokemonType(

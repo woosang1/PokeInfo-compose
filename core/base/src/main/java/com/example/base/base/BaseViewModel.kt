@@ -1,6 +1,7 @@
 package com.example.base.base
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.UiError
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -9,7 +10,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
-import androidx.lifecycle.viewModelScope
 
 abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.example.base.mvi.State, Effect : BaseSideEffect> : ViewModel() {
 

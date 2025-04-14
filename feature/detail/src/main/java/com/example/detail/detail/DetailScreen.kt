@@ -19,16 +19,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.component.LoadingAnimation
-import com.example.designsystem.theme.LocalColors
 import com.example.component.common.getPokemonColorByColor
+import com.example.designsystem.theme.LocalColors
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.detail.common.DetailState
 import com.example.detail.detail.common.DetailUiState
 import com.example.extension.noRippleClickable
 import com.example.log.DebugLog
 import com.example.resource.R as ResourceR
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.getValue
 
 @Composable
 fun DetailScreen(

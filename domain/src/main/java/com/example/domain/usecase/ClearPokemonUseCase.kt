@@ -1,7 +1,6 @@
 package com.example.domain.usecase
 
 import com.example.domain.repository.PokemonRepository
-import com.example.model.ui.Pokemon
 import javax.inject.Inject
 
 class ClearPokemonUseCase @Inject constructor(

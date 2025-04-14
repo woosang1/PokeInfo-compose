@@ -1,8 +1,7 @@
 package com.example.data.mapper
 
-import com.example.model.ui.Pokemon
-
 import com.example.model.rp.RpPokemonSpecies
+import com.example.model.ui.Pokemon
 
 internal fun RpPokemonSpecies.toEntity(): Pokemon {
 

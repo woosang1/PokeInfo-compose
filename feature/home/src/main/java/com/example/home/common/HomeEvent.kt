@@ -1,7 +1,7 @@
 package com.example.home.common
 
-import com.example.model.ui.Pokemon
 import com.example.base.mvi.Event
+import com.example.model.ui.Pokemon
 
 sealed interface HomeEvent: Event {
     data class ClickFloatingBtn(val menuType : MenuType) : HomeEvent

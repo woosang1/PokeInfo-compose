@@ -6,8 +6,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import com.example.database.POKEMON_INFO_DATASTORE
 import com.example.database.dataStore.PokemonInfoDataStore
-import com.example.database.room.PokemonRoomDataBase
 import com.example.database.room.PokemonDao
+import com.example.database.room.PokemonRoomDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

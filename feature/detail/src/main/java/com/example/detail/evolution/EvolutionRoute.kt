@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.example.designsystem.theme.LocalColors
-import com.example.model.ui.BaseStatsModel
 import com.example.model.ui.EvolutionModel
 
 @Composable

@@ -1,7 +1,7 @@
 package com.example.domain.usecase
 
-import com.example.model.ui.Pokemon
 import com.example.domain.repository.PokemonRepository
+import com.example.model.ui.Pokemon
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

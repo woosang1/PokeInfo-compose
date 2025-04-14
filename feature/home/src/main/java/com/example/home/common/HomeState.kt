@@ -3,8 +3,8 @@ package com.example.home.common
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.paging.PagingData
-import com.example.model.ui.Pokemon
 import com.example.base.mvi.State
+import com.example.model.ui.Pokemon
 import kotlinx.coroutines.flow.Flow
 
 @Immutable

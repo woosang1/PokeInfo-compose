@@ -9,8 +9,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.example.navigation.DetailTabRoute
-import com.example.navigation.MainRoute
 import com.example.detail.about.navigationAbout
 import com.example.detail.about.toAboutModel
 import com.example.detail.baseStats.navigationBaseStats
@@ -20,6 +18,8 @@ import com.example.detail.evolution.toEvolutionModel
 import com.example.detail.moves.navigationMoves
 import com.example.log.DebugLog
 import com.example.model.ui.Pokemon
+import com.example.navigation.DetailTabRoute
+import com.example.navigation.MainRoute
 
 
 class DetailNavigator(

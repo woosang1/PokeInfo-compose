@@ -2,8 +2,8 @@ package com.example.detail.detail.common
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
-import com.example.model.ui.Pokemon
 import com.example.base.mvi.State
+import com.example.model.ui.Pokemon
 
 @Immutable
 data class DetailState(
