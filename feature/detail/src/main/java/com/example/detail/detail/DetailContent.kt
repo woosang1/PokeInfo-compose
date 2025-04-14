@@ -41,6 +41,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
+import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.example.component.CircleView
 import com.example.designsystem.theme.LocalColors
@@ -53,7 +54,6 @@ import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
 import com.example.extension.getHeightDisplay
 import com.example.extension.pxToDp
-import com.example.extension.setImageUrl
 import com.example.log.DebugLog
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
@@ -113,22 +113,16 @@ fun DetailContent(
             }
 
             // 이미지 (가운데 정렬 + 위쪽 마진)
-            Image(
-                painter = rememberAsyncImagePainter(
-                    model = LocalContext.current.setImageUrl(
-                        data = pokemon.url,
-                        width = 200,
-                        height = 200,
-                        usePlaceholder = false
-                    )
-                ),
+            AsyncImage(
+                model = pokemon.url,
                 modifier = Modifier
                     .size(200.dp)
                     .clip(CircleShape)
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 20.dp),
                 contentScale = ContentScale.Crop,
-                contentDescription = null
+                contentDescription = null,
+                placeholder = null
             )
         }
         PokemonInfoBottomSheet(

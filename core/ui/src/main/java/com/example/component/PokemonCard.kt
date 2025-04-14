@@ -20,16 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import coil.compose.rememberAsyncImagePainter
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.extension.noRippleClickable
-import com.example.extension.setImageUrl
 import com.example.model.ui.Pokemon
 import com.example.resource.R as ResourceR
 
@@ -41,7 +38,6 @@ fun PokemonCard(
     pokemon: Pokemon,
     onClickPokemonCard: (Pokemon) -> Unit,
 ) {
-
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(16.dp))
@@ -55,7 +51,6 @@ fun PokemonCard(
                 .width(width.dp)
                 .height(height.dp)
                 .background(LocalColors.current.purple80)
-            ,
         )
 
         // 내용
@@ -117,20 +112,14 @@ fun PokemonCard(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
             ) {
-                Image(
-                    painter = rememberAsyncImagePainter(
-                        model = LocalContext.current.setImageUrl(
-                            data = pokemon.url,
-                            width = 80,
-                            height = 80,
-                            usePlaceholder = false
-                        )
-                    ),
+                AsyncImage(
+                    model = pokemon.url,
                     modifier = Modifier
                         .size(80.dp)
                         .clip(CircleShape),
                     contentScale = ContentScale.Crop,
-                    contentDescription = null
+                    contentDescription = null,
+                    placeholder = null
                 )
             }
 
