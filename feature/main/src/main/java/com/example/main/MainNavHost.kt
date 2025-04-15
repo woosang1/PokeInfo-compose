@@ -9,13 +9,20 @@ import com.example.navigation.MainRoute
 
 @Composable
 internal fun MainNavHost(
-    navigator: MainNavigator = rememberMainNavigator()
+    navigator: MainNavigator = rememberMainNavigator(),
+    onHandleNetworkUI: (throwable: Throwable?) -> Unit
 ) {
     NavHost(
         navController = navigator.navController,
         startDestination = MainRoute.Home
     ) {
-        homeNavGraph(onStartDetail = { navigator.navigationDetail(it) })
-        detailNavGraph(onBackEvent = navigator::popBackStackIfNotHome)
+        homeNavGraph(
+            onStartDetail = { navigator.navigationDetail(it) },
+            onHandleNetworkUI = onHandleNetworkUI
+        )
+        detailNavGraph(
+            onBackEvent = navigator::popBackStackIfNotHome,
+            onHandleNetworkUI = onHandleNetworkUI
+        )
     }
 }

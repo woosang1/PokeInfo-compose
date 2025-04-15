@@ -4,7 +4,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
-import com.example.base.base.BaseSideEffect
 import com.example.base.base.BaseViewModel
 import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.domain.usecase.GetPokemonListUseCase
@@ -14,7 +13,6 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
-import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
@@ -27,14 +25,14 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getPokemonListUseCase: GetPokemonListUseCase,
     private val getLikePokemonListUseCase: GetLikePokemonListUseCase
-) : BaseViewModel<HomeEvent, HomeState, BaseSideEffect>() {
+) : BaseViewModel<HomeEvent, HomeState, HomeSideEffect>() {
 
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
             is HomeEvent.Init -> { checkLoading() }
             is HomeEvent.ClickFloatingBtn -> {
-                when(event.menuType){
+                when (event.menuType) {
                     MenuType.LIKE -> {
                         viewModelScope.launch {
                             val likePokemonList = getLikePokemonListUseCase()
@@ -47,14 +45,19 @@ class HomeViewModel @Inject constructor(
                             }
                         }
                     }
+
                     MenuType.SEARCH -> {}
                     MenuType.HOME -> {
                         setEffect(HomeSideEffect.ShowLoadingAnimation)
                         getPokemonList(page = 0)
                     }
-                    MenuType.GENERATION -> { setEffect(HomeSideEffect.ShowGenerationsBottomSheet) }
+
+                    MenuType.GENERATION -> {
+                        setEffect(HomeSideEffect.ShowGenerationsBottomSheet)
+                    }
                 }
             }
+
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
@@ -65,11 +68,13 @@ class HomeViewModel @Inject constructor(
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
+
             is HomeEvent.PagingError -> {
                 setState { copy(homeUiState = HomeUiState.Error) }
                 setEffect(HomeSideEffect.HideLoadingAnimation)
-                handlerError(event.e.toUiError())
+                setEffect(HomeSideEffect.HandleNetworkUI(event.e))
             }
+
             is HomeEvent.ClickReLoadBtn -> {
                 setEffect(HomeSideEffect.ShowLoadingAnimation)
                 getPokemonList(page = 0)
@@ -96,7 +101,7 @@ class HomeViewModel @Inject constructor(
                 .cachedIn(this)
                 .catch { e ->
                     setState { copy(homeUiState = HomeUiState.Error) }
-                    handlerError(e.toUiError())
+                    setEffect(HomeSideEffect.HandleNetworkUI(e))
                 }
                 .collectLatest { filteredPagingData ->
                     setState {

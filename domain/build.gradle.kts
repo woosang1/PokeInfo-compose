@@ -53,6 +53,6 @@ dependencies {
 
     // test
     testImplementation(libs.turbine)
-    implementation(libs.kotest.runner)
+//    implementation(libs.kotest.runner)
     implementation(libs.kotest.assertions)
 }

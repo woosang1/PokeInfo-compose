@@ -1,7 +1,6 @@
 package com.example.detail.detail
 
 import androidx.lifecycle.viewModelScope
-import com.example.base.base.BaseSideEffect
 import com.example.base.base.BaseViewModel
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.detail.common.DetailSideEffect
@@ -41,8 +40,7 @@ class DetailViewModel @Inject constructor(
                         val pokemon = result.pokemon
                         if (isLike) insertPokemonUseCase(pokemon = pokemon)
                         else deletePokemonUseCase(id = pokemon.id)
-                        setEffect(BaseSideEffect.ShowToast(if (isLike)"좋아요가 추가되었습니다." else "좋아요를 취소했습니다."))
-
+                        setEffect(DetailSideEffect.ShowToast(if (isLike)"좋아요가 추가되었습니다." else "좋아요를 취소했습니다."))
                         val updatedPokemon = result.pokemon.copy(isLike = isLike)
                         setState {
                             copy(detailUiState = result.copy(pokemon = updatedPokemon))
@@ -65,7 +63,7 @@ class DetailViewModel @Inject constructor(
             }.catch { e ->
                 DebugLog("error : ${e.message}")
                 setState { copy(detailUiState = DetailUiState.Empty) }
-                handlerError(e.toUiError())
+                setEffect(DetailSideEffect.HandleNetworkUI(e))
             }.collectLatest { updatedPokemon ->
                 setState { copy(detailUiState = DetailUiState.Result(pokemon = updatedPokemon)) }
             }

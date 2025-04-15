@@ -102,5 +102,4 @@ internal class HomeViewModelTest {
         }
     }
 
-
 }

@@ -2,6 +2,7 @@ package com.example.base.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.base.mvi.SideEffect
 import com.example.utils.UiError
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.example.base.mvi.State, Effect : BaseSideEffect> : ViewModel() {
+abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.example.base.mvi.State, Effect : SideEffect> : ViewModel() {
 
     private val initialState: State by lazy { createInitialState() }
     abstract fun createInitialState(): State
@@ -22,7 +23,7 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
 
-    private val _effect: Channel<BaseSideEffect> = Channel()
+    private val _effect: Channel<SideEffect> = Channel()
     val effect = _effect.receiveAsFlow()
 
     init {
@@ -48,18 +49,7 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
         _state.value = newState
     }
 
-    fun setEffect(effect: BaseSideEffect) {
+    fun setEffect(effect: SideEffect) {
         viewModelScope.launch { _effect.send(effect) }
     }
-
-    fun handlerError(error: UiError){
-        when(error){
-            is UiError.AuthError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
-            is UiError.PermissionError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
-            is UiError.NetworkError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
-            is UiError.ServerError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
-            is UiError.UnknownError -> { setEffect(BaseSideEffect.ShowToast(message = error.message)) }
-        }
-    }
-
 }

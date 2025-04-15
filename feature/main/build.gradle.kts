@@ -76,4 +76,8 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
 
     implementation(libs.kotlinx.collections.immutable)
+    
+    // Retrofit 및 관련 의존성 추가
+    implementation(libs.retrofit2.retrofit)
+
 }

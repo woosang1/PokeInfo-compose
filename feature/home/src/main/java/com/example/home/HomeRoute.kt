@@ -14,7 +14,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.base.base.BaseSideEffect
 import com.example.component.LoadingAnimation
 import com.example.utils.extension.showToast
 import com.example.home.common.HomeEvent
@@ -28,6 +27,7 @@ import com.example.utils.extension.isDualScreen
 fun HomeRoute(
     homeViewModel: HomeViewModel = hiltViewModel(),
     onClickItem: (String) -> Unit,
+    onHandleNetworkUI: (Throwable?) -> Unit
 ) {
     val context = LocalContext.current
 
@@ -53,7 +53,7 @@ fun HomeRoute(
                     isShowGenerationSheet.value = false
                 }
                 is HomeSideEffect.ShowSearchBottomSheet -> {}
-                is BaseSideEffect.ShowToast -> {
+                is HomeSideEffect.ShowToast -> {
                     context.showToast(effect.message)
                 }
                 is HomeSideEffect.StartDetailActivity -> {
@@ -64,6 +64,9 @@ fun HomeRoute(
                 }
                 is HomeSideEffect.HideLoadingAnimation -> {
                     isLoadingAnimation.value = false
+                }
+                is HomeSideEffect.HandleNetworkUI -> {
+                    onHandleNetworkUI(effect.throwable)
                 }
             }
         }

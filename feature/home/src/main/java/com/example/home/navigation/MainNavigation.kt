@@ -12,10 +12,12 @@ fun NavController.navigationHome(){
 
 fun NavGraphBuilder.homeNavGraph(
     onStartDetail : (String) -> Unit,
+    onHandleNetworkUI: (Throwable?) -> Unit
 ) {
     composable<MainRoute.Home>{
         HomeRoute(
-            onClickItem = onStartDetail
+            onClickItem = onStartDetail,
+            onHandleNetworkUI = onHandleNetworkUI
         )
     }
 }
