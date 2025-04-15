@@ -50,4 +50,9 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     ksp(libs.androidx.hilt.compier)
+
+    // test
+    testImplementation(libs.turbine)
+    implementation(libs.kotest.runner)
+    implementation(libs.kotest.assertions)
 }
