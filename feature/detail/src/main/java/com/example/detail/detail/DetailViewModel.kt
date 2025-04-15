@@ -10,6 +10,7 @@ import com.example.domain.usecase.DeletePokemonUseCase
 import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.domain.usecase.InsertPokemonUseCase
+import com.example.utils.FeatureErrorHandler
 import com.example.utils.log.DebugLog
 import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,7 +27,7 @@ class DetailViewModel @Inject constructor(
     private val getLikePokemonListUseCase: GetLikePokemonListUseCase,
     private val insertPokemonUseCase: InsertPokemonUseCase,
     private val deletePokemonUseCase: DeletePokemonUseCase,
-) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>() {
+) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>(), FeatureErrorHandler {
 
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
     override fun handleEvent(event: DetailEvent) {
@@ -52,6 +53,10 @@ class DetailViewModel @Inject constructor(
         }
     }
 
+    override fun handleError(throwable: Throwable) {
+        setEffect(DetailSideEffect.HandleNetworkUI(throwable.toUiError()))
+    }
+
     fun getPokemonDetailInfo(id: Int) {
         viewModelScope.launch {
             combine(
@@ -63,7 +68,7 @@ class DetailViewModel @Inject constructor(
             }.catch { e ->
                 DebugLog("error : ${e.message}")
                 setState { copy(detailUiState = DetailUiState.Empty) }
-                setEffect(DetailSideEffect.HandleNetworkUI(e))
+                handleError(e)
             }.collectLatest { updatedPokemon ->
                 setState { copy(detailUiState = DetailUiState.Result(pokemon = updatedPokemon)) }
             }

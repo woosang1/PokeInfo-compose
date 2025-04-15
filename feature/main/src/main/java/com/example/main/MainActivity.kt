@@ -27,28 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             setContent {
                 PokeInfoTheme {
-                    val snackBarHostState = remember { SnackbarHostState() }
-                    val coroutineScope = rememberCoroutineScope()
-
-                    val onHandleNetworkUI: (Throwable?) -> Unit = { throwable ->
-                        coroutineScope.launch {
-                            val uiError = when (throwable) {
-                                is HttpException -> when (throwable.code()) {
-                                    401 -> UiError.AuthError()
-                                    403 -> UiError.PermissionError()
-                                    else -> UiError.ServerError(throwable.code(), throwable.message ?: "")
-                                }
-                                is IOException -> UiError.NetworkError()
-                                else -> UiError.UnknownError("알 수 없는 오류 발생: ${throwable?.message}")
-                            }
-                            snackBarHostState.showSnackbar(uiError.message)
-                        }
-                    }
-                    MainScreen(
-                        modifier = Modifier,
-                        onHandleNetworkUI = onHandleNetworkUI,
-                        snackBarHostState = snackBarHostState
-                    )
+                    MainScreen()
                 }
             }
         }

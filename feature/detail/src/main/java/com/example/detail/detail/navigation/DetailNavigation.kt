@@ -12,15 +12,13 @@ fun NavController.navigationDetail(pk: String){
 }
 
 fun NavGraphBuilder.detailNavGraph(
-    onBackEvent : () -> Unit,
-    onHandleNetworkUI: (throwable: Throwable?) -> Unit
+    onBackEvent : () -> Unit
 ) {
     composable<MainRoute.Detail> { navBackStackEntry ->
         val pk = navBackStackEntry.toRoute<MainRoute.Detail>().pk
         DetailRoute(
             pk = pk,
-            onBackEvent = onBackEvent,
-            onHandleNetworkUI = onHandleNetworkUI
+            onBackEvent = onBackEvent
         )
     }
 }

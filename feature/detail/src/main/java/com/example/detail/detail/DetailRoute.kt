@@ -7,14 +7,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.detail.detail.common.DetailSideEffect
+import com.example.utils.UiError
 import com.example.utils.extension.showToast
 
 @Composable
 fun DetailRoute(
     pk: String,
     detailViewModel: DetailViewModel = hiltViewModel(),
-    onBackEvent: () -> Unit,
-    onHandleNetworkUI: (throwable: Throwable?) -> Unit
+    onBackEvent: () -> Unit
 ) {
     val context = LocalContext.current
     val uiState by detailViewModel.state.collectAsStateWithLifecycle()
@@ -27,7 +27,16 @@ fun DetailRoute(
                 is DetailSideEffect.SetLikeIcon -> { }
                 is DetailSideEffect.ShowToast -> { context.showToast(message = effect.message) }
                 is DetailSideEffect.BackPage -> { onBackEvent.invoke() }
-                is DetailSideEffect.HandleNetworkUI -> { onHandleNetworkUI(effect.throwable) }
+                is DetailSideEffect.HandleNetworkUI -> {
+                    context.showToast(effect.uiError.message)
+                    when(effect.uiError){
+                        is UiError.AuthError -> Unit
+                        is UiError.NetworkError -> Unit
+                        is UiError.PermissionError -> Unit
+                        is UiError.ServerError -> Unit
+                        is UiError.UnknownError -> Unit
+                    }
+                }
             }
         }
     }

@@ -2,6 +2,7 @@ package com.example.home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -20,14 +21,14 @@ import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeUiState
 import com.example.home.view.GenerationBottomSheet
+import com.example.utils.UiError
 import com.example.utils.state.rememberFoldableState
 import com.example.utils.extension.isDualScreen
 
 @Composable
 fun HomeRoute(
     homeViewModel: HomeViewModel = hiltViewModel(),
-    onClickItem: (String) -> Unit,
-    onHandleNetworkUI: (Throwable?) -> Unit
+    onClickItem: (String) -> Unit
 ) {
     val context = LocalContext.current
 
@@ -66,7 +67,14 @@ fun HomeRoute(
                     isLoadingAnimation.value = false
                 }
                 is HomeSideEffect.HandleNetworkUI -> {
-                    onHandleNetworkUI(effect.throwable)
+                    context.showToast(effect.uiError.message)
+                    when(effect.uiError){
+                        is UiError.AuthError -> Unit
+                        is UiError.NetworkError -> Unit
+                        is UiError.PermissionError -> Unit
+                        is UiError.ServerError -> Unit
+                        is UiError.UnknownError -> Unit
+                    }
                 }
             }
         }

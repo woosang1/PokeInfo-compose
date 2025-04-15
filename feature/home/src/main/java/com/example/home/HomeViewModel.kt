@@ -13,6 +13,8 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
+import com.example.utils.FeatureErrorHandler
+import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
@@ -25,7 +27,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getPokemonListUseCase: GetPokemonListUseCase,
     private val getLikePokemonListUseCase: GetLikePokemonListUseCase
-) : BaseViewModel<HomeEvent, HomeState, HomeSideEffect>() {
+) : BaseViewModel<HomeEvent, HomeState, HomeSideEffect>(), FeatureErrorHandler {
 
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
@@ -57,29 +59,28 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
-
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
-
             is HomeEvent.SelectGeneration -> {
                 viewModelScope.launch {
                     setEffect(HomeSideEffect.ShowLoadingAnimation)
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
-
             is HomeEvent.PagingError -> {
-                setState { copy(homeUiState = HomeUiState.Error) }
                 setEffect(HomeSideEffect.HideLoadingAnimation)
-                setEffect(HomeSideEffect.HandleNetworkUI(event.e))
+                handleError(event.e)
             }
-
             is HomeEvent.ClickReLoadBtn -> {
                 setEffect(HomeSideEffect.ShowLoadingAnimation)
                 getPokemonList(page = 0)
             }
         }
+    }
+
+    override fun handleError(throwable: Throwable) {
+        setEffect(HomeSideEffect.HandleNetworkUI(throwable.toUiError()))
     }
 
     private fun checkLoading() {
@@ -101,7 +102,7 @@ class HomeViewModel @Inject constructor(
                 .cachedIn(this)
                 .catch { e ->
                     setState { copy(homeUiState = HomeUiState.Error) }
-                    setEffect(HomeSideEffect.HandleNetworkUI(e))
+                    handleError(throwable = e)
                 }
                 .collectLatest { filteredPagingData ->
                     setState {
@@ -114,4 +115,6 @@ class HomeViewModel @Inject constructor(
                 }
         }
     }
+
+
 }

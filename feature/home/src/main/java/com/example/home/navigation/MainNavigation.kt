@@ -11,13 +11,9 @@ fun NavController.navigationHome(){
 }
 
 fun NavGraphBuilder.homeNavGraph(
-    onStartDetail : (String) -> Unit,
-    onHandleNetworkUI: (Throwable?) -> Unit
+    onStartDetail : (String) -> Unit
 ) {
     composable<MainRoute.Home>{
-        HomeRoute(
-            onClickItem = onStartDetail,
-            onHandleNetworkUI = onHandleNetworkUI
-        )
+        HomeRoute(onClickItem = onStartDetail)
     }
 }
