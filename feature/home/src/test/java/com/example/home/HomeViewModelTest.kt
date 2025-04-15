@@ -22,8 +22,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertTrue
 
-class HomeUnitTest {
-
+internal class HomeViewModelTest {
     @get:Rule
     val dispatcherRule = MainDispatcherRule()
 
@@ -38,7 +37,7 @@ class HomeUnitTest {
     }
 
     @Test
-    fun `처음 로딩 시 로딩 상태 emit`() = runTest {
+    fun `처음 로딩 시 로딩 상태`() = runTest {
         // given
         coEvery { pokemonRepository.getPokemonList(any()) } returns flowOf(PagingData.empty())
         homeViewModel = HomeViewModel(getPokemonListUseCase, getLikePokemonListUseCase)
@@ -55,7 +54,7 @@ class HomeUnitTest {
     }
 
     @Test
-    fun `데이터 성공시 Success 상태 emit`() = runTest {
+    fun `데이터 성공시 Success 상태`() = runTest {
         coEvery { pokemonRepository.getPokemonList(any()) } returns flowOf(PagingData.empty())
         homeViewModel = HomeViewModel(getPokemonListUseCase, getLikePokemonListUseCase)
 
@@ -72,14 +71,16 @@ class HomeUnitTest {
     }
 
     @Test
-    fun `Paging 에러 발생 시 Error 상태 emit`() = runTest {
+    fun `Paging 에러 발생 시 Error 상태`() = runTest {
+        // given
         val errorMessage = "네트워크 에러"
+        val exception = Exception(errorMessage)
 
-        // PagingSource 내부에서 에러 발생시킴
         val pagingSource = object : PagingSource<Int, Pokemon>() {
             override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Pokemon> {
-                return LoadResult.Error(Exception(errorMessage))
+                return LoadResult.Error(exception)
             }
+
             override fun getRefreshKey(state: PagingState<Int, Pokemon>): Int? = null
         }
 
@@ -87,16 +88,19 @@ class HomeUnitTest {
             config = PagingConfig(pageSize = 20),
             pagingSourceFactory = { pagingSource }
         ).flow
-
         homeViewModel = HomeViewModel(getPokemonListUseCase, getLikePokemonListUseCase)
 
-        homeViewModel.setEvent(HomeEvent.PagingError(errorMessage))
 
+        // when
+        homeViewModel.setEvent(HomeEvent.PagingError(exception))
+
+        // then
         homeViewModel.state.test {
             val state = awaitItem()
             assertTrue(state.homeUiState is HomeUiState.Error)
             cancelAndConsumeRemainingEvents()
         }
     }
+
 
 }
