@@ -2,7 +2,6 @@ package com.example.home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -44,8 +43,9 @@ fun HomeRoute(
     LaunchedEffect(sideEffect) {
         sideEffect.collect { effect ->
             when (effect) {
-                is HomeSideEffect.CloseBottomSheet -> {}
-                is HomeSideEffect.ShowAllTypeBottomSheet -> {}
+                is HomeSideEffect.CloseAllBottomSheet -> {
+                    isShowGenerationSheet.value = false
+                }
                 is HomeSideEffect.ShowFavoriteBottomSheet -> {}
                 is HomeSideEffect.ShowGenerationsBottomSheet -> {
                     isShowGenerationSheet.value = true

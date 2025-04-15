@@ -32,8 +32,8 @@ class DetailViewModel @Inject constructor(
     override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
     override fun handleEvent(event: DetailEvent) {
         when (event) {
-            is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.BackPage) }
-            is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.BackPage) }
+            is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.NavigateBack) }
+            is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.NavigateBack) }
             is DetailEvent.ClickLikeIcon -> {
                 val isLike = event.isLike
                 viewModelScope.launch {
