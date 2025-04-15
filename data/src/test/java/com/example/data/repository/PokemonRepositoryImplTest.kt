@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import com.example.data.api.fake.FakePokemonAPI
 import com.example.data.datasource.local.FakePokemonInfoLocalDataSource
 import com.example.data.datasource.remote.FakePokemonRemoteDataSource
 import com.example.database.room.toEntity
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.first
 
 internal class PokemonRepositoryImplTest : BehaviorSpec({
 
-    val fakeRemote = FakePokemonRemoteDataSource()
+    val fakeRemote = FakePokemonRemoteDataSource(pokemonAPI = FakePokemonAPI())
     val fakeLocal = FakePokemonInfoLocalDataSource()
 
     val repository = PokemonRepositoryImpl(

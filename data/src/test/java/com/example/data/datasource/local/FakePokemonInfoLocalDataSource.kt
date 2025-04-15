@@ -3,7 +3,7 @@ package com.example.data.datasource.local
 import com.example.database.room.PokemonRoomEntity
 import kotlinx.coroutines.flow.Flow
 
-class FakePokemonInfoLocalDataSource : PokemonInfoLocalDataSource {
+internal class FakePokemonInfoLocalDataSource : PokemonInfoLocalDataSource {
     override suspend fun getPokemonList(): Flow<List<PokemonRoomEntity>> {
         TODO("Not yet implemented")
     }
