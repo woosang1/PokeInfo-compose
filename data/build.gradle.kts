@@ -67,4 +67,9 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.converter.gson)
     implementation(libs.gson)
+
+    // test
+    testImplementation(libs.turbine)
+    implementation(libs.kotest.runner)
+    implementation(libs.kotest.assertions)
 }
