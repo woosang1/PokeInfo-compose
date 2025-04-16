@@ -45,8 +45,6 @@ include(":core:model")
 include(":core:database")
 
 
-
-
 include(":core:resource")
 include(":core:navigation")
 include(":core:base")
