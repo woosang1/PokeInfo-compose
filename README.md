@@ -76,3 +76,8 @@ PokeInfo-compose/
   <img src="screenshots/pokemon-info-evolution.png" width="250" alt="Pokemon Info - Evolution">
   <img src="screenshots/news-detail.png" width="250" alt="News Detail">
 </p>
+
+## 📦 의존 그래프
+<p align="center">
+  <img src="./project.dot.png" width="1000" alt="image">
+</p>
