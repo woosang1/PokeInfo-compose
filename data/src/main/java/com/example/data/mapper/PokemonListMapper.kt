@@ -5,6 +5,8 @@ import com.example.model.ui.Pokemon
 import com.example.model.ui.PokemonList
 import com.example.model.ui.getId
 import com.example.model.ui.getImageUrl
+import com.example.model.ui.getSpriteImageUrl
+import com.example.model.ui.getSpritesShinyImageUrl
 
 internal fun RpPokemonList.toEntity(): PokemonList {
     return PokemonList(
@@ -16,11 +18,14 @@ internal fun RpPokemonList.toEntity(): PokemonList {
 }
 
 internal fun RpPokemonList.Pokemon.toEntity(): Pokemon {
+    val id = getId(this.url)
     return Pokemon(
-        id = getId(this.url).toIntOrNull() ?: 0,
+        id = id.toIntOrNull() ?: 0,
         count = this.count,
         name = this.name,
-        url = getImageUrl(id = getId(this.url)),
+        url = getImageUrl(id = id),
+        spriteImageUrl = getSpriteImageUrl(id),
+        spritesShinyImageUrl = getSpritesShinyImageUrl(id),
         description = "",
         genderRate = Pair(0.0, 0.0),
         eggGroups = "",

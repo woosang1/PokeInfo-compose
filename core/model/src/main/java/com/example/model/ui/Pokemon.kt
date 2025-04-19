@@ -7,6 +7,8 @@ data class Pokemon(
     val id: Int = 0,
     val name: String = "",
     val url: String = "",
+    val spriteImageUrl: String = "",
+    val spritesShinyImageUrl: String = "",
     val weight: Int = 0,
     val height: Int = 0,
     val count: Int = 0,
@@ -39,6 +41,15 @@ data class Pokemon(
 fun getImageUrl(id: String): String {
     return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/" +
             "pokemon/other/official-artwork/$id.png"
+}
+
+fun getSpriteImageUrl(id: String): String {
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png"
+}
+
+fun getSpritesShinyImageUrl(id: String): String {
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites" +
+            "/pokemon/shiny/$id.png"
 }
 
 //fun name(name: String): String = name.replaceFirstChar { it.uppercase() }

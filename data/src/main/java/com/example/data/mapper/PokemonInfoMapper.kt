@@ -3,6 +3,8 @@ package com.example.data.mapper
 import com.example.model.rp.RpPokemonInfo
 import com.example.model.ui.Pokemon
 import com.example.model.ui.getImageUrl
+import com.example.model.ui.getSpriteImageUrl
+import com.example.model.ui.getSpritesShinyImageUrl
 
 fun RpPokemonInfo.toEntity(): Pokemon {
     val id = id ?: 0
@@ -10,6 +12,8 @@ fun RpPokemonInfo.toEntity(): Pokemon {
         id = id,
         name = name.orEmpty(),
         url = getImageUrl(id.toString()),
+        spriteImageUrl = getSpriteImageUrl(id.toString()),
+        spritesShinyImageUrl = getSpritesShinyImageUrl(id.toString()),
         weight = weight ?: 0,
         height = height ?: 0,
         baseExperience = baseExperience ?: 0,
