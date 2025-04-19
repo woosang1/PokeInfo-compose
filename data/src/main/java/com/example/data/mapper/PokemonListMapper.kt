@@ -23,7 +23,7 @@ internal fun RpPokemonList.Pokemon.toEntity(): Pokemon {
         id = id.toIntOrNull() ?: 0,
         count = this.count,
         name = this.name,
-        url = getImageUrl(id = id),
+        thumbnailUrl = getImageUrl(id = id),
         spriteImageUrl = getSpriteImageUrl(id),
         spritesShinyImageUrl = getSpritesShinyImageUrl(id),
         description = "",

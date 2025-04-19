@@ -11,7 +11,7 @@ fun RpPokemonInfo.toEntity(): Pokemon {
     return Pokemon(
         id = id,
         name = name.orEmpty(),
-        url = getImageUrl(id.toString()),
+        thumbnailUrl = getImageUrl(id.toString()),
         spriteImageUrl = getSpriteImageUrl(id.toString()),
         spritesShinyImageUrl = getSpritesShinyImageUrl(id.toString()),
         weight = weight ?: 0,

@@ -5,7 +5,9 @@ import com.example.model.ui.Pokemon
 
 fun Pokemon.toEvolutionModel(): EvolutionModel {
     return EvolutionModel(
-        name = this.name
+        name = this.name,
+        spriteImageUrl = this.spriteImageUrl,
+        spritesShinyImageUrl = this.spritesShinyImageUrl
     )
 }
 

@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 data class Pokemon(
     val id: Int = 0,
     val name: String = "",
-    val url: String = "",
+    val thumbnailUrl: String = "",
     val spriteImageUrl: String = "",
     val spritesShinyImageUrl: String = "",
     val weight: Int = 0,

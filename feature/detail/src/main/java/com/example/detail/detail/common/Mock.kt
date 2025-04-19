@@ -10,7 +10,7 @@ val waterType = PokemonType.Type(name = "Water", url = "https://pokeapi.co/api/v
 val mockBlastoise = Pokemon(
     id = 9,  // 포켓몬 ID (전국 도감 기준)
     name = "Blastoise",  // 포켓몬 이름
-    url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",  // 포켓몬  URL
+    thumbnailUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",  // 포켓몬  URL
     weight = 855,  // 무게 (85.5kg, 단위: hectograms)
     height = 16,  // 키 (1.6m, 단위: decimeters)
     count = 1,  // 소유 개수 (사용자 데이터 관리 용도)

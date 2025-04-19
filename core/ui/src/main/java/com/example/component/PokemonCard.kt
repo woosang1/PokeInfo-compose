@@ -113,7 +113,7 @@ fun PokemonCard(
                     .align(Alignment.BottomEnd)
             ) {
                 AsyncImage(
-                    model = pokemon.url,
+                    model = pokemon.thumbnailUrl,
                     modifier = Modifier
                         .size(80.dp)
                         .clip(CircleShape),

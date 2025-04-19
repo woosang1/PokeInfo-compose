@@ -47,7 +47,7 @@ private fun createPagingDataDiffer(
     return AsyncPagingDataDiffer(
         diffCallback = object : DiffUtil.ItemCallback<Pokemon>() {
             override fun areItemsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
-                return oldItem.url == newItem.url
+                return oldItem.thumbnailUrl == newItem.thumbnailUrl
             }
 
             override fun areContentsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {

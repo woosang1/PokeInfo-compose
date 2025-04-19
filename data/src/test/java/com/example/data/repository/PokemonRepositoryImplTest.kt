@@ -21,7 +21,7 @@ internal class PokemonRepositoryImplTest : BehaviorSpec({
     )
 
     Given("로컬에 좋아요 포켓몬이 있다") {
-        val pokemon = Pokemon(id = 1, name = "피카츄", url = "url")
+        val pokemon = Pokemon(id = 1, name = "피카츄", thumbnailUrl = "url")
         fakeLocal.insert(pokemon.toEntity())
 
         When("좋아요 포켓몬 리스트를 조회하면") {

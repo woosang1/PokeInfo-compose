@@ -112,7 +112,7 @@ fun DetailContent(
 
             // 이미지 (가운데 정렬 + 위쪽 마진)
             AsyncImage(
-                model = pokemon.url,
+                model = pokemon.thumbnailUrl,
                 modifier = Modifier
                     .size(200.dp)
                     .clip(CircleShape)

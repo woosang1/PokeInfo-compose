@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.flowOf
 internal class FakePokemonRepository: PokemonRepository {
     override fun getPokemonList(page: Int): Flow<PagingData<Pokemon>> {
         val dummyList = listOf(
-            Pokemon(name = "피카츄", url = "https://pokeapi.co/api/v2/pokemon/25/"),
-            Pokemon(name = "이상해씨", url = "https://pokeapi.co/api/v2/pokemon/1/")
+            Pokemon(name = "피카츄", thumbnailUrl = "https://pokeapi.co/api/v2/pokemon/25/"),
+            Pokemon(name = "이상해씨", thumbnailUrl = "https://pokeapi.co/api/v2/pokemon/1/")
         )
         return flowOf(PagingData.from(dummyList))
     }

@@ -5,7 +5,7 @@ import com.example.model.ui.Pokemon
 fun Pokemon.toEntity(): PokemonRoomEntity = PokemonRoomEntity(
     id = id,
     name = name,
-    url = url,
+    url = thumbnailUrl,
     weight = weight,
     height = height,
     count = count,
@@ -26,7 +26,7 @@ fun Pokemon.toEntity(): PokemonRoomEntity = PokemonRoomEntity(
 fun PokemonRoomEntity.toDomain(): Pokemon = Pokemon(
     id = id,
     name = name,
-    url = url,
+    thumbnailUrl = url,
     weight = weight,
     height = height,
     count = count,
