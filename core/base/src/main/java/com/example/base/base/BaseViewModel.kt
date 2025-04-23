@@ -23,7 +23,7 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
 
-    private val _effect: Channel<SideEffect> = Channel()
+    private val _effect: Channel<Effect> = Channel()
     val effect = _effect.receiveAsFlow()
 
     init {
@@ -49,7 +49,7 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
         _state.value = newState
     }
 
-    fun setEffect(effect: SideEffect) {
+    fun setEffect(effect: Effect) {
         viewModelScope.launch { _effect.send(effect) }
     }
 }
