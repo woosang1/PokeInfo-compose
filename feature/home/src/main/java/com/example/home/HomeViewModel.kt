@@ -65,7 +65,7 @@ class HomeViewModel @Inject constructor(
             }
 
             is HomeEvent.PagingError -> {
-                setEffect(HomeSideEffect.HideLoadingAnimation)
+//                setEffect(HomeSideEffect.HideLoadingAnimation)
                 handleError(event.e)
             }
 
@@ -95,7 +95,6 @@ class HomeViewModel @Inject constructor(
 
         viewModelScope.launch {
             pagingFlow
-                .onStart { setEffect(HomeSideEffect.ShowLoadingAnimation) }
                 .catch { e ->
                 setState { copy(homeUiState = HomeUiState.Error) }
                 handleError(throwable = e)

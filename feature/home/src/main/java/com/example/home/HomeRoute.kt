@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -33,37 +35,21 @@ fun HomeRoute(
 
     val foldableState by rememberFoldableState(context)
     val isDualScreen = foldableState?.isDualScreen() ?: false
-
     val state by homeViewModel.state.collectAsStateWithLifecycle()
 
-    val isLoadingAnimation = remember { mutableStateOf(false) }
-    val isShowGenerationSheet = remember { mutableStateOf(false) }
+    val isShowGenerationSheet = rememberSaveable { mutableStateOf(false) }
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(homeViewModel) {
         homeViewModel.effect.collect { effect ->
             when (effect) {
-                is HomeSideEffect.CloseAllBottomSheet -> {
-                    isShowGenerationSheet.value = false
-                }
                 is HomeSideEffect.ShowFavoriteBottomSheet -> {}
                 is HomeSideEffect.ShowGenerationsBottomSheet -> {
                     isShowGenerationSheet.value = true
                 }
-                is HomeSideEffect.HideGenerationsBottomSheet -> {
-                    isShowGenerationSheet.value = false
-                }
                 is HomeSideEffect.ShowSearchBottomSheet -> {}
-                is HomeSideEffect.ShowToast -> {
-                    context.showToast(effect.message)
-                }
+                is HomeSideEffect.ShowToast -> context.showToast(effect.message)
                 is HomeSideEffect.StartDetailActivity -> {
-                    onClickItem.invoke(effect.pokemon.id.toString())
-                }
-                is HomeSideEffect.ShowLoadingAnimation -> {
-                    isLoadingAnimation.value = true
-                }
-                is HomeSideEffect.HideLoadingAnimation -> {
-                    isLoadingAnimation.value = false
+                    onClickItem(effect.pokemon.id.toString())
                 }
                 is HomeSideEffect.HandleNetworkUI -> {
                     context.showToast(effect.uiError.message)
@@ -88,21 +74,18 @@ fun HomeRoute(
             onEvent = { event -> homeViewModel.setEvent(event) }
         )
 
-        if (isLoadingAnimation.value){
-            val uiState = state.homeUiState
-            (uiState as? HomeUiState.Content)?.let {
-                val pokeList = uiState.pokemonList.collectAsLazyPagingItems()
-                val isEmpty = (pokeList.itemCount == 0)
-                if (pokeList.loadState.refresh is LoadState.Loading || isEmpty) { LoadingAnimation() }
-                else homeViewModel.setEffect(HomeSideEffect.HideLoadingAnimation)
-            }
+        val uiState = state.homeUiState
+        (uiState as? HomeUiState.Content)?.let {
+            val pokeList = uiState.pokemonList.collectAsLazyPagingItems()
+            val isEmpty = (pokeList.itemCount == 0)
+            if (pokeList.loadState.refresh is LoadState.Loading || isEmpty) { LoadingAnimation() }
         }
 
         if (isShowGenerationSheet.value) {
             GenerationBottomSheet(
                 modifier = Modifier.align(Alignment.BottomCenter),
                 onClickItem = { homeViewModel.setEvent(HomeEvent.SelectGeneration(it)) },
-                onHide = { homeViewModel.setEffect(HomeSideEffect.HideGenerationsBottomSheet) }
+                onHide = { isShowGenerationSheet.value = false }
             )
         }
     }
