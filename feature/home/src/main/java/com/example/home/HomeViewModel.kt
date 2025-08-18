@@ -19,7 +19,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,7 +34,10 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.Init -> { checkLoading() }
+            is HomeEvent.Init -> {
+                checkLoading()
+            }
+
             is HomeEvent.ClickFloatingBtn -> {
                 when (event.menuType) {
                     MenuType.LIKE -> {
@@ -59,19 +64,23 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
+
             is HomeEvent.ClickPokemonCard -> {
                 setEffect(HomeSideEffect.StartDetailActivity(pokemon = event.pokemon))
             }
+
             is HomeEvent.SelectGeneration -> {
                 viewModelScope.launch {
                     setEffect(HomeSideEffect.ShowLoadingAnimation)
                     getPokemonList(page = 0, generation = event.generation)
                 }
             }
+
             is HomeEvent.PagingError -> {
                 setEffect(HomeSideEffect.HideLoadingAnimation)
                 handleError(event.e)
             }
+
             is HomeEvent.ClickReLoadBtn -> {
                 setEffect(HomeSideEffect.ShowLoadingAnimation)
                 getPokemonList(page = 0)
@@ -91,19 +100,18 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getPokemonList(page: Int, generation: Int? = null) {
+        val idRange = generation?.let { getIdRangeForGeneration(it) }
+        val pagingFlow = getPokemonListUseCase(page = page)
+            .map { pagingData ->
+                idRange?.let { range -> pagingData.filter { it.id in range } } ?: pagingData
+            }
+            .cachedIn(viewModelScope)
+
         viewModelScope.launch {
-            val idRange = generation?.let { getIdRangeForGeneration(it) }
-            getPokemonListUseCase(page = page)
-                .map { pagingData ->
-                    idRange?.let { range ->
-                        pagingData.filter { it.id in range }
-                    } ?: pagingData
-                }
-                .cachedIn(this)
-                .catch { e ->
-                    setState { copy(homeUiState = HomeUiState.Error) }
-                    handleError(throwable = e)
-                }
+            pagingFlow.catch { e ->
+                setState { copy(homeUiState = HomeUiState.Error) }
+                handleError(throwable = e)
+            }
                 .collectLatest { filteredPagingData ->
                     setState {
                         copy(
@@ -115,6 +123,5 @@ class HomeViewModel @Inject constructor(
                 }
         }
     }
-
 
 }
