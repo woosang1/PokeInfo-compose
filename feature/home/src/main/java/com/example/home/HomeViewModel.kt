@@ -24,6 +24,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -52,13 +53,8 @@ class HomeViewModel @Inject constructor(
                             copy(homeUiState = HomeUiState.Content(pokemonList = pagingFlow))
                         }
                     }
-
                     MenuType.SEARCH -> {}
-                    MenuType.HOME -> {
-                        setEffect(HomeSideEffect.ShowLoadingAnimation)
-                        getPokemonList(page = 0)
-                    }
-
+                    MenuType.HOME -> { getPokemonList(page = 0) }
                     MenuType.GENERATION -> {
                         setEffect(HomeSideEffect.ShowGenerationsBottomSheet)
                     }
@@ -70,10 +66,7 @@ class HomeViewModel @Inject constructor(
             }
 
             is HomeEvent.SelectGeneration -> {
-                viewModelScope.launch {
-                    setEffect(HomeSideEffect.ShowLoadingAnimation)
-                    getPokemonList(page = 0, generation = event.generation)
-                }
+                getPokemonList(page = 0, generation = event.generation)
             }
 
             is HomeEvent.PagingError -> {
@@ -82,7 +75,6 @@ class HomeViewModel @Inject constructor(
             }
 
             is HomeEvent.ClickReLoadBtn -> {
-                setEffect(HomeSideEffect.ShowLoadingAnimation)
                 getPokemonList(page = 0)
             }
         }
@@ -94,7 +86,6 @@ class HomeViewModel @Inject constructor(
 
     private fun checkLoading() {
         if (state.value.homeUiState !is HomeUiState.Content) {
-            setEffect(HomeSideEffect.ShowLoadingAnimation)
             getPokemonList(page = 0)
         }
     }
@@ -108,7 +99,9 @@ class HomeViewModel @Inject constructor(
             .cachedIn(viewModelScope)
 
         viewModelScope.launch {
-            pagingFlow.catch { e ->
+            pagingFlow
+                .onStart { setEffect(HomeSideEffect.ShowLoadingAnimation) }
+                .catch { e ->
                 setState { copy(homeUiState = HomeUiState.Error) }
                 handleError(throwable = e)
             }
