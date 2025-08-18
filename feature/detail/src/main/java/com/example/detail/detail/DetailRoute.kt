@@ -1,5 +1,6 @@
 package com.example.detail.detail
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -26,7 +27,10 @@ fun DetailRoute(
                 is DetailSideEffect.MoveTab -> { }
                 is DetailSideEffect.SetLikeIcon -> { }
                 is DetailSideEffect.ShowToast -> { context.showToast(message = effect.message) }
-                is DetailSideEffect.NavigateBack -> { onBackEvent.invoke() }
+                is DetailSideEffect.NavigateBack -> {
+                    Log.i("aaaa", "DetailRoute - NavigateBack")
+                    onBackEvent.invoke()
+                }
                 is DetailSideEffect.HandleNetworkUI -> {
                     context.showToast(effect.uiError.message)
                     when(effect.uiError){

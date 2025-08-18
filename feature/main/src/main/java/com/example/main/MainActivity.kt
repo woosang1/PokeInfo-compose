@@ -4,17 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.designsystem.theme.PokeInfoTheme
+import com.example.utils.extension.showStateBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        showStateBar()
         setContent {
-            setContent {
-                PokeInfoTheme {
-                    MainScreen()
-                }
+            PokeInfoTheme {
+                MainScreen()
             }
         }
     }

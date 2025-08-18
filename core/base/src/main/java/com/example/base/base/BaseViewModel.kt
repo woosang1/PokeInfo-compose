@@ -52,23 +52,4 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     fun setEffect(effect: Effect) {
         _effect.tryEmit(effect)
     }
-
-    fun observe(
-        lifecycleOwner: LifecycleOwner,
-        stateHandler: (State) -> Unit,
-        sideEffectHandler: (Effect) -> Unit
-    ) {
-        lifecycleOwner.lifecycleScope.launch {
-            lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                state
-                    .onEach { stateHandler(it) }
-                    .launchIn(this)
-
-                effect
-                    .onEach { sideEffectHandler(it) }
-                    .launchIn(this)
-            }
-        }
-    }
-
 }
