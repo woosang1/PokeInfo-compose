@@ -11,12 +11,10 @@ import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.domain.usecase.GetPokemonDetailInfoUseCase
 import com.example.domain.usecase.InsertPokemonUseCase
 import com.example.utils.FeatureErrorHandler
-import com.example.utils.log.DebugLog
 import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.launchIn

@@ -4,10 +4,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,14 +15,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.component.LoadingAnimation
-import com.example.utils.extension.showToast
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeUiState
 import com.example.home.component.GenerationBottomSheet
 import com.example.utils.UiError
-import com.example.utils.state.rememberFoldableState
 import com.example.utils.extension.isDualScreen
+import com.example.utils.extension.showToast
+import com.example.utils.state.rememberFoldableState
 
 @Composable
 fun HomeRoute(

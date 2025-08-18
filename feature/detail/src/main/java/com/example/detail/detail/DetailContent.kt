@@ -28,7 +28,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,11 +49,11 @@ import com.example.detail.baseStats.baseStatsNavGraph
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
-import com.example.utils.extension.getHeightDisplay
-import com.example.utils.extension.pxToDp
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
 import com.example.navigation.DetailTabRoute.Companion.getIndex
+import com.example.utils.extension.getHeightDisplay
+import com.example.utils.extension.pxToDp
 import kotlinx.serialization.json.Json
 
 @Composable

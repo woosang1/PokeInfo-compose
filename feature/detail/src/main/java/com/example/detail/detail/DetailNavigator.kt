@@ -16,10 +16,10 @@ import com.example.detail.baseStats.toBaseStatsModel
 import com.example.detail.evolution.navigationEvolution
 import com.example.detail.evolution.toEvolutionModel
 import com.example.detail.moves.navigationMoves
-import com.example.utils.log.DebugLog
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
 import com.example.navigation.MainRoute
+import com.example.utils.log.DebugLog
 
 
 class DetailNavigator(

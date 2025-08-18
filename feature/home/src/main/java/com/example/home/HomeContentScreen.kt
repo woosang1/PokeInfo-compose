@@ -4,10 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.utils.PagingContentHandler
 import com.example.home.common.HomeEvent
 import com.example.home.component.GridCardLayout
 import com.example.model.ui.Pokemon
+import com.example.utils.PagingContentHandler
 import kotlinx.coroutines.flow.Flow
 
 @Composable

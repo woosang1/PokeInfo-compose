@@ -44,10 +44,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
+import com.example.home.model.GenerationItemData
 import com.example.utils.extension.getHeightDisplay
 import com.example.utils.extension.noRippleClickable
 import com.example.utils.extension.pxToDp
-import com.example.home.model.GenerationItemData
 import com.example.utils.log.DebugLog
 import com.example.resource.R as ResourceR
 

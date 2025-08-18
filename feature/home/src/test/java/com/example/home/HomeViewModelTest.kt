@@ -5,22 +5,22 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.domain.usecase.GetLikePokemonListUseCase
-import com.example.domain.usecase.GetPokemonListUseCase
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
-import io.mockk.mockk
-import com.example.testing.rule.MainDispatcherRule
-import io.mockk.coEvery
 import app.cash.turbine.test
 import com.example.domain.repository.PokemonRepository
+import com.example.domain.usecase.GetLikePokemonListUseCase
+import com.example.domain.usecase.GetPokemonListUseCase
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeUiState
 import com.example.model.ui.Pokemon
+import com.example.testing.rule.MainDispatcherRule
+import io.mockk.coEvery
+import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertTrue
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 
 internal class HomeViewModelTest {
     @get:Rule
