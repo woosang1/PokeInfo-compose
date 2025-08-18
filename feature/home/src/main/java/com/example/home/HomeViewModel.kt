@@ -43,10 +43,11 @@ class HomeViewModel @Inject constructor(
                     MenuType.LIKE -> {
                         viewModelScope.launch {
                             val likePokemonList = getLikePokemonListUseCase()
+                            val pagingData = PagingData.from(likePokemonList)
                             setState {
                                 copy(
                                     homeUiState = HomeUiState.Content(
-                                        pokemonList = likePokemonList.map { PagingData.from(it) }
+                                        pokemonList = flowOf(pagingData)
                                     )
                                 )
                             }

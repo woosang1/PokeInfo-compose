@@ -18,6 +18,8 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,11 +31,19 @@ class DetailViewModel @Inject constructor(
     private val deletePokemonUseCase: DeletePokemonUseCase,
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>(), FeatureErrorHandler {
 
-    override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
+    override fun createInitialState(): DetailState =
+        DetailState(detailUiState = DetailUiState.Loading)
+
     override fun handleEvent(event: DetailEvent) {
         when (event) {
-            is DetailEvent.ClickBackIcon -> { setEffect(DetailSideEffect.NavigateBack) }
-            is DetailEvent.PressBackActionWithFirstTab -> { setEffect(DetailSideEffect.NavigateBack) }
+            is DetailEvent.ClickBackIcon -> {
+                setEffect(DetailSideEffect.NavigateBack)
+            }
+
+            is DetailEvent.PressBackActionWithFirstTab -> {
+                setEffect(DetailSideEffect.NavigateBack)
+            }
+
             is DetailEvent.ClickLikeIcon -> {
                 val isLike = event.isLike
                 viewModelScope.launch {
@@ -41,7 +51,7 @@ class DetailViewModel @Inject constructor(
                         val pokemon = result.pokemon
                         if (isLike) insertPokemonUseCase(pokemon = pokemon)
                         else deletePokemonUseCase(id = pokemon.id)
-                        setEffect(DetailSideEffect.ShowToast(if (isLike)"좋아요가 추가되었습니다." else "좋아요를 취소했습니다."))
+                        setEffect(DetailSideEffect.ShowToast(if (isLike) "좋아요가 추가되었습니다." else "좋아요를 취소했습니다."))
                         val updatedPokemon = result.pokemon.copy(isLike = isLike)
                         setState {
                             copy(detailUiState = result.copy(pokemon = updatedPokemon))
@@ -49,7 +59,8 @@ class DetailViewModel @Inject constructor(
                     }
                 }
             }
-            is DetailEvent.SelectTab -> { }
+
+            is DetailEvent.SelectTab -> {}
         }
     }
 
@@ -58,20 +69,18 @@ class DetailViewModel @Inject constructor(
     }
 
     fun getPokemonDetailInfo(id: Int) {
-        viewModelScope.launch {
-            combine(
-                getLikePokemonListUseCase(),
-                flow { emit(getPokemonDetailInfoUseCase(id)) }
-            ) { likeList, pokemon ->
-                val isLiked = likeList.any { it.id == pokemon.id }
-                pokemon.copy(isLike = isLiked)
-            }.catch { e ->
-                DebugLog("error : ${e.message}")
-                setState { copy(detailUiState = DetailUiState.Empty) }
-                handleError(e)
-            }.collectLatest { updatedPokemon ->
-                setState { copy(detailUiState = DetailUiState.Result(pokemon = updatedPokemon)) }
-            }
+        combine(
+            flow { emit(getLikePokemonListUseCase()) },
+            flow { emit(getPokemonDetailInfoUseCase(id)) }
+        ) { likeList, pokemon ->
+            val isLiked = likeList.any { it.id == pokemon.id }
+            pokemon.copy(isLike = isLiked)
+        }.catch { e ->
+            setState { copy(detailUiState = DetailUiState.Empty) }
+            handleError(e)
+        }.onEach { updatedPokemon ->
+            setState { copy(detailUiState = DetailUiState.Result(pokemon = updatedPokemon)) }
         }
+        .launchIn(viewModelScope)
     }
 }
