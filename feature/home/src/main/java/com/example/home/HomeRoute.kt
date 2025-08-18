@@ -35,13 +35,12 @@ fun HomeRoute(
     val isDualScreen = foldableState?.isDualScreen() ?: false
 
     val state by homeViewModel.state.collectAsStateWithLifecycle()
-    val sideEffect = homeViewModel.effect
 
     val isLoadingAnimation = remember { mutableStateOf(false) }
     val isShowGenerationSheet = remember { mutableStateOf(false) }
 
-    LaunchedEffect(sideEffect) {
-        sideEffect.collect { effect ->
+    LaunchedEffect(Unit) {
+        homeViewModel.effect.collect { effect ->
             when (effect) {
                 is HomeSideEffect.CloseAllBottomSheet -> {
                     isShowGenerationSheet.value = false

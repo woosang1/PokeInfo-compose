@@ -19,18 +19,14 @@ fun DetailRoute(
 ) {
     val context = LocalContext.current
     val uiState by detailViewModel.state.collectAsStateWithLifecycle()
-    val sideEffect = detailViewModel.effect
 
-    LaunchedEffect(sideEffect) {
-        sideEffect.collect { effect ->
+    LaunchedEffect(true) {
+        detailViewModel.effect.collect { effect ->
             when (effect) {
                 is DetailSideEffect.MoveTab -> { }
                 is DetailSideEffect.SetLikeIcon -> { }
                 is DetailSideEffect.ShowToast -> { context.showToast(message = effect.message) }
-                is DetailSideEffect.NavigateBack -> {
-                    Log.i("aaaa", "DetailRoute - NavigateBack")
-                    onBackEvent.invoke()
-                }
+                is DetailSideEffect.NavigateBack -> { onBackEvent.invoke() }
                 is DetailSideEffect.HandleNetworkUI -> {
                     context.showToast(effect.uiError.message)
                     when(effect.uiError){

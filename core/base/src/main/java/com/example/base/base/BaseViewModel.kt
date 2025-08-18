@@ -8,6 +8,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import com.example.base.mvi.SideEffect
 import com.example.utils.UiError
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,7 +31,11 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
 
-    private val _effect = MutableSharedFlow<Effect>(replay = 1)
+    private val _effect = MutableSharedFlow<Effect>(
+        replay = 0,
+        extraBufferCapacity = 1,
+        onBufferOverflow = BufferOverflow.SUSPEND
+    )
     val effect = _effect.asSharedFlow()
 
     init {

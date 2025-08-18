@@ -21,9 +21,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -37,10 +35,7 @@ class HomeViewModel @Inject constructor(
     override fun createInitialState(): HomeState = HomeState(homeUiState = HomeUiState.Init)
     override fun handleEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.Init -> {
-                checkLoading()
-            }
-
+            is HomeEvent.Init -> { checkLoading() }
             is HomeEvent.ClickFloatingBtn -> {
                 when (event.menuType) {
                     MenuType.LIKE -> {
