@@ -14,6 +14,7 @@ import com.example.utils.FeatureErrorHandler
 import com.example.utils.log.DebugLog
 import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
@@ -46,7 +47,7 @@ class DetailViewModel @Inject constructor(
 
             is DetailEvent.ClickLikeIcon -> {
                 val isLike = event.isLike
-                viewModelScope.launch {
+                viewModelScope.launch(Dispatchers.IO) {
                     (state.value.detailUiState as? DetailUiState.Result)?.let { result ->
                         val pokemon = result.pokemon
                         if (isLike) insertPokemonUseCase(pokemon = pokemon)

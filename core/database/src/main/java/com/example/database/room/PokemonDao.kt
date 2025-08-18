@@ -12,11 +12,11 @@ interface PokemonDao {
     fun getPokemonList(): Flow<List<PokemonRoomEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(pokemon: PokemonRoomEntity)
+    fun insert(pokemon: PokemonRoomEntity)
 
     @Query("DELETE FROM pokemon_table WHERE id = :id")
-    suspend fun deleteById(id: Int)
+    fun deleteById(id: Int)
 
     @Query("DELETE FROM pokemon_table")
-    suspend fun clear()
+    fun clear()
 }
