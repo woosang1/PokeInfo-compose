@@ -1,6 +1,10 @@
 package com.example.base.base
 
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import com.example.base.mvi.SideEffect
 import com.example.utils.UiError
@@ -11,6 +15,9 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.update
 
 abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.example.base.mvi.State, Effect : SideEffect> : ViewModel() {
 
@@ -23,19 +30,13 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
 
-    private val _effect: Channel<Effect> = Channel()
-    val effect = _effect.receiveAsFlow()
+    private val _effect = MutableSharedFlow<Effect>(replay = 1)
+    val effect = _effect.asSharedFlow()
 
     init {
-        subscribeEvents()
-    }
-
-    private fun subscribeEvents() {
-        viewModelScope.launch {
-            event.collect {
-                handleEvent(it)
-            }
-        }
+        event
+            .onEach { handleEvent(it) }
+            .launchIn(viewModelScope)
     }
 
     abstract fun handleEvent(event: Event)
@@ -45,11 +46,29 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     }
 
     protected fun setState(reduce: State.() -> State) {
-        val newState = state.value.reduce()
-        _state.value = newState
+        _state.update { current -> current.reduce() }
     }
 
     fun setEffect(effect: Effect) {
-        viewModelScope.launch { _effect.send(effect) }
+        _effect.tryEmit(effect)
     }
+
+    fun observe(
+        lifecycleOwner: LifecycleOwner,
+        stateHandler: (State) -> Unit,
+        sideEffectHandler: (Effect) -> Unit
+    ) {
+        lifecycleOwner.lifecycleScope.launch {
+            lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                state
+                    .onEach { stateHandler(it) }
+                    .launchIn(this)
+
+                effect
+                    .onEach { sideEffectHandler(it) }
+                    .launchIn(this)
+            }
+        }
+    }
+
 }
