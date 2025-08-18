@@ -4,11 +4,11 @@ import com.example.domain.repository.PokemonRepository
 import com.example.model.ui.Pokemon
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class GetLikePokemonListUseCase @Inject constructor(
     private val pokemonRepository: PokemonRepository
 ) {
-    suspend operator fun invoke(): List<Pokemon> =
-        pokemonRepository.getLikePokemonList().first()
+    operator fun invoke(): Flow<List<Pokemon>> = pokemonRepository.getLikePokemonList()
 }

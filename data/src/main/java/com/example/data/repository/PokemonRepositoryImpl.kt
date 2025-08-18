@@ -42,7 +42,7 @@ class PokemonRepositoryImpl @Inject constructor(
     override suspend fun getPokemonTypeInfo(type: String) = remoteDataSource.getPokemonTypeInfo(type).toEntity()
 
     /** local **/
-    override suspend fun getLikePokemonList(): Flow<List<Pokemon>>
+    override fun getLikePokemonList(): Flow<List<Pokemon>>
         = localDataSource.getPokemonList().map { list -> list.map { it.toDomain() } }
     override suspend fun insertLocalDB(pokemon: Pokemon) { localDataSource.insert(pokemon = pokemon.toEntity()) }
     override suspend fun deleteLocalDB(id: Int) { localDataSource.deleteContent(id) }

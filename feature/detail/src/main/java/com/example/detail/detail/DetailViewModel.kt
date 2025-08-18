@@ -71,7 +71,7 @@ class DetailViewModel @Inject constructor(
 
     fun getPokemonDetailInfo(id: Int) {
         combine(
-            flow { emit(getLikePokemonListUseCase()) },
+            getLikePokemonListUseCase(),
             flow { emit(getPokemonDetailInfoUseCase(id)) }
         ) { likeList, pokemon ->
             val isLiked = likeList.any { it.id == pokemon.id }

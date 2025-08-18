@@ -13,9 +13,11 @@ import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
 import com.example.home.common.getIdRangeForGeneration
+import com.example.model.ui.Pokemon
 import com.example.utils.FeatureErrorHandler
 import com.example.utils.toUiError
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOf
@@ -41,16 +43,13 @@ class HomeViewModel @Inject constructor(
             is HomeEvent.ClickFloatingBtn -> {
                 when (event.menuType) {
                     MenuType.LIKE -> {
-                        viewModelScope.launch {
-                            val likePokemonList = getLikePokemonListUseCase()
-                            val pagingData = PagingData.from(likePokemonList)
-                            setState {
-                                copy(
-                                    homeUiState = HomeUiState.Content(
-                                        pokemonList = flowOf(pagingData)
-                                    )
-                                )
-                            }
+                        val pagingFlow: Flow<PagingData<Pokemon>> =
+                            getLikePokemonListUseCase()
+                                .map { list -> PagingData.from(list) }
+                                .cachedIn(viewModelScope)
+
+                        setState {
+                            copy(homeUiState = HomeUiState.Content(pokemonList = pagingFlow))
                         }
                     }
 
