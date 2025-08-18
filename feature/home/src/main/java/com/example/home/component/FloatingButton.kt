@@ -1,4 +1,4 @@
-package com.example.home.view
+package com.example.home.component
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable

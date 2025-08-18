@@ -1,4 +1,4 @@
-package com.example.home.view
+package com.example.home.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

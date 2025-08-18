@@ -23,7 +23,7 @@ import com.example.home.common.HomeEvent
 import com.example.home.common.HomeState
 import com.example.home.common.HomeUiState
 import com.example.home.common.MenuType
-import com.example.home.view.FloatingButton
+import com.example.home.component.FloatingButton
 import com.example.utils.log.DebugLog
 import com.example.resource.R as ResourceR
 

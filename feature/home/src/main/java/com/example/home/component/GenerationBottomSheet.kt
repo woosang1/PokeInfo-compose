@@ -1,4 +1,4 @@
-package com.example.home.view
+package com.example.home.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image

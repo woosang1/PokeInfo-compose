@@ -19,7 +19,7 @@ import com.example.utils.extension.showToast
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeSideEffect
 import com.example.home.common.HomeUiState
-import com.example.home.view.GenerationBottomSheet
+import com.example.home.component.GenerationBottomSheet
 import com.example.utils.UiError
 import com.example.utils.state.rememberFoldableState
 import com.example.utils.extension.isDualScreen
