@@ -32,19 +32,12 @@ class DetailViewModel @Inject constructor(
     private val deletePokemonUseCase: DeletePokemonUseCase,
 ) : BaseViewModel<DetailEvent, DetailState, DetailSideEffect>(), FeatureErrorHandler {
 
-    override fun createInitialState(): DetailState =
-        DetailState(detailUiState = DetailUiState.Loading)
+    override fun createInitialState(): DetailState = DetailState(detailUiState = DetailUiState.Loading)
 
     override fun handleEvent(event: DetailEvent) {
         when (event) {
-            is DetailEvent.ClickBackIcon -> {
-                setEffect(DetailSideEffect.NavigateBack)
-            }
-
-            is DetailEvent.PressBackActionWithFirstTab -> {
-                setEffect(DetailSideEffect.NavigateBack)
-            }
-
+            is DetailEvent.ClickBackIcon -> setEffect(DetailSideEffect.NavigateBack)
+            is DetailEvent.PressBackActionWithFirstTab -> setEffect(DetailSideEffect.NavigateBack)
             is DetailEvent.ClickLikeIcon -> {
                 val isLike = event.isLike
                 viewModelScope.launch(Dispatchers.IO) {
@@ -60,7 +53,6 @@ class DetailViewModel @Inject constructor(
                     }
                 }
             }
-
             is DetailEvent.SelectTab -> {}
         }
     }

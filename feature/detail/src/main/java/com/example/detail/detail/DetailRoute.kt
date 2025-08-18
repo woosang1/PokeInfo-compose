@@ -26,7 +26,7 @@ fun DetailRoute(
                 is DetailSideEffect.MoveTab -> { }
                 is DetailSideEffect.SetLikeIcon -> { }
                 is DetailSideEffect.ShowToast -> { context.showToast(message = effect.message) }
-                is DetailSideEffect.NavigateBack -> { onBackEvent.invoke() }
+                is DetailSideEffect.NavigateBack -> { onBackEvent() }
                 is DetailSideEffect.HandleNetworkUI -> {
                     context.showToast(effect.uiError.message)
                     when(effect.uiError){

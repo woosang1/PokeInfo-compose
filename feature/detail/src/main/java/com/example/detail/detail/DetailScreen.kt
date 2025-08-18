@@ -34,10 +34,7 @@ fun DetailScreen(
     onInit: () -> Unit,
     onEvent: (DetailEvent) -> Unit
 ) {
-    LaunchedEffect(Unit) {
-        DebugLog("DetailScreen - LaunchedEffect(Unit)")
-        onInit.invoke()
-    }
+    LaunchedEffect(Unit) { onInit.invoke() }
 
     val isShowToolbar = remember(uiState.detailUiState) {
         uiState.detailUiState is DetailUiState.Result

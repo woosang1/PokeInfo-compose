@@ -52,7 +52,6 @@ import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
 import com.example.utils.extension.getHeightDisplay
 import com.example.utils.extension.pxToDp
-import com.example.utils.log.DebugLog
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
 import com.example.navigation.DetailTabRoute.Companion.getIndex
@@ -149,30 +148,12 @@ fun PokemonInfoBottomSheet(
         skipHiddenState = true
     )
 
-    val scope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
-
     var isSheetVisible by remember { mutableStateOf(true) }
 
     LaunchedEffect(bottomSheetState.targetValue) {
-        DebugLog("- LaunchedEffect(bottomSheetState.targetValue) -")
         isSheetVisible = bottomSheetState.targetValue != SheetValue.Hidden
-        DebugLog("- isSheetVisible : ${isSheetVisible} -")
     }
-
-    // TODO: 뒤로가기 이벤트 작업중. 
-//    BackHandler(enabled = isSheetVisible) {
-//        DebugLog("- BackHandler -")
-//        navigator.backEvent(
-//            currentTab = selectedTab,
-//            onTabChanged = { changeTabRoute ->
-//                DebugLog("- onTabChanged[${changeTabRoute.getIndex()}] - : ${changeTabRoute}")
-//                selectedTab = changeTabRoute
-//                onEvent.invoke(DetailEvent.SelectTab(changeTabRoute))
-//            },
-//            onFirstTabAction = { onEvent.invoke(DetailEvent.PressBackActionWithFirstTab) }
-//        )
-//    }
 
     BottomSheetScaffold(
         modifier = modifier
@@ -189,8 +170,6 @@ fun PokemonInfoBottomSheet(
                     selectedTab = DetailTabRoute.tabList[index]
                 }
             )
-            // 네비게이션 영역
-            // TODO: 뒤로가기시,  startDestination 가 한번씩 나오는 이슈 발생!!!
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(
                     navController = navigator.navController,
@@ -209,14 +188,7 @@ fun PokemonInfoBottomSheet(
         sheetSwipeEnabled = true
     ) { paddingValues -> }
 
-    LaunchedEffect(selectedTab) {
-        DebugLog("- LaunchedEffect(selectedTab) : ${selectedTab} -")
-        DebugLog("pokemon : ${pokemon}")
-        navigator.navigate(
-            tab = selectedTab,
-            pokemon = pokemon
-        )
-    }
+    LaunchedEffect(selectedTab) { navigator.navigate(tab = selectedTab, pokemon = pokemon) }
 }
 
 @Composable
