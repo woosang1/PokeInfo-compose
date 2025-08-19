@@ -7,16 +7,14 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.applicationId
-    namespace = ConfigData.applicationId
-    compileSdk = ConfigData.compileSdkVersion
+    namespace = "com.example.pokeinfo"
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = ConfigData.applicationId
-        minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
-        versionCode = ConfigData.versionCode
-        versionName = ConfigData.versionName
+        applicationId = "com.example.pokeinfo"
+        minSdk = libs.versions.minSdk.get().toInt()
+        versionCode = 1
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

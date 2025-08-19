@@ -17,10 +17,10 @@ internal fun Project.configureKotlinAndroid() {
 
     // Android settings
     androidExtension.apply {
-        compileSdk = 35
+        compileSdk = libs.versions.compileSdk.get().toInt()
 
         defaultConfig {
-            minSdk = 28
+            minSdk = libs.versions.minSdk.get().toInt()
         }
 
         compileOptions {

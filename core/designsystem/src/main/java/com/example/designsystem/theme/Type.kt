@@ -7,7 +7,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Density
 import com.example.utils.extension.textDp
-import com.example.pokeinfo.R
+import com.example.designsystem.R
 
 data class TypographySystem(
     private val colors: ColorSystem,
