@@ -39,7 +39,7 @@ fun AboutScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(LocalColors.current.white)
-            .padding(horizontal = 12.dp, vertical = 20.dp)
+            .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
         if (model != null) {
             Column(
@@ -47,8 +47,8 @@ fun AboutScreen(
             ) {
                 Text(
                     text = model.description,
-                    modifier = Modifier,
-                    style = LocalTypography.current.headline3,
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    style = LocalTypography.current.body1,
                     color = LocalColors.current.black,
                     textAlign = TextAlign.Start
                 )
@@ -56,11 +56,15 @@ fun AboutScreen(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(top = 20.dp, start = 16.dp, end = 16.dp)
-                        .background(LocalColors.current.white)
-                        .border(1.dp, LocalColors.current.gray, shape = RoundedCornerShape(4.dp)),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                        .height(80.dp)
+                        .padding(vertical = 8.dp)
+                        .background(
+                            LocalColors.current.gray.copy(alpha = 0.1f),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        .padding(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     VerticalText(label = "Height", value = "${model.height} m")
                     VerticalText(label = "Weight", value = "${model.weight} kg")
@@ -68,7 +72,7 @@ fun AboutScreen(
 
                 Text(
                     modifier = Modifier
-                        .padding(top = 20.dp),
+                        .padding(top = 24.dp, bottom = 12.dp),
                     text = "Breeding",
                     style = LocalTypography.current.headline2,
                     color = LocalColors.current.black,
@@ -79,17 +83,19 @@ fun AboutScreen(
                 ) {
                     HorizontalText(
                         modifier = Modifier
-                            .padding(top = 8.dp),
+                            .padding(vertical = 6.dp),
                         label = "Gender Ratio",
                         value = "${model.genderRate.first}% ♂ / ${model.genderRate.second}% ♀"
                     )
                     HorizontalText(
                         modifier = Modifier
-                            .padding(top = 8.dp), label = "Egg Groups", value = model.eddGroups
+                            .padding(vertical = 6.dp), 
+                        label = "Egg Groups", 
+                        value = model.eddGroups
                     )
                     HorizontalText(
                         modifier = Modifier
-                            .padding(top = 8.dp),
+                            .padding(vertical = 6.dp),
                         label = "Egg Cycle",
                         value = model.eggCycle.toString()
                     )
@@ -102,25 +108,21 @@ fun AboutScreen(
 @Composable
 fun VerticalText(label: String, value: String) {
     Column(
-        modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
+        modifier = Modifier.padding(horizontal = 12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            modifier = Modifier
-                .weight(1f),
             text = label,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
+            style = LocalTypography.current.caption1,
+            color = LocalColors.current.darkGray,
             textAlign = TextAlign.Center
         )
         Text(
-            modifier = Modifier
-                .weight(1f),
             text = value,
-            style = LocalTypography.current.subTitle,
+            style = LocalTypography.current.headline3,
             color = LocalColors.current.black,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -133,21 +135,20 @@ fun HorizontalText(
 ) {
     Row(
         modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            modifier = Modifier.weight(1f),
             text = label,
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
+            style = LocalTypography.current.body1,
+            color = LocalColors.current.darkGray,
             textAlign = TextAlign.Start
         )
         Text(
-            modifier = Modifier.weight(2f),
             text = value,
-            style = LocalTypography.current.subTitle,
+            style = LocalTypography.current.body1,
             color = LocalColors.current.black,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.End
         )
     }
 }

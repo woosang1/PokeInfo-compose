@@ -74,7 +74,7 @@ fun DetailContent(
                 .fillMaxSize()
                 .padding(horizontal = 24.dp)
         ) {
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             
             // 이름 + ID 섹션
             Row(
@@ -133,7 +133,7 @@ fun DetailContent(
                 }
             }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             // 포켓몬 이미지 섹션
             Box(
@@ -187,11 +187,11 @@ fun PokemonInfoBottomSheet(
     var selectedTab by remember { mutableStateOf(DetailTabRoute.tabList.first()) }
 
     val context = LocalContext.current
-    val height = (context.getHeightDisplay() / 2).pxToDp()
 
     val bottomSheetState = rememberStandardBottomSheetState(
         initialValue = SheetValue.PartiallyExpanded,
-        skipHiddenState = true
+        skipHiddenState = false,
+        confirmValueChange = { true }
     )
 
     val focusManager = LocalFocusManager.current
@@ -229,9 +229,27 @@ fun PokemonInfoBottomSheet(
             }
         },
         scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState),
-        sheetPeekHeight = height.dp,
+        sheetPeekHeight = 300.dp, // 고정 높이 300dp
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-        sheetSwipeEnabled = true
+        sheetSwipeEnabled = true,
+        sheetDragHandle = { 
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(
+                    modifier = Modifier
+                        .width(100.dp)
+                        .height(8.dp)
+                        .background(
+                            color = Color.Gray.copy(alpha = 0.8f),
+                            shape = RoundedCornerShape(4.dp)
+                        )
+                )
+            }
+        }
     ) { paddingValues -> }
 
     LaunchedEffect(selectedTab) { navigator.navigate(tab = selectedTab, pokemon = pokemon) }
@@ -244,35 +262,57 @@ fun FixedTabs(
 ) {
     TabRow(
         selectedTabIndex = selectedTabIndex,
-        modifier = Modifier.fillMaxWidth(),
-        containerColor = Color.Transparent
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        containerColor = Color.Transparent,
+        indicator = { },
+        divider = { }
     ) {
         DetailTabRoute.tabList.forEachIndexed { index, tab ->
             Tab(
                 selected = selectedTabIndex == index,
                 onClick = {
                     onTabSelected(index)
-                }
+                },
+                modifier = Modifier.padding(horizontal = 4.dp)
             ) {
-                TabContent(text = tab.title)
+                TabContent(
+                    text = tab.title,
+                    isSelected = selectedTabIndex == index
+                )
             }
         }
     }
 }
 
 @Composable
-fun TabContent(text: String) {
+fun TabContent(
+    text: String,
+    isSelected: Boolean = false
+) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(vertical = 12.dp, horizontal = 8.dp)
     ) {
         Text(
             text = text,
-            modifier = Modifier
-                .align(Alignment.Center),
-            style = LocalTypography.current.subTitle,
-            color = LocalColors.current.black,
+            modifier = Modifier.align(Alignment.Center),
+            style = if (isSelected) {
+                LocalTypography.current.body1.copy(
+                    fontWeight = FontWeight.Bold
+                )
+            } else {
+                LocalTypography.current.body1.copy(
+                    fontWeight = FontWeight.Medium
+                )
+            },
+            color = if (isSelected) {
+                LocalColors.current.black
+            } else {
+                LocalColors.current.black.copy(alpha = 0.6f)
+            },
             maxLines = 1
         )
     }
