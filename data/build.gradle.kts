@@ -60,6 +60,7 @@ dependencies {
     // room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     // Retrofit 및 관련 의존성 추가
     implementation(libs.retrofit2.retrofit)

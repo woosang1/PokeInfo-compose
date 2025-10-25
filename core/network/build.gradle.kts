@@ -59,5 +59,8 @@ dependencies {
     ksp(libs.androidx.hilt.compier)
 
     implementation(libs.kotlinx.serialization.json)
+    
+    // Coil 이미지 로딩 라이브러리
+    implementation(libs.coil.compose)
 
 }

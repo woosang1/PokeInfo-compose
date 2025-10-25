@@ -19,6 +19,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.example.base.mvi.State, Effect : SideEffect> : ViewModel() {
 
@@ -28,7 +30,11 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     private val _state: MutableStateFlow<State> = MutableStateFlow(initialState)
     val state = _state.asStateFlow()
 
-    private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
+    private val _event: MutableSharedFlow<Event> = MutableSharedFlow(
+        replay = 0,
+        extraBufferCapacity = 64,
+        onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
     val event = _event.asSharedFlow()
 
     private val _effect = MutableSharedFlow<Effect>(
@@ -37,6 +43,9 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
         onBufferOverflow = BufferOverflow.SUSPEND
     )
     val effect = _effect.asSharedFlow()
+
+    // 성능 최적화: 상태 업데이트 동기화를 위한 Mutex
+    private val stateMutex = Mutex()
 
     init {
         event
@@ -47,14 +56,22 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     abstract fun handleEvent(event: Event)
 
     fun setEvent(event: Event) {
-        viewModelScope.launch { _event.emit(event) }
+        viewModelScope.launch { 
+            _event.emit(event) 
+        }
     }
 
     protected fun setState(reduce: State.() -> State) {
-        _state.update { current -> current.reduce() }
+        viewModelScope.launch {
+            stateMutex.withLock {
+                _state.update { current -> current.reduce() }
+            }
+        }
     }
 
     fun setEffect(effect: Effect) {
-        _effect.tryEmit(effect)
+        viewModelScope.launch {
+            _effect.emit(effect)
+        }
     }
 }

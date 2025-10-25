@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,30 +31,43 @@ internal fun GridCardLayout(
     cardList: LazyPagingItems<Pokemon>,
     onClickPokemonCard: (Pokemon) -> Unit,
 ) {
+    val context = LocalContext.current
     val gridState = rememberLazyGridState()
+    
+    // 성능 최적화: 카드 크기 계산을 remember로 캐싱
+    val cardWidth = remember(columns) {
+        ((context.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / columns
+    }
+    val cardHeight = remember { 120 }
+    
+    // 성능 최적화: GridCells와 Arrangement를 remember로 캐싱
+    val gridCells = remember(columns) { GridCells.Fixed(columns) }
+    val horizontalArrangementSpaced = remember(horizontalArrangement) {
+        Arrangement.spacedBy(horizontalArrangement.dp)
+    }
+    val verticalArrangementSpaced = remember(verticalArrangement) {
+        Arrangement.spacedBy(verticalArrangement.dp)
+    }
 
     LazyVerticalGrid(
-        columns = GridCells.Fixed(columns),
+        columns = gridCells,
         modifier = modifier,
         state = gridState,
         contentPadding = PaddingValues(paddingValues.dp),
-        horizontalArrangement = Arrangement.spacedBy(horizontalArrangement.dp),
-        verticalArrangement = Arrangement.spacedBy(verticalArrangement.dp)
+        horizontalArrangement = horizontalArrangementSpaced,
+        verticalArrangement = verticalArrangementSpaced
     ) {
         items(cardList.itemCount) { index ->
             cardList[index]?.let { pokemon ->
-                val cardWidth = ((LocalContext.current.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / 2
                 PokemonCard(
                     modifier = Modifier
                         .width(cardWidth.dp)
-                        .height(120.dp)
+                        .height(cardHeight.dp)
                         .padding(8.dp),
                     width = cardWidth,
-                    height = 120,
+                    height = cardHeight,
                     pokemon = pokemon,
-                    onClickPokemonCard = { pokemon ->
-                        onClickPokemonCard.invoke(pokemon)
-                    }
+                    onClickPokemonCard = onClickPokemonCard
                 )
             }
         }

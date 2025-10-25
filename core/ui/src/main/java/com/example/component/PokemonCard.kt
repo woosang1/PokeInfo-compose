@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -38,12 +39,18 @@ fun PokemonCard(
     pokemon: Pokemon,
     onClickPokemonCard: (Pokemon) -> Unit,
 ) {
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(16.dp))
+    // 성능 최적화: remember를 사용하여 불필요한 재계산 방지
+    val cardShape = remember { RoundedCornerShape(16.dp) }
+    val clickableModifier = remember(pokemon.id) {
+        Modifier
+            .clip(cardShape)
             .noRippleClickable {
                 onClickPokemonCard.invoke(pokemon)
             }
+    }
+    
+    Box(
+        modifier = modifier.then(clickableModifier)
     ) {
         // 배경 이미지
         Box(
@@ -112,11 +119,15 @@ fun PokemonCard(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
             ) {
+                // 성능 최적화: 이미지 크기와 모양을 remember로 캐싱
+                val imageSize = remember { 80.dp }
+                val circleShape = remember { CircleShape }
+                
                 AsyncImage(
                     model = pokemon.thumbnailUrl,
                     modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape),
+                        .size(imageSize)
+                        .clip(circleShape),
                     contentScale = ContentScale.Crop,
                     contentDescription = null,
                     placeholder = null

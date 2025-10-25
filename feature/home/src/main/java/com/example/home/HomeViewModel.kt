@@ -93,20 +93,25 @@ class HomeViewModel @Inject constructor(
             .cachedIn(viewModelScope)
 
         viewModelScope.launch {
-            pagingFlow
-                .catch { e ->
+            try {
+                pagingFlow
+                    .catch { e ->
+                        setState { copy(homeUiState = HomeUiState.Error) }
+                        handleError(throwable = e)
+                    }
+                    .collectLatest { filteredPagingData ->
+                        setState {
+                            copy(
+                                homeUiState = HomeUiState.Content(
+                                    pokemonList = flowOf(filteredPagingData)
+                                )
+                            )
+                        }
+                    }
+            } catch (e: Exception) {
                 setState { copy(homeUiState = HomeUiState.Error) }
                 handleError(throwable = e)
             }
-                .collectLatest { filteredPagingData ->
-                    setState {
-                        copy(
-                            homeUiState = HomeUiState.Content(
-                                pokemonList = flowOf(filteredPagingData)
-                            )
-                        )
-                    }
-                }
         }
     }
 
