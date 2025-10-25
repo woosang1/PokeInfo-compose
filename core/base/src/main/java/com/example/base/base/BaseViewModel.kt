@@ -10,6 +10,7 @@ import com.example.base.mvi.SideEffect
 import com.example.utils.UiError
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -37,12 +38,8 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
     )
     val event = _event.asSharedFlow()
 
-    private val _effect = MutableSharedFlow<Effect>(
-        replay = 0,
-        extraBufferCapacity = 1,
-        onBufferOverflow = BufferOverflow.SUSPEND
-    )
-    val effect = _effect.asSharedFlow()
+    private val _effect = Channel<Effect>(capacity = Channel.BUFFERED)
+    val effect: Flow<Effect> = _effect.receiveAsFlow()
 
     // 성능 최적화: 상태 업데이트 동기화를 위한 Mutex
     private val stateMutex = Mutex()
@@ -68,10 +65,7 @@ abstract class BaseViewModel<Event : com.example.base.mvi.Event, State : com.exa
             }
         }
     }
-
     fun setEffect(effect: Effect) {
-        viewModelScope.launch {
-            _effect.emit(effect)
-        }
+        viewModelScope.launch { _effect.send(effect) }
     }
 }
