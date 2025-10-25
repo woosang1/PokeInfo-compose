@@ -8,10 +8,12 @@ import androidx.navigation.toRoute
 import com.example.model.ui.EvolutionModel
 import com.example.navigation.DetailTabRoute
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
 
 fun NavController.navigationEvolution(model: EvolutionModel, navOptions: NavOptions){
     navigate(
-        DetailTabRoute.Evolution(modelJsonStr = Json.encodeToString(model)), navOptions
+        DetailTabRoute.Evolution(modelJsonStr = Json.encodeToString<EvolutionModel>(model)), navOptions
     )}
 
 fun NavGraphBuilder.evolutionNavGraph() {

@@ -8,10 +8,12 @@ import androidx.navigation.toRoute
 import com.example.model.ui.BaseStatsModel
 import com.example.navigation.DetailTabRoute
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
 
 fun NavController.navigationBaseStats(model: BaseStatsModel, navOptions: NavOptions){
     navigate(
-        DetailTabRoute.BaseStats(modelJsonStr = Json.encodeToString(model)), navOptions
+        DetailTabRoute.BaseStats(modelJsonStr = Json.encodeToString<BaseStatsModel>(model)), navOptions
     )
 }
 

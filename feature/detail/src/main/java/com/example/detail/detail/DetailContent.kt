@@ -55,12 +55,14 @@ import com.example.detail.baseStats.baseStatsNavGraph
 import com.example.detail.detail.common.DetailEvent
 import com.example.detail.evolution.evolutionNavGraph
 import com.example.detail.moves.movesNavGraph
+import com.example.model.ui.AboutModel
 import com.example.model.ui.Pokemon
 import com.example.navigation.DetailTabRoute
 import com.example.navigation.DetailTabRoute.Companion.getIndex
 import com.example.utils.extension.getHeightDisplay
 import com.example.utils.extension.pxToDp
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
 
 @Composable
 fun DetailContent(
@@ -219,7 +221,7 @@ fun PokemonInfoBottomSheet(
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(
                     navController = navigator.navController,
-                    startDestination = DetailTabRoute.About(modelJsonStr = Json.encodeToString(pokemon.toAboutModel()))
+                    startDestination = DetailTabRoute.About(modelJsonStr = Json.encodeToString<AboutModel>(pokemon.toAboutModel()))
                 ) {
                     aboutNavGraph()
                     baseStatsNavGraph()

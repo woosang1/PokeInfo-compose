@@ -4,6 +4,8 @@ import androidx.room.TypeConverter
 import com.example.model.ui.Pokemon
 import com.example.model.ui.PokemonType
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
 
 class RoomConverters {
 
@@ -11,7 +13,7 @@ class RoomConverters {
 
     @TypeConverter
     fun statsToString(stats: Pokemon.Stats?): String {
-        return json.encodeToString(stats)
+        return json.encodeToString(stats ?: Pokemon.Stats())
     }
 
     @TypeConverter
@@ -19,7 +21,7 @@ class RoomConverters {
         return if (data.isNullOrEmpty() || data == "null") {
             Pokemon.Stats()
         } else {
-            json.decodeFromString(data)
+            json.decodeFromString<Pokemon.Stats>(data)
         }
     }
 
@@ -33,7 +35,7 @@ class RoomConverters {
         return if (data.isNullOrEmpty() || data == "null") {
             emptyList()
         } else {
-            json.decodeFromString(data)
+            json.decodeFromString<List<String>>(data)
         }
     }
 
@@ -47,13 +49,13 @@ class RoomConverters {
         return if (data.isNullOrEmpty() || data == "null") {
             Pair(0.0, 0.0)
         } else {
-            json.decodeFromString(data)
+            json.decodeFromString<Pair<Double, Double>>(data)
         }
     }
 
     @TypeConverter
     fun pokemonTypeToString(type: PokemonType?): String {
-        return json.encodeToString(type)
+        return json.encodeToString(type ?: PokemonType(null, null))
     }
 
     @TypeConverter
@@ -61,7 +63,7 @@ class RoomConverters {
         return if (data.isNullOrEmpty() || data == "null") {
             null
         } else {
-            json.decodeFromString(data)
+            json.decodeFromString<PokemonType>(data)
         }
     }
 }
