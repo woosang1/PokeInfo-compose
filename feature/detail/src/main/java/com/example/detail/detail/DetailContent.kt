@@ -6,10 +6,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -32,15 +35,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import coil.compose.AsyncImage
 import com.example.component.CircleView
+import com.example.component.common.getPokemonColorType
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.detail.about.aboutNavGraph
@@ -66,60 +72,101 @@ fun DetailContent(
         Column(
             modifier = modifier
                 .fillMaxSize()
-                .padding(horizontal = 20.dp)
+                .padding(horizontal = 24.dp)
         ) {
-            // 이름 + ID
+            Spacer(modifier = Modifier.height(20.dp))
+            
+            // 이름 + ID 섹션
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = pokemon.name,
-                    modifier = Modifier
-                        .weight(1f),
-                    style = LocalTypography.current.headline1,
-                    color = LocalColors.current.white,
-                    maxLines = 1,
-                    textAlign = TextAlign.Start
-                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = pokemon.name.replaceFirstChar { it.uppercase() },
+                        style = LocalTypography.current.headline1.copy(
+                            fontWeight = FontWeight.Bold
+                        ),
+                        color = LocalColors.current.white,
+                        maxLines = 1
+                    )
+                    
+                    // 기본 정보 (키, 무게)
+                    Row(
+                        modifier = Modifier.padding(top = 8.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        InfoChip(
+                            label = "Height",
+                            value = "${pokemon.height / 10.0}m"
+                        )
+                        InfoChip(
+                            label = "Weight", 
+                            value = "${pokemon.weight / 10.0}kg"
+                        )
+                    }
+                }
 
                 Text(
-                    text = "#${pokemon.id}",
-                    modifier = Modifier.weight(1f),
-                    style = LocalTypography.current.headline2,
-                    color = LocalColors.current.white,
-                    maxLines = 1,
-                    textAlign = TextAlign.End
+                    text = "#${pokemon.id.toString().padStart(3, '0')}",
+                    style = LocalTypography.current.headline2.copy(
+                        fontWeight = FontWeight.Medium
+                    ),
+                    color = LocalColors.current.white.copy(alpha = 0.8f),
+                    maxLines = 1
                 )
             }
 
-            // 타입
-            LazyRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 20.dp),
-                horizontalArrangement = Arrangement.Start
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // 타입 섹션
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                itemsIndexed(pokemon.types.take(2)) { index, type -> // 최대 2개까지만 표시
-                    CircleView(
-                        modifier = Modifier.padding(start = if (index > 0) 8.dp else 0.dp),
-                        title = type
+                pokemon.types.take(2).forEach { type ->
+                    TypeChip(
+                        type = type,
+                        modifier = Modifier
                     )
                 }
             }
 
-            // 이미지 (가운데 정렬 + 위쪽 마진)
-            AsyncImage(
-                model = pokemon.thumbnailUrl,
+            Spacer(modifier = Modifier.height(32.dp))
+
+            // 포켓몬 이미지 섹션
+            Box(
                 modifier = Modifier
-                    .size(200.dp)
-                    .clip(CircleShape)
+                    .fillMaxWidth()
                     .align(Alignment.CenterHorizontally)
-                    .padding(top = 20.dp),
-                contentScale = ContentScale.Crop,
-                contentDescription = null,
-                placeholder = null
-            )
+            ) {
+                // 배경 원형 효과
+                Box(
+                    modifier = Modifier
+                        .size(280.dp)
+                        .align(Alignment.Center)
+                        .background(
+                            color = Color.White.copy(alpha = 0.1f),
+                            shape = CircleShape
+                        )
+                )
+                
+                // 포켓몬 이미지
+                AsyncImage(
+                    model = pokemon.thumbnailUrl,
+                    modifier = Modifier
+                        .size(240.dp)
+                        .align(Alignment.Center)
+                        .shadow(
+                            elevation = 8.dp,
+                            shape = CircleShape
+                        ),
+                    contentScale = ContentScale.Fit,
+                    contentDescription = null,
+                    placeholder = null
+                )
+            }
         }
         PokemonInfoBottomSheet(
             modifier = modifier,
@@ -226,6 +273,64 @@ fun TabContent(text: String) {
                 .align(Alignment.Center),
             style = LocalTypography.current.subTitle,
             color = LocalColors.current.black,
+            maxLines = 1
+        )
+    }
+}
+
+@Composable
+private fun InfoChip(
+    label: String,
+    value: String,
+    modifier: Modifier = Modifier
+) {
+    val chipShape = remember { RoundedCornerShape(12.dp) }
+    
+    Box(
+        modifier = modifier
+            .clip(chipShape)
+            .background(Color.White.copy(alpha = 0.2f))
+            .padding(horizontal = 12.dp, vertical = 6.dp)
+    ) {
+        Column {
+            Text(
+                text = label,
+                style = LocalTypography.current.caption1.copy(
+                    fontWeight = FontWeight.Medium
+                ),
+                color = LocalColors.current.white.copy(alpha = 0.8f)
+            )
+            Text(
+                text = value,
+                style = LocalTypography.current.body1.copy(
+                    fontWeight = FontWeight.Bold
+                ),
+                color = LocalColors.current.white
+            )
+        }
+    }
+}
+
+@Composable
+private fun TypeChip(
+    type: String,
+    modifier: Modifier = Modifier
+) {
+    val typeColor = remember(type) { type.getPokemonColorType() }
+    val chipShape = remember { RoundedCornerShape(16.dp) }
+    
+    Box(
+        modifier = modifier
+            .clip(chipShape)
+            .background(typeColor.copy(alpha = 0.9f))
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+    ) {
+        Text(
+            text = type.replaceFirstChar { it.uppercase() },
+            style = LocalTypography.current.body1.copy(
+                fontWeight = FontWeight.Bold
+            ),
+            color = Color.White,
             maxLines = 1
         )
     }

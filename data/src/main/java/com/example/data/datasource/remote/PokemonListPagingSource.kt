@@ -5,6 +5,9 @@ import androidx.paging.PagingState
 import com.example.data.mapper.toEntity
 import com.example.utils.log.DebugLog
 import com.example.model.ui.Pokemon
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.awaitAll
 
 internal class PokemonListPagingSource(
     private val pokemonRemoteDataSource: PokemonRemoteDataSource,
@@ -26,7 +29,26 @@ internal class PokemonListPagingSource(
                 page = if (pageNumber == startPage) pageNumber else (pageNumber*pagingSize),
                 limit = pagingSize
             )
-            val data = response.results.map { it.toEntity() }
+            
+            // 병렬로 각 포켓몬의 상세 정보를 가져와서 타입 정보 포함
+            val data: List<Pokemon> = coroutineScope {
+                response.results.map { pokemonListItem ->
+                    async {
+                        try {
+                            // 포켓몬 ID 추출
+                            val pokemonId = pokemonListItem.url.split("/").dropLast(1).last().toIntOrNull() ?: 0
+                            
+                            // 상세 정보 가져오기
+                            val pokemonInfo = pokemonRemoteDataSource.getPokemonInfo(pokemonId)
+                            pokemonInfo.toEntity()
+                        } catch (e: Exception) {
+                            DebugLog("Failed to load pokemon detail for ${pokemonListItem.name}: ${e.message}")
+                            // 상세 정보 로드 실패 시 기본 정보만 사용
+                            pokemonListItem.toEntity()
+                        }
+                    }
+                }.awaitAll()
+            }
 
             LoadResult.Page(
                 data = data,

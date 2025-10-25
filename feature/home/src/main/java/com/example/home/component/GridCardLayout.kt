@@ -38,7 +38,7 @@ internal fun GridCardLayout(
     val cardWidth = remember(columns) {
         ((context.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / columns
     }
-    val cardHeight = remember { 120 }
+    val cardHeight = remember { 140 }
     
     // 성능 최적화: GridCells와 Arrangement를 remember로 캐싱
     val gridCells = remember(columns) { GridCells.Fixed(columns) }
