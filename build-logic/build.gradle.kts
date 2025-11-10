@@ -1,24 +1,34 @@
+import org.gradle.api.artifacts.VersionCatalogsExtension
+
 plugins {
-    `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
-}
+    `kotlin-dsl`}
+
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 dependencies {
-    implementation(libs.android.gradlePlugin)
-    implementation(libs.kotlin.gradlePlugin)
-//    implementation(libs.verify.detektPlugin)
-    compileOnly(libs.compose.compiler.gradle.plugin)
+    implementation(libs.findLibrary("android-gradlePlugin").get())
+    implementation(libs.findLibrary("kotlin-gradlePlugin").get())
+    implementation(libs.findLibrary("compose-compiler-gradle-plugin").get())
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.6")
 }
 
 gradlePlugin {
     plugins {
-        register("androidHilt") {
-            id = "droidknights.android.hilt"
-            implementationClass = "com.droidknights.app.HiltAndroidPlugin"
+        register("androidApplication") {
+            id = "pokeinfo.android.application"
+            implementationClass = "com.example.build_logic.AndroidApplicationConventionPlugin"
         }
-        register("kotlinHilt") {
-            id = "droidknights.kotlin.hilt"
-            implementationClass = "com.droidknights.app.HiltKotlinPlugin"
+        register("androidLibrary") {
+            id = "pokeinfo.android.library"
+            implementationClass = "com.example.build_logic.AndroidLibraryConventionPlugin"
+        }
+        register("androidCompose") {
+            id = "pokeinfo.android.compose"
+            implementationClass = "com.example.build_logic.AndroidComposeConventionPlugin"
+        }
+        register("androidHilt") {
+            id = "pokeinfo.android.hilt"
+            implementationClass = "com.example.build_logic.AndroidHiltConventionPlugin"
         }
     }
 }
