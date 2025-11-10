@@ -1,0 +1,50 @@
+<resources>
+    <!-- App & Top level UI -->
+    <string name="app_name">PokeInfo</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">概览</string>
+    <string name="in_progress">进行中…</string>
+    <string name="non_evolving_pokemon">不进化的宝可梦</string>
+
+    <!-- Navigation menu -->
+    <string name="menu_item_1">宝可梦图鉴</string>
+    <string name="menu_item_2">招式</string>
+    <string name="menu_item_3">特性</string>
+    <string name="menu_item_4">道具</string>
+    <string name="menu_item_5">地点</string>
+    <string name="menu_item_6">属性相性表</string>
+
+    <!-- Filters -->
+    <string name="generation">世代</string>
+    <string name="generation_item_1">第一世代</string>
+    <string name="generation_item_2">第二世代</string>
+    <string name="generation_item_3">第三世代</string>
+    <string name="generation_item_4">第四世代</string>
+    <string name="generation_item_5">第五世代</string>
+    <string name="generation_item_6">第六世代</string>
+    <string name="generation_item_7">第七世代</string>
+    <string name="generation_item_8">第八世代</string>
+
+    <!-- Home content -->
+    <string name="pokemon_news">宝可梦新闻</string>
+    <string name="view_all">查看全部</string>
+    <string name="main_title">你在寻找哪只\n宝可梦？</string>
+    <string name="main_search">搜索宝可梦、招式、特性等</string>
+    <string name="news_title">《宝可梦 Rumble Rush》即将上线</string>
+    <string name="news_date">2019年5月15日</string>
+    <string name="lorem_small">这是一段示例文本，用于展示短句内容。</string>
+    <string name="lorem_large">这是一段示例长文，用于展示较长的文本效果。它说明了内容在应用中的呈现方式，并帮助测试界面布局。请在需要时替换为实际文案。</string>
+
+    <!-- Detail dashboard -->
+    <string name="dashboard_tab_1">简介</string>
+    <string name="dashboard_tab_2">基础数值</string>
+    <string name="dashboard_tab_3">进化</string>
+    <string name="dashboard_tab_4">招式</string>
+
+    <!-- Misc -->
+    <string name="search">搜索</string>
+    <string name="all_generations">全部世代</string>
+    <string name="all_types">全部属性</string>
+    <string name="favorite_pokemons">喜爱的宝可梦</string>
+</resources>
+

@@ -1,0 +1,50 @@
+<resources>
+    <!-- App & Top level UI -->
+    <string name="app_name">PokeInfo</string>
+    <string name="title_home">ホーム</string>
+    <string name="title_dashboard">ダッシュボード</string>
+    <string name="in_progress">処理中…</string>
+    <string name="non_evolving_pokemon">進化しないポケモン</string>
+
+    <!-- Navigation menu -->
+    <string name="menu_item_1">ポケモン図鑑</string>
+    <string name="menu_item_2">わざ</string>
+    <string name="menu_item_3">特性</string>
+    <string name="menu_item_4">どうぐ</string>
+    <string name="menu_item_5">場所</string>
+    <string name="menu_item_6">タイプ相性表</string>
+
+    <!-- Filters -->
+    <string name="generation">世代</string>
+    <string name="generation_item_1">第1世代</string>
+    <string name="generation_item_2">第2世代</string>
+    <string name="generation_item_3">第3世代</string>
+    <string name="generation_item_4">第4世代</string>
+    <string name="generation_item_5">第5世代</string>
+    <string name="generation_item_6">第6世代</string>
+    <string name="generation_item_7">第7世代</string>
+    <string name="generation_item_8">第8世代</string>
+
+    <!-- Home content -->
+    <string name="pokemon_news">ポケモンニュース</string>
+    <string name="view_all">すべて表示</string>
+    <string name="main_title">探しているポケモンは\nどれですか？</string>
+    <string name="main_search">ポケモン・わざ・特性などを検索</string>
+    <string name="news_title">『Pokémon Rumble Rush』まもなく登場</string>
+    <string name="news_date">2019年5月15日</string>
+    <string name="lorem_small">サンプルテキストです。短い説明文の表示例です。</string>
+    <string name="lorem_large">こちらはサンプルの長文です。アプリ内で文章の見え方を確認するために使用します。必要に応じて実際のコンテンツに置き換えてご利用ください。</string>
+
+    <!-- Detail dashboard -->
+    <string name="dashboard_tab_1">概要</string>
+    <string name="dashboard_tab_2">基本ステータス</string>
+    <string name="dashboard_tab_3">進化</string>
+    <string name="dashboard_tab_4">わざ</string>
+
+    <!-- Misc -->
+    <string name="search">検索</string>
+    <string name="all_generations">全世代</string>
+    <string name="all_types">すべてのタイプ</string>
+    <string name="favorite_pokemons">お気に入りのポケモン</string>
+</resources>
+
