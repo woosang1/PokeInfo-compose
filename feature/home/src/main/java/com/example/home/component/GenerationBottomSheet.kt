@@ -1,7 +1,6 @@
 package com.example.home.component
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -22,7 +21,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SheetValue
-import androidx.compose.material3.Text
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.material3.rememberStandardBottomSheetState
 import androidx.compose.runtime.Composable
@@ -40,8 +38,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.component.PKImage
+import com.example.component.PKText
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.home.model.GenerationItemData
@@ -117,7 +116,7 @@ fun GenerationContent(
             .fillMaxWidth()
             .padding(8.dp)
     ) {
-        Text(
+        PKText(
             text = "Generation",
             modifier = Modifier.align(Alignment.CenterHorizontally),
             style = LocalTypography.current.headline2,
@@ -172,15 +171,15 @@ fun GenerationItem(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
 
-        Text(
+        PKText(
             text = generationItemData.title,
             style = LocalTypography.current.headline3,
             color = LocalColors.current.black,
             modifier = Modifier.padding(top = 8.dp)
         )
 
-        Image(
-            painter = painterResource(id = generationItemData.imageRes),
+        PKImage(
+            data = generationItemData.imageRes,
             contentDescription = "",
             modifier = Modifier
                 .wrapContentSize()

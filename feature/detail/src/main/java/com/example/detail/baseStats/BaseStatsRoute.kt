@@ -11,13 +11,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.component.PKText
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.model.ui.BaseStatsModel
@@ -111,7 +111,7 @@ fun StatsBarLayout(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         // 이름
-        Text(
+        PKText(
             text = title,
             modifier = Modifier
                 .width(90.dp),
@@ -122,7 +122,7 @@ fun StatsBarLayout(
         )
 
         // 수치
-        Text(
+        PKText(
             text = value.toString(),
             modifier = Modifier
                 .width(50.dp),

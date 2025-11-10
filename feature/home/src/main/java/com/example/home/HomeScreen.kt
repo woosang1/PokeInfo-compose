@@ -1,13 +1,11 @@
 package com.example.home
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -18,6 +16,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.component.PKImage
+import com.example.component.PKText
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.home.common.HomeEvent
@@ -49,9 +49,8 @@ fun HomeScreen(
             .fillMaxSize()
     ) {
         // 좌상단 이미지
-        Image(
-            painter = painterResource(id = ResourceR.drawable.pokeball),
-            contentDescription = null,
+        PKImage(
+            data = ResourceR.drawable.pokeball,
             modifier = Modifier
                 .align(Alignment.TopStart)
                 .size(pokeballSize)
@@ -66,7 +65,7 @@ fun HomeScreen(
                 .padding(top = 60.dp)
         ) {
             // 타이틀
-            Text(
+            PKText(
                 text = "Pokedex",
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp, bottom = 2.dp),

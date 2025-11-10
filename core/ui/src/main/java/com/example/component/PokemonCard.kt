@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
@@ -25,14 +24,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
 import coil.request.CachePolicy
-import coil.request.ImageRequest
 import com.example.component.common.getPokemonColorType
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
-import com.example.utils.extension.noRippleClickable
 import com.example.model.ui.Pokemon
+import com.example.utils.extension.noRippleClickable
 
 @Composable
 fun PokemonCard(
@@ -54,15 +51,6 @@ fun PokemonCard(
     }
     val imageSize = remember { 80.dp }
     val circleShape = remember { CircleShape }
-    val context = androidx.compose.ui.platform.LocalContext.current
-    val imageRequest = remember(pokemon.thumbnailUrl) {
-        ImageRequest.Builder(context)
-            .data(pokemon.thumbnailUrl)
-            .crossfade(true)
-            .diskCachePolicy(CachePolicy.ENABLED)
-            .memoryCachePolicy(CachePolicy.ENABLED)
-            .build()
-    }
 
     Box(
         modifier = modifier.then(clickableModifier)
@@ -83,7 +71,7 @@ fun PokemonCard(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     // 이름 텍스트
-                    Text(
+                    PKText(
                         text = pokemon.name,
                         modifier = Modifier
                             .weight(1f),
@@ -94,7 +82,7 @@ fun PokemonCard(
                     )
 
                     // ID 텍스트
-                    Text(
+                    PKText(
                         text = "#${pokemon.id}",
                         modifier = Modifier
                             .weight(1f),
@@ -122,21 +110,19 @@ fun PokemonCard(
                 }
             }
 
-            // 이미지를 오른쪽 하단에 배치
-            Box(
+            PKImage(
+                data = pokemon.thumbnailUrl,
                 modifier = Modifier
-                        .fillMaxSize()
-            ) {
-                AsyncImage(
-                    model = imageRequest,
-                    modifier = Modifier
-                            .align(Alignment.CenterEnd)
-                        .size(imageSize)
-                        .clip(circleShape),
-                    contentScale = ContentScale.Crop,
-                    contentDescription = null
-                )
-            }
+                    .align(Alignment.CenterEnd)
+                    .size(imageSize),
+                clipShape = circleShape,
+                contentScale = ContentScale.Crop,
+                requestBuilder = {
+                    crossfade(true)
+                    diskCachePolicy(CachePolicy.ENABLED)
+                    memoryCachePolicy(CachePolicy.ENABLED)
+                }
+            )
 
         }
     }
@@ -156,7 +142,7 @@ private fun TypeChip(
             .background(typeColor.copy(alpha = 0.8f))
             .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
-        Text(
+        PKText(
             text = type.replaceFirstChar { it.uppercase() },
             style = LocalTypography.current.caption1.copy(
                 fontWeight = FontWeight.Medium

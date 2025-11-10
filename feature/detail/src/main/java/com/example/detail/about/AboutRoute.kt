@@ -10,12 +10,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.component.PKText
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.model.ui.AboutModel
@@ -45,7 +45,7 @@ fun AboutScreen(
             Column(
                 modifier = Modifier
             ) {
-                Text(
+                PKText(
                     text = model.description,
                     modifier = Modifier.padding(bottom = 16.dp),
                     style = LocalTypography.current.body1,
@@ -70,7 +70,7 @@ fun AboutScreen(
                     VerticalText(label = "Weight", value = "${model.weight} kg")
                 }
 
-                Text(
+                PKText(
                     modifier = Modifier
                         .padding(top = 24.dp, bottom = 12.dp),
                     text = "Breeding",
@@ -112,13 +112,13 @@ fun VerticalText(label: String, value: String) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
+        PKText(
             text = label,
             style = LocalTypography.current.caption1,
             color = LocalColors.current.darkGray,
             textAlign = TextAlign.Center
         )
-        Text(
+        PKText(
             text = value,
             style = LocalTypography.current.headline3,
             color = LocalColors.current.black,
@@ -138,13 +138,13 @@ fun HorizontalText(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(
+        PKText(
             text = label,
             style = LocalTypography.current.body1,
             color = LocalColors.current.darkGray,
             textAlign = TextAlign.Start
         )
-        Text(
+        PKText(
             text = value,
             style = LocalTypography.current.body1,
             color = LocalColors.current.black,

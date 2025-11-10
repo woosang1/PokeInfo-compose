@@ -1,6 +1,5 @@
 package com.example.detail.detail
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,12 +15,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.compose.ui.graphics.toArgb
 import com.example.component.LoadingAnimation
+import com.example.component.PKImage
 import com.example.component.common.getPokemonColorByColor
 import com.example.designsystem.theme.LocalColors
 import com.example.detail.detail.common.DetailEvent
@@ -79,8 +78,8 @@ fun DetailScreen(
                 .alpha(if (isShowToolbar) 1f else 0f),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(
-                painter = painterResource(id = ResourceR.drawable.close),
+            PKImage(
+                data = ResourceR.drawable.close,
                 contentDescription = null,
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp)
@@ -91,8 +90,8 @@ fun DetailScreen(
                 contentScale = ContentScale.Fit
             )
 
-            Image(
-                painter = painterResource(id = if(isLike) ResourceR.drawable.like_on_icon else ResourceR.drawable.like_off_icon),
+            PKImage(
+                data = if (isLike) ResourceR.drawable.like_on_icon else ResourceR.drawable.like_off_icon,
                 contentDescription = null,
                 modifier = Modifier
                     .padding(end = 16.dp, top = 16.dp)

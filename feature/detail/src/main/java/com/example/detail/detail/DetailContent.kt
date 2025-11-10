@@ -23,7 +23,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SheetValue
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
-import androidx.compose.material3.Text
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.material3.rememberStandardBottomSheetState
 import androidx.compose.runtime.Composable
@@ -44,8 +43,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
-import coil.compose.AsyncImage
 import com.example.component.CircleView
+import com.example.component.PKImage
+import com.example.component.PKText
 import com.example.component.common.getPokemonColorType
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
@@ -85,7 +85,7 @@ fun DetailContent(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(
+                    PKText(
                         text = pokemon.name.replaceFirstChar { it.uppercase() },
                         style = LocalTypography.current.headline1.copy(
                             fontWeight = FontWeight.Bold
@@ -110,7 +110,7 @@ fun DetailContent(
                     }
                 }
 
-                Text(
+                PKText(
                     text = "#${pokemon.id.toString().padStart(3, '0')}",
                     style = LocalTypography.current.headline2.copy(
                         fontWeight = FontWeight.Medium
@@ -155,8 +155,8 @@ fun DetailContent(
                 )
                 
                 // 포켓몬 이미지
-                AsyncImage(
-                    model = pokemon.thumbnailUrl,
+                PKImage(
+                    data = pokemon.thumbnailUrl,
                     modifier = Modifier
                         .size(240.dp)
                         .align(Alignment.Center)
@@ -165,8 +165,7 @@ fun DetailContent(
                             shape = CircleShape
                         ),
                     contentScale = ContentScale.Fit,
-                    contentDescription = null,
-                    placeholder = null
+                    contentDescription = null
                 )
             }
         }
@@ -272,7 +271,7 @@ fun FixedTabs(
         divider = { }
     ) {
         DetailTabRoute.tabList.forEachIndexed { index, tab ->
-            Tab(
+        Tab(
                 selected = selectedTabIndex == index,
                 onClick = {
                     onTabSelected(index)
@@ -298,7 +297,7 @@ fun TabContent(
             .fillMaxWidth()
             .padding(vertical = 12.dp, horizontal = 8.dp)
     ) {
-        Text(
+        PKText(
             text = text,
             modifier = Modifier.align(Alignment.Center),
             style = if (isSelected) {
@@ -335,14 +334,14 @@ private fun InfoChip(
             .padding(horizontal = 12.dp, vertical = 6.dp)
     ) {
         Column {
-            Text(
+            PKText(
                 text = label,
                 style = LocalTypography.current.caption1.copy(
                     fontWeight = FontWeight.Medium
                 ),
                 color = LocalColors.current.white.copy(alpha = 0.8f)
             )
-            Text(
+            PKText(
                 text = value,
                 style = LocalTypography.current.body1.copy(
                     fontWeight = FontWeight.Bold
@@ -367,7 +366,7 @@ private fun TypeChip(
             .background(typeColor.copy(alpha = 0.9f))
             .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
-        Text(
+        PKText(
             text = type.replaceFirstChar { it.uppercase() },
             style = LocalTypography.current.body1.copy(
                 fontWeight = FontWeight.Bold
