@@ -7,12 +7,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import com.example.component.PokemonCard
@@ -33,13 +36,14 @@ internal fun GridCardLayout(
 ) {
     val context = LocalContext.current
     val gridState = rememberLazyGridState()
-    
+
     // 성능 최적화: 카드 크기 계산을 remember로 캐싱
-    val cardWidth = remember(columns) {
+    val cardWidthPx = remember(columns) {
         ((context.getWidthDisplay() - 32.dpToPixel()) - 8.dpToPixel()) / columns
     }
-    val cardHeight = remember { 140 }
-    
+    val cardWidth = remember(cardWidthPx) { cardWidthPx.dp }
+    val cardHeight = remember { 140.dp }
+
     // 성능 최적화: GridCells와 Arrangement를 remember로 캐싱
     val gridCells = remember(columns) { GridCells.Fixed(columns) }
     val horizontalArrangementSpaced = remember(horizontalArrangement) {
@@ -48,28 +52,33 @@ internal fun GridCardLayout(
     val verticalArrangementSpaced = remember(verticalArrangement) {
         Arrangement.spacedBy(verticalArrangement.dp)
     }
+    val contentPaddingValues = remember(paddingValues) { PaddingValues(paddingValues.dp) }
+    val latestOnClickPokemonCard = rememberUpdatedState(onClickPokemonCard)
 
     LazyVerticalGrid(
         columns = gridCells,
         modifier = modifier,
         state = gridState,
-        contentPadding = PaddingValues(paddingValues.dp),
+        contentPadding = contentPaddingValues,
         horizontalArrangement = horizontalArrangementSpaced,
         verticalArrangement = verticalArrangementSpaced
     ) {
-        items(cardList.itemCount) { index ->
-            cardList[index]?.let { pokemon ->
-                PokemonCard(
-                    modifier = Modifier
-                        .width(cardWidth.dp)
-                        .height(cardHeight.dp)
-                        .padding(8.dp),
-                    width = cardWidth,
-                    height = cardHeight,
-                    pokemon = pokemon,
-                    onClickPokemonCard = onClickPokemonCard
-                )
-            }
+        items(
+            count = cardList.itemCount,
+            key = { index -> cardList.peek(index)?.id ?: index },
+            contentType = { _ -> "pokemon_card" }
+        ) { index ->
+            val pokemon = cardList[index] ?: return@items
+            PokemonCard(
+                modifier = Modifier
+                    .width(cardWidth)
+                    .height(cardHeight)
+                    .padding(8.dp),
+                width = cardWidth,
+                height = cardHeight,
+                pokemon = pokemon,
+                onClickPokemonCard = { latestOnClickPokemonCard.value(it) }
+            )
         }
     }
 }
