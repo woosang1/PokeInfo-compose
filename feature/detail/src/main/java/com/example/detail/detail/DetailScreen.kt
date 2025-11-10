@@ -18,6 +18,9 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
+import androidx.compose.ui.graphics.toArgb
 import com.example.component.LoadingAnimation
 import com.example.component.common.getPokemonColorByColor
 import com.example.designsystem.theme.LocalColors
@@ -47,6 +50,19 @@ fun DetailScreen(
     val isLike = when (val state = uiState.detailUiState) {
         is DetailUiState.Result -> state.pokemon.isLike
         else -> false
+    }
+
+    // 상태바 완전 투명하게 설정
+    val view = LocalView.current
+    LaunchedEffect(backgroundColor) {
+        val window = (view.context as? android.app.Activity)?.window
+        if (window != null) {
+            WindowCompat.getInsetsController(window, view).let { controller ->
+                controller.isAppearanceLightStatusBars = false
+                window.statusBarColor = android.graphics.Color.TRANSPARENT
+                window.navigationBarColor = android.graphics.Color.TRANSPARENT
+            }
+        }
     }
 
     Column (

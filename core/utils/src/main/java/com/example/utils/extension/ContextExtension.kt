@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.content.ContextCompat
 import coil.request.ImageRequest
+import coil.request.CachePolicy
 import com.example.resource.R as ResourceR
 
 /**
@@ -28,6 +29,9 @@ fun Context.setImageUrl(data: String, width: Int, height: Int, usePlaceholder: B
     return ImageRequest.Builder(this@setImageUrl)
         .data(data)
         .size(width.dpToPixel(), height.dpToPixel())
+        .memoryCachePolicy(CachePolicy.ENABLED) // 메모리 캐시 활성화
+        .diskCachePolicy(CachePolicy.ENABLED) // 디스크 캐시 활성화
+        .networkCachePolicy(CachePolicy.ENABLED) // 네트워크 캐시 활성화
         .apply {
             if (usePlaceholder) {
                 placeholder(placeholder)

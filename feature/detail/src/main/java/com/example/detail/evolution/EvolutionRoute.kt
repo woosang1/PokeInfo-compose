@@ -1,11 +1,15 @@
 package com.example.detail.evolution
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -40,7 +44,7 @@ fun EvolutionScreen(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalAlignment = Alignment.Top
     ) {
         Column(
@@ -48,18 +52,27 @@ fun EvolutionScreen(
                 .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            AsyncImage(
-                model = spriteImageUrl,
-                contentDescription = "Normal Sprite",
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .aspectRatio(1f),
-                contentScale = ContentScale.Crop
-            )
+                    .aspectRatio(1f)
+                    .background(
+                        LocalColors.current.gray.copy(alpha = 0.1f),
+                        RoundedCornerShape(12.dp)
+                    )
+                    .padding(8.dp)
+            ) {
+                AsyncImage(
+                    model = spriteImageUrl,
+                    contentDescription = "Normal Sprite",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Fit
+                )
+            }
             Text(
                 text = "기본",
                 modifier = Modifier.padding(top = 8.dp),
-                style = LocalTypography.current.headline3,
+                style = LocalTypography.current.body1,
                 color = LocalColors.current.black,
                 textAlign = TextAlign.Center
             )
@@ -70,18 +83,27 @@ fun EvolutionScreen(
                 .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            AsyncImage(
-                model = spritesShinyImageUrl,
-                contentDescription = "Shiny Sprite",
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .aspectRatio(1f),
-                contentScale = ContentScale.Crop
-            )
+                    .aspectRatio(1f)
+                    .background(
+                        LocalColors.current.gray.copy(alpha = 0.1f),
+                        RoundedCornerShape(12.dp)
+                    )
+                    .padding(8.dp)
+            ) {
+                AsyncImage(
+                    model = spritesShinyImageUrl,
+                    contentDescription = "Shiny Sprite",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Fit
+                )
+            }
             Text(
                 text = "이로치",
                 modifier = Modifier.padding(top = 8.dp),
-                style = LocalTypography.current.headline3,
+                style = LocalTypography.current.body1,
                 color = LocalColors.current.black,
                 textAlign = TextAlign.Center
             )

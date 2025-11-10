@@ -2,6 +2,7 @@ package com.example.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,15 +16,19 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.component.common.getPokemonColorType
 import com.example.designsystem.theme.LocalColors
 import com.example.designsystem.theme.LocalTypography
 import com.example.utils.extension.noRippleClickable
@@ -38,12 +43,18 @@ fun PokemonCard(
     pokemon: Pokemon,
     onClickPokemonCard: (Pokemon) -> Unit,
 ) {
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(16.dp))
+    // 성능 최적화: remember를 사용하여 불필요한 재계산 방지
+    val cardShape = remember { RoundedCornerShape(16.dp) }
+    val clickableModifier = remember(pokemon.id) {
+        Modifier
+            .clip(cardShape)
             .noRippleClickable {
                 onClickPokemonCard.invoke(pokemon)
             }
+    }
+    
+    Box(
+        modifier = modifier.then(clickableModifier)
     ) {
         // 배경 이미지
         Box(
@@ -84,27 +95,17 @@ fun PokemonCard(
 
                 Spacer(modifier = Modifier.height(32.dp))
 
-                // Type1 텍스트
-                Text(
-                    text = "타입1",
-                    modifier = Modifier
-                        .padding(start = 8.dp, end = 8.dp)
-                        .align(Alignment.Start),
-                    style = LocalTypography.current.subTitle,
-                    color = LocalColors.current.white,
-                    maxLines = 1
-                )
-
-                // Type2 텍스트
-                Text(
-                    text = "타입2",
-                    modifier = Modifier
-                        .padding(start = 8.dp, top = 4.dp, end = 8.dp)
-                        .align(Alignment.Start),
-                    style = LocalTypography.current.subTitle,
-                    color = LocalColors.current.white,
-                    maxLines = 1
-                )
+                // 타입들을 세로로 나열 (썸네일을 가리지 않도록)
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    pokemon.types.take(2).forEach { type ->
+                        TypeChip(
+                            type = type,
+                            modifier = Modifier
+                        )
+                    }
+                }
             }
 
             // 이미지를 오른쪽 하단에 배치
@@ -112,18 +113,22 @@ fun PokemonCard(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
             ) {
+                // 성능 최적화: 이미지 크기와 모양을 remember로 캐싱
+                val imageSize = remember { 80.dp }
+                val circleShape = remember { CircleShape }
+                
                 AsyncImage(
                     model = pokemon.thumbnailUrl,
                     modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape),
+                        .size(imageSize)
+                        .clip(circleShape),
                     contentScale = ContentScale.Crop,
                     contentDescription = null,
                     placeholder = null
                 )
             }
 
-//             Pokeball 이미지 (배경에 흐리게 배치)
+            // Pokeball 이미지 (배경에 흐리게 배치)
             Image(
                 painter = painterResource(id = ResourceR.drawable.pokeball),
                 contentDescription = null,
@@ -135,5 +140,30 @@ fun PokemonCard(
                 contentScale = ContentScale.Fit
             )
         }
+    }
+}
+
+@Composable
+private fun TypeChip(
+    type: String,
+    modifier: Modifier = Modifier
+) {
+    val typeColor = remember(type) { type.getPokemonColorType() }
+    val chipShape = remember { RoundedCornerShape(12.dp) }
+    
+    Box(
+        modifier = modifier
+            .clip(chipShape)
+            .background(typeColor.copy(alpha = 0.8f))
+            .padding(horizontal = 8.dp, vertical = 4.dp)
+    ) {
+        Text(
+            text = type.replaceFirstChar { it.uppercase() },
+            style = LocalTypography.current.caption1.copy(
+                fontWeight = FontWeight.Medium
+            ),
+            color = Color.White,
+            maxLines = 1
+        )
     }
 }

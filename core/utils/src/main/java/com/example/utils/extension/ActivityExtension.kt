@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 // 상태바 보이기.
 fun Activity.showStateBar(isLightMode: Boolean = true) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) { // Android 15+
+    if (Build.VERSION.SDK_INT >= 35) { // Android 15+
         WindowCompat.setDecorFitsSystemWindows(window, true)
         window.decorView.setOnApplyWindowInsetsListener { view, insets ->
             view.setBackgroundColor(Color.WHITE)

@@ -37,7 +37,7 @@ fun BaseStatsScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(LocalColors.current.white)
-            .padding(horizontal = 12.dp, vertical = 20.dp)
+            .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
         if (model != null) {
             Column(
@@ -45,55 +45,49 @@ fun BaseStatsScreen(
                     .padding(top = 8.dp)
             ) {
                 StatsBarLayout(
-                    modifier = Modifier,
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "HP",
                     value = model.hp,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "공격",
                     value = model.attack,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "방어",
                     value = model.defense,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "특수공격",
                     value = model.specialAttack,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "특수방어",
                     value = model.specialDefense,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 4.dp),
                     title = "스피드",
                     value = model.speed,
                     maxValue = 200
                 )
 
                 StatsBarLayout(
-                    modifier = Modifier
-                        .padding(top = 8.dp),
+                    modifier = Modifier.padding(vertical = 8.dp),
                     title = "총점",
                     value = model.total,
                     maxValue = 1000
@@ -113,15 +107,15 @@ fun StatsBarLayout(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
+            .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         // 이름
         Text(
             text = title,
             modifier = Modifier
-                .width(80.dp),
-            style = LocalTypography.current.headline3,
+                .width(90.dp),
+            style = LocalTypography.current.body1,
             color = LocalColors.current.darkGray,
             maxLines = 1,
             textAlign = TextAlign.Start
@@ -130,21 +124,22 @@ fun StatsBarLayout(
         // 수치
         Text(
             text = value.toString(),
-            modifier = Modifier,
-            style = LocalTypography.current.headline3,
+            modifier = Modifier
+                .width(50.dp),
+            style = LocalTypography.current.body1,
             color = LocalColors.current.black,
             maxLines = 1,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.End
         )
 
         // 프로그레스 바
         Box(
             modifier = Modifier
                 .weight(1f)
-                .height(8.dp)
-                .padding(start = 16.dp)
-                .clip(RoundedCornerShape(4.dp))
-                .background(LocalColors.current.gray)
+                .height(12.dp)
+                .padding(start = 12.dp)
+                .clip(RoundedCornerShape(6.dp))
+                .background(LocalColors.current.gray.copy(alpha = 0.3f))
         ) {
             Box(
                 modifier = Modifier

@@ -9,10 +9,12 @@ import com.example.model.ui.AboutModel
 import com.example.navigation.DetailTabRoute
 import com.example.utils.log.DebugLog
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
 
 fun NavController.navigationAbout(model: AboutModel, navOptions: NavOptions) {
     navigate(
-        DetailTabRoute.About(modelJsonStr = Json.encodeToString(model)), navOptions
+        DetailTabRoute.About(modelJsonStr = Json.encodeToString<AboutModel>(model)), navOptions
     )
 }
 

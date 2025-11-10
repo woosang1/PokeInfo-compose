@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -38,6 +39,11 @@ fun HomeScreen(
         onEvent(HomeEvent.Init)
     }
 
+    // 성능 최적화: 이미지 크기와 위치를 remember로 캐싱
+    val pokeballSize = remember { 300.dp }
+    val pokeballOffset = remember { Pair(200.dp, (-100).dp) }
+    val pokeballAlpha = remember { 0.25f }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -48,9 +54,9 @@ fun HomeScreen(
             contentDescription = null,
             modifier = Modifier
                 .align(Alignment.TopStart)
-                .size(300.dp)
-                .offset(x = 200.dp, y = (-100).dp)
-                .alpha(0.25f),
+                .size(pokeballSize)
+                .offset(x = pokeballOffset.first, y = pokeballOffset.second)
+                .alpha(pokeballAlpha),
             contentScale = ContentScale.Fit
         )
 
