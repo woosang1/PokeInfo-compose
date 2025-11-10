@@ -27,6 +27,10 @@ rootProject.name = "PokeInfo"
 // Application Module
 include(":app")
 
+// App Config Modules
+include(":app-config:app-config")
+include(":app-config:app-config-api")
+
 // Feature Modules
 include(":feature")
 include(":feature:main")

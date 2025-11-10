@@ -4,6 +4,7 @@ import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.maybeCreate
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -19,6 +20,14 @@ internal fun Project.configureAndroidCommon(
         defaultConfig {
             minSdk = libs.findVersion("minSdk").get().requiredVersion.toInt()
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
+
+        if (!flavorDimensions.contains(EnvironmentFlavors.DIMENSION)) {
+            flavorDimensions += EnvironmentFlavors.DIMENSION
+        }
+        productFlavors {
+            maybeCreate(EnvironmentFlavors.DEV).dimension = EnvironmentFlavors.DIMENSION
+            maybeCreate(EnvironmentFlavors.PROD).dimension = EnvironmentFlavors.DIMENSION
         }
 
         compileOptions {

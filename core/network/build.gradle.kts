@@ -10,6 +10,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":app-config:app-config-api"))
     implementation(project(":core:model"))
     implementation(project(":core:utils"))
 

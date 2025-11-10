@@ -1,9 +1,9 @@
 package com.example.network.di
 
+import com.example.app_config_api.PokeInfoBuildConfig
 import com.example.network.PokemonAPI
 import com.example.network.interceptor.LogInterceptor
 import com.example.network.interceptor.RetryInterceptor
-import com.example.network.pokeApiUrl
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -55,9 +55,10 @@ object ApiModule {
     fun provideNetworkAPI(
         okHttpClient: OkHttpClient,
         converterFactory: Converter.Factory,
+        buildConfig: PokeInfoBuildConfig,
     ): PokemonAPI =
         Retrofit.Builder()
-            .baseUrl(pokeApiUrl)
+            .baseUrl(buildConfig.getNetworkUrl())
             .client(okHttpClient)
             .addConverterFactory(converterFactory)
             .build()

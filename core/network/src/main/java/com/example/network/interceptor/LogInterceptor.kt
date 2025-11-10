@@ -1,5 +1,6 @@
 package com.example.network.interceptor
 
+import com.example.app_config_api.PokeInfoBuildConfig
 import com.example.utils.log.DebugLog
 import okhttp3.Interceptor
 import okhttp3.Request
@@ -11,7 +12,9 @@ import org.json.JSONObject
 import java.io.IOException
 import javax.inject.Inject
 
-class LogInterceptor  @Inject constructor(): Interceptor {
+class LogInterceptor @Inject constructor(
+    private val buildConfig: PokeInfoBuildConfig
+) : Interceptor {
     companion object {
         private const val TAG = "RetrofitLog"
         private const val REQUEST_LOG_STRING = ".\n" +
@@ -28,6 +31,11 @@ class LogInterceptor  @Inject constructor(): Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request().newBuilder().build()
+
+        if (!buildConfig.isDebug()) {
+            return chain.proceed(request)
+        }
+
         val response = chain.proceed(request)
         val bodyString = response.body?.string().toString()
         DebugLog(

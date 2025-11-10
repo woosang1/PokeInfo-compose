@@ -1,7 +1,7 @@
-package com.example.network.di
+package com.example.app_config.di
 
+import com.example.app_config.PokeInfoBuildConfigImpl
 import com.example.app_config_api.PokeInfoBuildConfig
-import com.example.network.interceptor.LogInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,12 +10,12 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object InterceptorModule {
+internal object BuildConfigModule {
 
     @Provides
     @Singleton
-    fun provideLogInterceptor(
-        buildConfig: PokeInfoBuildConfig
-    ): LogInterceptor = LogInterceptor(buildConfig)
-
+    fun providePokeInfoBuildConfig(
+        impl: PokeInfoBuildConfigImpl
+    ): PokeInfoBuildConfig = impl
 }
+
