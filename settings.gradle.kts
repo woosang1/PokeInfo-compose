@@ -30,22 +30,27 @@ include(":app")
 // Feature Modules
 include(":feature")
 include(":feature:main")
+include(":feature:main-api")
 include(":feature:home")
+include(":feature:home-api")
 include(":feature:detail")
+include(":feature:detail-api")
+
+// Data Modules
+include(":data:pokemon")
+include(":data:pokemon-api")
+
+// Domain Modules
+include(":domain:pokemon")
+include(":domain:pokemon-api")
 
 // Core Modules
-include(":core")
-include(":data")
-include(":domain")
 include(":core:ui")
 include(":core:designsystem")
 include(":core:utils")
 include(":core:network")
 include(":core:model")
 include(":core:database")
-
-
 include(":core:resource")
-include(":core:navigation")
 include(":core:base")
 include(":core:testing")

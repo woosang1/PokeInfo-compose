@@ -22,10 +22,9 @@ configureHiltAndroid()
 
 dependencies {
     implementation(project(":core:model"))
-    implementation(project(":data"))
+    implementation(project(":data:pokemon-api"))
     implementation(project(":core:designsystem"))
-    implementation(project(":domain"))
-    implementation(project(":core:navigation"))
+    implementation(project(":domain:pokemon-api"))
     implementation(project(":core:ui"))
 
     testImplementation(project(":core:testing"))

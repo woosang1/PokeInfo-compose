@@ -1,0 +1,15 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml:2:1-4:12
+	package
+		ADDED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml:2:11-48
+		INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml
+uses-sdk
+INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml
+INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/woosang/Desktop/Android/PokeInfo-compose/data/pokemon-api/src/main/AndroidManifest.xml

@@ -7,8 +7,8 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.detail.detail.navigation.navigationDetail
-import com.example.home.navigation.navigationHome
+import com.example.detail.api.navigateToDetail
+import com.example.home.api.navigateToHome
 import com.example.navigation.MainRoute
 
 internal class MainNavigator(
@@ -19,11 +19,11 @@ internal class MainNavigator(
             .currentBackStackEntryAsState().value?.destination
 
     fun navigationHome() {
-        navController.navigationHome()
+        navController.navigateToHome()
     }
 
     fun navigationDetail(pk: String) {
-        navController.navigationDetail(pk)
+        navController.navigateToDetail(pk)
     }
 
     fun popBackStackIfNotHome() {

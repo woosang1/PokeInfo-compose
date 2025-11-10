@@ -6,9 +6,10 @@ import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import app.cash.turbine.test
-import com.example.domain.repository.PokemonRepository
+import com.example.data.repository.PokemonRepository
 import com.example.domain.usecase.GetLikePokemonListUseCase
 import com.example.domain.usecase.GetPokemonListUseCase
+import com.example.domain.usecase.GetPokemonListUseCaseImpl
 import com.example.home.common.HomeEvent
 import com.example.home.common.HomeUiState
 import com.example.model.ui.Pokemon
@@ -33,7 +34,7 @@ internal class HomeViewModelTest {
 
     @Before
     fun setUp(){
-        getPokemonListUseCase = GetPokemonListUseCase(pokemonRepository)
+        getPokemonListUseCase = GetPokemonListUseCaseImpl(pokemonRepository)
     }
 
     @Test

@@ -41,7 +41,8 @@ android {
 dependencies {
 
     implementation(project(":feature:main"))
-    implementation(project(":data"))
+    implementation(project(":domain:pokemon"))
+    implementation(project(":data:pokemon"))
 
     // compopse
     implementation(libs.androidx.core.ktx)
